@@ -127,5 +127,19 @@
 	</dependencies>
 	<build>
 		<finalName>ppp</finalName>
+<!--
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat8-maven-plugin</artifactId>
+					<version>2.2</version>
+					<configuration>
+						<path>/springrest</path>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+ -->
 	</build>
 </project>
