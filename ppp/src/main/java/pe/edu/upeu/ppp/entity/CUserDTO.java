@@ -1,13 +1,33 @@
 package pe.edu.upeu.ppp.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class CUserDTO implements UserDetails, Serializable{
 	
+	private int idUsuario ;
+	private String nombre;
+	private String apellido;
+	private String dni;
+	private String celular;
+	private String correo;
+	private String usu;
+	private String pass;
+	private int activo;
+	private int genero;
+	
+	
+	private ArrayList<Map<String, Object>> List_Permiso;
+	
+	boolean accountNonExpired;
+	boolean AccountNonLocked;
+	boolean CredentialsNonExpired;
+	boolean Enabled;
 	
 	
 

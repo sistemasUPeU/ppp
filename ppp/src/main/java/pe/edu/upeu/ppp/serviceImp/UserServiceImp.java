@@ -13,8 +13,10 @@ public class UserServiceImp implements UserService{
 	UserDAO udao ;
 
 	public Map<String, Object> getUserAll(String username) {
-		return udao.getUserAll(username);
+		// TODO Auto-generated method stub
+		return null;
 	}
+
 	
 	
 }
