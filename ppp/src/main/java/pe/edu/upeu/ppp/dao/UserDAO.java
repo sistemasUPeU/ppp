@@ -6,7 +6,7 @@ import java.util.Map;
 public interface UserDAO {
 
 	
-	Map<String, Object> getValidateUser(String username, String pass);
+	Map<String, Object> getValidateUser(String username);
 
 	
 	ArrayList<Map<String, Object>> getAllSupervisor(int iduser);
@@ -19,6 +19,6 @@ public interface UserDAO {
 
 	
 	
-	ArrayList<Map<String, Object>> getAllPermit(int rol);
+	ArrayList<Map<String, Object>> getAllPermit(Object id);
 
 }
