@@ -19,7 +19,7 @@
 
 
 <!--  Style -->
-    <%@include file="../../jspf/head.jspf"%>
+    <%@ include file="../../jspf/head.jspf" %>
 
 
 </head>
