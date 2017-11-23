@@ -1,5 +1,5 @@
 package pe.edu.upeu.ppp.security;
 
-public class example {
+public class UserDetailsServiceImpl {
 
 }
