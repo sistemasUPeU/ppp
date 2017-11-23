@@ -1,3 +1,11 @@
 <%-- any content can be specified here e.g.: --%>
 <%@ page pageEncoding="UTF-8" %>
-<h2>Hello World!</h2>
+
+
+
+<footer class="app-footer">
+        <a href="#">Alpha Team</a> © 2017 creativeLabs.
+        <span class="float-right">
+            Universida Peruana Unión <a href="#">- <strong>UPeU</strong></a>
+        </span>
+    </footer>
