@@ -308,10 +308,10 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-title">
-                        Dashboard
+                        Home
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info">NEW</span></a>
+                        <a id="pagehome" class="nav-link" href="#"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info">NEW</span></a>
                     </li>
 
                     <li class="divider"></li>
@@ -451,41 +451,10 @@
 
         <!-- Main content -->
         <main class="main">
-
-            <!-- Breadcrumb -->
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">Home</li>
-                <li class="breadcrumb-item"><a href="#">Admin</a>
-                </li>
-                <li class="breadcrumb-item active">Dashboard</li>
-
-             </ol>
-            <div class="container-fluid">
-                <div class="animated fadeIn">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <i class="fa fa-edit"></i> Area build
-                                    <div class="card-actions">
-                                        <a href="#">
-                                            <small class="text-muted">NaN</small>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-block">
-                                    <h1>LLENAMOS AQUI SI ES QUE QUIEREN</h1>
-                                    <h2>Sabrina Vuelve</h2>
-                                 </div>
-                            </div>
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-
-            </div>
-            <!-- /.conainer-fluid -->
+		<section id="contenedor">
+			Pulsa 'Actualizar capa' y este texto se actualizará
+		</section>
+            
         </main>
 
     </div>

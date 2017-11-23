@@ -27,3 +27,7 @@
 
     <!-- Custom scripts required by this view -->
     <script src="<c:url value='resources/plugin/js/views/forms.js'/>"></script>
+    
+    <!-- Nuestros Javascrit -->
+    
+    <script src="<c:url value='resources/js/rutas.js'/>"></script>

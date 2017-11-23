@@ -14,4 +14,9 @@ public class HomeController {
 		return pagina;
 	}
 	
+	@GetMapping("/tu")
+	public String tu() {
+		String pagina = "/vistas/prueba";
+		return pagina;
+	}
 }
