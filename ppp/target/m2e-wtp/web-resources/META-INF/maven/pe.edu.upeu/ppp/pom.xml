@@ -8,7 +8,7 @@
 	<name>ppp Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
-	<properties>	
+	<properties>
 		<java-version>1.8</java-version>
 		<springframework.version>4.3.11.RELEASE</springframework.version>
 		<spring.security.version>4.2.1.RELEASE</spring.security.version>
@@ -71,14 +71,13 @@
 			<version>${springframework.version}</version>
 		</dependency>
 
-		<!-- Oracle -->		
+		<!-- Oracle -->
 
- 	<dependency>
-		    <groupId>com.github.noraui</groupId>
-		    <artifactId>ojdbc7</artifactId>
-		    <version>12.1.0.2</version>
+		<dependency>
+			<groupId>com.github.noraui</groupId>
+			<artifactId>ojdbc7</artifactId>
+			<version>12.1.0.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>ojdbc</groupId>
 			<artifactId>ojdbc</artifactId>
@@ -126,10 +125,9 @@
 
 
 	</dependencies>
-	
 	<build>
 		<finalName>ppp</finalName>
-<!-- 
+<!--
 		<pluginManagement>
 			<plugins>
 				<plugin>
