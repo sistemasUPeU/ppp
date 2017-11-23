@@ -319,10 +319,10 @@
                         UI Elements
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> Components</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> Registro</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="components-buttons.html"><i class="icon-puzzle"></i> Buttons</a>
+                                <a id="pageReEmpresa" class="nav-link" href="#"><i class="icon-puzzle"></i> Empresa </a>
                             </li>
                          </ul>
                     </li>

@@ -1,5 +1,13 @@
 $(document).ready(function() {
-	$("#pagehome").click(function(event) {
-		$("#contenedor").load("tu");	
+//Vista PRueba
+	//	$("#pagehome").click(function(event) {
+	//		$("#contenedor").load("tu");	
+	//	});
+//Vista Registro
+	// Registro Empresa
+	$("#pageReEmpresa").click(function(event) {
+		$("#contenedor").load("registro/empresa");	
 	});
+//Vista Asignacion
+	
 });	
