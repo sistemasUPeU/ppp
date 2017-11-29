@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upeu.ppp.config.SpringConnection;
-import pe.edu.upeu.ppp.dao.UserDAO2;
 import pe.edu.upeu.ppp.entity.CUserDTO;
 
 @Service("userDetailsService")
