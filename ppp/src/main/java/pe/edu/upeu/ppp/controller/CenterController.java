@@ -8,7 +8,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,15 +15,19 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import pe.edu.upeu.ppp.config.SpringConnection;
 import pe.edu.upeu.ppp.dao.ConvenioDAO;
 
 
 
 @Controller
 public class CenterController {
-	@Autowired
-	ConvenioDAO cO= new ConvenioDAO();
+	
+	
+	ConvenioDAO cO= new ConvenioDAO(SpringConnection.getDataSource());
+	
 	List<Map<String, Object>> listas;
+	
 	@RequestMapping("/paginas")
 	public ModelAndView paginas(ModelAndView modelo,HttpServletRequest request,HttpServletResponse response)
 	{
@@ -63,7 +66,6 @@ public class CenterController {
 
 				break;
 			}
-				
 			
 		} catch (Exception e) {
 
