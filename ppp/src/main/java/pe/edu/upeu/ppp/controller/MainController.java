@@ -19,16 +19,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.google.gson.Gson;
 
 import pe.edu.upeu.ppp.config.SpringConnection;
+import pe.edu.upeu.ppp.entity.CUserDTO;
 import pe.edu.upeu.ppp.security.UserDAO2;
 import pe.edu.upeu.ppp.service.RepreService;
+import pe.edu.upeu.ppp.service.UserService;
 
 @Controller
 public class MainController {
 
-	//UserDAO2 udao = new UserDAO2(SpringConnection.getDataSource());
 
 	@Autowired 
-	RepreService rser;
+	UserService userdao;
 	
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
@@ -41,14 +42,18 @@ public class MainController {
 		response.setContentType("application/json");
 		HttpSession session = request.getSession(true);
 		PrintWriter out = response.getWriter();
-
 		String opc = request.getParameter("opc");
 		System.out.println(opc);
+		
+		String REID = ((CUserDTO) authentication.getPrincipal()).IDUSER();
+		int IDUSER = Integer.parseInt(REID);
+		System.out.println(IDUSER);
+		
 		try {
 			switch (opc) {
 			case "perfil":
-				mp.put("li", rser.listarRepr());
-				System.out.println(rser.listarRepr());
+				mp.put("li", userdao.perfil(IDUSER));
+				System.out.println(userdao.perfil(IDUSER));
 				break;
 
 			case "cargo":
