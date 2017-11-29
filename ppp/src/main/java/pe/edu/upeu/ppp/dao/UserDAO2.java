@@ -16,13 +16,11 @@ public class UserDAO2 {
 
 	 DataSource d = SpringConnection.getDataSource();
 	 
+	 private JdbcTemplate jt;
+	 
 	 public UserDAO2(DataSource dataSource) {
 	        jt = new JdbcTemplate(dataSource);
 	    }
-	
-	@Autowired
-	JdbcTemplate jt;
-
 	
 	// metodo para comprobar que existe el usario y obtenemos el idUsuario
 		public Map<String, Object> getValidateUser(String username) {

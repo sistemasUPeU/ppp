@@ -30,7 +30,7 @@
         <a class="navbar-brand" href="#"></a>
         <ul class="nav navbar-nav hidden-md-down">
             <li class="nav-item">
-                <a class="nav-link navbar-toggler sidebar-toggler" href="#">☰</a>
+                <a class="nav-link navbar-toggler sidebar-toggler" href="#"><i class="glyphicons glyphicons-justify"></i></a>
             </li>
 
             <li class="nav-item px-1">
