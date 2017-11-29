@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class CUserDTO implements UserDetails, Serializable{
 	
 	//for user
-	private String idUsuario ;
+	private int idUsuario ;
 	private String nombre;
 	private String apellido;
 	private String dni;
@@ -35,9 +35,10 @@ public class CUserDTO implements UserDetails, Serializable{
 	}
 	
 	
-	public CUserDTO(Map<String,Object> UserT ,  ArrayList<Map<String, Object>> listmod, 
+	public CUserDTO(Map<String,Object> UserT,  ArrayList<Map<String, Object>> listmod, 
 			boolean accountNonExpired, boolean AccountNonLocked, boolean CredentialsNonExpired, boolean Enabled ) {
-			this.nombre = ((String) UserT.get("NOMBRE")).trim();
+		    this.idUsuario =  (int) UserT.get("IDUSER");
+		    this.nombre = ((String) UserT.get("NOMBRE")).trim();
 			this.apellido = ((String) UserT.get("APELLIDOS")).trim();
 			this.dni = ((String) UserT.get("DNI")).trim();
 			this.celular = ((String) UserT.get("CELULAR")).trim();
@@ -57,11 +58,11 @@ public class CUserDTO implements UserDetails, Serializable{
 		
 	}
 
-	public String getIdUsuario() {
+	public int getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdUsuario(String idUsuario) {
+	public void setIdUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 

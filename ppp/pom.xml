@@ -72,7 +72,6 @@
 		</dependency>
 
 		<!-- Oracle -->
-
 		<dependency>
 			<groupId>com.github.noraui</groupId>
 			<artifactId>ojdbc7</artifactId>
