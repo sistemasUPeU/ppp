@@ -45,8 +45,14 @@ public class CenterController {
         try {
         	switch (opc) {
 			case "convenio":
-				
-			
+				String p_idperiodo=request.getParameter("");
+				String p_razonsocial=request.getParameter("");
+				String p_ruc=request.getParameter("");
+				String p_direccion=request.getParameter("");
+				String p_seguro=request.getParameter("");
+				String p_actividad=request.getParameter("");
+				String p_cargo=request.getParameter("");
+				String p_idalumno=request.getParameter("");
 				break;
 
 			case "estplanilla":
