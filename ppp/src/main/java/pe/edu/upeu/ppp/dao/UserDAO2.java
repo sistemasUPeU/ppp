@@ -29,37 +29,14 @@ public class UserDAO2 {
 			return jt.queryForMap(sql, username );
 		}
 
-		// metodo para obtener datos escenciales del supervisorEP
-		public ArrayList<Map<String, Object>> getAllSupervisor(int iduser) {
-			String sql ="SELECT U.IDUSUARIO, u.NOMBRE , u.APELLIDOS ,  u.DNI ,u.GENERO , u.CELULAR , u.CORREO , u.USU , u.PASS, u.ACTIVO,  re.CODIGO , rol.IDROL, rol.NOMBRE AS ROL , rol.ACTIVO AS RACTIVO\r\n" + 
-					"FROM PPP_USUARIO u , PPP_TRABAJADOR re   , PPP_ROL rol , PPP_USUARIO__ROL ur \r\n" + 
-					"WHERE  rol.IDROL = ur.IDROL and u.IDUSUARIO = ur.IDUSUARIO  AND  re.IDTRABAJADOR = u.IDUSUARIO  and u.IDUSUARIO = ?"; 
-			return (ArrayList<Map<String, Object>>) jt.queryForList(sql, iduser);
-		}
-
-		// metodo para obtener datos escenciales del RepresentanteEmpresa
-		public ArrayList<Map<String, Object>> getAllRepresentante(int iduser) {
-			String sql ="SELECT u.IDUSUARIO ,  u.NOMBRE , u.APELLIDOS , u.DNI , u.CELULAR , u.CORREO , u.USU , u.PASS, u.ACTIVO, u.GENERO, rp.CARGO ,  rol.IDROL, rol.NOMBRE AS ROL , rol.ACTIVO AS RACTIVO\r\n" + 
-					"FROM PPP_USUARIO u , PPP_REPRESENTANTE rp   , PPP_ROL rol , PPP_USUARIO__ROL ur \r\n" + 
-					"WHERE  rol.IDROL = ur.IDROL and u.IDUSUARIO = ur.IDUSUARIO  AND  rp.IDREPRESENTANTE = u.IDUSUARIO and u.IDUSUARIO = ?";
-			return (ArrayList<Map<String, Object>>) jt.queryForList(sql,iduser);
-		}
-
-		// metodo para obtener datos escenciales del Alumno
-		public ArrayList<Map<String, Object>> getAllAlumno(int iduser) {
-			String sql ="SELECT u.IDUSUARIO ,  u.NOMBRE , u.APELLIDOS , u.DNI , u.CELULAR , u.CORREO , u.USU , u.PASS, u.ACTIVO,  u.GENERO, al.CICLO , al.DIRECCION , al.NACINALIDAD , al.DISTRITO , al.PROVINCIA ,al.DEPARTAMENTO ,al.ECIVIL ,al.PARTIDANACIMIENTO ,  rol.IDROL, rol.NOMBRE AS ROL\r\n" + 
-					"FROM PPP_USUARIO u , PPP_ALUMNO al   , PPP_ROL rol , PPP_USUARIO__ROL ur \r\n" + 
-					"WHERE  rol.IDROL = ur.IDROL and u.IDUSUARIO = ur.IDUSUARIO  AND  al.IDALUMNO = u.IDUSUARIO and u.IDUSUARIO = ?";
-			return (ArrayList<Map<String, Object>>) jt.queryForList(sql, iduser);
-		}
-
+	
 		//para listar todos los permisos y modulos que existan en la base de datos
 		public Map<String, Object> getAllPermit(String id) {
-			
-			String sql ="SELECT rol.IDROL , pr.IDPERMISOS , rol.NOMBRE ,rol.ACTIVO ,pr.NOMBRE as permiso , pr.DESCRIPCION as depermiso , pr.RUTA , pr.ICONO ,pr.ACTIVO as ESPERMISO\r\n" + 
-					"FROM PPP_ROL__PERMISOS RP , PPP_ROL rol , PPP_PERMISOS pr,PPP_USUARIO__ROL UR,PPP_USUARIO U \r\n" + 
-					"where  RP.IDPERMISOS = pr.IDPERMISOS and RP.IDROL = rol.IDROL and U.IDUSUARIO=UR.IDUSUARIO AND rol.IDROL=UR.IDROL AND U.IDUSUARIO= ? ";
-			return (Map<String, Object>) jt.queryForList(sql,id );
+			String sql ="SELECT  UR.IDUSUARIO,R.NOMBRE Rol,PA.IDPERMISOS,PA.NOMBRE Permiso,PA.IDPERMISOS_PADRE,PA.RUTA,PA.ICONO\r\n" + 
+					"FROM PPP_ROL R INNER JOIN PPP_USUARIO__ROL UR ON R.IDROL=UR.IDROL INNER JOIN PPP_ROL__PERMISOS RP\r\n" + 
+					"ON RP.IDROL=UR.IDROL INNER JOIN  PPP_PERMISOS PA ON (RP.IDPERMISOS=PA.IDPERMISOS or RP.IDPERMISOS=PA.IDPERMISOS_PADRE )\r\n" + 
+					"WHERE UR.IDUSUARIO=?";
+			return (Map<String, Object>) jt.queryForList(sql,id);
 		}
 		
   

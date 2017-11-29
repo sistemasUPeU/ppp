@@ -17,10 +17,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.gson.Gson;
 
+import pe.edu.upeu.ppp.config.SpringConnection;
+import pe.edu.upeu.ppp.dao.UserDAO2;
+
 @Controller
 public class MainController {
 
-	// private ContratoDAO c = new ContratoDAO(AppConfig.getDataSource());
+	UserDAO2 udao = new UserDAO2(SpringConnection.getDataSource());
 
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
