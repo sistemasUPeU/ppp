@@ -13,7 +13,7 @@ public class UserServiceImp implements UserService{
 	@Autowired
 	UserDAO udao ;
 
-	public Map<String, Object> getValidateUser(String username, String pass) {
+	public Map<String, Object> getValidateUser(String username) {
 		return udao.getValidateUser(username);
 	}
 

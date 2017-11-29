@@ -3,9 +3,12 @@ package pe.edu.upeu.ppp.service;
 import java.util.ArrayList;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public interface UserService {
 	
-Map<String, Object> getValidateUser(String username, String pass);
+	Map<String, Object> getValidateUser(String username);
 
 	
 	ArrayList<Map<String, Object>> getAllSupervisor(int iduser);
