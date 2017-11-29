@@ -1,0 +1,54 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+
+ <div class="sidebar">
+		            <div class="sidebar-header">
+		               <br>
+		                <img src="<c:url value='resources/plugin/img/avatars/8.jpg'/>" class="img-avatar" alt="Avatar">
+		                <div>
+		                    <strong>Brandux DOE</strong>
+		                </div>
+		                <div class="text-muted">
+		                    <small>Founder &amp; CEO</small>
+		                </div>
+		             </div>
+		
+		
+		            <nav class="sidebar-nav">
+		                <ul class="nav">
+		                    <li class="nav-title">
+		                        Home
+		                    </li>
+		                    <li class="nav-item">
+		                        <a id="pagehome" class="nav-link" href="#"><i class="icon-speedometer"></i> Dashboard </a>
+		                    </li>
+		
+		                    <li class="divider"></li>
+		                    <li class="nav-title">
+		                        UI Elements
+		                    </li>
+		                    <li class="nav-item nav-dropdown">
+		                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> Registro</a>
+		                        <ul class="nav-dropdown-items">
+		                            <li class="nav-item">
+		                                <a id="pageReEmpresa" class="nav-link" href="#"><i class="icon-puzzle"></i> Empresa </a>
+		                            </li>
+		                         </ul>
+		                    </li>
+		                    <li class="nav-item nav-dropdown">
+		                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-note"></i> Forms</a>
+		                        <ul class="nav-dropdown-items">
+		                            <li class="nav-item">
+		                                <a class="nav-link" href="forms-basic-forms.html"><i class="icon-note"></i> Basic Forms</a>
+		                            </li>
+		                         </ul>
+		                    </li>
+		                    
+		                </ul>
+		            </nav>
+		        
+		        
+		        </div>
+		        
+		
