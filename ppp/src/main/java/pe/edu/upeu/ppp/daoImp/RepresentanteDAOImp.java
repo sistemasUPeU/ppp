@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.ppp.dao.RepresentanteDAO;
 
-@Repository("RepresentanteDAO")
+@Repository("RepreSerImp")
 public class RepresentanteDAOImp implements RepresentanteDAO {
 
 	@Autowired

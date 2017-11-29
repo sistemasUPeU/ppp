@@ -13,11 +13,11 @@ import pe.edu.upeu.ppp.service.RepreService;
 public class RepreServiceImp implements RepreService {
 
 	@Autowired
-	RepresentanteDAO RepresentanteDAO;
+	RepresentanteDAO RepreSerImp;
 	
 	@Override
 	public ArrayList<Map<String, Object>> listarRepr() {
-		return RepresentanteDAO.listarRepr();
+		return RepreSerImp.listarRepr();
 	}
 
 }
