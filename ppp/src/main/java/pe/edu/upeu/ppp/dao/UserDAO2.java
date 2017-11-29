@@ -24,8 +24,8 @@ public class UserDAO2 {
 	
 	// metodo para comprobar que existe el usario y obtenemos el idUsuario
 		public Map<String, Object> getValidateUser(String username) {
-			String sql = "SELECT U.IDUSUARIO as iduser , U.NOMBRE , U.APELLIDOS , U.DNI , U.CELULAR, U.USU ,U.PASS , U.ACTIVO, U.GENERO   \r\n" + 
-					"FROM PPP_USUARIO U , PPP_USUARIO__ROL ur WHERE U.IDUSUARIO = ur.IDUSUARIO and TRIM(U.USU) = ? ";
+			String sql = "SELECT U.IDUSUARIO as iduser , U.NOMBRE , U.APELLIDOS , U.DNI , U.CELULAR, U.USU ,U.PASS , U.ACTIVO, U.GENERO   ,rol.IDROL\r\n" + 
+					"FROM PPP_USUARIO U , PPP_USUARIO__ROL ur , PPP_ROL rol WHERE U.IDUSUARIO = ur.IDUSUARIO and rol.IDROL=UR.IDROL and TRIM(U.USU) = ?";
 			return jt.queryForMap(sql, username );
 		}
 

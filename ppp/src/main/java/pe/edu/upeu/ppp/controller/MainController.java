@@ -38,7 +38,7 @@ public class MainController {
 		System.out.println(opc);
 		try {
 			switch (opc) {
-			case "cargar":
+			case "perfil":
 
 				break;
 
