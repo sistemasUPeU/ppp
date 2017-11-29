@@ -3,10 +3,11 @@
 
 
  <div class="sidebar">
-		            <div class="sidebar-header">
+		            
+		            <div class="sidebar-header" >
 		               <br>
 		                <img src="<c:url value='resources/plugin/img/avatars/8.jpg'/>" class="img-avatar" alt="Avatar">
-		                <div>
+		                <div  id="perfil">
 		                    <strong>Brandux DOE</strong>
 		                </div>
 		                <div class="text-muted">

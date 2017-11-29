@@ -49,10 +49,15 @@ public class MainController {
 		int IDUSER = Integer.parseInt(REID);
 		System.out.println(IDUSER);
 		
+		String name = ((CUserDTO) authentication.getPrincipal()).getNombre();
+		String genero = ((CUserDTO) authentication.getPrincipal()).getGenero();
+		
 		try {
 			switch (opc) {
 			case "perfil":
 				mp.put("li", userdao.perfil(IDUSER));
+				mp.put("name", name);
+				mp.put("genero", genero);
 				System.out.println(userdao.perfil(IDUSER));
 				break;
 
