@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class HomeController {
 
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String home() {
 		String pagina = "index";
 		return pagina;
