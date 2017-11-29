@@ -11,11 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.ppp.config.SpringConnection;
 
-
-
-
-
-
 @Repository
 public class UserDAO2 {
 
