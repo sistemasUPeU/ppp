@@ -24,7 +24,8 @@ public class UserDAO2 {
 	
 	// metodo para comprobar que existe el usario y obtenemos el idUsuario
 		public Map<String, Object> getValidateUser(String username) {
-			String sql = "SELECT U.IDUSUARIO as iduser ,  U.USU   FROM PPP_USUARIO U , PPP_USUARIO__ROL ur WHERE U.IDUSUARIO = ur.IDUSUARIO and TRIM(U.USU) = ?";
+			String sql = "SELECT U.IDUSUARIO as iduser , U.NOMBRE , U.APELLIDOS , U.DNI , U.CELULAR, U.USU ,U.PASS , U.ACTIVO, U.GENERO   \r\n" + 
+					"FROM PPP_USUARIO U , PPP_USUARIO__ROL ur WHERE U.IDUSUARIO = ur.IDUSUARIO and TRIM(U.USU) = ? ";
 			return jt.queryForMap(sql, username );
 		}
 
@@ -53,13 +54,12 @@ public class UserDAO2 {
 		}
 
 		//para listar todos los permisos y modulos que existan en la base de datos
-		public ArrayList<Map<String, Object>> getAllPermit(Object id) {
-			int i = Integer.valueOf((String) id);
-			System.out.println(id);
+		public Map<String, Object> getAllPermit(String id) {
+			
 			String sql ="SELECT rol.IDROL , pr.IDPERMISOS , rol.NOMBRE ,rol.ACTIVO ,pr.NOMBRE as permiso , pr.DESCRIPCION as depermiso , pr.RUTA , pr.ICONO ,pr.ACTIVO as ESPERMISO\r\n" + 
 					"FROM PPP_ROL__PERMISOS RP , PPP_ROL rol , PPP_PERMISOS pr,PPP_USUARIO__ROL UR,PPP_USUARIO U \r\n" + 
 					"where  RP.IDPERMISOS = pr.IDPERMISOS and RP.IDROL = rol.IDROL and U.IDUSUARIO=UR.IDUSUARIO AND rol.IDROL=UR.IDROL AND U.IDUSUARIO= ? ";
-			return (ArrayList<Map<String, Object>>) jt.queryForList(sql, i );
+			return (Map<String, Object>) jt.queryForList(sql,id );
 		}
 		
   

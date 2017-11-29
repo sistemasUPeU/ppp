@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
+import org.apache.catalina.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class CUserDTO implements UserDetails, Serializable{
 	
 	//for user
-	private int idUsuario ;
+	private String IDUSER ;
 	private String nombre;
 	private String apellido;
 	private String dni;
@@ -25,45 +26,40 @@ public class CUserDTO implements UserDetails, Serializable{
 	
 	private ArrayList<Map<String, Object>> List_Permiso;
 	
+	private Map<String, Object> user;
+	
+	
 	boolean accountNonExpired;
 	boolean AccountNonLocked;
 	boolean CredentialsNonExpired;
 	boolean Enabled;
-	
-	public CUserDTO() {
-		
+
+	public String IDUSER() {
+		return IDUSER;
 	}
-	
-	
-	public CUserDTO(Map<String,Object> UserT,  ArrayList<Map<String, Object>> listmod, 
-			boolean accountNonExpired, boolean AccountNonLocked, boolean CredentialsNonExpired, boolean Enabled ) {
-		    this.idUsuario =  (int) UserT.get("IDUSER");
-		    this.nombre = ((String) UserT.get("NOMBRE")).trim();
-			this.apellido = ((String) UserT.get("APELLIDOS")).trim();
-			this.dni = ((String) UserT.get("DNI")).trim();
-			this.celular = ((String) UserT.get("CELULAR")).trim();
-			this.correo = ((String) UserT.get("CORREO")).trim();
-			this.usu = ((String) UserT.get("USU")).trim();
-			this.pass = ((String) UserT.get("PASS")).trim();
-			this.activo = ((String) UserT.get("ACTIVO")).trim();
-			this.genero = ((String) UserT.get("GENERO")).trim();
+
+	public CUserDTO(String iDUSER, String nombre, String apellido, String dni, String celular, String usu, String pass,
+			String activo, String genero, boolean accountNonExpired,
+			boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
+			IDUSER = iDUSER;
+			this.nombre = nombre;
+			this.apellido = apellido;
+			this.dni = dni;
+			this.celular = celular;
+			this.usu = usu;
+			this.pass = pass;
+			this.activo = activo;
+			this.genero = genero;
 			
-			
-			//Permit session
-			this.List_Permiso = listmod;
 			this.accountNonExpired = accountNonExpired;
-			this.AccountNonLocked = AccountNonLocked;
-			this.CredentialsNonExpired = CredentialsNonExpired;
-			this.Enabled = Enabled;
-		
+			AccountNonLocked = accountNonLocked;
+			CredentialsNonExpired = credentialsNonExpired;
+			Enabled = enabled;
 	}
 
-	public int getIdUsuario() {
-		return idUsuario;
-	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setIDUSER(String IDUSER) {
+		this.IDUSER = IDUSER;
 	}
 
 	public String getNombre() {
