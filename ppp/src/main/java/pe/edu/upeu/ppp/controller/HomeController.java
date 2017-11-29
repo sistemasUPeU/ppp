@@ -27,7 +27,12 @@ public class HomeController {
 			
 		return pagina;
 	}
-	
+	@RequestMapping(value="/registrar")
+	public String registro()
+	{
+		String pag="vistas/registro/Convenio";
+		return pag;
+	}
 	
 	@GetMapping("/login")
 	public ModelAndView hello(HttpServletRequest request, HttpServletResponse response,@RequestParam(value = "error", required = false) String error,
