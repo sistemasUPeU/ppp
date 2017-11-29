@@ -16,8 +16,7 @@ import pe.edu.upeu.ppp.service.UserService;
 @RequestMapping("/")
 public class HomeController {
 
-	@Autowired
-	UserService a ;
+	
 	
 	@GetMapping("/")
 	public String home() {
