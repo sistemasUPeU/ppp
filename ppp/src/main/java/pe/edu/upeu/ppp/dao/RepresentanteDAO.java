@@ -6,6 +6,17 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class RepresentanteDAO {
 
 	@Autowired
-	JdbcTemplate jdbc;
-	
+	JdbcTemplate j;
+	String sql="";
+	public int convenio()
+    { 	
+    	int x=0;
+    		try {
+				sql="";
+				x=j.update(sql);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+       return x;
+    }
 }
