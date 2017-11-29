@@ -5,8 +5,9 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public interface UserService {
+	
 	
 	Map<String, Object> getValidateUser(String username);
 

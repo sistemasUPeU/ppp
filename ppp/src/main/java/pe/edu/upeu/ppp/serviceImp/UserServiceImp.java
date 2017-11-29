@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.ppp.dao.UserDAO;
 import pe.edu.upeu.ppp.service.UserService;
 
+@Repository
 public class UserServiceImp implements UserService{
 
 	@Autowired
