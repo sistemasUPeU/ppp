@@ -20,7 +20,7 @@
 		                    <li class="nav-title">
 		                        Home
 		                    </li>
-		                    <li class="nav-item">
+		                    <li class="nav-item"  id="cagarmenu" >
 		                        <a id="pagehome" class="nav-link" href="#"><i class="icon-speedometer"></i> Dashboard </a>
 		                    </li>
 		
