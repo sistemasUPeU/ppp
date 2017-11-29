@@ -16,11 +16,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import pe.edu.upeu.ppp.dao.ConvenioDAO;
+
 
 
 @Controller
 public class CenterController {
 	@Autowired
+	ConvenioDAO cO= new ConvenioDAO();
 	List<Map<String, Object>> listas;
 	@RequestMapping("/paginas")
 	public ModelAndView paginas(ModelAndView modelo,HttpServletRequest request,HttpServletResponse response)
@@ -45,7 +48,7 @@ public class CenterController {
         try {
         	switch (opc) {
 			case "convenio":
-				String p_idperiodo=request.getParameter("");
+				int p_idperiodo=Integer.parseInt(request.getParameter(""));
 				String p_razonsocial=request.getParameter("");
 				String p_ruc=request.getParameter("");
 				String p_direccion=request.getParameter("");
@@ -53,6 +56,7 @@ public class CenterController {
 				String p_actividad=request.getParameter("");
 				String p_cargo=request.getParameter("");
 				String p_idalumno=request.getParameter("");
+				cO.convenio(p_idperiodo,p_razonsocial,p_ruc,p_direccion,p_seguro,p_actividad,p_cargo,p_idalumno);
 				break;
 
 			case "estplanilla":
