@@ -54,7 +54,7 @@ function listarPerfil() {
 			$("#perfil").empty();
 			$("#perfil").append(a);
 		if (genero == 1){
-			//$("#icon").attr("src","<c:url value="resources/plugin/img/avatars/8.jpg"/>");
+			//asas$("#icon").attr("src","<c:url value="resources/plugin/img/avatars/8.jpg"/>");
 		}else{
 			
 		}
