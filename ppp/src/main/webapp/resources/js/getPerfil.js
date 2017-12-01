@@ -9,6 +9,7 @@ function listarModulos() {
 		var list = objJson.li;
 		var user = objJson.name ;
 		var genero = objJson.genero ;
+		var a ='"buscar"';
 		console.log(user + genero);
 		var s = "";
 		if (list.length > 0) {
@@ -54,7 +55,9 @@ function listarPerfil() {
 			$("#perfil").empty();
 			$("#perfil").append(a);
 		if (genero == 1){
-			//asas$("#icon").attr("src","<c:url value="resources/plugin/img/avatars/8.jpg"/>");
+		
+			//asas$("#icon").attr("src", '<c:url value='"resources/plugin/img/avatars/8.jpg"''/>');
+			//var a ='\"buscar.value=' ';\"';
 		}else{
 			
 		}
