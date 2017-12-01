@@ -40,18 +40,30 @@ function listarPerfil() {
 	$.getJSON(url, data, function(objJson) {
 		var user = objJson.name ;
 		var genero = objJson.genero ;
+		var role = objJson.rol ;	
+		var rol;
 		console.log(user + genero);
 		var a = "";
-
-			a = perfildate(user ,genero);
+		
+		for(var i=0;i<role.length;i++){
+			 rol = role[i].ROL;
+		}
+			
+			a = perfildate(user ,genero , rol);
 			console.log(a);
 			$("#perfil").empty();
 			$("#perfil").append(a);
+		if (genero == 1){
+			//$("#icon").attr("src","<c:url value="resources/plugin/img/avatars/8.jpg"/>");
+		}else{
+			
+		}
 		
 	});
 }
 
-function perfildate(user ,genero) {
-	var s = '<strong>'+user+'</strong>';
+function perfildate(user ,genero , role) {
+	var s = '<strong>'+user+'</strong><br>';
+	s+='<small><strong>'+role+'</strong></small>';
 	return s;
 }

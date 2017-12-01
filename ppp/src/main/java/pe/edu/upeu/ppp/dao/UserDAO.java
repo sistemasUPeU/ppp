@@ -8,6 +8,9 @@ public interface UserDAO {
 	
 	//Metho for get data of perfil
 	ArrayList<Map<String, Object>> perfil (int id);
+	
+	//Mettho role 
+	ArrayList<Map<String , Object>> getRole (int id);
 
 	
 }

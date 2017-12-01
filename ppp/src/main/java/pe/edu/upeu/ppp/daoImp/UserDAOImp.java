@@ -18,11 +18,21 @@ public class UserDAOImp implements UserDAO{
 	@Override
 	public ArrayList<Map<String, Object>> perfil(int id) {
 
-		String sql="SELECT  UR.IDUSUARIO,R.NOMBRE Rol,PA.IDPERMISOS,PA.NOMBRE Permiso,PA.IDPERMISOS_PADRE,PA.RUTA,PA.ICONO ,PA.DESCRIPCION\r\n" + 
+		String sql="SELECT  UR.IDUSUARIO,R.NOMBRE Rol,PA.IDPERMISOS,PA.MODULO Permiso,PA.IDPERMISOS_PADRE,PA.RUTA,PA.ICONO ,PA.DESCRIPCION\r\n" + 
 				"FROM PPP_ROL R INNER JOIN PPP_USUARIO__ROL UR ON R.IDROL=UR.IDROL INNER JOIN PPP_ROL__PERMISOS RP\r\n" + 
 				"ON RP.IDROL=UR.IDROL INNER JOIN  PPP_PERMISOS PA ON (RP.IDPERMISOS=PA.IDPERMISOS or RP.IDPERMISOS=PA.IDPERMISOS_PADRE )\r\n" + 
 				"WHERE UR.IDUSUARIO="+id+"";
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
 	}
 
+	@Override
+	public ArrayList<Map<String, Object>> getRole(int id) {
+		String sql ="select r.NOMBRE as ROL\r\n" + 
+				"from ppp_usuario u , PPP_USUARIO__ROL ur , PPP_ROL r \r\n" + 
+				"where u.IDUSUARIO = ur.IDUSUARIO and r.IDROL = ur.IDROL and u.IDUSUARIO="+id+"";// TODO Auto-generated method stub
+		return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
+	}
+
+	
+	
 }

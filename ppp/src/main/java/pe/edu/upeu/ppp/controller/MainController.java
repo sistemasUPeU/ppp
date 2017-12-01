@@ -52,13 +52,15 @@ public class MainController {
 		String name = ((CUserDTO) authentication.getPrincipal()).getNombre();
 		String genero = ((CUserDTO) authentication.getPrincipal()).getGenero();
 		
+		//userinf.get("IDUSER").toString().trim();
 		try {
 			switch (opc) {
 			case "perfil":
 				mp.put("li", userdao.perfil(IDUSER));
 				mp.put("name", name);
 				mp.put("genero", genero);
-				System.out.println(userdao.perfil(IDUSER));
+				mp.put("rol", userdao.getRole(IDUSER));
+				System.out.println(userdao.getRole(IDUSER));
 				break;
 
 			case "cargo":

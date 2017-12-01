@@ -14,7 +14,7 @@ import pe.edu.upeu.ppp.entity.CUserDTO;
 @Transactional(readOnly=true)
 public class UserDetailsServiceImpl implements UserDetailsService{
 
-	private Map<String, Object> user;
+	//private Map<String, Object> user;
 
 	
 	private UserDAO2 userDAO2 = new UserDAO2(SpringConnection.getDataSource());

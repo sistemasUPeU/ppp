@@ -20,4 +20,9 @@ public class UserServiceImpl implements UserService{
 		return userdao.perfil(id);
 	}
 
+	@Override
+	public ArrayList<Map<String, Object>> getRole(int id) {
+		return userdao.getRole(id);
+	}
+
 }

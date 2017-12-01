@@ -10,7 +10,7 @@ public class RegistroController {
 
 	@GetMapping("/empresa")
 	public String empresa() {
-		String pagina = "vistas/registro/Convenio";
+		String pagina = "vistas/registro/index";
 		return pagina;
 	}
 	
