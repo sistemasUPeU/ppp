@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 
 import pe.edu.upeu.ppp.config.SpringConnection;
-import pe.edu.upeu.ppp.dao.ConvenioDAO;
+//import pe.edu.upeu.ppp.dao.ConvenioDAO;
 
 
 
@@ -24,7 +24,7 @@ import pe.edu.upeu.ppp.dao.ConvenioDAO;
 public class CenterController {
 	
 	
-	ConvenioDAO cO= new ConvenioDAO(SpringConnection.getDataSource());
+	//ConvenioDAO cO= new ConvenioDAO(SpringConnection.getDataSource());
 	
 	List<Map<String, Object>> listas;
 	
@@ -59,7 +59,7 @@ public class CenterController {
 				String p_actividad=request.getParameter("");
 				String p_cargo=request.getParameter("");
 				String p_idalumno=request.getParameter("");
-				cO.convenio(p_idperiodo,p_razonsocial,p_ruc,p_direccion,p_seguro,p_actividad,p_cargo,p_idalumno);
+				//cO.convenio(p_idperiodo,p_razonsocial,p_ruc,p_direccion,p_seguro,p_actividad,p_cargo,p_idalumno);
 				break;
 
 			case "estplanilla":
