@@ -27,7 +27,7 @@ public class UserDAOImp implements UserDAO{
 
 	@Override
 	public ArrayList<Map<String, Object>> getRole(int id) {
-		String sql ="select r.NOMBRE as ROL\r\n" + 
+		String sql ="select u.NOMBRE , u.APELLIDOS, r.NOMBRE as ROL\r\n" + 
 				"from ppp_usuario u , PPP_USUARIO__ROL ur , PPP_ROL r \r\n" + 
 				"where u.IDUSUARIO = ur.IDUSUARIO and r.IDROL = ur.IDROL and u.IDUSUARIO="+id+"";// TODO Auto-generated method stub
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql);

@@ -43,14 +43,18 @@ function listarPerfil() {
 		var genero = objJson.genero ;
 		var role = objJson.rol ;	
 		var rol;
+		var nombre ="";
+		var apellido ="";
 		console.log(user + genero);
 		var a = "";
 		
 		for(var i=0;i<role.length;i++){
 			 rol = role[i].ROL;
+			 nombre = role[i].NOMBRE;
+			 apellido = role[i].APELLIDOS
 		}
 			
-			a = perfildate(user ,genero , rol);
+			a = perfildate(nombre ,apellido , rol);
 			console.log(a);
 			$("#perfil").empty();
 			$("#perfil").append(a);
@@ -65,8 +69,8 @@ function listarPerfil() {
 	});
 }
 
-function perfildate(user ,genero , role) {
-	var s = '<strong>'+user+'</strong><br>';
-	s+='<small><strong>'+role+'</strong></small>';
+function perfildate(nombre ,apellido , rol) {
+	var s = '<strong>'+nombre+'  '+apellido+'</strong><br>';
+	s+='<small><strong>'+rol+'</strong></small>';
 	return s;
 }
