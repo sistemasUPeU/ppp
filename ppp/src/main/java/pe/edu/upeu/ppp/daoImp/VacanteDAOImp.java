@@ -5,9 +5,10 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.ppp.dao.VacanteDAO;
-
+@Repository("VacanteDAO")
 public class VacanteDAOImp implements VacanteDAO {
 	String sql;
 	@Autowired
@@ -22,23 +23,21 @@ public class VacanteDAOImp implements VacanteDAO {
 		return jt.queryForList(sql);
 	}
 
-	
 
 	@Override
 	public int NewVacante(String P_IDPERIODO, String P_IDREPRESENTANTE, String P_AREATRABAJO, String P_CANTIDAD,
 			String P_HORARIO, String P_FECHAINICIO, String P_FECHAFIN, String P_HORAINICIO, String P_HORAFIN,
-			String P_SUELDO, String P_IDESTADO) {
-		
+			String P_SUELDO, String P_IDLINEASP, String P_IDFOLDERPRACTICA, String P_IDTRABAJADOR, String P_IDALUMNO,
+			String P_IDROL, String P_CICLO, String P_TIPOPRACTICA, String P_OBSERVACIONES) {
 		int x=0;
 		try {
-			sql="INSERT INTO PPP_VACANTES(IDPERIODO,IDREPRESENTANTE,AREATRABAJO,CANTIDAD,HORARIO,FECHAINICIO,FECHAFIN,HORAINICIO,HORAFIN,SUELDO,IDESTADO)";
-			x=jt.update(sql,P_IDPERIODO,P_IDREPRESENTANTE,P_AREATRABAJO,P_CANTIDAD,P_HORARIO,P_FECHAINICIO,P_FECHAFIN,P_HORAINICIO,P_SUELDO,P_IDESTADO);
+			sql="CALL PA_REG_EMPRESA_P3(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			x=jt.update(sql,P_IDPERIODO,P_IDREPRESENTANTE,P_AREATRABAJO,P_CANTIDAD,P_HORARIO,P_FECHAINICIO,P_FECHAFIN,P_HORAINICIO,P_SUELDO,P_IDLINEASP,P_IDFOLDERPRACTICA,P_IDTRABAJADOR,P_IDALUMNO,P_IDROL,P_CICLO,P_TIPOPRACTICA,P_OBSERVACIONES);
 		} catch (Exception e) {
 			System.out.println("New Vacante error : "+e);
 		}
 		
 		return x;
-		
 	}
 
 }
