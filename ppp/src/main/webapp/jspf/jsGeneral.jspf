@@ -30,4 +30,3 @@
     
     <!-- Nuestros Javascrit -->
     <script src="<c:url value='resources/js/getPerfil.js'/>"></script>
-    <script src="<c:url value='resources/js/rutas.js'/>"></script>
