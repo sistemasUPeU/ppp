@@ -16,7 +16,7 @@ public class RegistroController {
 	
 	@GetMapping("/vacante")
 	public String as() {
-		String pagina = "vistas/registro/Convenio";
+		String pagina = "vistas/registro/Empresa";
 		return pagina;
 	}
 	
