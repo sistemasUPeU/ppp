@@ -9,24 +9,22 @@
 
 </head>
 <body>
-<div class="container">
+	<div class="container">
 
 
 		<fieldset>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group">
-						<label>Nombre: </label>
-						 <input type="text" id="nombre" class="form-control required"
-							placeholder="John Doe">
+						<label>Nombre: </label> <input type="text" id="nombre"
+							class="form-control required" placeholder="John Doe">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 					<div class="form-group">
-						<label>Apellido: </label>
-						 <input type="text" id="apellido" class="form-control required"
-							placeholder="lalalala"> </select>
+						<label>Apellido: </label> <input type="text" id="apellido"
+							class="form-control required" placeholder="lalalala"> </select>
 					</div>
 				</div>
 			</div>
@@ -34,59 +32,56 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>DNI: </label> 
-						<input type="number" id="dni" class="form-control required"
-							placeholder="12345678">
+						<label>DNI: </label> <input type="number" id="dni"
+							class="form-control required" placeholder="12345678">
 					</div>
 				</div>
 
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>Celular: </label> 
-						<input type="number" id="celular" class="form-control required"
-							placeholder="987654321">
+						<label>Celular: </label> <input type="number" id="celular"
+							class="form-control required" placeholder="987654321">
 					</div>
 				</div>
-				
+
 				<div class="col-md-6">
 					<div class="form-group">
-						<label>Correo:</label>
-						 <input type="email" id="correo" class="form-control required"
-							placeholder="jonas@upeu.edu.pe">
+						<label>Correo:</label> <input type="email" id="correo"
+							class="form-control required" placeholder="jonas@upeu.edu.pe">
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-1">
 					<div class="form-group">
-						<label>Genero:</label> 
-						<input type="text" id="genero" class="form-control required"
-							placeholder="...">
+						<label>Genero:</label>
+					 <select name="select" id="genero" class="form-control">
+							<option value="#">Genero</option>
+							<option value="1">M</option>
+							<option value="2">F</option>
+						</select>
 					</div>
 				</div>
-				
+
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>IdPeriodo:</label>
-						 <input type="number" id="idperiodo" class="form-control required"
-							placeholder="...">
+						<label>IdPeriodo:</label> <input type="number" id="idperiodo"
+							class="form-control required" placeholder="...">
 					</div>
 				</div>
-				
-				<div class="col-md-3">
+
+				<div class="col-md-4">
 					<div class="form-group">
-						<label>Razon Social: 
-						<input type="text" id="razonS" class="form-control required"
-							placeholder="...">
+						<label>Razon Social: <input type="text" id="razonS"
+							class="form-control required" placeholder="...">
 					</div>
 				</div>
-				
-				<div class="col-md-3">
+
+				<div class="col-md-4">
 					<div class="form-group">
-						<label>RUC:</label> 
-						<input type="text" id="ruc" class="form-control required"
-							placeholder="1234567891011">
+						<label>RUC:</label> <input type="text" id="ruc"
+							class="form-control required" placeholder="1234567891011">
 					</div>
 				</div>
 			</div>
@@ -94,27 +89,24 @@
 
 
 			<div class="row">
-				
+
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Direccion: </label> 
-						<input type="email" id="direccion" class="form-control required"
-							placeholder="alla aqui por ahi">
+						<label>Direccion: </label> <input type="email" id="direccion"
+							class="form-control required" placeholder="alla aqui por ahi">
 					</div>
 				</div>
-				
+
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Seguro:</label> 
-						<input type="text" id="seguro" class="form-control required"
-							placeholder="seguro">
+						<label>Seguro:</label> <input type="text" id="seguro"
+							class="form-control required" placeholder="seguro">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Actividad: </label>
-						 <input type="email" id="actividad" class="form-control required"
-							placeholder="actividad">
+						<label>Actividad: </label> <input type="email" id="actividad"
+							class="form-control required" placeholder="actividad">
 					</div>
 				</div>
 			</div>
@@ -123,39 +115,36 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>Cargo:</label> 
-						<input type="text" id="cargo" class="form-control required"
-							placeholder="cargo">
+						<label>Cargo:</label> <input type="text" id="cargo"
+							class="form-control required" placeholder="cargo">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>IdAlumno: </label>
-						 <input type="number" id="idalumno" class="form-control required"
-							placeholder="idalumno">
+						<label>IdAlumno: </label> <input type="number" id="idalumno"
+							class="form-control required" placeholder="idalumno">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>IdRol:</label> \
-						<input type="number" id="idrol" class="form-control required"
-							placeholder="...">
+						<label>IdRol:</label> \ <input type="number" id="idrol"
+							class="form-control required" placeholder="...">
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>Ciclo: </label> 
-						<input type="email" id="ciclo" class="form-control required"
-							placeholder="ciclo">
+						<label>Ciclo: </label> <input type="email" id="ciclo"
+							class="form-control required" placeholder="ciclo">
 					</div>
 				</div>
 				<div class="col-md-4">
-		                    	<button type="button" name="action" onclick="ReEm()" type="submit" class="btn btn-danger btn-rounded">Rounded button</button>
-							</div>
-						
-				
+					<button type="button" name="action" onclick="ReEm()" type="submit"
+						class="btn btn-danger btn-rounded">Rounded button</button>
+				</div>
+
+
 			</div>
-	</fieldset>
-</div>
+		</fieldset>
+	</div>
 </body>
 </html>

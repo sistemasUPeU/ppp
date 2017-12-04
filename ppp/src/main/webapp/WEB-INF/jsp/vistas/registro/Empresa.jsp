@@ -22,6 +22,17 @@
 			<form class="stepy-basic" action="#">
 				<fieldset title="1">
 					<legend class="text-semibold">Registro Empresa</legend>
+					
+					<!-- Info alert -->
+					
+					<div class="alert alert-info alert-styled-left alert-arrow-left alert-component">
+						<button type="button" class="close" data-dismiss="alert"><span>&times;</span><span class="sr-only">Close</span></button>
+						<h6 class="alert-heading text-semibold">Idle timeout</h6>
+						Current settings allow you to track user inactivity and launch a warning dialog in a fixed amount of time after latest user activity. In this demo warning dialog appears <strong>after 5 seconds</strong> of latest user activity.
+				    </div>
+				  
+				    <!-- /info alert -->
+					
 				  <%@ include file="../../../../jspf/Emp/RE_Emp01.jspf" %>
 				</fieldset>
 
