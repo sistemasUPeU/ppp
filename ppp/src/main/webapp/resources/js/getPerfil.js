@@ -34,7 +34,7 @@ function listarModulos() {
 }
 
 function createModulo(idPER, rol,nombre, ico, permiso , id) {
-	var s ='<a id="'+id+'" onclick="getrutas(this.id);" class="nav-link" href="#"><i class="'+ico+'"></i> '+nombre+' </a>';
+	var s ='<a id="'+id+'" onclick="getrutas(this.id);" href="#"><i class="'+ico+'"></i> <span>'+nombre+'</span></a></li>';
 	return s;
 }
 
@@ -73,8 +73,10 @@ function listarPerfil() {
 }
 
 function perfildate(nombre ,apellido , rol) {
-	var s = '<strong>'+nombre+'  '+apellido+'</strong><br>';
-	s+='<small><strong>'+rol+'</strong></small>';
+	var s = '<span class="media-heading text-semibold">'+nombre+'  '+apellido+'</span>';
+	s+='<div class="text-size-mini text-muted">';
+	s+='<i class="icon-pin text-size-small"></i> &nbsp; '+rol+'';
+	s+='</div>';
 	return s;
 }
 

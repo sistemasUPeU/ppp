@@ -62,7 +62,7 @@
 
 					<!-- Main charts -->
 					<div class="row">
-						<div class="col-lg-7">
+						<div class="col-lg-12">
 
 							<!-- Traffic sources -->
 							<div class="panel panel-flat">
@@ -114,5 +114,8 @@
 		<!-- /page content -->
 	</div>
 	<!-- /page container -->
+	
+	
+	
 </body>
 </html>
