@@ -14,9 +14,19 @@ public class RegistroController {
 		return pagina;
 	}
 	
-	@GetMapping("/as")
+	@GetMapping("/vacante")
 	public String as() {
+		String pagina = "vistas/registro/Convenio";
+		return pagina;
+	}
+	
+	@GetMapping("/evaluacion")
+	public String ds() {
 		String pagina = "vistas/registro/example";
 		return pagina;
 	}
+	
+	
+
+	
 }
