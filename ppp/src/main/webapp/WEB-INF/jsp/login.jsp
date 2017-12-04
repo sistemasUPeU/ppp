@@ -92,12 +92,10 @@
 						style="width: 44%">
 						<div class="card-block text-center">
 							<div>
-								<h2>Sign up</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod tempor incididunt ut labore et dolore magna
-									aliqua.</p>
-								<button type="button" class="btn btn-primary active mt-1">Register
-									Now!</button>
+								
+								<img alt="" style="width:80%" src="resources/imagenes/Logoupeu.png">
+							
+								<h4>BIENVENIDOS</h4>
 							</div>
 						</div>
 					</div>
