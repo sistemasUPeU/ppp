@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import pe.edu.upeu.ppp.dao.ConvenioDAO;
+import pe.edu.upeu.ppp.dao.EmpresaDAO;
 
 @Repository("condao")
-public class ConvenioDAOImp implements ConvenioDAO {
+public class EmpresaDAOImp implements EmpresaDAO {
 
 	@Autowired
 	JdbcTemplate jt;

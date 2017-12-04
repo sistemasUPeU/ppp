@@ -3,14 +3,14 @@ package pe.edu.upeu.ppp.serviceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pe.edu.upeu.ppp.dao.ConvenioDAO;
+import pe.edu.upeu.ppp.dao.EmpresaDAO;
 import pe.edu.upeu.ppp.service.ConvenioService;
 
 @Service
-public class ConvenioServiceImp implements ConvenioService{
+public class EmpresaServiceImp implements ConvenioService{
 
 	@Autowired
-	ConvenioDAO condao;
+	EmpresaDAO condao;
 	
 	@Override
 	public int convenio(int p_idperiodo, String p_razonsocial, String p_ruc, String p_direccion, String p_seguro,
