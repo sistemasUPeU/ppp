@@ -33,6 +33,12 @@ public class HomeController {
 		String pag="vistas/registro/Convenio";
 		return pag;
 	}
+	@RequestMapping(value="/vacantes")
+	public String vacante()
+	{
+		String pag="vistas/registro/ListaVacantes";
+		return pag;
+	}
 	
 	@GetMapping("/login")
 	public ModelAndView hello(HttpServletRequest request, HttpServletResponse response,@RequestParam(value = "error", required = false) String error,

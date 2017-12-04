@@ -8,12 +8,10 @@
 <title>Insert title here</title>
 </head>
  <%@ include file="../../../../jspf/head.jspf" %>
+
 <body>
-
 	<div class="content">
-
-		<!-- Basic setup -->
-		<div class="panel panel-white">
+	<div class="panel panel-white">
 			<div class="panel-heading">
 				<h6 class="panel-title">REGISTRAR Vacante</h6>
 
@@ -24,6 +22,5 @@
 				
 				</div>
 	</div>
-<script type="text/javascript" src="<c:url value='resources/js/ReEm.js'/>"></script>
 </body>
 </html>
