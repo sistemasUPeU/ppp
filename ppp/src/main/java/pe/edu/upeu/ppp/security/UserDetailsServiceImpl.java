@@ -1,5 +1,6 @@
 package pe.edu.upeu.ppp.security;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -22,24 +23,24 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	@Override
 	public CUserDTO loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-			Map<String, Object> userinf = userDAO2.getValidateUser(username);
+		List <Map<String, Object>>  userinf = userDAO2.getValidateUser(username);
 			
 			System.out.println(userinf );
-			System.out.println( userinf.get("IDUSER").toString().trim());
-			System.out.println( userinf.get("NOMBRE").toString().trim());
-			System.out.println( userinf.get("APELLIDOS").toString().trim());
-			System.out.println( userinf.get("DNI").toString().trim());
-			System.out.println( userinf.get("CELULAR").toString().trim());
-			System.out.println( userinf.get("USU").toString().trim());
-			System.out.println( userinf.get("PASS").toString().trim());
-			System.out.println( userinf.get("ACTIVO").toString().trim());
-			System.out.println( userinf.get("GENERO").toString().trim());
-			System.out.println( userinf.get("IDROL").toString().trim());
+			System.out.println( userinf.get(0).get("IDUSER").toString().trim());
+			System.out.println( userinf.get(0).get("NOMBRE").toString().trim());
+			System.out.println( userinf.get(0).get("APELLIDOS").toString().trim());
+			System.out.println( userinf.get(0).get("DNI").toString().trim());
+			System.out.println( userinf.get(0).get("CELULAR").toString().trim());
+			System.out.println( userinf.get(0).get("USU").toString().trim());
+			System.out.println( userinf.get(0).get("PASS").toString().trim());
+			System.out.println( userinf.get(0).get("ACTIVO").toString().trim());
+			System.out.println( userinf.get(0).get("GENERO").toString().trim());
+			System.out.println( userinf.get(0).get("IDROL").toString().trim());
 			
-			CUserDTO user = new CUserDTO(userinf.get("IDUSER").toString().trim(),userinf.get("NOMBRE").toString().trim(),
-					userinf.get("APELLIDOS").toString().trim(), userinf.get("DNI").toString().trim(),
-					userinf.get("CELULAR").toString().trim(),userinf.get("USU").toString().trim(), userinf.get("PASS").toString().trim()
-					, userinf.get("ACTIVO").toString().trim() , userinf.get("GENERO").toString().trim(),userinf.get("IDROL").toString().trim() , true,true,true,true);
+			CUserDTO user = new CUserDTO(userinf.get(0).get("IDUSER").toString().trim(),userinf.get(0).get("NOMBRE").toString().trim(),
+					userinf.get(0).get("APELLIDOS").toString().trim(), userinf.get(0).get("DNI").toString().trim(),
+					userinf.get(0).get("CELULAR").toString().trim(),userinf.get(0).get("USU").toString().trim(), userinf.get(0).get("PASS").toString().trim()
+					, userinf.get(0).get("ACTIVO").toString().trim() , userinf.get(0).get("GENERO").toString().trim(),userinf.get(0).get("IDROL").toString().trim() , true,true,true,true);
 			
 			 System.out.println("Cargando user");
 			
