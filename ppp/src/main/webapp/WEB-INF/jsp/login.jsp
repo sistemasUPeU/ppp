@@ -63,7 +63,7 @@
 
 	<!-- Page container -->
 	<div class="page-container">
-
+	<br>
 		<!-- Page content -->
 		<div class="page-content">
 
@@ -80,16 +80,14 @@
 								<div class="icon-object border-warning-400 text-warning-400">
 									<i class="icon-people"></i>
 								</div>
-								<h5 class="content-group-lg">
-									Login to your account <small class="display-block">Enter
-										your credentials</small>
-								</h5>
+								<h5 class="content-group-lg">Gestion de PPP</h5>
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
 								<input type="text" name="username" class="form-control"
 									placeholder="Username">
 								<div class="form-control-feedback">
+								
 									<i class="icon-user text-muted"></i>
 								</div>
 							</div>
@@ -119,25 +117,30 @@
 							<div class="row margin">
 								<div class="input-field col s12">
 									<c:if test="${not empty error}">
-
-										<div class="alert alert-warning">
-											<strong>${error}</strong>
+										<div class="alert alert-warning alert-bordered">
+											<button type="button" class="close" data-dismiss="alert">
+												<span>&times;</span><span class="sr-only">Close</span>
+											</button>
+											<span class="text-semibold">${error}
 										</div>
-
 									</c:if>
 									<c:if test="${not empty msg}">
-										<div class="alert alert-info">
-											<strong>${msg}!</strong>
-										</div>
 
+										<div class="alert alert-primary no-border">
+											<button type="button" class="close" data-dismiss="alert">
+												<span>&times;</span><span class="sr-only">Close</span>
+											</button>
+											<span class="text-semibold">${msg}!
+										</div>
 									</c:if>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<button type="submit" class="btn bg-blue btn-block">
-									Login <i class="icon-circle-right2 position-right"></i>
-							 <input	type="hidden" name="${_csrf.parameterName}"	value="${_csrf.token}" />
+									Ingresar <i class="icon-circle-right2 position-right"></i> <input
+										type="hidden" name="${_csrf.parameterName}"
+										value="${_csrf.token}" />
 								</button>
 							</div>
 
