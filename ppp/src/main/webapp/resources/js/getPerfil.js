@@ -22,8 +22,11 @@ function listarModulos() {
 				var ico = list[i].ICONO;
 				var permiso = list[i].PERMISO;
 				var nombre = list[i].DESCRIPCION;
+				var modulos = list[i].MODULO;
+				var id_pader = list[i].PAPA;
 				var id = list[i].IDRUTA;
-				s += createModulo(idPER, rol,nombre, ico, permiso ,id);
+				console.log(modulos);
+				s += createModulo(idPER, rol,nombre,modulos,id_pader,  ico, permiso ,id);
 				
 			}
 			console.log(s);
@@ -33,8 +36,16 @@ function listarModulos() {
 	});
 }
 
-function createModulo(idPER, rol,nombre, ico, permiso , id) {
-	var s ='<a id="'+id+'" onclick="getrutas(this.id);" href="#"><i class="'+ico+'"></i> <span>'+nombre+'</span></a></li>';
+function createModulo(idPER, rol,nombre,modulos,id_pader,  ico, permiso ,id) {
+	var s ='';
+	//if (id_pader == null){
+		//s += '<a href="#"><i class="icon-stack2"></i> <span> '+modulos+' </span></a>';
+		//s += '<ul>';
+		s +='<a id="'+id+'" onclick="getrutas(this.id);" href="#"><i class="'+ico+'"></i> <span>'+nombre+' </span></a>';
+		//s +='</ul>';
+	//}else{
+		//s +='<a id="'+id+'" onclick="getrutas(this.id);" href="#"><i class="'+ico+'"></i> <span>'+nombre+'</span></a></li>';
+	//}
 	return s;
 }
 

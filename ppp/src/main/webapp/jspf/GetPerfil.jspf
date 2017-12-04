@@ -31,9 +31,6 @@
 								<!-- Main -->
 								
 								<li  id="cagarmenu">
-									<a id="pagehome" href="#"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
-								<li>
-									
 									<a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>
 									<ul>
 										<li><a href="boxed_full.html">Boxed full width</a></li>
