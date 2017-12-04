@@ -1,0 +1,158 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+<div class="container">
+
+
+		<fieldset>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Nombre: </label>
+						 <input type="text" name="name" class="form-control required"
+							placeholder="John Doe">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Apellido: </label>
+						 <input type="text" name="name" class="form-control required"
+							placeholder="lalalala"> </select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>DNI: </label> 
+						<input type="number" name="name" class="form-control required"
+							placeholder="12345678">
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Celular: </label> 
+						<input type="number" name="email" class="form-control required"
+							placeholder="987654321">
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Correo:</label>
+						 <input type="number" name="correo" class="form-control required"
+							placeholder="jonas@upeu.edu.pe">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Genero:</label> 
+						<input type="text" name="genero" class="form-control required"
+							placeholder="...">
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>IdPeriodo:</label>
+						 <input type="number" name="idperiodo" class="form-control required"
+							placeholder="...">
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Razon Social: 
+						<input type="text" name="razon social" class="form-control required"
+							placeholder="...">
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>RUC:</label> 
+						<input type="text" name="ruc" class="form-control required"
+							placeholder="1234567891011">
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="row">
+				
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Direccion: </label> 
+						<input type="email" name="email" class="form-control required"
+							placeholder="alla aqui por ahi">
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Seguro:</label> 
+						<input type="text" name="seguro" class="form-control required"
+							placeholder="seguro">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Actividad: </label>
+						 <input type="email" name="actividad" class="form-control required"
+							placeholder="actividad">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Cargo:</label> 
+						<input type="text" name="email" class="form-control required"
+							placeholder="cargo">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>IdAlumno: </label>
+						 <input type="number" name="email" class="form-control required"
+							placeholder="idalumno">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>IdRol:</label> \
+						<input type="number" name="email" class="form-control required"
+							placeholder="...">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Ciclo: </label> 
+						<input type="email" name="email" class="form-control required"
+							placeholder="ciclo">
+					</div>
+				</div>
+
+
+			</div>
+	</fieldset>
+</div>
+</body>
+</html>

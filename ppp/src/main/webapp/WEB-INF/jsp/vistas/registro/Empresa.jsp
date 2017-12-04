@@ -21,18 +21,18 @@
 
 			<form class="stepy-basic" action="#">
 				<fieldset title="1">
-					<legend class="text-semibold">Personal data</legend>
-					<%@ include file="../../../jsp/vistas/registro/RE_Empresa01.jsp"%>
+					<legend class="text-semibold">Registro Empresa</legend>
+					  <%@ include file="../../../../jspf/Empp/RE_Emp01.jspf" %>
 				</fieldset>
 
 				<fieldset title="2">
-					<legend class="text-semibold">Your education</legend>
-					<%@ include file="../../../jsp/vistas/registro/RE_Empresa02.jsp"%>
+					<legend class="text-semibold">Convenio</legend>
+					<%@ include file="../../../../jspf/Empp/RE_Emp02.jspf" %>
 				</fieldset>
 
 				<fieldset title="3">
-					<legend class="text-semibold">Your experience</legend>
-					<%@ include file="../../../jsp/vistas/registro/RE_Empresa03.jsp"%>
+					<legend class="text-semibold">Vacante</legend>
+					<%@ include file="../../../../jspf/Empp/RE_Emp03.jspf" %>
 				</fieldset>
 
 
