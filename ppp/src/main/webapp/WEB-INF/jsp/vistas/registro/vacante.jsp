@@ -20,9 +20,6 @@
 			</div>
 
 			</div>
-			<div id="contTable" class="col s12 m12 l9"> 
-				
-				</div>
 	</div>
 <script type="text/javascript" src="<c:url value='resources/js/ReEm.js'/>"></script>
 </body>
