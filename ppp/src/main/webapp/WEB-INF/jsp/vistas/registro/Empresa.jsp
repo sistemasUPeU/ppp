@@ -22,17 +22,17 @@
 			<form class="stepy-basic" action="#">
 				<fieldset title="1">
 					<legend class="text-semibold">Registro Empresa</legend>
-					  <%@ include file="../../../../jspf/Empp/RE_Emp01.jspf" %>
+				  <%@ include file="../../../../jspf/Emp/RE_Emp01.jspf" %>
 				</fieldset>
 
 				<fieldset title="2">
 					<legend class="text-semibold">Convenio</legend>
-					<%@ include file="../../../../jspf/Empp/RE_Emp02.jspf" %>
+					<%@ include file="../../../../jspf/Emp/RE_Emp02.jspf" %>
 				</fieldset>
 
 				<fieldset title="3">
 					<legend class="text-semibold">Vacante</legend>
-					<%@ include file="../../../../jspf/Empp/RE_Emp03.jspf" %>
+					<%@ include file="../../../../jspf/Emp/RE_Emp03.jspf" %>
 				</fieldset>
 
 
@@ -43,6 +43,6 @@
 			</form>
 		</div>
 	</div>
-
+<script type="text/javascript" src="<c:url value='resources/js/ReEm.js'/>"></script>
 </body>
 </html>
