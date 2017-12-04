@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	listarModulos();
 	listarPerfil();
+	
+	
 });
 function listarModulos() {
 	var url = "cc?";
@@ -21,7 +23,9 @@ function listarModulos() {
 				var permiso = list[i].PERMISO;
 				var ruta = list[i].RUTA;
 				var nombre = list[i].DESCRIPCION;
-				s += createModulo(idPER, rol,nombre, ico, permiso, ruta);
+				var id = list[i].IDRUTA;
+				s += createModulo(idPER, rol,nombre, ico, permiso, ruta ,id);
+				
 			}
 			console.log(s);
 			$("#cagarmenu").empty();
@@ -30,8 +34,8 @@ function listarModulos() {
 	});
 }
 
-function createModulo(idPER, rol,nombre, ico, permiso, ruta) {
-	var s ='<a id="pagehome" class="nav-link" href="'+ruta+'"><i class="'+ico+'"></i> '+nombre+' </a>';
+function createModulo(idPER, rol,nombre, ico, permiso, ruta , id) {
+	var s ='<a id="'+id+'" onclick="getrutas(this.id);" class="nav-link" href="#"><i class="'+ico+'"></i> '+nombre+' </a>';
 	return s;
 }
 
@@ -73,4 +77,11 @@ function perfildate(nombre ,apellido , rol) {
 	var s = '<strong>'+nombre+'  '+apellido+'</strong><br>';
 	s+='<small><strong>'+rol+'</strong></small>';
 	return s;
+}
+
+function getrutas(id){
+	//$("#"+id).on('click',function(event) {
+		//$("#contenedor").load(ruta);	
+		console.log(id);
+	//});
 }

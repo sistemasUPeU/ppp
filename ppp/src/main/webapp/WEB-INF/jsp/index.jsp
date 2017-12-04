@@ -57,7 +57,8 @@
 
     <%@include file="../../jspf/jsGeneral.jspf"%>
 
-	<script src="<c:url value='resources/js/getPerfil.js'/>"></script>
+	
+	
 
 </body>
 </html>

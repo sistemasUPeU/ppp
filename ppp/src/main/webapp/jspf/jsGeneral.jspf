@@ -29,5 +29,5 @@
     <script src="<c:url value='resources/plugin/js/views/forms.js'/>"></script>
     
     <!-- Nuestros Javascrit -->
-    
+    <script src="<c:url value='resources/js/getPerfil.js'/>"></script>
     <script src="<c:url value='resources/js/rutas.js'/>"></script>
