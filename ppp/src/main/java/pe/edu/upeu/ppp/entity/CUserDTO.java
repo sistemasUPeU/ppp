@@ -25,6 +25,17 @@ public class CUserDTO implements UserDetails, Serializable{
 	
 	private String idrol;
 	
+	private String idperiodo;
+	
+	public String getidperiodo() {
+		return idperiodo;
+	}
+
+	public void setidperiodo(String idperiodo) {
+		this.idperiodo = idperiodo;
+	}
+	
+	
 	public String getidrol() {
 		return idrol;
 	}
@@ -48,7 +59,7 @@ public class CUserDTO implements UserDetails, Serializable{
 	}
 
 	public CUserDTO(String iDUSER, String nombre, String apellido, String dni, String celular, String usu, String pass,
-			String activo, String genero, String idrol, boolean accountNonExpired,
+			String activo, String genero, String idrol,  boolean accountNonExpired,
 			boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
 			IDUSER = iDUSER;
 			this.nombre = nombre;
@@ -60,6 +71,7 @@ public class CUserDTO implements UserDetails, Serializable{
 			this.activo = activo;
 			this.genero = genero;
 			this.idrol = idrol;
+			
 			
 			this.accountNonExpired = accountNonExpired;
 			AccountNonLocked = accountNonLocked;
