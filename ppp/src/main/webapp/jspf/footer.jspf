@@ -2,10 +2,6 @@
 <%@ page pageEncoding="UTF-8" %>
 
 
-
-<footer class="app-footer">
-        <a href="#">Alpha Team</a> © 2017 creativeLabs.
-        <span class="float-right">
-            Universida Peruana Unión <a href="#">- <strong>UPeU</strong></a>
-        </span>
-    </footer>
+<div class="footer text-muted">
+	&copy; 2017. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+</div>
