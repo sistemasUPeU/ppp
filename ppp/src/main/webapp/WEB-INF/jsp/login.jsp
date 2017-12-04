@@ -63,7 +63,7 @@
 
 	<!-- Page container -->
 	<div class="page-container">
-	<br>
+		<br>
 		<!-- Page content -->
 		<div class="page-content">
 
@@ -74,7 +74,7 @@
 				<div class="content">
 
 					<!-- Advanced login -->
-					<form action="login" method="POST">
+					<form action="login" method="POST" >
 						<div class="panel panel-body login-form">
 							<div class="text-center">
 								<div class="icon-object border-warning-400 text-warning-400">
@@ -87,11 +87,11 @@
 								<input type="text" name="username" class="form-control"
 									placeholder="Username">
 								<div class="form-control-feedback">
-								
+
 									<i class="icon-user text-muted"></i>
 								</div>
 							</div>
-
+							
 							<div class="form-group has-feedback has-feedback-left">
 								<input type="password" name="password" class="form-control"
 									placeholder="Password">
