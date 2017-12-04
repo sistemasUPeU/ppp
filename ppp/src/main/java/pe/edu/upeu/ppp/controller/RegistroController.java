@@ -10,13 +10,13 @@ public class RegistroController {
 
 	@GetMapping("/empresa")
 	public String empresa() {
-		String pagina = "vistas/registro/index";
+		String pagina = "vistas/registro/Empresa";
 		return pagina;
 	}
 	
 	@GetMapping("/vacante")
 	public String as() {
-		String pagina = "vistas/registro/Empresa";
+		String pagina = "vistas/registro/vacante";
 		return pagina;
 	}
 	
