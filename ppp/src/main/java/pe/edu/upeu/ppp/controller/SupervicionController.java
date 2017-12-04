@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/supervicion")
+@RequestMapping("/superviciones")
 public class SupervicionController {
 	
 	@GetMapping("/supervicion")
@@ -28,7 +28,7 @@ public class SupervicionController {
 	
 	@GetMapping("/evaluacion")
 	public String evaluaciones() {
-		String pagina = "vistas/Supervision/evaluacion";
+		String pagina = "vistas/Supervision/evaluaciones";
 		return pagina;
 	}
 	
