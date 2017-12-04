@@ -19,12 +19,11 @@ import com.google.gson.Gson;
 
 import pe.edu.upeu.ppp.config.AppConfig;
 import pe.edu.upeu.ppp.config.SpringConnection;
-<<<<<<< HEAD
+
 import pe.edu.upeu.ppp.dao.EmpresaDAO;
 import pe.edu.upeu.ppp.dao.contratoDAO;
-=======
+
 import pe.edu.upeu.ppp.dao.VacanteDAO;
->>>>>>> 3cc27f8cd9a2b9fe2337466b8b57937779efbba7
 //import pe.edu.upeu.ppp.dao.ConvenioDAO;
 import pe.edu.upeu.ppp.service.VacanteService;
 
@@ -33,16 +32,16 @@ import pe.edu.upeu.ppp.service.VacanteService;
 @Controller
 public class CenterController {
 	
-<<<<<<< HEAD
+
 	@Autowired 
 	EmpresaDAO empredao;
 	//ConvenioDAO cO= new ConvenioDAO(SpringConnection.getDataSource());
 	
-=======
+
 	
 	@Autowired
 	VacanteService vS;
->>>>>>> 3cc27f8cd9a2b9fe2337466b8b57937779efbba7
+
 	List<Map<String, Object>> listas;
 	
 	@RequestMapping("/paginas")
