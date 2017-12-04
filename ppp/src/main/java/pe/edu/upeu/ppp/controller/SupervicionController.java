@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/superviciones")
+@RequestMapping("/Supervision")
 public class SupervicionController {
 	
 	@GetMapping("/supervicion")
@@ -14,7 +14,7 @@ public class SupervicionController {
 		return pagina;
 	}
 	
-	@GetMapping("/asignacion")
+	@GetMapping("/asignar")
 	public String Asignacion() {
 		String pagina = "vistas/Supervision/asignacion";
 		return pagina;
@@ -22,17 +22,17 @@ public class SupervicionController {
 	
 	@GetMapping("/practicantes_Aptos")
 	public String Practicantes_Aptos() {
-		String pagina = "vistas/Supervision/practicantes_Aptos";
+		String pagina = "vistas/Supervision/practicantesAptos";
 		return pagina;
 	}
 	
-	@GetMapping("/evaluacion")
+	@GetMapping("/evaluar")
 	public String evaluaciones() {
 		String pagina = "vistas/Supervision/evaluaciones";
 		return pagina;
 	}
 	
-	@GetMapping("/practicanteCargo")
+	@GetMapping("/practicanteACargo")
 	public String practicanteCargo() {
 		String pagina = "vistas/Supervision/practicanteCargo";
 		return pagina;

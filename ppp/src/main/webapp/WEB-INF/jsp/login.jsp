@@ -93,9 +93,8 @@
 						<div class="card-block text-center">
 							<div>
 								
-								<img alt="" style="width:80%" src="resources/imagenes/Logoupeu.png">
+								<img alt="" style="width:60%" src="resources/imagenes/Logoupeu.png">
 							
-								<h4>BIENVENIDOS</h4>
 							</div>
 						</div>
 					</div>
