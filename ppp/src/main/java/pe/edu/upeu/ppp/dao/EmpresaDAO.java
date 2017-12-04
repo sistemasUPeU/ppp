@@ -2,7 +2,22 @@ package pe.edu.upeu.ppp.dao;
 
 public interface EmpresaDAO {
 
-	// this metho add in convenio
-	 int convenio(int p_idperiodo, String p_razonsocial, String p_ruc,String p_direccion,String p_seguro,String p_actividad,String p_cargo,String p_idalumno);
+	// Este meto usa el procedimiento PA_REG_EMPRESA_P1
+	 int RegEmpresa(String P_NOMBRE, 
+			 	  String P_APELLIDOS,
+			 	  String P_DNI,
+			 	  String P_CELULAR,
+			 	  String P_CORREO,
+			 	  String P_GENERO,
+			 	  String P_IDPERIODO,
+			 	  String P_RAZONSOCIAL,
+			 	  String P_RUC,
+			 	  String P_DIRECCION,
+			 	  String P_SEGURO,
+			 	  String P_ACTIVIDAD,	  
+			 	  String P_CARGO,
+			 	  String P_IDALUMNO,
+			 	  String P_IDROL,
+			 	  String P_CICLO);
 	
 }

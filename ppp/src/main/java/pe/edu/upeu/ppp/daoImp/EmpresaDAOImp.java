@@ -6,22 +6,38 @@ import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.ppp.dao.EmpresaDAO;
 
-@Repository("condao")
+@Repository("empredao")
 public class EmpresaDAOImp implements EmpresaDAO {
 
 	@Autowired
 	JdbcTemplate jt;
 	
 	@Override
-	public int convenio(int p_idperiodo, String p_razonsocial, String p_ruc, String p_direccion, String p_seguro,
-			String p_actividad, String p_cargo, String p_idalumno) {
+	public int RegEmpresa(String P_NOMBRE, 
+					 	  String P_APELLIDOS,
+					 	  String P_DNI,
+					 	  String P_CELULAR,
+					 	  String P_CORREO,
+					 	  String P_GENERO,
+					 	  String P_IDPERIODO,
+					 	  String P_RAZONSOCIAL,
+					 	  String P_RUC,
+					 	  String P_DIRECCION,
+					 	  String P_SEGURO,
+					 	  String P_ACTIVIDAD,	  
+					 	  String P_CARGO,
+					 	  String P_IDALUMNO,
+					 	  String P_IDROL,
+					 	  String P_CICLO) {
 		String sql ="";
 		int x = 0;
 		try {
-			sql = "";
-			x = jt.update(sql);
+			sql = "{EXE PA_REG_EMPRESA_P1(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+			x = jt.update(sql , P_NOMBRE , P_APELLIDOS , P_DNI , P_CELULAR , P_CORREO , P_GENERO,
+					P_IDPERIODO , P_RAZONSOCIAL, P_RUC , P_DIRECCION , P_SEGURO, P_ACTIVIDAD, P_CARGO,
+					P_IDALUMNO  , P_IDROL, P_CICLO );
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("error en comvenio dao implement:" + e);
 		}
 		return x;
 	}

@@ -1,15 +1,14 @@
-package pe.edu.upeu.ppp.dao;
+package pe.edu.upeu.ppp.service;
 
-import java.util.ArrayList;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
-
-public interface contratoDAO {
+public interface ContratoService {
 	
-	List<Map<String,Object>> listarRepr ();
+	 public List<Map<String,Object>> listarRepr ();
 	
 	
-	 int convenio(String P_idalumno,
+	 public int convenio(String P_idalumno,
 		            String P_IDROL,
 		            String P_CICLO,
 		            String p_idempresa,
@@ -19,4 +18,5 @@ public interface contratoDAO {
 		            String p_FECHAINICIO,
 		            String P_FECHAFIN,
 		            String P_IDVACANTES);
+
 }
