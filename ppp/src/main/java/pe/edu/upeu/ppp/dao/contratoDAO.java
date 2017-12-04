@@ -7,8 +7,7 @@ import java.util.*;
 public interface contratoDAO {
 	
 	List<Map<String,Object>> listarRepr ();
-	
-	
+		
 	 int convenio(String P_idalumno,
 		            String P_IDROL,
 		            String P_CICLO,

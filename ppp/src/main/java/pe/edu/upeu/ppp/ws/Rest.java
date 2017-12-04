@@ -1,5 +1,5 @@
 package pe.edu.upeu.ppp.ws;
 
-public class sabrinahaselrest {
+public class Rest {
 
 }

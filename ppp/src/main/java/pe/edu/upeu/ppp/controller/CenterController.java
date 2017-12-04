@@ -19,19 +19,30 @@ import com.google.gson.Gson;
 
 import pe.edu.upeu.ppp.config.AppConfig;
 import pe.edu.upeu.ppp.config.SpringConnection;
+<<<<<<< HEAD
 import pe.edu.upeu.ppp.dao.EmpresaDAO;
 import pe.edu.upeu.ppp.dao.contratoDAO;
+=======
+import pe.edu.upeu.ppp.dao.VacanteDAO;
+>>>>>>> 3cc27f8cd9a2b9fe2337466b8b57937779efbba7
 //import pe.edu.upeu.ppp.dao.ConvenioDAO;
+import pe.edu.upeu.ppp.service.VacanteService;
 
 
 
 @Controller
 public class CenterController {
 	
+<<<<<<< HEAD
 	@Autowired 
 	EmpresaDAO empredao;
 	//ConvenioDAO cO= new ConvenioDAO(SpringConnection.getDataSource());
 	
+=======
+	
+	@Autowired
+	VacanteService vS;
+>>>>>>> 3cc27f8cd9a2b9fe2337466b8b57937779efbba7
 	List<Map<String, Object>> listas;
 	
 	@RequestMapping("/paginas")
@@ -84,8 +95,31 @@ public class CenterController {
 				
 				break;
 
-			case "estplanilla":
+			case "Newvacante":
+                String P_IDPERIODO=request.getParameter("periodo"); 
+                String P_IDREPRESENTANTE=request.getParameter("representante"); 
+                String P_AREATRABAJO=request.getParameter("area_trabajo"); 
+                String P_CANTIDAD=request.getParameter("cantidad"); 
+                String P_HORARIO=request.getParameter("horario"); 
+                String P_FECHAINICIO=request.getParameter("fechainicio"); 
+                String P_FECHAFIN=request.getParameter("fechafin"); 
+                String P_HORAINICIO=request.getParameter("fechainicio"); 
+                String P_HORAFIN=request.getParameter("horafin"); 
+                String P_SUELDO=request.getParameter("sueldo"); 
+                String P_IDLINEASP=request.getParameter("IDlineasAP"); 
+                String P_IDFOLDERPRACTICA=request.getParameter(""); 
+                String P_IDTRABAJADOR=request.getParameter("trabajador"); 
+                String P_IDALUMNO=request.getParameter("alumnos"); 
+                String P_IDROL=request.getParameter("idrol"); 
+                String P_CICLO=request.getParameter("ciclo"); 
+                String P_TIPOPRACTICA=request.getParameter("tipo_practica"); 
+                String P_OBSERVACIONES=request.getParameter("observacion"); 
 
+                vS.NewVacante(P_IDPERIODO, P_IDREPRESENTANTE, P_AREATRABAJO, P_CANTIDAD, P_HORARIO, P_FECHAINICIO, P_FECHAFIN, P_HORAINICIO, P_HORAFIN, P_SUELDO, P_IDLINEASP, P_IDFOLDERPRACTICA, P_IDTRABAJADOR, P_IDALUMNO, P_IDROL, P_CICLO, P_TIPOPRACTICA, P_OBSERVACIONES);
+				break;
+				
+			case "Vacantes":
+                listas=vS.listarVacantes();
 				break;
 			}
 			

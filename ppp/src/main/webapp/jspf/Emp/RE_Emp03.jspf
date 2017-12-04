@@ -13,18 +13,18 @@
 		<fieldset>
 
 			<div class="row">
-				<div class="col-md-6">
-					<div class="form-group">
-						<label>IdVacantes: </label> 
-						<input type="number" name="vacante" class="form-control required"
-							placeholder="Vacante">
-					</div>
-				</div>
-
+				
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>IdPeriodo:</label> 
 						<input 	type="number" name="periodo" class="form-control required"
+							placeholder="Periodo"> 
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdRol:</label> 
+						<input 	type="number" name="idrol" class="form-control required"
 							placeholder="Periodo"> 
 					</div>
 				</div>
@@ -69,14 +69,14 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>FechaInicio:</label> 
-						<input type="date" name="email" class="form-control required"
+						<input type="date" name="fechainicio" class="form-control required"
 							placeholder="Fecha Inicio">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>FechaFin: </label> 
-						<input type="date" name="email" class="form-control required"
+						<input type="date" name="fechafin" class="form-control required"
 							placeholder="Fecha Fin">
 					</div>
 				</div>
@@ -124,7 +124,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>IdAlumno:</label>
-						 <input type="number" name="Alumnos" class="form-control required"
+						 <input type="number" name="alumnos" class="form-control required"
 							placeholder="IdAlumnos">
 					</div>
 				</div>
