@@ -9,8 +9,9 @@
 </head>
 <body>
 
-<div class="col-md-12">
+<div class="container">
 
+<<<<<<< HEAD
 		<fieldset >
 
 		<div class="row">
@@ -61,6 +62,99 @@
 
 		</fieldset>
 		
+=======
+		<fieldset>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdAlumno:</label> 
+						<input type="number" name="name" class="form-control required"
+							placeholder="IdAlmuno">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdRol: </label> 
+						<input type="number" name="name" class="form-control required"
+							placeholder="IdRol"> </select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Ciclo:</label> 
+						<input type="number" name="name" class="form-control required"
+							placeholder="Ciclo">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdEmpresa: </label> 
+						<input type="number" name="email" class="form-control required"
+							placeholder="IdEmpresa">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdEscuela:</label> 
+						<input type="number" name="email" class="form-control required"
+							placeholder="Idescuela">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdPeriodo: </label>
+						<input type="number" name="email" class="form-control required"
+							placeholder="IdPeriodo">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Ruta:</label>
+						<input type="text" name="ruta" class="form-control required"
+							placeholder="Ruta">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>FechaInicio: </label> 
+						<input type="date" name="email" class="form-control required"
+							placeholder="Fecha Inicio">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Fecha Fin:</label> 
+						<input type="date" name="email" class="form-control required"
+							placeholder="Fecha Fin">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdVacantes: </label> 
+						<input type="number" name="email" class="form-control required"
+							placeholder="IdVacante">
+					</div>
+				</div>
+			</div>
+			
+				
+		</fieldset>
+>>>>>>> 4fe70dd6cf5f7c920a63bd00c7eb2c93c923e8e5
 
 	</div>
 

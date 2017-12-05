@@ -1,6 +1,10 @@
 $(document).ready(function(){
-	
-		});
+	$.post('rp?opc=Vacantes',function(obj){
+		console.log(obj[0]);
+		alert(obj);
+	})
+})
+
 function createTable() {
     var s = '<table id="data" class="table datatable-show-all" cellspacing="0" width="100%">';
     s += '<thead>';

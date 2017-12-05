@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="col-md-12">
+	<div class="container">
 		
 
+<<<<<<< HEAD
 		<fieldset >
 		
 		<div class="row">
@@ -123,6 +124,167 @@
 								
 			</div>
 					
+=======
+		<fieldset>
+
+			<div class="row">
+				
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdPeriodo:</label> 
+						<input 	type="number" name="periodo" class="form-control required"
+							placeholder="Periodo"> 
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdRol:</label> 
+						<input 	type="number" name="idrol" class="form-control required"
+							placeholder="Periodo"> 
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdRepresentante:</label>
+						<input type="number" name="representante" class="form-control required"
+							placeholder="Representante">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Area_Trabajo: </label> 
+						<input type="text" name="area_trabajo" class="form-control required"
+							placeholder="Area Trabajo">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Cantidad:</label>
+						 <input type="text" name="cantidad" class="form-control required"
+							placeholder="cantidad">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Horario: </label>
+						 <input type="text" name="horario" class="form-control required"
+							placeholder="horario">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>FechaInicio:</label> 
+						<input type="date" name="fechainicio" class="form-control required"
+							placeholder="Fecha Inicio">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>FechaFin: </label> 
+						<input type="date" name="fechafin" class="form-control required"
+							placeholder="Fecha Fin">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>HoraInicio:</label>  
+						<input type="text" name="horainicio" class="form-control required"
+							placeholder="inicio">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>HoraFin: </label>
+						 <input type="text" name="horafin" class="form-control required"
+							placeholder="horafin">
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Sueldo:</label> 
+						<input type="number" name="sueldo" class="form-control required"
+							placeholder="sueldo">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdLineasAP: </label> 
+						<input type="number" name="IDlineasAP" class="form-control required"
+							placeholder="Lineas AP">
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>IdAlumno:</label>
+						 <input type="number" name="alumnos" class="form-control required"
+							placeholder="IdAlumnos">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Ciclo:</label> 
+						<input type="text" name="ciclo" class="form-control required"
+							placeholder="ciclo">
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Trabajador:</label> <input type="text" name="tel"
+							type="text" name="trabajador" class="form-control required"
+							placeholder="trabajador">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label>Tipo Practica: </label> 
+						<input type="text" name="tipo_practica" class="form-control required"
+							placeholder="tipo practica">
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label>Observaciones:</label>
+						 <input type="text" name="observacion" class="form-control required"
+							placeholder="observacion">
+					</div>
+				</div>
+			</div>
+			
+			
+>>>>>>> 4fe70dd6cf5f7c920a63bd00c7eb2c93c923e8e5
 		</fieldset>
 
 	</div>

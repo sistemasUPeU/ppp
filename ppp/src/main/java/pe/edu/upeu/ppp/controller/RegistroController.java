@@ -26,7 +26,11 @@ public class RegistroController {
 		return pagina;
 	}
 	
-	
+	@GetMapping("/ListaVacantes")
+	public String dols() {
+		String pagina = "vistas/registro/ListaVacantes";
+		return pagina;
+	}
 
 	
 }

@@ -40,7 +40,7 @@ public class CenterController {
 
 	
 	@Autowired
-	VacanteService vS;
+	VacanteDAO vS;
 
 	List<Map<String, Object>> listas;
 	
