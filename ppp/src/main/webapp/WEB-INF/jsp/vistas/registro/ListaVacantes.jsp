@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<%@ include file="../../../../jspf/head.jspf" %>
+
 </head>
 <body>
 	<div class="content">
@@ -22,11 +22,4 @@
 				</div>
 	</div>
 </body>
-<script type="text/javascript">
-$(document).ready(function() {
-	alert("Hola");
-	
-	
-});
-</script>
 </html>
