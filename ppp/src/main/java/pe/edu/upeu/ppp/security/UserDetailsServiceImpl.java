@@ -36,12 +36,11 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 			System.out.println( userinf.get(0).get("ACTIVO").toString().trim());
 			System.out.println( userinf.get(0).get("GENERO").toString().trim());
 			System.out.println( userinf.get(0).get("IDROL").toString().trim());
-			System.out.println( userinf.get(0).get("IDPERIODO").toString().trim());
 			
 			CUserDTO user = new CUserDTO(userinf.get(0).get("IDUSER").toString().trim(),userinf.get(0).get("NOMBRE").toString().trim(),
 					userinf.get(0).get("APELLIDOS").toString().trim(), userinf.get(0).get("DNI").toString().trim(),
 					userinf.get(0).get("CELULAR").toString().trim(),userinf.get(0).get("USU").toString().trim(), userinf.get(0).get("PASS").toString().trim()
-					, userinf.get(0).get("ACTIVO").toString().trim() , userinf.get(0).get("GENERO").toString().trim(),userinf.get(0).get("IDROL").toString().trim(), userinf.get(0).get("IDPERIODO").toString().trim() , true,true,true,true);
+					, userinf.get(0).get("ACTIVO").toString().trim() , userinf.get(0).get("GENERO").toString().trim(),userinf.get(0).get("IDROL").toString().trim() , true,true,true,true);
 			
 			 System.out.println("Cargando user");
 			
