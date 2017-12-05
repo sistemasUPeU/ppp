@@ -62,7 +62,7 @@ public class CenterController {
 	//public contratoDAO cAO = new contratoDAO
 	
 	
-	@RequestMapping(value="/rp",method=RequestMethod.POST)
+	@RequestMapping(value="/rp",method=RequestMethod.GET)
 	public void metod(HttpServletRequest request,HttpServletResponse response) throws IOException
 	{
 		response.setContentType("application/json");

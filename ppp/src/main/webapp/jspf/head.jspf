@@ -28,7 +28,7 @@
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/daterangepicker.js'/>"></script>
 
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
-<%-- 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/dashboard.js'/>"></script> --%>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/dashboard.js'/>"></script>
 	<!-- /theme JS files -->
 	
 	
@@ -44,7 +44,7 @@
 
 
 
-				<script type="text/javascript" src="<c:url value='resources/js/Vacante.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/js/Vacante.js'/>"></script>
 				
 
 	<!-- /theme JS files -->
