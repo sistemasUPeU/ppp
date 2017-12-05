@@ -41,19 +41,26 @@
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/validation/validate.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
 				<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_stepy.js'/>"></script>
+
 	<!-- /theme JS files -->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	 <!-- Nuestros Javascrit -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Nuestros Javascrit -->
     <script src="<c:url value='resources/js/getPerfil.js'/>"></script>
 
 

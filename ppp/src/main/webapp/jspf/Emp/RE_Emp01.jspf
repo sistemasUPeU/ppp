@@ -17,100 +17,115 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Applicant name: <span class="text-danger">*</span></label>
-						<input type="text" name="name" class="form-control required"
-							placeholder="John Doe">
+						<label>Nombre: <span class="text-danger">*</span></label>
+						<input type="text" name="nombre" class="form-control required"
+							placeholder="Jonas...">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Applicant name: <span class="text-danger">*</span></label>
-						<input type="text" name="name" class="form-control required"
-							placeholder="John Doe">
+						<label>Apellidos: <span class="text-danger">*</span></label>
+						<input type="text" name="apellido" class="form-control required"
+							placeholder="Jonases">
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-2">
 					<div class="form-group">
-						<label>Email address: <span class="text-danger">*</span></label> <input
-							type="email" name="email" class="form-control required"
-							placeholder="your@email.com">
+						<label>DNI<span class="text-danger">*</span></label> <input
+							type="number" name="dni" class="form-control required"
+							placeholder="doc. de identidad">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Celular<span class="text-danger">*</span></label> <input
+							type="number" name="celular" class="form-control required"
+							placeholder="numero de celular">
 					</div>
 				</div>
 			</div>
 
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="form-group">
-						<label>Phone #:</label> <input type="text" name="tel"
-							class="form-control" placeholder="+99-99-9999-9999"
-							data-mask="+99-99-9999-9999">
+						<label>Corre Electronico:</label> <input type="text" name="tel"
+							type="email" name="correo" class="form-control required"
+							placeholder="jonas@upeu.edu.pe">
 					</div>
 				</div>
-
-				<div class="col-md-6">
-					<label>Date of birth:</label>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="form-group">
-								<select name="birth-month" data-placeholder="Month"
-									class="select">
-									<option></option>
-									<option value="1">January</option>
-									<option value="2">February</option>
-									<option value="3">March</option>
-									<option value="4">April</option>
-									<option value="5">May</option>
-									<option value="6">June</option>
-									<option value="7">July</option>
-									<option value="8">August</option>
-									<option value="9">September</option>
-									<option value="10">October</option>
-									<option value="11">November</option>
-									<option value="12">December</option>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Actividad:</label> <input type="text" name="tel"
+							type="text" name="actividad" class="form-control required"
+							placeholder="actividad">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+								<label>Genero</label>
+								<select name="Genero"
+									data-placeholder="Choose a Ciclo..." class="form-control required">
+									<option>Seleccionar genero...</option>
+									<option value="1">M</option>
+									<option value="2">F</option>
 								</select>
-							</div>
-						</div>
-
-						<div class="col-md-4">
-							<div class="form-group">
-								<select name="birth-day" data-placeholder="Day" class="select">
-									<option></option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="...">...</option>
-									<option value="31">31</option>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+								<label>Ciclo</label>
+								<select name="ciclo"
+									data-placeholder="Choose a Ciclo..." class="form-control required">
+									<option>Seleccionar ciclo...</option>
+									<option value="1">I</option>
+									<option value="2">II</option>
+									<option value="3">III</option>
+									<option value="4">IV</option>
+									<option value="5">V</option>
+									<option value="6">VI</option>
+									<option value="7">VII</option>
+									<option value="8">VIII</option>
+									<option value="9">IX</option>
+									<option value="10">X</option>
 								</select>
-							</div>
-						</div>
-
-						<div class="col-md-4">
-							<div class="form-group">
-								<select name="birth-year" data-placeholder="Year" class="select">
-									<option></option>
-									<option value="1">1980</option>
-									<option value="2">1981</option>
-									<option value="3">1982</option>
-									<option value="4">1983</option>
-									<option value="5">1984</option>
-									<option value="6">1985</option>
-									<option value="7">1986</option>
-									<option value="8">1987</option>
-									<option value="9">1988</option>
-									<option value="10">1989</option>
-									<option value="11">1990</option>
-								</select>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>RazonSocial:</label> <input type="text" name="tel"
+							type="text" name="rasoc" class="form-control required"
+							placeholder="razon social">
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Direccion:</label> <input type="text" name="tel"
+							type="text" name="direccion" class="form-control required"
+							placeholder="direccion">
+					</div>
+				</div>
+				
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>RUC:</label> <input type="text" name="tel"
+							type="text" name="ruc" class="form-control required"
+							placeholder="ruc">
+					</div>
+				</div>
+				
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Cargo:</label> <input type="text" name="tel"
+							type="text" name="cargo" class="form-control required"
+							placeholder="cargo">
+					</div>
+				</div>
+			</div>
+			
 		</fieldset>
 
 	</div>
