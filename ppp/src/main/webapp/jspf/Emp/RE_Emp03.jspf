@@ -10,6 +10,121 @@
 	<div class="container">
 		
 
+<<<<<<< HEAD
+		<fieldset >
+		
+		<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Area de tabajo: <span class="text-danger">*</span></label>
+						<input type="text" name="nombre" class="form-control required"
+							placeholder="Area de trabajo.....">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Cantidad: <span class="text-danger">*</span></label>
+						<input type="number" name="apellido" class="form-control required"
+							placeholder="cantidad....">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Horario<span class="text-danger">*</span></label> <input
+							type="text" name="dni" class="form-control required"
+							placeholder="doc. de identidad">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Fecha Inicio<span class="text-danger">*</span></label> <input
+							type="date" name="celular" class="form-control required"
+							placeholder="numero de celular">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Fecha Fin<span class="text-danger">*</span></label> <input
+							type="date" name="celular" class="form-control required"
+							placeholder="numero de celular">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Hora Inicio<span class="text-danger">*</span></label> <input
+							type="time" name="celular" class="form-control required"
+							placeholder="numero de celular">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Hora Fin<span class="text-danger">*</span></label> <input
+							type="time" name="celular" class="form-control required"
+							placeholder="numero de celular">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Sueldo<span class="text-danger">*</span></label> <input
+							type="number" name="celular" class="form-control required"
+							placeholder="numero de celular">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+								<label>Ciclo</label>
+								<select name="ciclo"
+									data-placeholder="Choose a Ciclo..." class="form-control required">
+									<option>Seleccionar ciclo...</option>
+									<option value="1">I</option>
+									<option value="2">II</option>
+									<option value="3">III</option>
+									<option value="4">IV</option>
+									<option value="5">V</option>
+									<option value="6">VI</option>
+									<option value="7">VII</option>
+									<option value="8">VIII</option>
+									<option value="9">IX</option>
+									<option value="10">X</option>
+								</select>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="form-group">
+								<label>Tipo de Practica</label>
+								<select name="ciclo"
+									data-placeholder="Choose a Ciclo..." class="form-control required">
+									<option>Seleccionar tipo de practica...</option>
+									<option value="1">Pre Requisito</option>
+									<option value="2">Pasantias</option>
+									<option value="3">Especialidad</option>
+								</select>
+					</div>
+				</div>
+				
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Total de Días<span class="text-danger">*</span></label> <input
+							type="number" name="celular" class="form-control required"
+							placeholder="total de días">
+					</div>
+				</div>
+				
+				
+				
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Observaciones<span class="text-danger">*</span></label> <input
+							type="text-area" name="celular" class="form-control required"
+							placeholder="numero de celular">
+					</div>
+				</div>
+				
+				
+								
+			</div>
+					
+=======
 		<fieldset>
 
 			<div class="row">
@@ -169,6 +284,7 @@
 			</div>
 			
 			
+>>>>>>> 4fe70dd6cf5f7c920a63bd00c7eb2c93c923e8e5
 		</fieldset>
 
 	</div>

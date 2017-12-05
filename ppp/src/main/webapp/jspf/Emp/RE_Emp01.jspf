@@ -66,13 +66,38 @@
 
 				<div class="col-md-3">
 					<div class="form-group">
+<<<<<<< HEAD
+						<label>Nombre: <span class="text-danger">*</span></label>
+						<input type="text" name="nombre" class="form-control required"
+							placeholder="Jonas...">
+=======
 						<label>IdPeriodo:</label> <input type="number" id="idperiodo"
 							class="form-control required" placeholder="...">
+>>>>>>> 4fe70dd6cf5f7c920a63bd00c7eb2c93c923e8e5
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="form-group">
+<<<<<<< HEAD
+						<label>Apellidos: <span class="text-danger">*</span></label>
+						<input type="text" name="apellido" class="form-control required"
+							placeholder="Jonases">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>DNI<span class="text-danger">*</span></label> <input
+							type="number" name="dni" class="form-control required"
+							placeholder="doc. de identidad">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Celular<span class="text-danger">*</span></label> <input
+							type="number" name="celular" class="form-control required"
+							placeholder="numero de celular">
+=======
 						<label>Razon Social: <input type="text" id="razonS"
 							class="form-control required" placeholder="...">
 					</div>
@@ -82,6 +107,7 @@
 					<div class="form-group">
 						<label>RUC:</label> <input type="text" id="ruc"
 							class="form-control required" placeholder="1234567891011">
+>>>>>>> 4fe70dd6cf5f7c920a63bd00c7eb2c93c923e8e5
 					</div>
 				</div>
 			</div>
@@ -89,6 +115,89 @@
 
 
 			<div class="row">
+<<<<<<< HEAD
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Corre Electronico:</label> <input type="text" name="tel"
+							type="email" name="correo" class="form-control required"
+							placeholder="jonas@upeu.edu.pe">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Actividad:</label> <input type="text" name="tel"
+							type="text" name="actividad" class="form-control required"
+							placeholder="actividad">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+								<label>Genero</label>
+								<select name="Genero"
+									data-placeholder="Choose a Ciclo..." class="form-control required">
+									<option>Seleccionar genero...</option>
+									<option value="1">M</option>
+									<option value="2">F</option>
+								</select>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="form-group">
+								<label>Ciclo</label>
+								<select name="ciclo"
+									data-placeholder="Choose a Ciclo..." class="form-control required">
+									<option>Seleccionar ciclo...</option>
+									<option value="1">I</option>
+									<option value="2">II</option>
+									<option value="3">III</option>
+									<option value="4">IV</option>
+									<option value="5">V</option>
+									<option value="6">VI</option>
+									<option value="7">VII</option>
+									<option value="8">VIII</option>
+									<option value="9">IX</option>
+									<option value="10">X</option>
+								</select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>RazonSocial:</label> <input type="text" name="tel"
+							type="text" name="rasoc" class="form-control required"
+							placeholder="razon social">
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Direccion:</label> <input type="text" name="tel"
+							type="text" name="direccion" class="form-control required"
+							placeholder="direccion">
+					</div>
+				</div>
+				
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>RUC:</label> <input type="text" name="tel"
+							type="text" name="ruc" class="form-control required"
+							placeholder="ruc">
+					</div>
+				</div>
+				
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Cargo:</label> <input type="text" name="tel"
+							type="text" name="cargo" class="form-control required"
+							placeholder="cargo">
+					</div>
+				</div>
+			</div>
+			
+		</fieldset>
+=======
 
 				<div class="col-md-4">
 					<div class="form-group">
@@ -110,6 +219,7 @@
 					</div>
 				</div>
 			</div>
+>>>>>>> 4fe70dd6cf5f7c920a63bd00c7eb2c93c923e8e5
 
 
 			<div class="row">
