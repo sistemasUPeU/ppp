@@ -154,10 +154,14 @@
 			
 				
 		</fieldset>
+<<<<<<< HEAD
+				<button type="submit" id ="BotonSub" class="btn btn-primary stepy-finish">
+					Submit <i class="icon-check position-right"></i>
+				</button>
+=======
 >>>>>>> 4fe70dd6cf5f7c920a63bd00c7eb2c93c923e8e5
 
+>>>>>>> 370ab7830b0288edb52dca280c1ee8fd99723e4f
 	</div>
-
-
 </body>
 </html>

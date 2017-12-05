@@ -47,10 +47,10 @@
 				</fieldset>
 
 
-
-				<button type="submit" class="btn btn-primary stepy-finish">
+				<button type="submit" id ="BotonSub" class="btn btn-primary stepy-finish R-EmpresaPaso1">
 					Submit <i class="icon-check position-right"></i>
 				</button>
+				
 			</form>
 		</div>
 	</div>
