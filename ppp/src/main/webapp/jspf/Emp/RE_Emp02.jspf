@@ -102,9 +102,9 @@
 			
 				
 		</fieldset>
-
+				<button type="submit" id ="BotonSub" class="btn btn-primary stepy-finish">
+					Submit <i class="icon-check position-right"></i>
+				</button>
 	</div>
-
-
 </body>
 </html>

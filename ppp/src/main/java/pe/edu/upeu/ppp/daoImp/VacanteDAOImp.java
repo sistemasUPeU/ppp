@@ -20,7 +20,7 @@ public class VacanteDAOImp implements VacanteDAO {
 		} catch (Exception ev) {
 			System.out.println("No lista Vacantes, error:_"+ev);
 		}
-		return jt.queryForList(sql);
+		return jt.queryForList(sql);	
 	}
 
 
