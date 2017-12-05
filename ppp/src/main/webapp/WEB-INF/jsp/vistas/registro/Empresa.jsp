@@ -10,7 +10,7 @@
 <%@ include file="../../../../jspf/head.jspf"%>
 <body>
 
-	<div class="content">
+	<div class="col-md-12">
 
 		<!-- Basic setup -->
 		<div class="panel panel-white">
