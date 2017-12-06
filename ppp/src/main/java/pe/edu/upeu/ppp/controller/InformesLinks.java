@@ -5,13 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/Asignacion")
-public class AsignacionLinks {
+@RequestMapping("/Informe")
+public class InformesLinks {
 
-	@GetMapping("/AsignacionVacante")
+	@GetMapping("/Informes")
 	public String supervicion() {
-		String pagina = "vistas/Asignacion/AsignacionVacante";
+		String pagina = "vistas/Informes/Informes";
 		return pagina;
 	}
-	
 }

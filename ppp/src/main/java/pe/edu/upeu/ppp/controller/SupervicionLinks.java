@@ -14,9 +14,9 @@ public class SupervicionLinks {
 		return pagina;
 	}
 	
-	@GetMapping("/asignar")
+	@GetMapping("/Monitoreo")
 	public String Asignacion() {
-		String pagina = "vistas/Supervision/asignacion";
+		String pagina = "vistas/Supervision/Monitoreo";
 		return pagina;
 	}
 	
