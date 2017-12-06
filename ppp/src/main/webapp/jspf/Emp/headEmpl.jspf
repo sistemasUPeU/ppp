@@ -9,13 +9,13 @@
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/uploader_bootstrap.js'/>"></script>
 				
 		<!-- Date pickers -->
-<%-- <%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/notifications/jgrowl.min.js'/>"></script> --%> --%>
-<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/ui/moment/moment.min.js'/>"></script> --%>
-<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/anytime.min.js'/>"></script> --%>
-<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/pickadate/picker.js'/>"></script> --%>
-<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/pickadate/picker.date.js'/>"></script> --%>
-<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/pickadate/picker.time.js'/>"></script> --%>
-<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/pickadate/legacy.js'/>"></script> --%>
-<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/pages/picker_date.js'/>"></script> --%>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/notifications/jgrowl.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/ui/moment/moment.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/anytime.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/pickadate/picker.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/pickadate/picker.date.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/pickadate/picker.time.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/pickadate/legacy.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/picker_date.js'/>"></script>
 
 
