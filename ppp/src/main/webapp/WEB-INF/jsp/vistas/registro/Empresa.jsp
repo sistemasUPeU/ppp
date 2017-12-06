@@ -7,22 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 		
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_stepy.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/daterangepicker.js'/>"></script>
-
-		<!-- File imput -->
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/uploaders/fileinput/fileinput.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/uploader_bootstrap.js'/>"></script>
-				
-		<!-- Date pickers -->
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/notifications/jgrowl.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/ui/moment/moment.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/anytime.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/pickadate/picker.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/pickadate/picker.date.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/pickadate/picker.time.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/plugins/pickers/pickadate/legacy.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/assets/js/pages/picker_date.js'/>"></script>
+		<%@ include file="../../../../jspf/Emp/headEmpl.jspf"%>
 </head>
 
 
