@@ -15,30 +15,11 @@
 		<fieldset >
 
 		<div class="row">
-				<div class="col-md-2">
-					<div class="form-group">
-								<label>Ciclo</label>
-								<select name="ciclo"
-									data-placeholder="Choose a Ciclo..." class="form-control required">
-									<option>Seleccionar ciclo...</option>
-									<option value="1">I</option>
-									<option value="2">II</option>
-									<option value="3">III</option>
-									<option value="4">IV</option>
-									<option value="5">V</option>
-									<option value="6">VI</option>
-									<option value="7">VII</option>
-									<option value="8">VIII</option>
-									<option value="9">IX</option>
-									<option value="10">X</option>
-								</select>
-					</div>
-				</div>
+				
 				<div class="col-md-4">
 					<div class="form-group">
 						<label>Ruta: <span class="text-danger">*</span></label>
-						<input type="text" name="apellido" class="form-control required"
-							placeholder="Ruta...">
+						<input type="file" class="file-input-ajax required" multiple="multiple">
 					</div>
 				</div>
 	
