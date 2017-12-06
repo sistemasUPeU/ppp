@@ -24,7 +24,7 @@ public class UserDAOImp implements UserDAO{
 		String sql="SELECT  UR.IDUSUARIO,R.NOMBRE Rol,PA.IDPERMISOS,PA.MODULO as modulo,PA.IDPERMISOS_PADRE as PAPA,PA.ICONO , PA.IDRUTA,PA.DESCRIPCION\r\n" + 
 				"FROM PPP_ROL R INNER JOIN PPP_USUARIO__ROL UR ON R.IDROL=UR.IDROL INNER JOIN PPP_ROL__PERMISOS RP\r\n" + 
 				"ON RP.IDROL=UR.IDROL INNER JOIN  PPP_PERMISOS PA ON (RP.IDPERMISOS=PA.IDPERMISOS or RP.IDPERMISOS=PA.IDPERMISOS_PADRE )\r\n" + 
-				"WHERE UR.IDUSUARIO="+id+" order by Pa.IdpermisoN";
+				"WHERE UR.IDUSUARIO="+id+" order by Pa.Idpermisos";
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
 	}
 

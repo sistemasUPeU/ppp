@@ -62,7 +62,7 @@ function listarPerfil() {
 		console.log(user + genero);
 		var a = "";
 		
-		for(var i=0;i<role.length;i++){
+		for(var i=0; i< role.length ;i++){
 			 rol = role[i].ROL;
 			 nombre = role[i].NOMBRE;
 			 apellido = role[i].APELLIDOS
@@ -104,7 +104,7 @@ function getrutas(id){
 
 function namePerfil(nombre ,apellido ) {
 	var s = '<a class="dropdown-toggle" data-toggle="dropdown">';
-	s+='<img src="<c:url value='|'resources/imagenes/1.png'|'/>" alt="">';
+	//s+='<img src="<c:url value='|'resources/imagenes/1.png'|'/>" alt="">';
 	s+='<span>'+nombre+'  '+apellido+'</span>';
 	s+='<i class="caret"></i>';
 	s+='</a>';
