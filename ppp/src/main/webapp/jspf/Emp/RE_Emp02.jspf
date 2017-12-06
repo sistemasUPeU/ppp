@@ -16,22 +16,22 @@
 
 		<div class="row">
 				
-				<div class="col-md-4">
+				<div class="col-md-5">
 					<div class="form-group">
-						<label>Ruta: <span class="text-danger">*</span></label>
-						<input type="file" class="file-input-ajax required" multiple="multiple">
+						<label>Adjuntar Convenio: <span class="text-danger">*</span></label>
+						<input type="file" class="file-input required" data-browse-class="btn btn-primary btn-block" data-show-remove="false" data-show-caption="false" data-show-upload="false">
 					</div>
 				</div>
 	
 		
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label>Fecha Inicio<span class="text-danger">*</span></label> <input
 							type="date" name="dni" class="form-control required"
 							placeholder="doc. de identidad">
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label>Fecha Fin<span class="text-danger">*</span></label> <input
 							type="date" name="celular" class="form-control required"
@@ -43,4 +43,6 @@
 
 	</div>
 </body>
+
+
 </html>

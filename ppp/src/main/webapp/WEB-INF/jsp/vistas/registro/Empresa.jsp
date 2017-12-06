@@ -25,7 +25,8 @@
 				</div>
 			</div>
 
-			<form class="stepy-validation" action="#">
+			<form class="stepy-basic" action="#">
+<!-- 			stepy-validation -->
 				<fieldset title="1">
 					<legend class="text-semibold">Registro Empresa</legend>
 
@@ -67,5 +68,6 @@
 			</form>
 		</div>
 	</div>
+	
 </body>
 </html>

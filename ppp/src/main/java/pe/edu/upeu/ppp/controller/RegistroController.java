@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/registro")
 public class RegistroController {
 
-	@GetMapping("/empresa")
+	@GetMapping("/ORDN")
 	public String empresa() {
 		String pagina = "vistas/registro/Empresa";
 		return pagina;

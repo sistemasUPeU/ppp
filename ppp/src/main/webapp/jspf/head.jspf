@@ -42,13 +42,15 @@
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_stepy.js'/>"></script>
 
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/uploaders/fileinput/fileinput.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/uploader_bootstrap.js'/>"></script>
-
-		<script type="text/javascript" src="<c:url value='resources/js/Vacante.js'/>"></script>
 				
 
 	<!-- /theme JS files -->
 
+<!-- NUESTOS -->
+<script type="text/javascript" src="<c:url value='resources/js/Vacante.js'/>"></script>
+		
 
 
 <!-- Nuestros Javascrit -->
