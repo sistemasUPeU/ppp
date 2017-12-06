@@ -9,33 +9,42 @@
 </head>
 <body>
 
-<div class="col-md-12">
+	<div class="col-md-12">
 
 
-		<fieldset >
+		<fieldset>
 
-		<div class="row">
-				
+			<div class="row">
+
 				<div class="col-md-5">
 					<div class="form-group">
 						<label>Adjuntar Convenio: <span class="text-danger">*</span></label>
-						<input type="file" class="file-input required" data-browse-class="btn btn-primary btn-block" data-show-remove="false" data-show-caption="false" data-show-upload="false">
+						<input type="file" class="file-input required"
+							data-browse-class="btn btn-primary btn-block"
+							data-show-remove="false" data-show-caption="false"
+							data-show-upload="false">
 					</div>
 				</div>
-	
-		
+
+
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>Fecha Inicio<span class="text-danger">*</span></label> <input
-							type="date" name="dni" class="form-control required"
-							placeholder="doc. de identidad">
+						<label>Fecha Inicio<span class="text-danger">*</span></label>
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-calendar5"></i></span>
+							<input type="text" class="form-control pickadate-accessibility"
+								placeholder="Inicio Convenio&hellip;">
+						</div>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>Fecha Fin<span class="text-danger">*</span></label> <input
-							type="date" name="celular" class="form-control required"
-							placeholder="numero de celular">
+						<label>Fecha Fin<span class="text-danger">*</span></label> 
+						<div class="input-group">
+							<span class="input-group-addon"><i class="icon-calendar5"></i></span>
+							<input type="text" class="form-control pickadate-accessibility"
+								placeholder="Fin Convenio&hellip;">
+						</div>
 					</div>
 				</div>
 			</div>

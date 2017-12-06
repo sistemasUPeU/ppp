@@ -25,35 +25,28 @@
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/bootstrap_multiselect.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/ui/moment/moment.min.js'/>"></script>
-	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/daterangepicker.js'/>"></script>
-
-	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
+	
 <%-- 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/dashboard.js'/>"></script> --%>
 	<!-- /theme JS files -->
 	
 	
-	<!-- Theme JS files -->
+		<!-- Theme JS files -->
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/wizards/stepy.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/select2.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jasny_bootstrap.min.js'/>"></script>
 		
+		<!-- para wizard -->
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/validation/validate.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_stepy.js'/>"></script>
+		
 
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/uploaders/fileinput/fileinput.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/uploader_bootstrap.js'/>"></script>
-				
+	
 
 	<!-- /theme JS files -->
 
-<!-- NUESTOS -->
-<script type="text/javascript" src="<c:url value='resources/js/Vacante.js'/>"></script>
-		
-
-
-<!-- Nuestros Javascrit -->
+	<!-- Nuestros Javascrit -->
+	<script type="text/javascript" src="<c:url value='resources/js/Vacante.js'/>"></script>
     <script src="<c:url value='resources/js/getPerfil.js'/>"></script>
 
 
