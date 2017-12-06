@@ -37,5 +37,11 @@ public class SupervicionController {
 		String pagina = "vistas/Supervision/practicanteCargo";
 		return pagina;
 	}
+	
+	@GetMapping("/perfil")
+	public String perfil() {
+		String pagina = "vistas/Supervision/perfil";
+		return pagina;
+	}
 
 }
