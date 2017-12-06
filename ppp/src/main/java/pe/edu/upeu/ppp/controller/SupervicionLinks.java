@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/Supervision")
-public class SupervicionController {
+public class SupervicionLinks {
 	
 	@GetMapping("/supervicion")
 	public String supervicion() {
