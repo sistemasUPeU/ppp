@@ -77,7 +77,6 @@ function listarPerfil() {
 			b= namePerfil(nombre,apellido);
 			//$("#listarI").empty();
 			$("#listarI").append(b); 
-			c
 		if (genero == 1){
 		
 			//asas$("#icon").attr("src", '<c:url value='"resources/plugin/img/avatars/8.jpg"''/>');
@@ -105,12 +104,9 @@ function getrutas(id){
 
 function namePerfil(nombre ,apellido ) {
 	var s = '<a class="dropdown-toggle" data-toggle="dropdown">';
-	s+='<img src=\"<c:url value=\'resources/imagenes/1.png\'/>" alt=\"">';
 	s+='<img src="<c:url value='|'resources/imagenes/1.png'|'/>" alt="">';
 	s+='<span>'+nombre+'  '+apellido+'</span>';
 	s+='<i class="caret"></i>';
 	s+='</a>';
 	return s;
-}
-
 }
