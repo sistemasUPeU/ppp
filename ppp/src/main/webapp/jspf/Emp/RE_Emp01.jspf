@@ -10,13 +10,18 @@
 </head>
 <body>
 	<div class="col-md-12">
+		<span class="label border-left-primary label-striped">Representante de Empresa</span>
+
 		<fieldset>
+			<br>
+
 			<div class="row">
+
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>Nombre: <span class="text-danger">*</span></label> <input
-							type="text" name="nombre" class="form-control required"
-							placeholder="Jonas...">
+						<label>Nombre: <span class="text-danger">*</span></label> 
+						<input type="text" id="nombreRepre" name="nombre" class="form-control required"
+							placeholder="Nombre del Representante">
 					</div>
 				</div>
 
@@ -50,23 +55,24 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Corre Electronico: <span class="text-danger">*</span></label> <input type="email"
-							name="correo" class="form-control required"
+						<label>Corre Electronico: <span class="text-danger">*</span></label>
+						<input type="email" name="correo" class="form-control required"
 							placeholder="jonas@upeu.edu.pe">
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Actividad: <span class="text-danger">*</span></label> <input type="text" name="actividad"
-							class="form-control required" placeholder="actividad">
+						<label>Actividad: <span class="text-danger">*</span></label> <input
+							type="text" name="actividad" class="form-control required"
+							placeholder="actividad">
 					</div>
 				</div>
 
-				<div class="col-md-1">
+				<div class="col-md-2">
 					<div class="form-group">
-						<label>Genero<span class="text-danger required">*</span></label>
-						 <select name="Genero" data-placeholder="Choose a Ciclo..."
+						<label>Genero<span class="text-danger required">*</span></label> <select
+							name="Genero" data-placeholder="Choose a Ciclo..."
 							class="form-control required">
 							<option>Seleccionar</option>
 							<option value="1">M</option>
@@ -74,6 +80,45 @@
 						</select>
 					</div>
 				</div>
+			</div>
+			<span class="label border-left-success label-striped"><strong>Registro
+					de Empresa</strong></span>
+
+			<div class="divider"></div>
+			<div class="row">
+				<br>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Razon Social:<span class="text-danger">*</span></label> <input
+							type="text" name="rasoc" class="form-control required"
+							placeholder="razon social">
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Direccion:<span class="text-danger">*</span></label> <input
+							type="text" name="direccion" class="form-control required"
+							placeholder="direccion">
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>RUC:<span class="text-danger">*</span></label> <input
+							type="text" name="ruc" class="form-control required"
+							placeholder="ruc">
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Cargo:<span class="text-danger">*</span></label> <input
+							type="text" name="cargo" class="form-control required"
+							placeholder="cargo">
+					</div>
+				</div>
+
 
 				<div class="col-md-3">
 					<div class="form-group required">
@@ -87,39 +132,6 @@
 						</select>
 					</div>
 				</div>
-
-
-			</div>
-
-			<div class="row">
-				<div class="col-md-4">
-					<div class="form-group">
-						<label>Razon  Social:<span class="text-danger">*</span></label> <input type="text" name="rasoc"
-							class="form-control required" placeholder="razon social">
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label>Direccion:<span class="text-danger">*</span></label> <input type="text" name="direccion"
-							class="form-control required" placeholder="direccion">
-					</div>
-				</div>
-
-				<div class="col-md-2">
-					<div class="form-group">
-						<label>RUC:<span class="text-danger">*</span></label> <input type="text" name="ruc"
-							class="form-control required" placeholder="ruc">
-					</div>
-				</div>
-
-				<div class="col-md-2">
-					<div class="form-group">
-						<label>Cargo:<span class="text-danger">*</span></label> <input type="text" name="cargo"
-							class="form-control required" placeholder="cargo">
-					</div>
-				</div>
-
 			</div>
 
 		</fieldset>

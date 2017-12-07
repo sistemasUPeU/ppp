@@ -81,25 +81,7 @@
 							placeholder="numero de celular">
 					</div>
 				</div>
-				<div class="col-md-2">
-					<div class="form-group">
-								<label>Ciclo</label>
-								<select name="ciclo"
-									data-placeholder="Choose a Ciclo..." class="form-control required">
-									<option>Seleccionar ciclo...</option>
-									<option value="1">I</option>
-									<option value="2">II</option>
-									<option value="3">III</option>
-									<option value="4">IV</option>
-									<option value="5">V</option>
-									<option value="6">VI</option>
-									<option value="7">VII</option>
-									<option value="8">VIII</option>
-									<option value="9">IX</option>
-									<option value="10">X</option>
-								</select>
-					</div>
-				</div>
+				
 				<div class="col-md-3">
 					<div class="form-group">
 								<label>Tipo de Practica</label>
@@ -120,19 +102,7 @@
 							placeholder="total de días">
 					</div>
 				</div>
-				
-				
-				
-				<div class="col-md-2">
-					<div class="form-group">
-						<label>Observaciones<span class="text-danger">*</span></label> <input
-							type="text-area" name="celular" class="form-control required"
-							placeholder="numero de celular">
-					</div>
-				</div>
-				
-				
-								
+					
 			</div>
 					
 		</div>

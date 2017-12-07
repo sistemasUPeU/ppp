@@ -28,25 +28,22 @@
 				</div>
 			</div>
 
-			<form class="stepy-basic" action="#">
+			<form class="stepy-basic" >
 <!-- 			stepy-validation -->
 				<fieldset title="1">
 					<legend class="text-semibold">Registro Empresa</legend>
 
 					<!-- Info alert -->
-
 					<div
 						class="alert alert-info alert-styled-left alert-arrow-left alert-component">
 						<button type="button" class="close" data-dismiss="alert">
 							<span>&times;</span><span class="sr-only">Close</span>
 						</button>
-						<h6 class="alert-heading text-semibold">Idle timeout</h6>
+						<h6 class="alert-heading text-semibold">Bienvenido al area de registro de Empresa</h6>
 						Current settings allow you to track user inactivity and launch a
 						warning dialog in a fixed amount of time after latest user
-						activity. In this demo warning dialog appears <strong>after
-							5 seconds</strong> of latest user activity.
+						activity. In this demo warning dialog appears of latest user activity.
 					</div>
-
 					<!-- /info alert -->
 
 					<%@ include file="../../../../jspf/Emp/RE_Emp01.jspf"%>
@@ -65,12 +62,22 @@
 
 				<button type="submit" id="BotonSub"
 					class="btn btn-primary stepy-finish R-EmpresaPaso1">
-					Submit <i class="icon-check position-right"></i>
+					Registrar <i class="icon-check position-right"></i>
 				</button>
-
-			</form>
+		</form>
 		</div>
 	</div>
 	
 </body>
+<script type="text/javascript">
+	$('#BotonSub').on('click', function() {
+		swal({
+			title : "Registrado correctamente!",
+			text : "Espere la confirmación del Supervisor de Practicas.!",
+			confirmButtonColor : "#66BB6A",
+			type : "success"
+		});
+	});
+</script>
+
 </html>
