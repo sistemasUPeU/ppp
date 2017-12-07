@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
@@ -7,11 +7,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/form_checkboxes_radios.js'/>"></script>
+<script type="text/javascript"
+	src="<c:url value='resources/plugin2/assets/js/pages/form_checkboxes_radios.js'/>"></script>
 <body>
-<div class="row">
-	
-	
+	<div class="row">
+		<div class="row">
+
+			<div class="form-group">
+				
+				<div class="col-lg-10">
+					<select name="select" class="form-control">
+						<option value="opt1"></option>
+						<option value="opt2">En Proceso</option>
+						<option value="opt3">En Espera</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<br>
 		<div class="col-lg-3 col-md-6">
 			<div class="thumbnail">
 				<div class="thumb thumb-rounded">
@@ -196,21 +209,21 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 
 
 
 
 </body>
-<script  type="text/javascript">
- $('#hola').on('click', function() {
-        swal({
-            title: "Good job!",
-            text: "You clicked the button!",
-            confirmButtonColor: "#66BB6A",
-            type: "success"
-        });
-    });
- </script>
+<script type="text/javascript">
+	$('#hola').on('click', function() {
+		swal({
+			title : "Good job!",
+			text : "You clicked the button!",
+			confirmButtonColor : "#66BB6A",
+			type : "success"
+		});
+	});
+</script>
 </html>
