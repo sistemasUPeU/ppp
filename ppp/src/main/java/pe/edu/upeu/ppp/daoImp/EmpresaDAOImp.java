@@ -47,7 +47,7 @@ public class EmpresaDAOImp implements EmpresaDAO {
 
 	@Override
 	public List<Map<String, Object>> ListSeguro() {
-		String sql ="SELECT U.IDSEGUROS, U.NOMBRE AS SEGURO FROM PPP_SEGUROS U;";
+		String sql ="SELECT U.IDSEGUROS, U.NOMBRE AS SEGURO FROM PPP_SEGUROS U";
 		return jt.queryForList(sql);
 	}
 

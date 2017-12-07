@@ -50,7 +50,8 @@
 		<!-- /theme JS files -->
 	
 		<!-- Nuestros Javascrit -->
-		<script type="text/javascript" src="<c:url value='resources/js/Vacante.js'/>"></script>
+<%-- 		<script type="text/javascript" src="<c:url value='resources/js/Vacante.js'/>"></script> --%>
+	   
 	    <script src="<c:url value='resources/js/getPerfil.js'/>"></script>
 	
 

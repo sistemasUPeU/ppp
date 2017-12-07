@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,31 +19,23 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
-import pe.edu.upeu.ppp.config.AppConfig;
-import pe.edu.upeu.ppp.config.SpringConnection;
-
-import pe.edu.upeu.ppp.dao.EmpresaDAO;
-import pe.edu.upeu.ppp.dao.contratoDAO;
-
-import pe.edu.upeu.ppp.dao.VacanteDAO;
-//import pe.edu.upeu.ppp.dao.ConvenioDAO;
+import pe.edu.upeu.ppp.service.EmpresaService;
 import pe.edu.upeu.ppp.service.VacanteService;
-
 @Controller
 public class CenterController {
 
 	@Autowired
-	EmpresaDAO empredao;
+	EmpresaService empredao;
 	
 	@Autowired
-	VacanteDAO vS;
+	VacanteService vS;
 
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
 
-	@RequestMapping("/paginas")
-	public ModelAndView paginas(ModelAndView modelo, HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping(value = "/rg", method = RequestMethod.POST)
+	public ModelAndView paginas(ModelAndView modelo, HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
 		String opc = request.getParameter("opc");
 		switch (opc) {
 		case "1":
@@ -56,17 +49,19 @@ public class CenterController {
 
 	// public contratoDAO cAO = new contratoDAO
 
-	@RequestMapping(value = "/rp", method = RequestMethod.POST)
-	public void metod(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	@RequestMapping(value = "/rp", method = RequestMethod.GET)
+	public void metod(HttpServletRequest request, HttpServletResponse response , Authentication authentication) throws IOException {
 		response.setContentType("application/json");
-		HttpSession session = request.getSession(true);
+		//HttpSession session = request.getSession(true);
 		PrintWriter out = response.getWriter();
 		String opc = request.getParameter("opc");
 		try {
 			switch (opc) {
 
 			case "Seguro":
-				mp.put("seguro", empredao.ListSeguro());
+				mp.put("as", empredao.ListSeguro());
+				System.out.println("soy seguro");
+				System.out.println(empredao.ListSeguro());
 				break;
 				
 			case "registrarp":
@@ -128,7 +123,7 @@ public class CenterController {
 			System.out.println("Error CenterController COMPONENTS : " + e);
 		}
 		Gson gson = new Gson();
-		out.println(gson.toJson(listas));
+		out.println(gson.toJson(mp));
 		out.flush();
 		out.close();
 	}

@@ -10,7 +10,8 @@
 </head>
 <body>
 	<div class="col-md-12">
-		<span class="label border-left-primary label-striped">Representante de Empresa</span>
+		<span class="label border-left-primary label-striped">Representante
+			de Empresa</span>
 
 		<fieldset>
 			<br>
@@ -19,17 +20,17 @@
 
 				<div class="col-md-3">
 					<div class="form-group">
-						<label>Nombre: <span class="text-danger">*</span></label> 
-						<input type="text" id="nombreRepre" name="nombre" class="form-control required"
-							placeholder="Nombre...">
+						<label>Nombre: <span class="text-danger">*</span></label> <input
+							type="text" id="nombreRepre" name="nombre"
+							class="form-control required" placeholder="Nombre...">
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="form-group">
 						<label>Apellidos: <span class="text-danger">*</span></label> <input
-							type="text" id="ape" name="apellido" class="form-control required"
-							placeholder="Apellido...!">
+							type="text" id="ape" name="apellido"
+							class="form-control required" placeholder="Apellido...!">
 					</div>
 				</div>
 
@@ -44,8 +45,8 @@
 				<div class="col-md-2">
 					<div class="form-group">
 						<label>Celular<span class="text-danger">*</span></label> <input
-							type="number" id="cel" name="celular" class="form-control required"
-							placeholder="numero de celular">
+							type="number" id="cel" name="celular"
+							class="form-control required" placeholder="numero de celular">
 					</div>
 				</div>
 			</div>
@@ -56,23 +57,15 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label>Corre Electronico: <span class="text-danger">*</span></label>
-						<input type="email" id="correo" name="correo" class="form-control required"
-							placeholder="Example@upeu.edu.pe">
+						<input type="email" id="correo" name="correo"
+							class="form-control required" placeholder="Example@upeu.edu.pe">
 					</div>
 				</div>
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label>Actividad: <span class="text-danger">*</span></label> <input
-							type="text" id="actividad" name="actividad" class="form-control required"
-							placeholder="actividad">
-					</div>
-				</div>
-
 				<div class="col-md-2">
 					<div class="form-group">
-						<label>Genero<span class="text-danger required">*</span></label> 
-						<select	name="Genero" id="genero" data-placeholder="Genero"	class="form-control required">
+						<label>Genero<span class="text-danger required">*</span></label> <select
+							name="Genero" id="genero" data-placeholder="Genero"
+							class="form-control required">
 							<option>Seleccionar</option>
 							<option value="1">M</option>
 							<option value="2">F</option>
@@ -88,43 +81,50 @@
 				<br>
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Razon Social:<span class="text-danger">*</span></label> 
-						<input	type="text" id="rasoc" name="rasoc" class="form-control required" placeholder="razon social">
+						<label>Razon Social:<span class="text-danger">*</span></label> <input
+							type="text" id="rasoc" name="rasoc" class="form-control required"
+							placeholder="razon social">
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Direccion:<span class="text-danger">*</span></label> <input
+							type="text" id="direccion" name="direccion"
+							class="form-control required" placeholder="direccion">
 					</div>
 				</div>
 
 				<div class="col-md-4">
 					<div class="form-group">
-						<label>Direccion:<span class="text-danger">*</span></label> 
-						<input	type="text" id="direccion" name="direccion" class="form-control required"	placeholder="direccion">
+						<label>RUC:<span class="text-danger">*</span></label> <input
+							type="text" id="ruc" name="ruc" class="form-control required"
+							placeholder="ruc">
 					</div>
 				</div>
 
 				<div class="col-md-2">
 					<div class="form-group">
-						<label>RUC:<span class="text-danger">*</span></label>
-						 <input	type="text" id="ruc" name="ruc" class="form-control required" placeholder="ruc">
+						<label>Cargo:<span class="text-danger">*</span></label> <input
+							type="text" id="cargo" name="cargo" class="form-control required"
+							placeholder="cargo">
 					</div>
 				</div>
-
-				<div class="col-md-2">
+				<div class="col-md-4">
 					<div class="form-group">
-						<label>Cargo:<span class="text-danger">*</span></label>
-						 <input	type="text" id="cargo" name="cargo" class="form-control required"	placeholder="cargo">
+						<label>Actividad: <span class="text-danger">*</span></label> <input
+							type="text" id="actividad" name="actividad"
+							class="form-control required" placeholder="actividad">
 					</div>
 				</div>
 
-
-				<div class="col-md-3">
-					<div class="form-group required">
-						<label class="control-label">Seguros de Empresa</label> 
-						<select id="seguro"	data-placeholder="Seguros de Empresa" class="select">
-							<option></option>
-							<optgroup label="Seguros de Empresa">
-								<option value="AK">Rimac</option>
-								<option value="HI">Hawaii</option>
-							</optgroup>
+				<div class="col-md-4">
+					<div id="llenarseguro" class="form-group required">
+						<label class="control-label">Seguros de Empresa</label> <select
+							id="seguro" data-placeholder="Seguros de Empresa" class="select">
+							<!-- Aqui va combo -->
 						</select>
+
 					</div>
 				</div>
 			</div>
