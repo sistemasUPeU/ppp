@@ -1,5 +1,8 @@
 package pe.edu.upeu.ppp.service;
 
+import java.util.List;
+import java.util.Map;
+
 public interface EmpresaService {
 
 	public int RegEmpresa(String P_NOMBRE, 
@@ -19,5 +22,6 @@ public interface EmpresaService {
 		 	  String P_IDROL,
 		 	  String P_CICLO);
 	
-	
+	 //Listar seguros de empresas
+	 public List<Map<String, Object>> ListSeguro();
 }

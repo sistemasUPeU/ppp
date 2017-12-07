@@ -1,5 +1,8 @@
 package pe.edu.upeu.ppp.daoImp;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -40,6 +43,12 @@ public class EmpresaDAOImp implements EmpresaDAO {
 			System.out.println("error en comvenio dao implement:" + e);
 		}
 		return x;
+	}
+
+	@Override
+	public List<Map<String, Object>> ListSeguro() {
+		String sql ="SELECT U.IDSEGUROS, U.NOMBRE AS SEGURO FROM PPP_SEGUROS U;";
+		return jt.queryForList(sql);
 	}
 
 }

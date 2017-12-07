@@ -1,5 +1,8 @@
 package pe.edu.upeu.ppp.serviceImp;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +25,10 @@ public class EmpresaServiceImp implements EmpresaService{
 								P_CORREO, P_GENERO, P_IDPERIODO, P_RAZONSOCIAL, P_RUC,
 								P_DIRECCION, P_SEGURO, P_ACTIVIDAD, P_CARGO, P_IDALUMNO,
 								P_IDROL, P_CICLO);
+	}
+
+	@Override
+	public List<Map<String, Object>> ListSeguro() {
+		return empredao.ListSeguro();
 	}
 }

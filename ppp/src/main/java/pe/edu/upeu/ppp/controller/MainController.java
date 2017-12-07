@@ -64,20 +64,12 @@ public class MainController {
 				break;
 
 			case "cargo":
-
-				break;
-			case "seguro":
-
-				break;
-			case "planillas":
-
-				break;
-
+			break;
 			}
 
 		} catch (Exception e) {
 			mp.put("rpta", false);
-			System.out.println("Error CenterController COMPONENTS : " + e);
+			System.out.println("Error MainController COMPONENTS : " + e);
 		}
 		Gson gson = new Gson();
 		out.println(gson.toJson(mp));

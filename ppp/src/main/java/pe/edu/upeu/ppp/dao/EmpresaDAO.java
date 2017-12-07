@@ -1,5 +1,8 @@
 package pe.edu.upeu.ppp.dao;
 
+import java.util.List;
+import java.util.Map;
+
 public interface EmpresaDAO {
 
 	// Este meto usa el procedimiento PA_REG_EMPRESA_P1
@@ -19,5 +22,8 @@ public interface EmpresaDAO {
 			 	  String P_IDALUMNO,
 			 	  String P_IDROL,
 			 	  String P_CICLO);
-	
+
+	 //Listar seguros de empresas
+	 List<Map<String, Object>> ListSeguro();
+	 
 }

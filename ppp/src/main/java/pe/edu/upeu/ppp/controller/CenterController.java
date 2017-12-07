@@ -2,6 +2,7 @@ package pe.edu.upeu.ppp.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,110 +28,109 @@ import pe.edu.upeu.ppp.dao.VacanteDAO;
 //import pe.edu.upeu.ppp.dao.ConvenioDAO;
 import pe.edu.upeu.ppp.service.VacanteService;
 
-
-
 @Controller
 public class CenterController {
-	
 
-	@Autowired 
+	@Autowired
 	EmpresaDAO empredao;
-	//ConvenioDAO cO= new ConvenioDAO(SpringConnection.getDataSource());
-	
-
 	
 	@Autowired
 	VacanteDAO vS;
 
+	Map<String, Object> mp = new HashMap<>();
+	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
-	
+
 	@RequestMapping("/paginas")
-	public ModelAndView paginas(ModelAndView modelo,HttpServletRequest request,HttpServletResponse response)
-	{
-		String opc=request.getParameter("opc");
+	public ModelAndView paginas(ModelAndView modelo, HttpServletRequest request, HttpServletResponse response) {
+		String opc = request.getParameter("opc");
 		switch (opc) {
 		case "1":
 			break;
 
-		case"2":
+		case "2":
 			break;
 		}
 		return modelo;
 	}
-	
-	
-	//public contratoDAO cAO = new contratoDAO
-	
-	
-	@RequestMapping(value="/rp",method=RequestMethod.GET)
-	public void metod(HttpServletRequest request,HttpServletResponse response) throws IOException
-	{
+
+	// public contratoDAO cAO = new contratoDAO
+
+	@RequestMapping(value = "/rp", method = RequestMethod.POST)
+	public void metod(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("application/json");
 		HttpSession session = request.getSession(true);
-        PrintWriter out = response.getWriter();
-        String opc = request.getParameter("opc");
-        try {
-        	switch (opc) {
+		PrintWriter out = response.getWriter();
+		String opc = request.getParameter("opc");
+		try {
+			switch (opc) {
+
+			case "Seguro":
+				mp.put("seguro", empredao.ListSeguro());
+				break;
+				
 			case "registrarp":
-				
-				String nom=request.getParameter("");
-				String ape=request.getParameter("");
-				String dnii=request.getParameter("");
-				String cel=request.getParameter("");
-				String cor=request.getParameter("");
-				String genero=request.getParameter("");
-				String idpe=request.getParameter("");
-				String raz=request.getParameter("");
-				String rucc=request.getParameter("");
-				String direc=request.getParameter("");
-				String seg=request.getParameter("");
-				String act=request.getParameter("");
-				String car=request.getParameter("");
-				String idal=request.getParameter("");
-				String idrol=request.getParameter("");
-				String cic=request.getParameter("");
-				//cO.convenio(p_idperiodo,p_razonsocial,p_ruc,p_direccion,p_seguro,p_actividad,p_cargo,p_idalumno);
-				empredao.RegEmpresa(nom, ape, dnii, cel, cor, genero, idpe.trim(), raz, rucc, direc, seg, act, car, idal.trim(), idrol.trim(), cic);
-				
+
+				String nom = request.getParameter("");
+				String ape = request.getParameter("");
+				String dnii = request.getParameter("");
+				String cel = request.getParameter("");
+				String cor = request.getParameter("");
+				String genero = request.getParameter("");
+				String idpe = request.getParameter("");
+				String raz = request.getParameter("");
+				String rucc = request.getParameter("");
+				String direc = request.getParameter("");
+				String seg = request.getParameter("");
+				String act = request.getParameter("");
+				String car = request.getParameter("");
+				String idal = request.getParameter("");
+				String idrol = request.getParameter("");
+				String cic = request.getParameter("");
+				// cO.convenio(p_idperiodo,p_razonsocial,p_ruc,p_direccion,p_seguro,p_actividad,p_cargo,p_idalumno);
+				empredao.RegEmpresa(nom, ape, dnii, cel, cor, genero, idpe.trim(), raz, rucc, direc, seg, act, car,
+						idal.trim(), idrol.trim(), cic);
+
 				break;
 
 			case "Newvacante":
-                String P_IDPERIODO=request.getParameter("periodo"); 
-                String P_IDREPRESENTANTE=request.getParameter("representante"); 
-                String P_AREATRABAJO=request.getParameter("area_trabajo"); 
-                String P_CANTIDAD=request.getParameter("cantidad"); 
-                String P_HORARIO=request.getParameter("horario"); 
-                String P_FECHAINICIO=request.getParameter("fechainicio"); 
-                String P_FECHAFIN=request.getParameter("fechafin"); 
-                String P_HORAINICIO=request.getParameter("fechainicio"); 
-                String P_HORAFIN=request.getParameter("horafin"); 
-                String P_SUELDO=request.getParameter("sueldo"); 
-                String P_IDLINEASP=request.getParameter("IDlineasAP"); 
-                String P_IDFOLDERPRACTICA=request.getParameter(""); 
-                String P_IDTRABAJADOR=request.getParameter("trabajador"); 
-                String P_IDALUMNO=request.getParameter("alumnos"); 
-                String P_IDROL=request.getParameter("idrol"); 
-                String P_CICLO=request.getParameter("ciclo"); 
-                String P_TIPOPRACTICA=request.getParameter("tipo_practica"); 
-                String P_OBSERVACIONES=request.getParameter("observacion"); 
+				String P_IDPERIODO = request.getParameter("periodo");
+				String P_IDREPRESENTANTE = request.getParameter("representante");
+				String P_AREATRABAJO = request.getParameter("area_trabajo");
+				String P_CANTIDAD = request.getParameter("cantidad");
+				String P_HORARIO = request.getParameter("horario");
+				String P_FECHAINICIO = request.getParameter("fechainicio");
+				String P_FECHAFIN = request.getParameter("fechafin");
+				String P_HORAINICIO = request.getParameter("fechainicio");
+				String P_HORAFIN = request.getParameter("horafin");
+				String P_SUELDO = request.getParameter("sueldo");
+				String P_IDLINEASP = request.getParameter("IDlineasAP");
+				String P_IDFOLDERPRACTICA = request.getParameter("");
+				String P_IDTRABAJADOR = request.getParameter("trabajador");
+				String P_IDALUMNO = request.getParameter("alumnos");
+				String P_IDROL = request.getParameter("idrol");
+				String P_CICLO = request.getParameter("ciclo");
+				String P_TIPOPRACTICA = request.getParameter("tipo_practica");
+				String P_OBSERVACIONES = request.getParameter("observacion");
 
-                vS.NewVacante(P_IDPERIODO, P_IDREPRESENTANTE, P_AREATRABAJO, P_CANTIDAD, P_HORARIO, P_FECHAINICIO, P_FECHAFIN, P_HORAINICIO, P_HORAFIN, P_SUELDO, P_IDLINEASP, P_IDFOLDERPRACTICA, P_IDTRABAJADOR, P_IDALUMNO, P_IDROL, P_CICLO, P_TIPOPRACTICA, P_OBSERVACIONES);
+				vS.NewVacante(P_IDPERIODO, P_IDREPRESENTANTE, P_AREATRABAJO, P_CANTIDAD, P_HORARIO, P_FECHAINICIO,
+						P_FECHAFIN, P_HORAINICIO, P_HORAFIN, P_SUELDO, P_IDLINEASP, P_IDFOLDERPRACTICA, P_IDTRABAJADOR,
+						P_IDALUMNO, P_IDROL, P_CICLO, P_TIPOPRACTICA, P_OBSERVACIONES);
 				break;
-				
+
 			case "Vacantes":
-                listas=vS.listarVacantes();
+				listas = vS.listarVacantes();
 				break;
 			}
-			
-		} catch (Exception e) {
 
-			System.out.println("Error:"+e);
+		} catch (Exception e) {
+			mp.put("rpta", false);
+			System.out.println("Error CenterController COMPONENTS : " + e);
 		}
-        Gson gson = new Gson();
-        out.println(gson.toJson(listas));
+		Gson gson = new Gson();
+		out.println(gson.toJson(listas));
 		out.flush();
 		out.close();
 	}
-	
 
 }
