@@ -1,6 +1,7 @@
 package pe.edu.upeu.ppp.security;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -23,16 +24,16 @@ public class UserDAO2 {
 	    }
 	
 	// metodo para comprobar que existe el usario y obtenemos el idUsuario
-		public List <Map<String, Object>> getValidateUser(String username) {
+		public ArrayList<Map<String, Object>>  getValidateUser(String username) {
 			String sql = "SELECT U.IDUSUARIO as iduser , U.NOMBRE , U.APELLIDOS , U.DNI , U.CELULAR, U.USU ,U.PASS , U.ACTIVO, U.GENERO ,rol.IDROL,p.IDPERIODO, max(p.fechainicio) as FechaInicio " + 
 					"					FROM PPP_USUARIO U , PPP_USUARIO__ROL ur , PPP_ROL rol, ppp_periodo p WHERE U.IDUSUARIO = ur.IDUSUARIO and rol.IDROL=UR.IDROL and TRIM(U.USU) = ? " + 
 					"          group by U.IDUSUARIO , U.NOMBRE , U.APELLIDOS , U.DNI , U.CELULAR, U.USU ,U.PASS , U.ACTIVO, U.GENERO ,rol.IDROL,p.IDPERIODO";
-			return  jt.queryForList(sql, username );
+			return  (ArrayList<Map<String, Object>>) jt.queryForList(sql, username );
 		}
 
 	
 		//para listar todos los permisos y modulos que existan en la base de datos
-		public List <Map<String, Object>> getAllPermit(String id) {
+		public List<Map<String, Object>> getAllPermit(String id) {
 			String sql ="SELECT  UR.IDUSUARIO,R.NOMBRE Rol,PA.IDPERMISOS,PA.MODULO as modulo,PA.IDPERMISOS_PADRE as PAPA,PA.ICONO , PA.IDRUTA,PA.DESCRIPCION\r\n" + 
 					"				FROM PPP_ROL R INNER JOIN PPP_USUARIO__ROL UR ON R.IDROL=UR.IDROL INNER JOIN PPP_ROL__PERMISOS RP \r\n" + 
 					"				ON RP.IDROL=UR.IDROL INNER JOIN  PPP_PERMISOS PA ON (RP.IDPERMISOS=PA.IDPERMISOS or RP.IDPERMISOS=PA.IDPERMISOS_PADRE ) \r\n" + 
@@ -40,6 +41,11 @@ public class UserDAO2 {
 			return jt.queryForList(sql,id);
 		}
 		
-  
-	
+		//para listar ciclo
+		public  ArrayList<Map<String, Object>>  getCiclo(int id) {
+			String sql ="SELECT  al.ciclo\r\n" + 
+					"FROM   PPP_USUARIO U ,ppp_Alumno al  \r\n" + 
+					"WHERE   Al.Idalumno = U.Idusuario and U.Idusuario = ? ";
+			return (ArrayList<Map<String, Object>>) jt.queryForList(sql,id);
+		}
 }

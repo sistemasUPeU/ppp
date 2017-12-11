@@ -3,6 +3,7 @@ package pe.edu.upeu.ppp.entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.catalina.User;
@@ -27,6 +28,18 @@ public class CUserDTO implements UserDetails, Serializable{
 	
 	private String idperiodo;
 	
+	private String ciclo;
+	
+	// periodo
+		public String getCiclo() {
+			return ciclo;
+		}
+
+		public void setCiclo(String ciclo) {
+			this.ciclo = ciclo;
+		}
+	
+	// periodo
 	public String getidperiodo() {
 		return idperiodo;
 	}
@@ -35,7 +48,7 @@ public class CUserDTO implements UserDetails, Serializable{
 		this.idperiodo = idperiodo;
 	}
 	
-	
+	//rol
 	public String getidrol() {
 		return idrol;
 	}
@@ -44,7 +57,7 @@ public class CUserDTO implements UserDetails, Serializable{
 		this.idrol = idrol;
 	}
 	
-	private ArrayList<Map<String, Object>> List_Permiso;
+	private List<Map<String, Object>> List_Permiso;
 	
 	private Map<String, Object> user;
 	
@@ -59,7 +72,7 @@ public class CUserDTO implements UserDetails, Serializable{
 	}
 
 	public CUserDTO(String iDUSER, String nombre, String apellido, String dni, String celular, String usu, String pass,
-			String activo, String genero, String idrol,  boolean accountNonExpired,
+			String activo, String genero, String idrol,String idperiodo, String ciclo,  boolean accountNonExpired,
 			boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
 			IDUSER = iDUSER;
 			this.nombre = nombre;
@@ -71,7 +84,9 @@ public class CUserDTO implements UserDetails, Serializable{
 			this.activo = activo;
 			this.genero = genero;
 			this.idrol = idrol;
-			
+			this.idperiodo = idperiodo;
+			this.ciclo =ciclo;
+			//this.List_Permiso = List_Permiso;
 			
 			this.accountNonExpired = accountNonExpired;
 			AccountNonLocked = accountNonLocked;
@@ -157,11 +172,11 @@ public class CUserDTO implements UserDetails, Serializable{
 	}
 
 
-	public ArrayList<Map<String, Object>> getList_Permiso() {
+	public List<Map<String, Object>> getList_Permiso() {
 		return List_Permiso;
 	}
 
-	public void setList_Permiso(ArrayList<Map<String, Object>> list_Permiso) {
+	public void setList_Permiso(List<Map<String, Object>> list_Permiso) {
 		List_Permiso = list_Permiso;
 	}
 	

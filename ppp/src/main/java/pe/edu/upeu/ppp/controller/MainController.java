@@ -51,7 +51,8 @@ public class MainController {
 		
 		String name = ((CUserDTO) authentication.getPrincipal()).getNombre();
 		String genero = ((CUserDTO) authentication.getPrincipal()).getGenero();
-		
+		String idPeriodo = ((CUserDTO) authentication.getPrincipal()).getidperiodo();
+		//String 
 		//userinf.get("IDUSER").toString().trim();
 		try {
 			switch (opc) {

@@ -6,8 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-		
-		<%@ include file="../../../../jspf/Emp/headEmpl.jspf"%>
+<%@ include file="../../../../jspf/Emp/headEmpl.jspf"%>
 </head>
 
 
@@ -28,8 +27,8 @@
 				</div>
 			</div>
 
-			<form class="stepy-basic" >
-<!-- 			stepy-validation -->
+			<form class="stepy-basic">
+				<!-- 			stepy-validation -->
 				<fieldset title="1">
 					<legend class="text-semibold">Registro Empresa</legend>
 
@@ -39,38 +38,39 @@
 						<button type="button" class="close" data-dismiss="alert">
 							<span>&times;</span><span class="sr-only">Close</span>
 						</button>
-						<h6 class="alert-heading text-semibold">Bienvenido al area de registro de Empresa</h6>
-						Current settings allow you to track user inactivity and launch a
-						warning dialog in a fixed amount of time after latest user
-						activity. In this demo warning dialog appears of latest user activity.
+						<h6 class="alert-heading text-semibold">Bienvenido al area de
+							registro de Empresa</h6>
+						Si la empresa a registrar no se encuentra, agregar una nueva empresa!!
 					</div>
 					<!-- /info alert -->
 
 					<%@ include file="../../../../jspf/Emp/RE_Emp01.jspf"%>
 				</fieldset>
 
-				<fieldset title="2">
-					<legend class="text-semibold">Convenio</legend>
-					<%@ include file="../../../../jspf/Emp/RE_Emp02.jspf"%>
-				</fieldset>
 
-				<fieldset title="3">
+				<fieldset title="2">
 					<legend class="text-semibold">Vacante</legend>
 					<%@ include file="../../../../jspf/Emp/RE_Emp03.jspf"%>
 				</fieldset>
 
+				<fieldset title="3">
+					<legend class="text-semibold">Convenio</legend>
+					<%@ include file="../../../../jspf/Emp/RE_Emp02.jspf"%>
+				</fieldset>
 
 				<button type="submit" id="Boton" onclick="registrar();"
 					class="btn btn-primary stepy-finish R-EmpresaPaso1">
 					Registrar <i class="icon-check position-right"></i>
 				</button>
-		</form>
+			</form>
 		</div>
 	</div>
-	
+
 </body>
 
-<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jquery.min.js'/>"></script>
+<script type="text/javascript"
+	src="<c:url value='resources/plugin2/assets/js/core/libraries/jquery.min.js'/>"></script>
+
 <script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
 <script type="text/javascript">
 	$('#Boton').on('click', function() {

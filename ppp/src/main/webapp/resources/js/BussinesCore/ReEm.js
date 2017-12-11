@@ -1,6 +1,13 @@
 $(document).ready(function() {
+	$("#ocultar").hide();
 	listarSeguro();
+	
 });
+
+function ocultar(){
+	$("#ocultar").show();
+	$("#Aparecer").hide();
+}
 
 function listarSeguro() {
 	$.get('rp?opc=Seguro', function(objJson) {
@@ -40,6 +47,6 @@ function registrar() {
 	data += "&act=" + $("#actividad").val();
 	data += "&car=" + $("#cargo").val();
 	
-	alert(data);
+	
 };
 
