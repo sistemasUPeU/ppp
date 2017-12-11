@@ -9,19 +9,24 @@ import pe.edu.upeu.ppp.dao.EvaluacionesDAO;
 public class EvaluacionesDAOImp implements EvaluacionesDAO {
 	@Autowired
 	JdbcTemplate jt;
-	int x=0;
+	int estado=0;
 	String sql="";
 	@Override
 	public int ActualizarEvaluacion(int p_idevaluacion, int p_estado) {
 		// TODO Auto-generated method stub
 		try {
 			sql="UPDATE PPP_EVALUACION SET ACTIVO=? WHERE IDEVALUACION=?";
-			x=jt.update(sql,p_estado,p_idevaluacion);
+			estado=jt.update(sql,p_estado,p_idevaluacion);
 		} catch (Exception ee) {
 			System.out.println("Error al actualizar evaluacion: "+ee);
 			ee.getStackTrace();
 		}
-		return x;
+		return estado;
+	}
+	@Override
+	public int CrearDimensiones(int p_idevaluacion, String nombre, int p_activo) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
