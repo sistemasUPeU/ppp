@@ -4,6 +4,6 @@ public interface EvaluacionesDAO {
 	int ActualizarEvaluacion(int p_idevaluacion,
 			                 int p_estado);
 	int CrearDimensiones(int p_idevaluacion,
-			             String nombre,
-			             int p_activo);
+			             String[] nombre,
+			             String[] p_activo);
 }
