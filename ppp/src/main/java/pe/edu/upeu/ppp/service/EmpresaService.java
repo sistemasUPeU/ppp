@@ -24,4 +24,7 @@ public interface EmpresaService {
 	
 	 //Listar seguros de empresas
 	 public List<Map<String, Object>> ListSeguro();
+	 
+	//LISTAMOS LINEAS ACADEMICAS
+	 public List<Map<String, Object>> ListLineas();
 }

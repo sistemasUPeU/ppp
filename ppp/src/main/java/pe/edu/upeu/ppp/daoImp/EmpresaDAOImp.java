@@ -51,4 +51,10 @@ public class EmpresaDAOImp implements EmpresaDAO {
 		return jt.queryForList(sql);
 	}
 
+	@Override
+	public List<Map<String, Object>> ListLineas() {
+		String sql ="SELECT L.Idlineasp , L.Nombre as LINEA FROM PPP_LINEASP L";
+		return jt.queryForList(sql);
+	}
+
 }

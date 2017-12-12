@@ -58,10 +58,10 @@ public class CenterController {
 		try {
 			switch (opc) {
 
-			case "Seguro":
+			case "Combox":
 				mp.put("as", empredao.ListSeguro());
-				System.out.println("soy seguro");
-				System.out.println(empredao.ListSeguro());
+				mp.put("li", empredao.ListLineas());
+				System.out.println(empredao.ListLineas());
 				break;
 				
 			case "registrarp":

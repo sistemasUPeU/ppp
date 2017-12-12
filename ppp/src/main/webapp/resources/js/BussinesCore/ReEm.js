@@ -10,10 +10,15 @@ function ocultar(){
 }
 
 function listarSeguro() {
-	$.get('rp?opc=Seguro', function(objJson) {
+	$.get('rp?opc=Combox', function(objJson) {
 		var v = '';
+		var c='';
 		var list = objJson.as;
+		var listLin = objJson.li;
 		console.log(list);
+		console.log(listLin);
+		
+		// solo para seguro
 		for (var i = 0; i < list.length; i++) {
 			v +='<option value="' + list[i].IDSEGUROS + '">'+ list[i].SEGURO +'</option>';
 		}
@@ -25,6 +30,19 @@ function listarSeguro() {
 			'</optgroup>';
 		
 		$("#seguro").append(v);
+		
+		// solo para lineas
+		for (var j = 0; j < listLin.length; j++) {
+			c +='<option value="' + listLin[j].Idlineasp + '">'+ listLin[j].LINEA +'</option>';
+		}
+		$("#lineas").empty();
+		
+		c = '<option></option>\
+			<optgroup label="Lineas academicas">'
+			+ c	+ 
+			'</optgroup>';
+		
+		$("#lineas").append(c);
 	});
 }
 
@@ -46,7 +64,6 @@ function registrar() {
 	data += "&seg=" + $("#seguro").val();
 	data += "&act=" + $("#actividad").val();
 	data += "&car=" + $("#cargo").val();
-	
 	
 };
 

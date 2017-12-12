@@ -26,4 +26,6 @@ public interface EmpresaDAO {
 	 //Listar seguros de empresas
 	 List<Map<String, Object>> ListSeguro();
 	 
+	 //LISTAMOS LINEAS ACADEMICAS
+	 List<Map<String, Object>> ListLineas();
 }

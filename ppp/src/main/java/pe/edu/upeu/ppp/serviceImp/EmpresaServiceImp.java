@@ -31,4 +31,9 @@ public class EmpresaServiceImp implements EmpresaService{
 	public List<Map<String, Object>> ListSeguro() {
 		return empredao.ListSeguro();
 	}
+
+	@Override
+	public List<Map<String, Object>> ListLineas() {
+		return empredao.ListLineas();
+	}
 }

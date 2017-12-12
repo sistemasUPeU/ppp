@@ -97,7 +97,7 @@ function perfildate(nombre ,apellido , rol) {
 }
 
 function getrutas(id){
-	    $("#contenedor").empty();
+	  
 		$("#contenedor").load(id);	
 		console.log('"'+id+'"');
 }
