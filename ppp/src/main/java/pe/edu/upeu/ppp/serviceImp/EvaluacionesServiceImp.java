@@ -15,5 +15,11 @@ public class EvaluacionesServiceImp implements EvaluacionesService {
 		// TODO Auto-generated method stub
 		return evadao.ActualizarEvaluacion(p_idevaluacion, p_estado);
 	}
+	@Override
+	public int CrearDimensiones(int p_idevaluacion, String[] nombre, String[] p_activo) {
+		// TODO Auto-generated method stub
+		return evadao.CrearDimensiones(p_idevaluacion, nombre, p_activo);
+	}
+
 
 }

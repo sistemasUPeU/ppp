@@ -26,7 +26,7 @@ public class EvaluacionesDAOImp implements EvaluacionesDAO {
 	@Override
 	public int CrearDimensiones(int p_idevaluacion, String[] nombre, String[] p_activo) {
 		try {
-			sql="call PA_CREAR_DIMENSION(?,?)";
+			sql="call PA_CREAR_DIMENSION(?,?,?)";
 			estado=jt.update(sql,p_idevaluacion,nombre,p_activo);
 		} catch (Exception ecd) {
 			System.out.println("Erroe al crear dimension en :" +ecd);
