@@ -19,14 +19,20 @@ public class EvaluacionesDAOImp implements EvaluacionesDAO {
 			estado=jt.update(sql,p_estado,p_idevaluacion);
 		} catch (Exception ee) {
 			System.out.println("Error al actualizar evaluacion: "+ee);
-			ee.getStackTrace();
+			ee.printStackTrace();
 		}
 		return estado;
 	}
 	@Override
 	public int CrearDimensiones(int p_idevaluacion, String nombre, int p_activo) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			sql="";
+			estado=jt.update(sql);
+		} catch (Exception ecd) {
+			System.out.println("Erroe al crear dimension en :" +ecd);
+			ecd.printStackTrace();
+		} 
+		return estado;
 	}
 
 }
