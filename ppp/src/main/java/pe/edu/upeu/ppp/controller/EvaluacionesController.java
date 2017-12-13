@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.google.gson.Gson;
+
 @Controller
 public class EvaluacionesController {
 	//BY KEVIN MOGOLLON--
@@ -19,9 +21,13 @@ public class EvaluacionesController {
 				case "updateevaluacion":
 					break;
 				}
-			} catch (Exception e) {
-				// TODO: handle exception
+			} catch (Exception ee) {
+				System.out.println("Error en Evaluaciones Controller : "+ee);
 			}
+			Gson gson = new Gson();
+			out.println(gson.toJson(mp));
+			out.flush();
+			out.close();
 		
 		}
 }
