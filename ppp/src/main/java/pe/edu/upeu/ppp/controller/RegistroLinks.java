@@ -22,7 +22,7 @@ public class RegistroLinks {
 	
 	@GetMapping("/evaluacion")
 	public String ds() {
-		String pagina = "vistas/registro/example";
+		String pagina = "vistas/registro/Evaluacion";
 		return pagina;
 	}
 	
