@@ -19,7 +19,6 @@ public class RegistroLinks {
 		String pagina = "vistas/registro/vacante";
 		return pagina;
 	}
-	
 	@GetMapping("/evaluacion")
 	public String ds() {
 		String pagina = "vistas/registro/Evaluacion";
