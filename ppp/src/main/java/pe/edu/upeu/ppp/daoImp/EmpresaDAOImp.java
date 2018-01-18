@@ -17,28 +17,43 @@ public class EmpresaDAOImp implements EmpresaDAO {
 	
 	@Override
 	public int RegEmpresa(String P_NOMBRE, 
-					 	  String P_APELLIDOS,
-					 	  String P_DNI,
-					 	  String P_CELULAR,
-					 	  String P_CORREO,
-					 	  String P_GENERO,
-					 	  String P_IDPERIODO,
-					 	  String P_RAZONSOCIAL,
-					 	  String P_RUC,
-					 	  String P_DIRECCION,
-					 	  String P_SEGURO,
-					 	  String P_ACTIVIDAD,	  
-					 	  String P_CARGO,
-					 	  String P_IDALUMNO,
-					 	  String P_IDROL,
-					 	  String P_CICLO) {
+		 	  String P_APELLIDOS,
+		 	  String P_DNI,
+		 	  String P_CELULAR,
+		 	  String P_CORREO,
+		 	  String P_GENERO,
+		 	  
+		 	  String P_CARGO,
+		 	  String P_IDPERIODO,
+		 	  
+		 	  String P_RAZONSOCIAL,
+		 	  String P_RUC,
+		 	  String P_DIRECCION,
+		 	  String P_SEGURO,
+		 	  String P_ACTIVIDAD,	  
+		 	 
+		 	  String P_IDALUMNO,
+		 	  String P_IDROL,
+		 	  String P_CICLO,
+		 	  
+		 	  String P_AREAWK,
+		 	  String P_CANTIDAD,
+		 	  String P_HORARIO,
+		 	  String P_FECHA_INI,
+		 	  String P_FECHA_FIN,
+		 	  String P_H_INI,
+		 	  String P_H_FIN,
+		 	  String P_SUELDO,
+		 	  String P_idLinea) {
+		
 		String sql ="";
 		int x = 0;
 		try {
-			sql = "{EXE PA_REG_EMPRESA_P1(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+			sql = "{EXE PA_REGS_EMPRESA_P1_AND_P2(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
 			x = jt.update(sql , P_NOMBRE , P_APELLIDOS , P_DNI , P_CELULAR , P_CORREO , P_GENERO,
-					P_IDPERIODO , P_RAZONSOCIAL, P_RUC , P_DIRECCION , P_SEGURO, P_ACTIVIDAD, P_CARGO,
-					P_IDALUMNO  , P_IDROL, P_CICLO );
+					 P_CARGO, P_IDPERIODO , P_RAZONSOCIAL, P_RUC , P_DIRECCION , P_SEGURO, P_ACTIVIDAD,
+					P_IDALUMNO  , P_IDROL, P_CICLO , P_AREAWK, P_CANTIDAD ,P_HORARIO , P_FECHA_INI , P_FECHA_FIN , P_H_INI , P_H_FIN,
+					P_SUELDO , P_idLinea );
 		} catch (Exception e) {
 			System.out.println("error en comvenio dao implement:" + e);
 		}

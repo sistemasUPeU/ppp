@@ -64,14 +64,17 @@ public class CenterController {
 				System.out.println(empredao.ListLineas());
 				break;
 				
-			case "registrarp":
+			case "Registro":
 
+				// REPRESENTANTE
 				String nom = request.getParameter("");
 				String ape = request.getParameter("");
 				String dnii = request.getParameter("");
 				String cel = request.getParameter("");
 				String cor = request.getParameter("");
 				String genero = request.getParameter("");
+				
+				//EMPRESAS
 				String idpe = request.getParameter("");
 				String raz = request.getParameter("");
 				String rucc = request.getParameter("");

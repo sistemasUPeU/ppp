@@ -65,5 +65,29 @@ function registrar() {
 	data += "&act=" + $("#actividad").val();
 	data += "&car=" + $("#cargo").val();
 	
+	//Registro vacante
+	data += "&arTrabajo=" + $("#areaT").val();
+	data += "&cantidad=" +  $("#cant").val();
+	data += "&horario=" + $("#horario").val();
+	data += "&f_ini=" + $("#fec_ini").val();
+	data += "&f_fin=" + $("#fec_fin").val();
+	data += "&h_ini=" + $("#H_inic").val();
+	data += "&h_fin=" + $("#H_fin").val();
+	data += "&sueldo=" + $("#suel").val();
+	data += "&linia=" + $("#lineas").val();
+	
+	alert(data);
+	$.post(url,data, function(objJson) {
+		
+		swal({
+			title : "Registrado correctamente!",
+			text : "Espere la confirmación del Supervisor de Practicas.!",
+			confirmButtonColor : "#66BB6A",
+			type : "success"
+		});
+		
+	});
+	
+	
 };
 

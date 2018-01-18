@@ -7,15 +7,17 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="form-group">
-					<label>Area de tabajo: <span class="text-danger">*</span></label> <input
-						type="text" name="nombre" class="form-control required"
+					<label>Area de tabajo: <span class="text-danger">*</span></label>
+					 <input
+						type="text" id="areaT" name="nombre" class="form-control required"
 						placeholder="Area de trabajo.....">
 				</div>
 			</div>
 			<div class="col-md-1">
 				<div class="form-group">
-					<label>Cantidad: <span class="text-danger">*</span></label> <select
-						name="Genero" data-placeholder="Choose a Ciclo..."
+					<label>Cantidad: <span class="text-danger">*</span></label>
+					 <select
+						name="Genero" id="cant" data-placeholder="Choose a Ciclo..."
 						class="form-control required">
 						<option>Seleccionar</option>
 						<option value="1">1</option>
@@ -28,7 +30,8 @@
 			</div>
 			<div class="col-md-4">
 				<div class="form-group">
-					<label>Horario<span class="text-danger">*</span></label> <input
+					<label>Horario<span class="text-danger">*</span></label> 
+					<input id="horario"
 						type="text" name="dni" class="form-control required"
 						placeholder="doc. de identidad">
 				</div>
@@ -38,7 +41,7 @@
 					<label>Fecha Inicio<span class="text-danger">*</span></label>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="icon-calendar"></i></span>
-						<input type="text" class="form-control pickadate-accessibility"
+						<input type="text" id="fec_ini" class="form-control pickadate-accessibility"
 							placeholder="Fecha Inicio&hellip;">
 					</div>
 				</div>
@@ -48,36 +51,39 @@
 					<label>Fecha Fin<span class="text-danger">*</span></label>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="icon-calendar"></i></span>
-						<input type="text" class="form-control pickadate-accessibility"
+						<input type="text"  id="fec_fin" class="form-control pickadate-accessibility"
 							placeholder="Fin Convenio&hellip;">
 					</div>
 				</div>
 			</div>
 			<div class="col-md-2">
 				<div class="form-group">
-					<label>Hora Inicio<span class="text-danger">*</span></label> <input
+					<label>Hora Inicio<span class="text-danger">*</span></label> 
+					<input id="H_inic"
 						type="time" name="celular" class="form-control required"
 						placeholder="numero de celular">
 				</div>
 			</div>
 			<div class="col-md-2">
 				<div class="form-group">
-					<label>Hora Fin<span class="text-danger">*</span></label> <input
+					<label>Hora Fin<span class="text-danger">*</span></label>
+					 <input id="H_fin"
 						type="time" name="celular" class="form-control required"
 						placeholder="numero de celular">
 				</div>
 			</div>
 			<div class="col-md-2">
 				<div class="form-group">
-					<label>Sueldo<span class="text-danger">*</span></label> <input
-						type="number" name="celular" class="form-control required"
-						placeholder="numero de celular">
+					<label>Sueldo<span class="text-danger">*</span></label> 
+					<input id="suel"
+						type="number" name="sueldo" class="form-control required"
+						placeholder="Sueldo">
 				</div>
 			</div>
 
 			<div class="col-md-6">
 				<div  id="llenarlineas" class="form-group required">
-					<label class="control-label">Lineas Academicas</label> <select
+					<label class="control-label">Lineas Academicas</label><select
 						id="lineas" data-placeholder="Lista de empresasEmpresas" class="select">
 						<!-- Aqui va combo -->
 					</select>

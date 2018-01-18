@@ -58,7 +58,7 @@
 <!-- 				</fieldset> -->
 
 
-				<button type="button" id="Boton" 
+				<button type="button" id="Boton" onclick="registrar();"
 					class="btn btn-primary stepy-finish R-EmpresaPaso1">
 					Registrar <i class="icon-check position-right"></i>
 				</button>
@@ -72,14 +72,14 @@
 	src="<c:url value='resources/plugin2/assets/js/core/libraries/jquery.min.js'/>"></script>
 <script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
 <script type="text/javascript">
-	$('#Boton').on('click', function() {
+	/*$('#Boton').on('click', function() {
 		swal({
 			title : "Registrado correctamente!",
 			text : "Espere la confirmación del Supervisor de Practicas.!",
 			confirmButtonColor : "#66BB6A",
 			type : "success"
 		});
-	});
+	});*/
 </script>
 
 </html>
