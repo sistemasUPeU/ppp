@@ -83,11 +83,11 @@
 								<h5 class="content-group-lg">Gestion de PPP</h5>
 							</div>
 
+
 							<div class="form-group has-feedback has-feedback-left">
 								<input type="text" name="username" class="form-control"
 									placeholder="Username">
 								<div class="form-control-feedback">
-
 									<i class="icon-user text-muted"></i>
 								</div>
 							</div>

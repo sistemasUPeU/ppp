@@ -26,8 +26,11 @@
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/bootstrap_multiselect.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/ui/moment/moment.min.js'/>"></script>
 		
-		<%-- 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/dashboard.js'/>"></script> --%>
-		<!-- /theme JS files -->
+	<!-- Para alertas -->
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/notifications/bootbox.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/notifications/sweet_alert.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/select2.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_modals.js'/>"></script>
 	
 	
 		<!-- Theme JS files -->
@@ -36,16 +39,19 @@
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jasny_bootstrap.min.js'/>"></script>
 		
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/ui/fullcalendar/fullcalendar.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/visualization/echarts/echarts.js'/>"></script>
+
+		
+	
+		<!-- /theme JS files -->
+		
+		
 		<!-- para wizard -->
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/validation/validate.min.js'/>"></script>
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/user_pages_profile.js'/>"></script>
 		
-		<!-- Para alertas -->
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/notifications/bootbox.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/notifications/sweet_alert.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/select2.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_modals.js'/>"></script>
-	
 
 		<!-- /theme JS files -->
 	

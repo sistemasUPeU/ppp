@@ -48,7 +48,7 @@ function listarSeguro() {
 
 function registrar() {
 	
-	var url = "rp?opc=registrarp";
+	var url = "rp?opc=Registro";
 	// REPRESENTANTE
 	var data = "&nom=" + $("#nombreRepre").val();
 	data += "&ape=" +  $("#ape").val();
@@ -78,14 +78,24 @@ function registrar() {
 	
 	alert(data);
 	$.post(url,data, function(objJson) {
+		var rspt = objJson.abl;
+		console.log(rspt);
 		
-		swal({
-			title : "Registrado correctamente!",
-			text : "Espere la confirmación del Supervisor de Practicas.!",
-			confirmButtonColor : "#66BB6A",
-			type : "success"
-		});
-		
+		if(rspt == 1){
+			swal({
+				title : "Registrado correctamente!",
+				text : "Espere la confirmación del Supervisor de Practicas.!",
+				confirmButtonColor : "#66BB6A",
+				type : "success"
+			});
+		}else{
+			swal({
+	            title: "For your information",
+	            text: "This is some sort of a custom alert",
+	            confirmButtonColor: "#2196F3",
+	            type: "info"
+	        });
+		}
 	});
 	
 	

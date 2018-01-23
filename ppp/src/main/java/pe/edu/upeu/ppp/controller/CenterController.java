@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import pe.edu.upeu.ppp.entity.CUserDTO;
 import pe.edu.upeu.ppp.service.EmpresaService;
 import pe.edu.upeu.ppp.service.VacanteService;
 @Controller
@@ -55,6 +56,14 @@ public class CenterController {
 		//HttpSession session = request.getSession(true);
 		PrintWriter out = response.getWriter();
 		String opc = request.getParameter("opc");
+		
+		String IDPERIODO = ((CUserDTO) authentication.getPrincipal()).getidperiodo();
+		String IDALUMNO = ((CUserDTO) authentication.getPrincipal()).IDUSER();
+		String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
+		String CICLO = ((CUserDTO) authentication.getPrincipal()).getCiclo();
+		
+		
+		
 		try {
 			switch (opc) {
 
@@ -67,28 +76,46 @@ public class CenterController {
 			case "Registro":
 
 				// REPRESENTANTE
-				String nom = request.getParameter("");
-				String ape = request.getParameter("");
-				String dnii = request.getParameter("");
-				String cel = request.getParameter("");
-				String cor = request.getParameter("");
-				String genero = request.getParameter("");
+				String nom = request.getParameter("nom");
+				String ape = request.getParameter("ape");
+				String dnii = request.getParameter("dnii");
+				String cel = request.getParameter("cel");
+				String cor = request.getParameter("cor");
+				String genero = request.getParameter("gen");
 				
 				//EMPRESAS
-				String idpe = request.getParameter("");
-				String raz = request.getParameter("");
-				String rucc = request.getParameter("");
-				String direc = request.getParameter("");
-				String seg = request.getParameter("");
-				String act = request.getParameter("");
-				String car = request.getParameter("");
-				String idal = request.getParameter("");
-				String idrol = request.getParameter("");
-				String cic = request.getParameter("");
-				// cO.convenio(p_idperiodo,p_razonsocial,p_ruc,p_direccion,p_seguro,p_actividad,p_cargo,p_idalumno);
-				empredao.RegEmpresa(nom, ape, dnii, cel, cor, genero, idpe.trim(), raz, rucc, direc, seg, act, car,
-						idal.trim(), idrol.trim(), cic);
-
+				String raz = request.getParameter("raz");
+				String rucc = request.getParameter("rucc");
+				String direc = request.getParameter("direc");
+				String seg = request.getParameter("seg");
+				String act = request.getParameter("act");
+				String car = request.getParameter("car");
+				
+				//Registro vacante
+				String arTrabajo = request.getParameter("arTrabajo");
+				String cantidad = request.getParameter("cantidad");
+				String horario = request.getParameter("horario");
+				String f_ini = request.getParameter("f_ini");
+				String f_fin = request.getParameter("f_fin");
+				String h_ini = request.getParameter("h_ini");
+				String h_fin = request.getParameter("h_fin");
+				String sueldo = request.getParameter("sueldo");
+				//String linia = request.getParameter("linia");
+				
+				int a =	empredao.RegEmpresa(nom, ape, dnii, cel,
+						cor, genero, car, IDPERIODO, raz,
+						rucc, direc, seg, act, IDALUMNO, IDROL, 
+						CICLO, arTrabajo, cantidad, horario, f_ini,
+									f_fin, h_ini, h_fin, sueldo, "1");
+				
+				if(a!=0) {
+					rpta.put("abl", 1);
+				}else {
+					rpta.put("abl", 0);
+				}
+				
+				System.out.println("hola : "+ rpta);
+				
 				break;
 
 			case "Newvacante":

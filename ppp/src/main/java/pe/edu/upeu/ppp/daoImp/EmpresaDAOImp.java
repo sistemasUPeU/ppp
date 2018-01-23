@@ -49,13 +49,13 @@ public class EmpresaDAOImp implements EmpresaDAO {
 		String sql ="";
 		int x = 0;
 		try {
-			sql = "{EXE PA_REGS_EMPRESA_P1_AND_P2(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+			sql = "{CALL PA_REGS_EMPRESA_P1_AND_P2(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
 			x = jt.update(sql , P_NOMBRE , P_APELLIDOS , P_DNI , P_CELULAR , P_CORREO , P_GENERO,
 					 P_CARGO, P_IDPERIODO , P_RAZONSOCIAL, P_RUC , P_DIRECCION , P_SEGURO, P_ACTIVIDAD,
 					P_IDALUMNO  , P_IDROL, P_CICLO , P_AREAWK, P_CANTIDAD ,P_HORARIO , P_FECHA_INI , P_FECHA_FIN , P_H_INI , P_H_FIN,
 					P_SUELDO , P_idLinea );
 		} catch (Exception e) {
-			System.out.println("error en comvenio dao implement:" + e);
+			System.out.println("error en RegEmpresa dao implement:" + e);
 		}
 		return x;
 	}
