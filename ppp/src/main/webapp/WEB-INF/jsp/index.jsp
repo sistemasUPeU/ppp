@@ -40,20 +40,42 @@
 			<div class="content-wrapper">
 
 				<!-- Page header -->
-				<div class="page-header page-header-default">
-					<div class="page-header-content">
-						<div class="page-title">
-							<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Home</span> - Dashboard</h4>
-						</div>
-					</div>
+				
+				<div class="content-group">
+								<div class="page-header page-header-default has-cover " 
+								style="border: 1px solid #ddd; border-bottom: 0;">
+									<div class="page-header-content">
+										<div class="page-title">
+											<h5>
+												<i class="icon-arrow-left52 position-left"></i>
+												<span class="text-semibold">Bienvenido al Sistema de praciticas pre - profesionales</span> - UPeU
+												<small class="display-block">Se muestra la fecha de sus presentes practicas</small>
+											</h5>
+										</div>
 
-					<div class="breadcrumb-line">
-						<ul class="breadcrumb">
-							<li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
-							<li class="active">Dashboard</li>
-						</ul>
-					</div>
-				</div>
+										<div class="heading-elements">
+											<form class="heading-form" action="#">
+												<div class="form-group">
+													<div class="daterange-custom" id="reportrange">
+														<div class="daterange-custom-display"></div>
+														<span class="badge badge-success">*</span>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+
+									<div class="breadcrumb-line">
+										<ul class="breadcrumb">
+											<li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
+											<li><a href="components_page_header.html">Current</a></li>
+											<li class="active">Perfil</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+				
+				
 				<!-- /page header -->
 
 

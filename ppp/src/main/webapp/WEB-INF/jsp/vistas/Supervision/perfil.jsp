@@ -1,37 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-
-
 <body>
-
-
-
 	<!-- Page container -->
 	<div class="page-container">
 
 		<!-- Page content -->
 		<div class="page-content">
-
-			
-
-
 			<!-- Main content -->
 			<div class="content-wrapper">
 
 				
 				<!-- Cover area -->
 				<div class="profile-cover">
-					<div class="profile-cover-img" style="background-image: url(assets/images/demo/cover2.jpg)"></div>
+					<div class="profile-cover-img" style="background-image: url(resources/plugin2/assets/images/coverflow.jpg)"    ></div>
 					<div class="media">
 						<div class="media-left">
 							<a href="#" class="profile-thumb">
-								<img src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>" class="img-circle img-md" alt="">
+								<img src="<c:url value='resources/imagenes/1.png'/>" class="img-circle img-md" alt="">
 							</a>
 						</div>
 
@@ -39,12 +31,7 @@
 				    		<h1>Hanna Dorman <small class="display-block">UX/UI designer</small></h1>
 						</div>
 
-						<div class="media-right media-middle">
-							<ul class="list-inline list-inline-condensed no-margin-bottom text-nowrap">
-								<li><a href="#" class="btn btn-default"><i class="icon-file-picture position-left"></i> Cover image</a></li>
-								
-							</ul>
-						</div>
+						
 					</div>
 				</div>
 				<!-- /cover area -->
@@ -59,7 +46,7 @@
 					<div class="navbar-collapse collapse" id="navbar-filter">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="#activity" data-toggle="tab"><i class="icon-menu7 position-left"></i> Activity</a></li>
-							<li><a href="#schedule" data-toggle="tab"><i class="icon-calendar3 position-left"></i> Schedule <span class="badge badge-success badge-inline position-right">32</span></a></li>
+							
 							<li><a href="#settings" data-toggle="tab"><i class="icon-cog3 position-left"></i> Settings</a></li>
 						</ul>
 
@@ -91,7 +78,9 @@
 												<!-- Sales stats -->
 												<div class="timeline-row">
 													<div class="timeline-icon">
-														<a href="#"><img src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>" alt=""></a>
+														<div class="bg-info-400">
+															<i class="icon-comment-discussion"></i>
+														</div>
 													</div>
 
 													<div class="panel panel-flat timeline-content">
@@ -108,7 +97,8 @@
 
 														<div class="panel-body">
 															<div class="chart-container">
-																<div class="chart has-fixed-height" id="sales"></div>
+																<!--<div class="chart has-fixed-height" id="sales"></div>-->   
+																<h1>a qui van a ir graficos</h1>
 															</div>
 														</div>
 													</div>
@@ -119,7 +109,9 @@
 												<!-- Blog post -->
 												<div class="timeline-row">
 													<div class="timeline-icon">
-														<img src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>" alt="">
+														<div class="bg-warning-400">
+															<i class="icon-cash3"></i>
+														</div>
 													</div>
 
 													<div class="panel panel-flat timeline-content">
@@ -357,7 +349,7 @@
 																	</div>
 
 																	<div class="media-right">
-																		<a href="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>">
+																		<a href="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>"></a>
 																			<img src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>" class="img-circle img-md" alt="">
 																		</a>
 																	</div>
@@ -365,7 +357,7 @@
 
 																<li class="media">
 																	<div class="media-left">
-																		<a href="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>">
+																		<a href="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>"></a>
 																			<img src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>" class="img-circle img-md" alt="">
 																		</a>
 																	</div>
@@ -383,16 +375,16 @@
 																	</div>
 
 																	<div class="media-right">
-																		<a href="assets/images/placeholder.jpg">
-																			<img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+																		<a href="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>">
+																			<img src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>" class="img-circle img-md" alt="">
 																		</a>
 																	</div>
 																</li>
 
 																<li class="media">
 																	<div class="media-left">
-																		<a href="assets/images/placeholder.jpg">
-																			<img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+																		<a href="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>">
+																			<img src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>" class="img-circle img-md" alt="">
 																		</a>
 																	</div>
 
@@ -408,8 +400,8 @@
 																	</div>
 
 																	<div class="media-right">
-																		<a href="assets/images/placeholder.jpg">
-																			<img src="assets/images/placeholder.jpg" class="img-circle img-md" alt="">
+																		<a href="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>">
+																			<img src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>" class="img-circle img-md" alt="">
 																		</a>
 																	</div>
 																</li>
@@ -441,50 +433,7 @@
 
 									</div>
 
-									<div class="tab-pane fade" id="schedule">
-
-										<!-- Available hours -->
-										<div class="panel panel-flat">
-											<div class="panel-heading">
-												<h6 class="panel-title">Available hours</h6>
-												<div class="heading-elements">
-													<ul class="icons-list">
-								                		<li><a data-action="collapse"></a></li>
-								                		<li><a data-action="reload"></a></li>
-								                		<li><a data-action="close"></a></li>
-								                	</ul>
-							                	</div>
-											</div>
-
-											<div class="panel-body">
-												<div class="chart-container">
-													<div class="chart has-fixed-height" id="plans"></div>
-												</div>
-											</div>
-										</div>
-										<!-- /available hours -->
-
-
-										<!-- Calendar -->
-										<div class="panel panel-flat">
-											<div class="panel-heading">
-												<h6 class="panel-title">My schedule</h6>
-												<div class="heading-elements">
-													<ul class="icons-list">
-								                		<li><a data-action="collapse"></a></li>
-								                		<li><a data-action="reload"></a></li>
-								                		<li><a data-action="close"></a></li>
-								                	</ul>
-							                	</div>
-											</div>
-
-											<div class="panel-body">
-												<div class="schedule"></div>
-											</div>
-										</div>
-										<!-- /calendar -->
-
-									</div>
+									
 
 									<div class="tab-pane fade" id="settings">
 
@@ -728,7 +677,6 @@
 
 								<div class="list-group no-border no-padding-top">
 									<a href="#" class="list-group-item"><i class="icon-user"></i> My profile</a>
-									<a href="#" class="list-group-item"><i class="icon-cash3"></i> Balance</a>
 									<a href="#" class="list-group-item"><i class="icon-users"></i> Friends</a>
 									<div class="list-group-divider"></div>
 									<a href="#" class="list-group-item"><i class="icon-calendar3"></i> Events <span class="badge bg-teal-400 pull-right">48</span></a>
@@ -772,26 +720,6 @@
 							</div>
 							<!-- /share your thoughts -->
 
-
-							<!-- Balance chart -->
-							<div class="panel panel-flat">
-								<div class="panel-heading">
-									<h6 class="panel-title">Balance changes</h6>
-									<div class="heading-elements">
-										<span class="heading-text"><i class="icon-arrow-down22 text-danger"></i> <span class="text-semibold">- 29.4%</span></span>
-				                	</div>
-								</div>
-
-								<div class="panel-body">
-									<div class="chart-container">
-										<div class="chart" id="visits" style="height: 300px;"></div>
-									</div>
-		                    	</div>
-							</div>
-							<!-- /balance chart -->
-
-
-							
 						</div>
 					</div>
 					<!-- /user profile -->
@@ -812,7 +740,6 @@
 	<!-- /page container -->
 
 </body>
-
 
 
 </html>

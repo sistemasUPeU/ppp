@@ -19,21 +19,12 @@
 <title>Gestion de PPP</title>
 
 <!-- Global stylesheets -->
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
-	rel="stylesheet" type="text/css">
-<link
-	href="<c:url value='resources/plugin2/assets/css/icons/icomoon/styles.css'/>"
-	rel="stylesheet" type="text/css">
-<link href="<c:url value='resources/plugin2/assets/css/bootstrap.css'/>"
-	rel="stylesheet" type="text/css">
-<link href="<c:url value='resources/plugin2/assets/css/core.css'/>"
-	rel="stylesheet" type="text/css">
-<link
-	href="<c:url value='resources/plugin2/assets/css/components.css'/>"
-	rel="stylesheet" type="text/css">
-<link href="<c:url value='resources/plugin2/assets/css/colors.css'/>"
-	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"	rel="stylesheet" type="text/css">
+<link	href="<c:url value='resources/plugin2/assets/css/icons/icomoon/styles.css'/>"	rel="stylesheet" type="text/css">
+<link href="<c:url value='resources/plugin2/assets/css/bootstrap.css'/>"	rel="stylesheet" type="text/css">
+<link href="<c:url value='resources/plugin2/assets/css/core.css'/>"	rel="stylesheet" type="text/css">
+<link	href="<c:url value='resources/plugin2/assets/css/components.css'/>"	rel="stylesheet" type="text/css">
+<link href="<c:url value='resources/plugin2/assets/css/colors.css'/>"	rel="stylesheet" type="text/css">
 <!-- /global stylesheets -->
 
 <!-- Core JS files -->
@@ -46,24 +37,29 @@
 <script type="text/javascript"
 	src="<c:url value='resources/plugin2/assets/js/plugins/loaders/blockui.min.js'/>"></script>
 <!-- /core JS files -->
-
-<!-- Theme JS files -->
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
-
 <script type="text/javascript"
 	src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/pages/login.js'/>"></script>
 <!-- /theme JS files -->
 
 </head>
 
-<body class="login-container bg-slate-800">
+
+
+<body class="login-container">
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img src="<c:url value='resources/plugin2/assets/images/logo_icon_light.png'/>" alt=""></a>
+		</div>
+
+		</div>
+	<!-- /main navbar -->
+
 
 	<!-- Page container -->
 	<div class="page-container">
-		<br>
+
 		<!-- Page content -->
 		<div class="page-content">
 
@@ -73,47 +69,34 @@
 				<!-- Content area -->
 				<div class="content">
 
-					<!-- Advanced login -->
-					<form action="login" method="POST" >
+					<!-- Simple login form -->
+					<form action="login" method="POST">
 						<div class="panel panel-body login-form">
 							<div class="text-center">
-								<div class="icon-object border-warning-400 text-warning-400">
-									<i class="icon-people"></i>
-								</div>
-								<h5 class="content-group-lg">Gestion de PPP</h5>
+								<div class="icon-object border-slate-300 text-slate-300"><i class="icon-home2"></i></div>
+								<h5 class="content-group">Gestion de Practicas Pre -  Profesionales</h5>
 							</div>
 
-
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="text" name="username" class="form-control"
-									placeholder="Username">
+								<input type="text" name="username"  class="form-control" placeholder="Username">
 								<div class="form-control-feedback">
 									<i class="icon-user text-muted"></i>
 								</div>
 							</div>
-							
+
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="password" name="password" class="form-control"
-									placeholder="Password">
+								<input type="password" name="password" class="form-control" placeholder="Password">
 								<div class="form-control-feedback">
 									<i class="icon-lock2 text-muted"></i>
 								</div>
 							</div>
 
-							<div class="form-group login-options">
-								<div class="row">
-									<div class="col-sm-6">
-										<label class="checkbox-inline"> <input type="checkbox"
-											class="styled" checked="checked"> Remember
-										</label>
-									</div>
-
-									<div class="col-sm-6 text-right">
-										<a href="login_password_recover.html">Forgot password?</a>
-									</div>
-								</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block">Ingresar <i class="icon-circle-right2 position-right"></i></button>
+								<input type="hidden" name="${_csrf.parameterName}"	value="${_csrf.token}" />
 							</div>
 
+							<!-- if de cierre de session -->
 							<div class="row margin">
 								<div class="input-field col s12">
 									<c:if test="${not empty error}">
@@ -136,17 +119,16 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<button type="submit" class="btn bg-blue btn-block">
-									Ingresar <i class="icon-circle-right2 position-right"></i> <input
-										type="hidden" name="${_csrf.parameterName}"
-										value="${_csrf.token}" />
-								</button>
-							</div>
-
 						</div>
 					</form>
-					<!-- /advanced login -->
+					<!-- /simple login form -->
+
+
+					<!-- Footer -->
+					<div class="footer text-center">
+	                  &copy; 2017. <a href="#">Sistema de Practicas Pre-Profesionales</a> by <a href="https://www.facebook.com/AlphaTeamUPeU/" target="_blank">Alpha Team - UPeU</a>
+                    </div>
+					<!-- /footer -->
 
 				</div>
 				<!-- /content area -->
@@ -159,5 +141,8 @@
 
 	</div>
 	<!-- /page container -->
+
 </body>
+
+
 </html>

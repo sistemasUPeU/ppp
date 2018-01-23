@@ -45,7 +45,7 @@ public class HomeController {
 		if (logout != null) {
 			model.addObject("msg", "Has cerrado sesión.");
 		}
-		model.setViewName("login");
+		model.setViewName("loginHome");
 		
 		return model;
 	}
