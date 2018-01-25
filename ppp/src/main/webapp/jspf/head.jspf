@@ -11,52 +11,6 @@
 		<link href="<c:url value='resources/plugin2/assets/css/colors.css'/>" rel="stylesheet" type="text/css">
 		<!-- /global stylesheets -->
 	
-		<!-- Core JS files -->
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/loaders/pace.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jquery.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/bootstrap.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/loaders/blockui.min.js'/>"></script>
-		<!-- /core JS files -->
-	
-		<!-- Theme JS files -->
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/select2.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/ui/moment/moment.min.js'/>"></script>		
-		
-		
-		<!-- Theme for home bar JS files -->
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/switchery.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/ui/moment/moment.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/daterangepicker.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/select2.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/bootstrap_multiselect.js'/>"></script>
-			
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/visualization/echarts/echarts.js'/>"></script>
-		
-		
-		<!-- Theme JS files -->
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/velocity/velocity.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/velocity/velocity.ui.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/buttons/spin.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/buttons/ladda.min.js'/>"></script>
-	
-	
-		<!-- Para alertas -->
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/notifications/sweet_alert.min.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_modals.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_page_header.js'/>"></script>
-	
-	
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
-<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_buttons.js'/>"></script> --%>
-		
-		
-		
-		<!-- /theme JS files -->
-	
-	   <!-- JS PERSONALES	 -->
-	    <script src="<c:url value='resources/js/getPerfil.js'/>"></script>
-	
 
+	  
 

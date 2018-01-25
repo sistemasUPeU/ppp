@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-
 		
 </head>
 
@@ -116,6 +115,7 @@
 					<!-- area de panelbars -->
 					<div class="row">
 						<div class="col-md-6">
+							
 							<div id="Notify" class="panel panel-callout">
 								<div class="panel-heading bg-warning">
 									<h6 class="panel-title">
@@ -137,7 +137,7 @@
 										
 										<!-- data table -->
 								
-										<table class="table datatable-select-basic">
+											<table class="table datatable-responsive">
 							<thead>
 								<tr>
 									<th>First Name</th>
@@ -149,11 +149,35 @@
 								</tr>
 							</thead>
 							<tbody>
+								
 								<tr>
-									<td>Marth</td>
-									<td><a href="#">Enright</a></td>
-									<td>Traffic Court Referee</td>
-									<td>22 Jun 1972</td>
+									<td>Delma</td>
+									<td>Bonds</td>
+									<td>Lead Brand Manager</td>
+									<td>21 Dec 1968</td>
+									<td><span class="label label-info">Pending</span></td>
+									<td class="text-center">
+										<ul class="icons-list">
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="icon-menu9"></i>
+												</a>
+
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
+													<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
+													<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
+												</ul>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>Coy</td>
+									<td>Wollard</td>
+									<td>Customer Service Operator</td>
+									<td>12 Oct 1982</td>
 									<td><span class="label label-success">Active</span></td>
 									<td class="text-center">
 										<ul class="icons-list">
@@ -172,32 +196,10 @@
 									</td>
 								</tr>
 								<tr>
-									<td>Jackelyn</td>
-									<td>Weible</td>
-									<td><a href="#">Airline Transport Pilot</a></td>
-									<td>3 Oct 1981</td>
-									<td><span class="label label-default">Inactive</span></td>
-									<td class="text-center">
-										<ul class="icons-list">
-											<li class="dropdown">
-												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-													<i class="icon-menu9"></i>
-												</a>
-
-												<ul class="dropdown-menu dropdown-menu-right">
-													<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
-													<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
-													<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
-												</ul>
-											</li>
-										</ul>
-									</td>
-								</tr>
-								<tr>
-									<td>Aura</td>
-									<td>Hard</td>
-									<td>Business Services Sales Representative</td>
-									<td>19 Apr 1969</td>
+									<td>Maxwell</td>
+									<td>Maben</td>
+									<td>Regional Representative</td>
+									<td>25 Feb 1988</td>
 									<td><span class="label label-danger">Suspended</span></td>
 									<td class="text-center">
 										<ul class="icons-list">
@@ -215,7 +217,8 @@
 										</ul>
 									</td>
 								</tr>
-								</tbody>
+								
+							</tbody>
 						</table>
 					
 								
@@ -457,6 +460,7 @@
 	}
 	
 </script>
-<script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
 
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/datatables_responsive.js'/>"></script>
+<script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
 </html>
