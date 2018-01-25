@@ -36,9 +36,15 @@
 	src="<c:url value='resources/plugin2/assets/js/core/libraries/bootstrap.min.js'/>"></script>
 <script type="text/javascript"
 	src="<c:url value='resources/plugin2/assets/js/plugins/loaders/blockui.min.js'/>"></script>
+	
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/velocity/velocity.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/velocity/velocity.ui.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/ui/prism.min.js'/>"></script>
+	
 <!-- /core JS files -->
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
+	<script type="text/javascript"	src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/animations_velocity_examples.js'/>"></script>
 <!-- /theme JS files -->
 
 </head>
@@ -52,7 +58,29 @@
 		<div class="navbar-header">
 			<a class="navbar-brand" href="index.html"><img src="<c:url value='resources/plugin2/assets/images/logo_icon_light.png'/>" alt=""></a>
 		</div>
+<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="#">
+						<i class="icon-display4"></i> <span class="visible-xs-inline-block position-right"> Go to website</span>
+					</a>
+				</li>
 
+				<li>
+					<a href="#">
+						<i class="icon-user-tie"></i> <span class="visible-xs-inline-block position-right"> Contact admin</span>
+					</a>
+				</li>
+
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-cog3"></i>
+						<span class="visible-xs-inline-block position-right"> Options</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
 		</div>
 	<!-- /main navbar -->
 

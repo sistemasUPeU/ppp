@@ -1,5 +1,6 @@
 package pe.edu.upeu.ppp.daoImp;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import pe.edu.upeu.ppp.dao.VacanteDAO;
 @Repository("VacanteDAO")
 public class VacanteDAOImp implements VacanteDAO {
+	
 	String sql;
 	@Autowired
 	JdbcTemplate jt;
@@ -38,6 +40,21 @@ public class VacanteDAOImp implements VacanteDAO {
 		}
 		
 		return x;
+	}
+
+
+	@Override
+	public int notifyVaca(int id) {
+		int a = 0;
+		sql = "";
+		List<Map<String, Object>> oa= jt.queryForList(sql, id);;
+		 
+		if(oa.isEmpty()) {
+			a =1;
+		}else {
+			a = 0; 
+		}
+		return a;
 	}
 
 }

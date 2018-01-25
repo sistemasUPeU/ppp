@@ -29,4 +29,9 @@ public class VacanteServiceImpl implements VacanteService {
 		return vacanteDAO.NewVacante(P_IDPERIODO, P_IDREPRESENTANTE, P_AREATRABAJO, P_CANTIDAD, P_HORARIO, P_FECHAINICIO, P_FECHAFIN, P_HORAINICIO, P_HORAFIN, P_SUELDO, P_IDLINEASP, P_IDFOLDERPRACTICA, P_IDTRABAJADOR, P_IDALUMNO, P_IDROL, P_CICLO, P_TIPOPRACTICA, P_OBSERVACIONES);
 	}
 
+	@Override
+	public int notifyVaca(int id) {
+		return vacanteDAO.notifyVaca(id);
+	}
+
 }

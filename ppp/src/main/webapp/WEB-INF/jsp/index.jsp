@@ -12,9 +12,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Gestion de ppp</title>
 	 <%@ include file="../../jspf/head.jspf" %>
+	 	
+<%-- 	 <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/animations_velocity_examples.js'/>"></script> --%>
+		
 </head>
 
-<body>
+<body class="navbar-top">
 
 	<!-- Main navbar -->
 	
@@ -118,7 +121,18 @@
 	
 	<!-- /page container -->
 	
-	
-	
+		<script type="text/javascript">
+							   window.onbeforeunload = function (e) {
+			        var e = e || window.event;
+							   if (e) {
+							     e.returnValue = 'Se perderan todos los datos que no hayas guardado';
+							   }
+			    }
+
+							   $.ajaxPrefilter(function( options, originalOptions, jqXHR ) { options.async = true; });
+							   
+			    </script>	
+
 </body>
+
 </html>

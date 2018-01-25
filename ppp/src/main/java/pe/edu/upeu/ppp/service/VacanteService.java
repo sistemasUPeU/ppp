@@ -26,4 +26,6 @@ public interface VacanteService {
 	 		
 	 );
 
+	public int notifyVaca (int id);
+	
 }

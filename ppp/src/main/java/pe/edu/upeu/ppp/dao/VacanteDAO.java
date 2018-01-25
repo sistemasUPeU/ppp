@@ -27,4 +27,8 @@ public interface VacanteDAO {
 			 		String P_OBSERVACIONES
 			 		
 			 );
+	 
+	 
+	 int notifyVaca (int id);
+	 
 }

@@ -58,7 +58,7 @@
 <!-- 				</fieldset> -->
 
 
-				<button type="button" id="Boton" onclick="registrar();"
+				<button type="button" 
 					class="btn btn-primary stepy-finish R-EmpresaPaso1">
 					Registrar <i class="icon-check position-right"></i>
 				</button>

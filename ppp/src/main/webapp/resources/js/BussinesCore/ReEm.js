@@ -5,7 +5,7 @@ $(document).ready(function() {
 });
 
 function ocultar(){
-	$("#ocultar").show();
+	$("#ocultar").show(500);
 	$("#Aparecer").hide();
 }
 
@@ -77,26 +77,26 @@ function registrar() {
 	data += "&linia=" + $("#lineas").val();
 	
 	alert(data);
-	$.post(url,data, function(objJson) {
-		var rspt = objJson.abl;
-		console.log(rspt);
-		
-		if(rspt == 1){
-			swal({
-				title : "Registrado correctamente!",
-				text : "Espere la confirmación del Supervisor de Practicas.!",
-				confirmButtonColor : "#66BB6A",
-				type : "success"
-			});
-		}else{
-			swal({
-	            title: "For your information",
-	            text: "This is some sort of a custom alert",
-	            confirmButtonColor: "#2196F3",
-	            type: "info"
-	        });
-		}
-	});
+//	$.post(url,data, function(objJson) {
+//		var rspt = objJson.abl;
+//		console.log(rspt);
+//		
+//		if(rspt == 1){
+//			swal({
+//				title : "Registrado correctamente!",
+//				text : "Espere la confirmación del Supervisor de Practicas.!",
+//				confirmButtonColor : "#66BB6A",
+//				type : "success"
+//			});
+//		}else{
+//			swal({
+//	            title: "For your information",
+//	            text: "This is some sort of a custom alert",
+//	            confirmButtonColor: "#2196F3",
+//	            type: "info"
+//	        });
+//		}
+//	});
 	
 	
 };
