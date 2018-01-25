@@ -49,7 +49,7 @@
 	
 	
 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_buttons.js'/>"></script>
+<%-- 		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_buttons.js'/>"></script> --%>
 		
 		
 		
