@@ -33,36 +33,25 @@
 							</h4>
 							<!-- sino -->
 							<div class="row">
-								<div class="col-sm-6 col-md-6">
-									<div class="panel panel-body">
-										<div class="media no-margin">
-											<div class="media-body">
-												<h3 class="no-margin text-semibold">Tienes una
-													solicitud de vacante</h3>
-											</div>
+								
+								
+								<div class="row text-center">
+									<div class="col-xs-6">
+										<p><i class="icon-users2 icon-2x display-inline-block text-info"></i></p>
+										<h5 class="text-semibold no-margin">2,345</h5>
+										<span class="text-muted text-size-small">users</span>
+									</div>
 
-											<div class="media-right media-middle">
-												<i class="icon-bubbles4 icon-3x text-blue-400"></i>
-											</div>
-										</div>
+									
+
+									<div class="col-xs-6">
+										<p><i class="icon-cash3 icon-2x display-inline-block text-success"></i></p>
+										<h5 class="text-semibold no-margin">$9,693</h5>
+										<span class="text-muted text-size-small">revenue</span>
 									</div>
 								</div>
-								<div class="col-sm-6 col-md-6">
-									<div class="panel panel-body">
-										<div class="media no-margin">
-											<div class="media-body">
-												<h3 class="no-margin text-semibold">
-													<span>Te quedan - </span>389,438 <span>Horas</span>
-												</h3>
-											</div>
-
-											<div class="media-right media-middle">
-												<i class="icon-bag icon-3x text-danger-400"></i>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+					
+ 							</div> 
 
 
 						</div>
@@ -81,7 +70,7 @@
 									<h3 class="text-semibold">Notificaciones</h3>
 									<p class="mb-15">En el presente apartado se presentan las
 										notificaciones acerca de vacantes o asiganciones existentes</p>
-									<button onclick="Notify();" type="button"
+									<button id="btn_Nb" onclick="Notify();" type="button"
 										class="btn bg-warning btn-ladda btn-ladda-progress"
 										data-style="expand-down">
 										<span class="success-label">Revisar ... !! </span>
@@ -100,7 +89,7 @@
 									<p class="mb-15">En el presente apartado se puede registrar
 										a la empresa en la que se realizaran las practicas</p>
 
-									<button onclick="Regis();" type="button"
+									<button  id="btn_Rvca" onclick="Regis();" type="button"
 										class="btn bg-success btn-ladda btn-ladda-progress"
 										data-style="expand-down">
 										<span class="success-label">Revisar ... !! </span>
@@ -220,14 +209,214 @@
 								
 							</tbody>
 						</table>
-					
+											
 								
 									</div>
 									
+									
+									<div class="row">
+									
+										
+										<!-- User profile -->
+					<div class="row">
+					
+					
+						<div class="col-lg-12">
+							<div class="tabbable">
+								<div class="tab-content">
+									<div class="tab-pane fade in active" id="activity">
+
+										<!-- Timeline -->
+										<div class="timeline timeline-left content-group">
+											<div class="timeline-container">
+												<!-- Date stamp -->
+												<div class="timeline-date text-muted">
+													<i class="icon-history position-left"></i> <span class="text-semibold">Historial de vacantes asignadas
+												</div>
+												<!-- /date stamp -->
+
+												<!-- Invoices -->
+												<div class="timeline-row">
+													<div class="timeline-icon">
+														<div class="bg-warning-400">
+															<i class="icon-cash3"></i>
+														</div>
+													</div>
+
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
+																<div class="panel-body">
+																	<div class="row">
+																		<div class="col-sm-12">
+																			<h6 class="text-semibold no-margin-top">Leonardo Fellini</h6>
+																			<ul class="list list-unstyled">
+																				<li>Invoice #: &nbsp;0028</li>
+																				<li>Issued on: <span class="text-semibold">2015/01/25</span></li>
+																			</ul>
+																		</div>
+
+																		<div class="col-sm-12">
+																			<h6 class="text-semibold text-right no-margin-top">$8,750</h6>
+																			<ul class="list list-unstyled text-right">
+																				<li>Method: <span class="text-semibold">SWIFT</span></li>
+																				<li class="dropdown">
+																					Status: &nbsp;
+																					<a href="#" class="label bg-danger-400 dropdown-toggle" data-toggle="dropdown">Overdue <span class="caret"></span></a>
+																					<ul class="dropdown-menu dropdown-menu-right">
+																						<li class="active"><a href="#"><i class="icon-alert"></i> Overdue</a></li>
+																						<li><a href="#"><i class="icon-alarm"></i> Pending</a></li>
+																						<li><a href="#"><i class="icon-checkmark3"></i> Paid</a></li>
+																						<li class="divider"></li>
+																						<li><a href="#"><i class="icon-spinner2 spinner"></i> On hold</a></li>
+																						<li><a href="#"><i class="icon-cross2"></i> Canceled</a></li>
+																					</ul>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel-footer panel-footer-condensed">
+																	<div class="heading-elements">
+																		<span class="heading-text">
+																			<span class="status-mark border-danger position-left"></span> Due: <span class="text-semibold">2015/02/25</span>
+																		</span>
+
+																		<ul class="list-inline list-inline-condensed heading-text pull-right">
+																			<li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i></a></li>
+																			<li class="dropdown">
+																				<a href="#" class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
+																				<ul class="dropdown-menu dropdown-menu-right">
+																					<li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
+																					<li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
+																					<li class="divider"></li>
+																					<li><a href="#"><i class="icon-file-plus"></i> Edit invoice</a></li>
+																					<li><a href="#"><i class="icon-cross2"></i> Remove invoice</a></li>
+																				</ul>
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+														
+													</div>
+												</div>
+												<!-- /invoices -->
+											</div>
+									    </div>
+									    <!-- /timeline -->
+									</div>
 								</div>
 							</div>
 						</div>
 
+                    
+                    <div class="col-lg-12">
+							<div class="tabbable">
+								<div class="tab-content">
+									<div class="tab-pane fade in active" id="activity">
+
+										<!-- Timeline -->
+										<div class="timeline timeline-left content-group">
+											<div class="timeline-container">
+												
+
+												<!-- Invoices -->
+												<div class="timeline-row">
+													<div class="timeline-icon">
+														<div class="bg-warning-400">
+															<i class="icon-cash3"></i>
+														</div>
+													</div>
+
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
+																<div class="panel-body">
+																	<div class="row">
+																		<div class="col-sm-12">
+																			<h6 class="text-semibold no-margin-top">Leonardo Fellini</h6>
+																			<ul class="list list-unstyled">
+																				<li>Invoice #: &nbsp;0028</li>
+																				<li>Issued on: <span class="text-semibold">2015/01/25</span></li>
+																			</ul>
+																		</div>
+
+																		<div class="col-sm-12">
+																			<h6 class="text-semibold text-right no-margin-top">$8,750</h6>
+																			<ul class="list list-unstyled text-right">
+																				<li>Method: <span class="text-semibold">SWIFT</span></li>
+																				<li class="dropdown">
+																					Status: &nbsp;
+																					<a href="#" class="label bg-danger-400 dropdown-toggle" data-toggle="dropdown">Overdue <span class="caret"></span></a>
+																					<ul class="dropdown-menu dropdown-menu-right">
+																						<li class="active"><a href="#"><i class="icon-alert"></i> Overdue</a></li>
+																						<li><a href="#"><i class="icon-alarm"></i> Pending</a></li>
+																						<li><a href="#"><i class="icon-checkmark3"></i> Paid</a></li>
+																						<li class="divider"></li>
+																						<li><a href="#"><i class="icon-spinner2 spinner"></i> On hold</a></li>
+																						<li><a href="#"><i class="icon-cross2"></i> Canceled</a></li>
+																					</ul>
+																				</li>
+																			</ul>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="panel-footer panel-footer-condensed">
+																	<div class="heading-elements">
+																		<span class="heading-text">
+																			<span class="status-mark border-danger position-left"></span> Due: <span class="text-semibold">2015/02/25</span>
+																		</span>
+
+																		<ul class="list-inline list-inline-condensed heading-text pull-right">
+																			<li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i></a></li>
+																			<li class="dropdown">
+																				<a href="#" class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
+																				<ul class="dropdown-menu dropdown-menu-right">
+																					<li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
+																					<li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
+																					<li class="divider"></li>
+																					<li><a href="#"><i class="icon-file-plus"></i> Edit invoice</a></li>
+																					<li><a href="#"><i class="icon-cross2"></i> Remove invoice</a></li>
+																				</ul>
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+														
+													</div>
+												</div>
+												<!-- /invoices -->
+											</div>
+									    </div>
+									    <!-- /timeline -->
+									</div>
+								</div>
+							</div>
+						</div>
+
+                    
+                    </div>
+					<!-- /user profile -->
+										
+									</div>
+									
+									
+									
+									<button onclick="nsocultar();" style=" text-align: center;" type="button" class="btn bg-danger-400 btn-labeled btn-rounded"><b><i class="icon-switch2"></i></b> Cancelar	</button>
+										
+								</div>
+							</div>
+						</div>
+
+
+
+					<!-- panel de registro -->
 						<div class="col-md-6">
 							<div id="Regis" class="panel panel-callout">
 								<div class="panel-heading bg-success">
@@ -243,6 +432,9 @@
 									</div>
 								</div>
 
+
+
+									
 								<div class="panel-body">
 								
 								<!-- forms -->
@@ -255,10 +447,17 @@
 												<label class="control-label">Empresas</label> <select
 													data-placeholder="Lista de empresasEmpresas" class="select">
 													<!-- Aqui va combo -->
+													<optgroup label="Seleeciona Empresa">
+														<option value="AZ">Arizona</option>
+														<option value="CO">Colorado</option>
+														<option value="ID">Idaho</option>
+														<option value="WY">Wyoming</option>
+													</optgroup>
 												</select>
 
 											</div>
-										
+											
+									
 										
 										</div>
 										<div class="col-md-6">
@@ -266,6 +465,12 @@
 												<label class="control-label">Representante</label> <select
 													data-placeholder="Seguros de Empresa" class="select">
 													<!-- Aqui va combo -->
+													<optgroup label="Seleeciona Empresa">
+														<option value="AZ">Arizona</option>
+														<option value="CO">Colorado</option>
+														<option value="ID">Idaho</option>
+														<option value="WY">Wyoming</option>
+													</optgroup>
 												</select>
 											</div>
 
@@ -280,6 +485,8 @@
 										</div>
 									</div>
 
+
+								
 									<div class="col-md-12" id="ocultar">
 										<span class="label border-left-primary label-striped">Representante
 											de Empresa</span>
@@ -287,120 +494,124 @@
 
 										
 											<br>
-											<div class="row">
-												<div class="col-md-3">
-													<div class="form-group">
-														<label>Nombre: <span class="text-danger">*</span></label>
-														<input type="text" id="nombreRepre" name="nombre"
-															class="form-control required" placeholder="Nombre...">
-													</div>
-												</div>
-
-												<div class="col-md-4">
-													<div class="form-group">
-														<label>Apellidos: <span class="text-danger">*</span></label>
-														<input type="text" id="ape" name="apellido"
-															class="form-control required" placeholder="Apellido...!">
-													</div>
-												</div>
-
-												<div class="col-md-2">
-													<div class="form-group">
-														<label>DNI<span class="text-danger">*</span></label> <input
-															type="number" id="dni" name="dni"
-															class="form-control required"
-															placeholder="doc. de identidad">
-													</div>
-												</div>
-
-												<div class="col-md-2">
-													<div class="form-group">
-														<label>Celular<span class="text-danger">*</span></label> <input
-															type="number" id="cel" name="celular"
-															class="form-control required"
-															placeholder="numero de celular">
-													</div>
-												</div>
-
-												<div class="col-md-3">
-													<div class="form-group">
-														<label>Corre Electronico: <span
-															class="text-danger">*</span></label> <input type="email"
-															id="correo" name="correo" class="form-control required"
-															placeholder="Example@upeu.edu.pe">
-													</div>
-												</div>
-												<div class="col-md-2">
-													<div class="form-group">
-														<label>Genero<span class="text-danger required">*</span></label>
-														<select name="Genero" id="genero"
-															data-placeholder="Genero" class="form-control required">
-															<option>Seleccionar</option>
-															<option value="1">M</option>
-															<option value="2">F</option>
-														</select>
-													</div>
-												</div>
-
-											</div>
-
-											<span class="label border-left-success label-striped"><strong>Registro
-													de Empresa</strong></span>
-
-											<div class="row">
-												<br>
-												<div class="col-md-4">
-													<div class="form-group">
-														<label>Razon Social:<span class="text-danger">*</span></label>
-														<input type="text" id="rasoc" name="rasoc"
-															class="form-control required" placeholder="razon social">
-													</div>
-												</div>
-
-												<div class="col-md-3">
-													<div class="form-group">
-														<label>Direccion:<span class="text-danger">*</span></label>
-														<input type="text" id="direccion" name="direccion"
-															class="form-control required" placeholder="direccion">
-													</div>
-												</div>
-
-												<div class="col-md-4">
-													<div class="form-group">
-														<label>RUC:<span class="text-danger">*</span></label> <input
-															type="text" id="ruc" name="ruc"
-															class="form-control required" placeholder="ruc">
-													</div>
-												</div>
-
-												<div class="col-md-2">
-													<div class="form-group">
-														<label>Cargo:<span class="text-danger">*</span></label> <input
-															type="text" id="cargo" name="cargo"
-															class="form-control required" placeholder="cargo">
-													</div>
-												</div>
-												<div class="col-md-4">
-													<div class="form-group">
-														<label>Actividad: <span class="text-danger">*</span></label>
-														<input type="text" id="actividad" name="actividad"
-															class="form-control required" placeholder="actividad">
-													</div>
-												</div>
-
-												<div class="col-md-4">
-													<div id="llenarseguro" class="form-group required">
-														<label class="control-label">Seguros de Empresa</label> <select
-															id="seguro" data-placeholder="Seguros de Empresa"
-															class="select">
-															<!-- Aqui va combo -->
-														</select>
-
-													</div>
-												</div>
-											</div>
-							
 											
+											<div class="row">
+												
+												<form action="">
+														<div class="row">
+															<div class="col-md-3">
+																<div class="form-group">
+																	<label>Nombre: <span class="text-danger">*</span></label>
+																	<input type="text" id="nombreRepre" name="nombre"
+																		class="form-control required" placeholder="Nombre...">
+																</div>
+															</div>
+			
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label>Apellidos: <span class="text-danger">*</span></label>
+																	<input type="text" id="ape" name="apellido"
+																		class="form-control required" placeholder="Apellido...!">
+																</div>
+															</div>
+			
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label>DNI<span class="text-danger">*</span></label> <input
+																		type="number" id="dni" name="dni"
+																		class="form-control required"
+																		placeholder="doc. de identidad">
+																</div>
+															</div>
+			
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label>Celular<span class="text-danger">*</span></label> <input
+																		type="number" id="cel" name="celular"
+																		class="form-control required"
+																		placeholder="numero de celular">
+																</div>
+															</div>
+			
+															<div class="col-md-3">
+																<div class="form-group">
+																	<label>Corre Electronico: <span
+																		class="text-danger">*</span></label> <input type="email"
+																		id="correo" name="correo" class="form-control required"
+																		placeholder="Example@upeu.edu.pe">
+																</div>
+															</div>
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label>Genero<span class="text-danger required">*</span></label>
+																	<select name="Genero" id="genero"
+																		data-placeholder="Genero" class="form-control required">
+																		<option>Seleccionar</option>
+																		<option value="1">M</option>
+																		<option value="2">F</option>
+																	</select>
+																</div>
+															</div>
+			
+														</div>
+			
+														<span class="label border-left-success label-striped"><strong>Registro
+																de Empresa</strong></span>
+			
+														<div class="row">
+															<br>
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label>Razon Social:<span class="text-danger">*</span></label>
+																	<input type="text" id="rasoc" name="rasoc"
+																		class="form-control required" placeholder="razon social">
+																</div>
+															</div>
+			
+															<div class="col-md-3">
+																<div class="form-group">
+																	<label>Direccion:<span class="text-danger">*</span></label>
+																	<input type="text" id="direccion" name="direccion"
+																		class="form-control required" placeholder="direccion">
+																</div>
+															</div>
+			
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label>RUC:<span class="text-danger">*</span></label> <input
+																		type="text" id="ruc" name="ruc"
+																		class="form-control required" placeholder="ruc">
+																</div>
+															</div>
+			
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label>Cargo:<span class="text-danger">*</span></label> <input
+																		type="text" id="cargo" name="cargo"
+																		class="form-control required" placeholder="cargo">
+																</div>
+															</div>
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label>Actividad: <span class="text-danger">*</span></label>
+																	<input type="text" id="actividad" name="actividad"
+																		class="form-control required" placeholder="actividad">
+																</div>
+															</div>
+			
+															<div class="col-md-4">
+																<div id="llenarseguro" class="form-group required">
+																	<label class="control-label">Seguros de Empresa</label> <select
+																		id="seguro" data-placeholder="Seguros de Empresa"
+																		class="select">
+																		<!-- Aqui va combo -->
+																	</select>
+			
+																</div>
+															</div>
+														</div>
+												</form>										
+											</div>
 									</div>
 									
 									
@@ -442,25 +653,34 @@
 	$(document).ready(function() {
 		$("#Notify").hide();
 		$("#Regis").hide();
-
+		$
 	});
 
 	function Notify() {
 		$("#Notify").show(500);
-
+		$('#btn_Nb').attr("disabled", true);
 	}
 
 	function Regis() {
 		$("#Regis").show(500);
+		$('#btn_Rvca').attr("disabled", true);
 	}
 	
 	function asocultar(){
 		$("#Regis").hide(500);
-		
+		$('#btn_Rvca').attr("disabled", false);
+	}
+	
+	function nsocultar(){
+		$("#Notify").hide(500);
+		$('#btn_Nb').attr("disabled", false);
 	}
 	
 </script>
 
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/datatables_responsive.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_steps.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_buttons.js'/>"></script>
+<%-- 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/user_pages_profile.js'/>"></script> --%>
 <script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
 </html>

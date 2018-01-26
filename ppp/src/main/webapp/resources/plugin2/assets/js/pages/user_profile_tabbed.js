@@ -18,7 +18,7 @@ $(function() {
     // Set paths
     require.config({
         paths: {
-            echarts: 'assets/js/plugins/visualization/echarts'
+            echarts: 'resources/plugin2/assets/js/plugins/visualization/echarts'
         }
     });
 

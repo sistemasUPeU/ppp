@@ -25,15 +25,38 @@
 	
 	<!-- Para alertas -->
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/notifications/sweet_alert.min.js'/>"></script>
-
-
-
-
-
-	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
-	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/animations_velocity_examples.js'/>"></script>
-
-	 <!-- JS PERSONALES	 -->
-	 <script src="<c:url value='resources/js/getPerfil.js'/>"></script>
 	
+			<!-- Theme for home bar JS files -->
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/switchery.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/ui/moment/moment.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/daterangepicker.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/select2.min.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/bootstrap_multiselect.js'/>"></script>
+			
+	
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/wizards/steps.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/select2.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jasny_bootstrap.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/validation/validate.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/extensions/cookie.js'/>"></script>
+	
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/buttons/spin.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/buttons/ladda.min.js'/>"></script>
+	
+	
+	
+	
+	
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/app.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/animations_velocity_examples.js'/>"></script>
+	
+		 <!-- JS PERSONALES	 -->
+		 <script src="<c:url value='resources/js/getPerfil.js'/>"></script>
+	
+	
+	
+		
 	

@@ -121,7 +121,8 @@
 	<!-- /page container -->
 
 	<%@ include file="../../jspf/jsGeneral.jspf"%>
-
+	
+<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_page_header.js'/>"></script>
 	<script type="text/javascript">
 		window.onbeforeunload = function(e) {
 			var e = e || window.event;
