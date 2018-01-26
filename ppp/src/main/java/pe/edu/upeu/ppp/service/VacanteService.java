@@ -1,10 +1,13 @@
 package pe.edu.upeu.ppp.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public interface VacanteService {
-	public List<Map<String,Object>> listarVacantes ();
+	
+	public ArrayList<Map<String, Object>> listarVacantes (int id);
+	
 	public int NewVacante(String P_IDPERIODO,
 	 		String P_IDREPRESENTANTE,
 	 		String P_AREATRABAJO,

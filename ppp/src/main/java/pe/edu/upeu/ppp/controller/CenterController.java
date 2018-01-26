@@ -144,7 +144,14 @@ public class CenterController {
 				break;
 
 			case "Vacantes":
-				listas = vS.listarVacantes();
+				int id = Integer.parseInt(IDALUMNO);
+				mp.put("Vacantes", vS.listarVacantes(id));
+					if(vS.listarVacantes(id).isEmpty()) {
+						mp.put("hay", 1);
+					}else {
+						mp.put("hay", 0);
+					}
+				System.out.println("hola pues" +vS.listarVacantes(id));
 				break;
 			}
 

@@ -1,5 +1,6 @@
 package pe.edu.upeu.ppp.daoImp;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,13 +17,13 @@ public class VacanteDAOImp implements VacanteDAO {
 	@Autowired
 	JdbcTemplate jt;
 	@Override
-	public List<Map<String, Object>> listarVacantes() {
+	public ArrayList<Map<String, Object>> listarVacantes(int id) {
 		try {
-			sql="select p.FECHAINICIO inicio,p.FECHAFIN fin,p.tipo tipo,r.cargo cargo,e.nombre estado,v.AREATRABAJO area,v.cantidad cantidad,v.horario horario,v.horainicio horainicio,v.horafin horafin,v.sueldo sueldo FROM PPP_VACANTES v,PPP_PERIODO p,PPP_REPRESENTANTE r,PPP_ESTADO e";
+			sql="SELECT V.Idvacantes , P.Periodo as Semestre , Em.Razonsocial ,Em.Ruc ,Em.Direccion, U.Apellidos ||', '|| U.Nombre as Representante ,U.Celular , U.Dni, U.Correo, V.Horario , V.Fechainicio || ' - ' || V.Fechafin AS Periodo, V.Horainicio || ' - ' || V.Horafin as Hora , V.Sueldo , V.Areatrabajo FROM PPP_VACANTES V , PPP_EMPRESA EM , PPP_PERIODO P , PPP_REPRESENTANTE RP , Ppp_Usuario u WHERE Em.Idempresa = Rp.Idempresa and V.Idperiodo =  P.Idperiodo and V.Idempresa = Em.Idempresa and Rp.Idrepresentante = U.Idusuario and  V.IDUSUARIO = ? AND V.Idestado = 22 ";
 		} catch (Exception ev) {
 			System.out.println("No lista Vacantes, error:_"+ev);
 		}
-		return jt.queryForList(sql);	
+		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);	
 	}
 
 

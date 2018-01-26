@@ -121,289 +121,224 @@
 
 								<div class="panel-body">
 								
-									<div class="row">
-										<h3>Tienes notificaciones </h3>
-										
+								<div class="row">
+									
+									<h3 id="msj" style="text-align: center;"><strong>Tienes una vacante pendiente </strong> </h3>
+								
 										<!-- data table -->
-								
-											<table class="table datatable-responsive">
-							<thead>
-								<tr>
-									<th>First Name</th>
-									<th>Last Name</th>
-									<th>Job Title</th>
-									<th>DOB</th>
-									<th>Status</th>
-									<th class="text-center">Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								
-								<tr>
-									<td>Delma</td>
-									<td>Bonds</td>
-									<td>Lead Brand Manager</td>
-									<td>21 Dec 1968</td>
-									<td><span class="label label-info">Pending</span></td>
-									<td class="text-center">
-										<ul class="icons-list">
-											<li class="dropdown">
-												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-													<i class="icon-menu9"></i>
-												</a>
-
-												<ul class="dropdown-menu dropdown-menu-right">
-													<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
-													<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
-													<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
-												</ul>
-											</li>
-										</ul>
-									</td>
-								</tr>
-								
-								<tr>
-									<td>Coy</td>
-									<td>Wollard</td>
-									<td>Customer Service Operator</td>
-									<td>12 Oct 1982</td>
-									<td><span class="label label-success">Active</span></td>
-									<td class="text-center">
-										<ul class="icons-list">
-											<li class="dropdown">
-												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-													<i class="icon-menu9"></i>
-												</a>
-
-												<ul class="dropdown-menu dropdown-menu-right">
-													<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
-													<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
-													<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
-												</ul>
-											</li>
-										</ul>
-									</td>
-								</tr>
-								<tr>
-									<td>Maxwell</td>
-									<td>Maben</td>
-									<td>Regional Representative</td>
-									<td>25 Feb 1988</td>
-									<td><span class="label label-danger">Suspended</span></td>
-									<td class="text-center">
-										<ul class="icons-list">
-											<li class="dropdown">
-												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-													<i class="icon-menu9"></i>
-												</a>
-
-												<ul class="dropdown-menu dropdown-menu-right">
-													<li><a href="#"><i class="icon-file-pdf"></i> Export to .pdf</a></li>
-													<li><a href="#"><i class="icon-file-excel"></i> Export to .csv</a></li>
-													<li><a href="#"><i class="icon-file-word"></i> Export to .doc</a></li>
-												</ul>
-											</li>
-										</ul>
-									</td>
-								</tr>
-								
-							</tbody>
-						</table>
-											
+								<div class="row" id="contTable" >
+									
+										<table id="tabla" class="table datatable-responsive">
+													<thead>
+														<tr>
+															<th>Empresa</th>
+															<th>Ruc</th>
+															<th>Horario</th>
+															<th>Sueldo</th>
+															<th>Estado</th>
+															<th class="text-center">Opciones</th>
+														</tr>
+													</thead>
+												<tbody id="data">
+												<!-- data for js table -->
+												
+											</tbody>
+										</table>
+										
+									</div>
 								
 									</div>
 									
 									
 									<div class="row">
-									
 										
 										<!-- User profile -->
-					<div class="row">
-					
-					
-						<div class="col-lg-12">
-							<div class="tabbable">
-								<div class="tab-content">
-									<div class="tab-pane fade in active" id="activity">
-
-										<!-- Timeline -->
-										<div class="timeline timeline-left content-group">
-											<div class="timeline-container">
-												<!-- Date stamp -->
-												<div class="timeline-date text-muted">
-													<i class="icon-history position-left"></i> <span class="text-semibold">Historial de vacantes asignadas
-												</div>
-												<!-- /date stamp -->
-
-												<!-- Invoices -->
-												<div class="timeline-row">
-													<div class="timeline-icon">
-														<div class="bg-warning-400">
-															<i class="icon-cash3"></i>
-														</div>
-													</div>
-
-													<div class="row">
-														<div class="col-lg-12">
-															<div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
-																<div class="panel-body">
-																	<div class="row">
-																		<div class="col-sm-12">
-																			<h6 class="text-semibold no-margin-top">Leonardo Fellini</h6>
-																			<ul class="list list-unstyled">
-																				<li>Invoice #: &nbsp;0028</li>
-																				<li>Issued on: <span class="text-semibold">2015/01/25</span></li>
-																			</ul>
+											<div class="row">
+											
+											
+												<div class="col-lg-12">
+													<div class="tabbable">
+														<div class="tab-content">
+															<div class="tab-pane fade in active" id="activity">
+						
+																<!-- Timeline -->
+																<div class="timeline timeline-left content-group">
+																	<div class="timeline-container">
+																		<!-- Date stamp -->
+																		<div class="timeline-date text-muted">
+																			<i class="icon-history position-left"></i> <span class="text-semibold">Historial de practicas 
 																		</div>
-
-																		<div class="col-sm-12">
-																			<h6 class="text-semibold text-right no-margin-top">$8,750</h6>
-																			<ul class="list list-unstyled text-right">
-																				<li>Method: <span class="text-semibold">SWIFT</span></li>
-																				<li class="dropdown">
-																					Status: &nbsp;
-																					<a href="#" class="label bg-danger-400 dropdown-toggle" data-toggle="dropdown">Overdue <span class="caret"></span></a>
-																					<ul class="dropdown-menu dropdown-menu-right">
-																						<li class="active"><a href="#"><i class="icon-alert"></i> Overdue</a></li>
-																						<li><a href="#"><i class="icon-alarm"></i> Pending</a></li>
-																						<li><a href="#"><i class="icon-checkmark3"></i> Paid</a></li>
-																						<li class="divider"></li>
-																						<li><a href="#"><i class="icon-spinner2 spinner"></i> On hold</a></li>
-																						<li><a href="#"><i class="icon-cross2"></i> Canceled</a></li>
-																					</ul>
-																				</li>
-																			</ul>
+																		<!-- /date stamp -->
+						
+																		<!-- Invoices -->
+																		<div class="timeline-row">
+																			<div class="timeline-icon">
+																				<div class="bg-warning-400">
+																					<i class="icon-cash3"></i>
+																				</div>
+																			</div>
+						
+																			<div class="row">
+																				<div class="col-lg-12">
+																					<div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
+																						<div class="panel-body">
+																							<div class="row">
+																								<div class="col-sm-12">
+																									<h6 class="text-semibold no-margin-top">Leonardo Fellini</h6>
+																									<ul class="list list-unstyled">
+																										<li>Invoice #: &nbsp;0028</li>
+																										<li>Issued on: <span class="text-semibold">2015/01/25</span></li>
+																									</ul>
+																								</div>
+						
+																								<div class="col-sm-12">
+																									<h6 class="text-semibold text-right no-margin-top">$8,750</h6>
+																									<ul class="list list-unstyled text-right">
+																										<li>Method: <span class="text-semibold">SWIFT</span></li>
+																										<li class="dropdown">
+																											Status: &nbsp;
+																											<a href="#" class="label bg-danger-400 dropdown-toggle" data-toggle="dropdown">Overdue <span class="caret"></span></a>
+																											<ul class="dropdown-menu dropdown-menu-right">
+																												<li class="active"><a href="#"><i class="icon-alert"></i> Overdue</a></li>
+																												<li><a href="#"><i class="icon-alarm"></i> Pending</a></li>
+																												<li><a href="#"><i class="icon-checkmark3"></i> Paid</a></li>
+																												<li class="divider"></li>
+																												<li><a href="#"><i class="icon-spinner2 spinner"></i> On hold</a></li>
+																												<li><a href="#"><i class="icon-cross2"></i> Canceled</a></li>
+																											</ul>
+																										</li>
+																									</ul>
+																								</div>
+																							</div>
+																						</div>
+						
+																						<div class="panel-footer panel-footer-condensed">
+																							<div class="heading-elements">
+																								<span class="heading-text">
+																									<span class="status-mark border-danger position-left"></span> Due: <span class="text-semibold">2015/02/25</span>
+																								</span>
+						
+																								<ul class="list-inline list-inline-condensed heading-text pull-right">
+																									<li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i></a></li>
+																									<li class="dropdown">
+																										<a href="#" class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
+																										<ul class="dropdown-menu dropdown-menu-right">
+																											<li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
+																											<li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
+																											<li class="divider"></li>
+																											<li><a href="#"><i class="icon-file-plus"></i> Edit invoice</a></li>
+																											<li><a href="#"><i class="icon-cross2"></i> Remove invoice</a></li>
+																										</ul>
+																									</li>
+																								</ul>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				
+																			</div>
 																		</div>
+																		<!-- /invoices -->
 																	</div>
-																</div>
-
-																<div class="panel-footer panel-footer-condensed">
-																	<div class="heading-elements">
-																		<span class="heading-text">
-																			<span class="status-mark border-danger position-left"></span> Due: <span class="text-semibold">2015/02/25</span>
-																		</span>
-
-																		<ul class="list-inline list-inline-condensed heading-text pull-right">
-																			<li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i></a></li>
-																			<li class="dropdown">
-																				<a href="#" class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
-																				<ul class="dropdown-menu dropdown-menu-right">
-																					<li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
-																					<li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
-																					<li class="divider"></li>
-																					<li><a href="#"><i class="icon-file-plus"></i> Edit invoice</a></li>
-																					<li><a href="#"><i class="icon-cross2"></i> Remove invoice</a></li>
-																				</ul>
-																			</li>
-																		</ul>
-																	</div>
-																</div>
+															    </div>
+															    <!-- /timeline -->
 															</div>
 														</div>
-														
 													</div>
 												</div>
-												<!-- /invoices -->
-											</div>
-									    </div>
-									    <!-- /timeline -->
-									</div>
-								</div>
-							</div>
-						</div>
-
-                    
-                    <div class="col-lg-12">
-							<div class="tabbable">
-								<div class="tab-content">
-									<div class="tab-pane fade in active" id="activity">
-
-										<!-- Timeline -->
-										<div class="timeline timeline-left content-group">
-											<div class="timeline-container">
-												
-
-												<!-- Invoices -->
-												<div class="timeline-row">
-													<div class="timeline-icon">
-														<div class="bg-warning-400">
-															<i class="icon-cash3"></i>
-														</div>
-													</div>
-
-													<div class="row">
-														<div class="col-lg-12">
-															<div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
-																<div class="panel-body">
-																	<div class="row">
-																		<div class="col-sm-12">
-																			<h6 class="text-semibold no-margin-top">Leonardo Fellini</h6>
-																			<ul class="list list-unstyled">
-																				<li>Invoice #: &nbsp;0028</li>
-																				<li>Issued on: <span class="text-semibold">2015/01/25</span></li>
-																			</ul>
+						
+						                    
+						                    <div class="col-lg-12">
+													<div class="tabbable">
+														<div class="tab-content">
+															<div class="tab-pane fade in active" id="activity">
+						
+																<!-- Timeline -->
+																<div class="timeline timeline-left content-group">
+																	<div class="timeline-container">
+																		
+						
+																		<!-- Invoices -->
+																		<div class="timeline-row">
+																			<div class="timeline-icon">
+																				<div class="bg-warning-400">
+																					<i class="icon-cash3"></i>
+																				</div>
+																			</div>
+						
+																			<div class="row">
+																				<div class="col-lg-12">
+																					<div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
+																						<div class="panel-body">
+																							<div class="row">
+																								<div class="col-sm-12">
+																									<h6 class="text-semibold no-margin-top">Leonardo Fellini</h6>
+																									<ul class="list list-unstyled">
+																										<li>Invoice #: &nbsp;0028</li>
+																										<li>Issued on: <span class="text-semibold">2015/01/25</span></li>
+																									</ul>
+																								</div>
+						
+																								<div class="col-sm-12">
+																									<h6 class="text-semibold text-right no-margin-top">$8,750</h6>
+																									<ul class="list list-unstyled text-right">
+																										<li>Method: <span class="text-semibold">SWIFT</span></li>
+																										<li class="dropdown">
+																											Status: &nbsp;
+																											<a href="#" class="label bg-danger-400 dropdown-toggle" data-toggle="dropdown">Overdue <span class="caret"></span></a>
+																											<ul class="dropdown-menu dropdown-menu-right">
+																												<li class="active"><a href="#"><i class="icon-alert"></i> Overdue</a></li>
+																												<li><a href="#"><i class="icon-alarm"></i> Pending</a></li>
+																												<li><a href="#"><i class="icon-checkmark3"></i> Paid</a></li>
+																												<li class="divider"></li>
+																												<li><a href="#"><i class="icon-spinner2 spinner"></i> On hold</a></li>
+																												<li><a href="#"><i class="icon-cross2"></i> Canceled</a></li>
+																											</ul>
+																										</li>
+																									</ul>
+																								</div>
+																							</div>
+																						</div>
+						
+																						<div class="panel-footer panel-footer-condensed">
+																							<div class="heading-elements">
+																								<span class="heading-text">
+																									<span class="status-mark border-danger position-left"></span> Due: <span class="text-semibold">2015/02/25</span>
+																								</span>
+						
+																								<ul class="list-inline list-inline-condensed heading-text pull-right">
+																									<li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i></a></li>
+																									<li class="dropdown">
+																										<a href="#" class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
+																										<ul class="dropdown-menu dropdown-menu-right">
+																											<li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
+																											<li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
+																											<li class="divider"></li>
+																											<li><a href="#"><i class="icon-file-plus"></i> Edit invoice</a></li>
+																											<li><a href="#"><i class="icon-cross2"></i> Remove invoice</a></li>
+																										</ul>
+																									</li>
+																								</ul>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				
+																			</div>
 																		</div>
-
-																		<div class="col-sm-12">
-																			<h6 class="text-semibold text-right no-margin-top">$8,750</h6>
-																			<ul class="list list-unstyled text-right">
-																				<li>Method: <span class="text-semibold">SWIFT</span></li>
-																				<li class="dropdown">
-																					Status: &nbsp;
-																					<a href="#" class="label bg-danger-400 dropdown-toggle" data-toggle="dropdown">Overdue <span class="caret"></span></a>
-																					<ul class="dropdown-menu dropdown-menu-right">
-																						<li class="active"><a href="#"><i class="icon-alert"></i> Overdue</a></li>
-																						<li><a href="#"><i class="icon-alarm"></i> Pending</a></li>
-																						<li><a href="#"><i class="icon-checkmark3"></i> Paid</a></li>
-																						<li class="divider"></li>
-																						<li><a href="#"><i class="icon-spinner2 spinner"></i> On hold</a></li>
-																						<li><a href="#"><i class="icon-cross2"></i> Canceled</a></li>
-																					</ul>
-																				</li>
-																			</ul>
-																		</div>
+																		<!-- /invoices -->
 																	</div>
-																</div>
-
-																<div class="panel-footer panel-footer-condensed">
-																	<div class="heading-elements">
-																		<span class="heading-text">
-																			<span class="status-mark border-danger position-left"></span> Due: <span class="text-semibold">2015/02/25</span>
-																		</span>
-
-																		<ul class="list-inline list-inline-condensed heading-text pull-right">
-																			<li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i></a></li>
-																			<li class="dropdown">
-																				<a href="#" class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
-																				<ul class="dropdown-menu dropdown-menu-right">
-																					<li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
-																					<li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
-																					<li class="divider"></li>
-																					<li><a href="#"><i class="icon-file-plus"></i> Edit invoice</a></li>
-																					<li><a href="#"><i class="icon-cross2"></i> Remove invoice</a></li>
-																				</ul>
-																			</li>
-																		</ul>
-																	</div>
-																</div>
+															    </div>
+															    <!-- /timeline -->
 															</div>
 														</div>
-														
 													</div>
 												</div>
-												<!-- /invoices -->
-											</div>
-									    </div>
-									    <!-- /timeline -->
-									</div>
-								</div>
-							</div>
-						</div>
-
-                    
-                    </div>
-					<!-- /user profile -->
-										
+						
+						                    
+						                    </div>
+											<!-- /user profile -->
+																
 									</div>
 									
 									
@@ -646,6 +581,110 @@
 	<!-- /page container -->
 
 
+	<!-- area de modales  -->
+		
+		  <!-- Warning modal -->
+					<div id="modal_theme_warning" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header bg-warning">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h6 class="modal-title">Detalle de la vacante</h6>
+								</div>
+
+								<div class="modal-body">
+									<h6 class="text-semibold">Información acerca de la vacante </h6>
+									
+									
+									<div class="panel">
+								<div class="panel-body text-center">
+									<div class="icon-object border-danger text-danger"><i class="icon-office"></i></div>
+									<h5 class="text-semibold">Universidad Peruana Union</h5>
+								</div>
+							</div>
+									
+									
+									<!-- List of latest updates -->
+							<div class="panel panel-flat">
+								<div class="panel-body">
+									<ul class="media-list">
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-primary text-primary btn-flat btn-icon btn-rounded btn-sm">
+													<i class="icon-store2"></i>
+												</a>
+											</div>
+
+											<div class="media-body">
+												<p><strong>RUC : </strong></p>
+												<p><strong>Dirección : </strong></p>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-danger text-danger btn-flat btn-icon btn-rounded btn-sm">
+													<i class="icon-vcard"></i>
+												</a>
+											</div>
+
+											<div class="media-body">
+												<p><strong>Representante : </strong></p>
+												<p><strong>Celular : </strong></p>
+												<p><strong>DNI : </strong></p>
+												<p><strong>Correo : </strong></p>
+											</div>
+										</li>
+
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-slate text-slate btn-flat btn-icon btn-rounded btn-sm">
+													<i class="icon-cash3"></i>
+												</a>
+											</div>
+
+											<div class="media-body">
+												<p><strong>Periodo : </strong></p>
+												<p><strong>Horario : </strong></p>
+												<p><strong>Sueldo : </strong></p>
+											</div>
+										</li>
+										<li class="media">
+											<div class="media-left">
+												<a href="#" class="btn border-success text-success btn-flat btn-icon btn-rounded btn-sm">
+													<i class="icon-checkmark3"></i>
+												</a>
+											</div>
+											
+											<div class="media-body">
+												<p><strong>Area de Trabajo : </strong></p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- /list of latest updates -->
+
+									<hr>
+
+									<h6 class="text-semibold">Nota:</h6>
+									<p>Una vez aceptado la vacante tendras que descargar la carta de presentacion..... bla bla bla</p>
+								</div>
+
+								<div class="modal-footer">
+									<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+									<button type="button" class="btn btn-warning">Aceptar </button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /warning modal -->
+
+		
+		
+	<!-- / are4a de modales -->
+
+
 </body>
 		
 		
@@ -682,5 +721,5 @@
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_steps.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_buttons.js'/>"></script>
 <%-- 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/user_pages_profile.js'/>"></script> --%>
-<script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
+	<script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
 </html>

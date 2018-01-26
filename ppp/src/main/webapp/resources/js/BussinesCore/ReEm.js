@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("#ocultar").hide();
 	listarSeguro();
-	
+	dataVacante();
 });
 
 function ocultar(){
@@ -46,6 +46,68 @@ function listarSeguro() {
 	});
 }
 
+
+
+// cargar vacantes existentes 
+function dataVacante (){
+	
+	var s ;
+	var c ;
+	$.getJSON('rp?opc=Vacantes', function(objJson){
+		var vacantes = objJson.Vacantes;
+		console.log(vacantes);
+		if (vacantes.length > 0) {
+			for (var i = 0; i < vacantes.length; i++) {
+				s += '<tr>';
+					s += '<td>'+vacantes[i].RAZONSOCIAL+'</td>';
+					s += '<td>'+vacantes[i].RUC+'</td>';
+					s += '<td>'+vacantes[i].HORARIO+'</td>';
+					s += '<td><strong>S/. </strong>'+vacantes[i].SUELDO+'</td>';
+					s += '<td><span class="label label-info">Pendiente</span></td></td>';
+					s += '<td class="text-center">\
+								<button   data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>\
+						  </td>';
+				s += '</tr>';
+			}
+			
+			
+			$("#contTable").empty();
+			c = create (s);
+			$("#contTable").append(c);
+			$('#tabla').DataTable();
+		
+		}else{
+			$("#contTable").hide();
+			var a ="<h2><strong>NO!! tienes vacante asignada..</strong></h2>";
+			$("#msj").empty();
+			$("#msj").append(a);
+		}
+		
+	});
+}
+	
+function create (s){
+	var b ='<table id="tabla" class="table datatable-responsive">\
+				<thead>\
+					<tr>\
+						<th>Empresa</th>\
+						<th>Ruc</th>\
+						<th>Horario</th>\
+						<th>Sueldo</th>\
+						<th>Estado</th>\
+						<th class="text-center">Opciones</th>\
+					</tr>\
+				</thead>\
+				<tbody id="data">'+
+					s
+				'</tbody>\
+				</table>';
+	return b;
+}
+
+
+// --------------------------------------------------------------
+// funcion para re3gistrar vacante
 function registrar() {
 	
 	var url = "rp?opc=Registro";

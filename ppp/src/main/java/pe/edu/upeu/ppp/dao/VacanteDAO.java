@@ -1,11 +1,12 @@
 package pe.edu.upeu.ppp.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public interface VacanteDAO {
 
-	List<Map<String,Object>> listarVacantes ();
+	ArrayList<Map<String, Object>> listarVacantes (int id);
 		
 	 int NewVacante(String P_IDPERIODO,
 			 		String P_IDREPRESENTANTE,
@@ -30,5 +31,6 @@ public interface VacanteDAO {
 	 
 	 
 	 int notifyVaca (int id);
+	 
 	 
 }

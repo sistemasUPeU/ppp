@@ -1,5 +1,6 @@
 package pe.edu.upeu.ppp.serviceImp;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,9 +16,9 @@ public class VacanteServiceImpl implements VacanteService {
 	VacanteDAO vacanteDAO;
 
 	@Override
-	public List<Map<String, Object>> listarVacantes() {
+	public ArrayList<Map<String, Object>> listarVacantes(int id) {
 		// TODO Auto-generated method stub
-		return vacanteDAO.listarVacantes();
+		return vacanteDAO.listarVacantes(id);
 	}
 
 	@Override
