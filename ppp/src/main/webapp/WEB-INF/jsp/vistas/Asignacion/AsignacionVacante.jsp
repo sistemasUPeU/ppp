@@ -126,7 +126,7 @@
 									<h3 id="msj" style="text-align: center;"><strong>Tienes una vacante pendiente </strong> </h3>
 								
 										<!-- data table -->
-								<div class="row" id="contTable" >
+										<div class="row" id="contTable" >
 									
 										<table id="tabla" class="table datatable-responsive">
 													<thead>
@@ -145,8 +145,8 @@
 											</tbody>
 										</table>
 										
-									</div>
-								
+										</div>
+										<!-- / data table  for js -->
 									</div>
 									
 									
@@ -161,7 +161,7 @@
 														<div class="tab-content">
 															<div class="tab-pane fade in active" id="activity">
 						
-																<!-- Timeline -->
+																<!-- Timeline HISTORIAL -->
 																<div class="timeline timeline-left content-group">
 																	<div class="timeline-container">
 																		<!-- Date stamp -->
@@ -170,7 +170,7 @@
 																		</div>
 																		<!-- /date stamp -->
 						
-																		<!-- Invoices -->
+																		<!-- Invoices  -->
 																		<div class="timeline-row">
 																			<div class="timeline-icon">
 																				<div class="bg-warning-400">
@@ -239,9 +239,12 @@
 																			</div>
 																		</div>
 																		<!-- /invoices -->
+																		
+																		
 																	</div>
 															    </div>
-															    <!-- /timeline -->
+															    <!-- /timeline HISTORIAL-->
+															
 															</div>
 														</div>
 													</div>
@@ -583,8 +586,8 @@
 
 	<!-- area de modales  -->
 		
-		  <!-- Warning modal -->
-					<div id="modal_theme_warning" class="modal fade">
+		 
+		<div id="modal_theme_warning" class="modal fade">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header bg-warning">
@@ -597,71 +600,76 @@
 									
 									
 									<div class="panel">
-								<div class="panel-body text-center">
-									<div class="icon-object border-danger text-danger"><i class="icon-office"></i></div>
-									<h5 class="text-semibold">Universidad Peruana Union</h5>
-								</div>
-							</div>
-									
-									
+										
+										<div id="empresaName" class="panel-body text-center">
+											<div class="icon-object border-danger text-danger"><i class="icon-office"></i></div>
+											<h5 class="text-semibold">Universidad Peruana Union</h5>
+										</div>
+							
+									</div>
 									<!-- List of latest updates -->
 							<div class="panel panel-flat">
-								<div class="panel-body">
-									<ul class="media-list">
-										<li class="media">
-											<div class="media-left">
-												<a href="#" class="btn border-primary text-primary btn-flat btn-icon btn-rounded btn-sm">
-													<i class="icon-store2"></i>
-												</a>
-											</div>
-
-											<div class="media-body">
-												<p><strong>RUC : </strong></p>
-												<p><strong>Dirección : </strong></p>
-											</div>
-										</li>
-
-										<li class="media">
-											<div class="media-left">
-												<a href="#" class="btn border-danger text-danger btn-flat btn-icon btn-rounded btn-sm">
-													<i class="icon-vcard"></i>
-												</a>
-											</div>
-
-											<div class="media-body">
-												<p><strong>Representante : </strong></p>
-												<p><strong>Celular : </strong></p>
-												<p><strong>DNI : </strong></p>
-												<p><strong>Correo : </strong></p>
-											</div>
-										</li>
-
-										<li class="media">
-											<div class="media-left">
-												<a href="#" class="btn border-slate text-slate btn-flat btn-icon btn-rounded btn-sm">
-													<i class="icon-cash3"></i>
-												</a>
-											</div>
-
-											<div class="media-body">
-												<p><strong>Periodo : </strong></p>
-												<p><strong>Horario : </strong></p>
-												<p><strong>Sueldo : </strong></p>
-											</div>
-										</li>
-										<li class="media">
-											<div class="media-left">
-												<a href="#" class="btn border-success text-success btn-flat btn-icon btn-rounded btn-sm">
-													<i class="icon-checkmark3"></i>
-												</a>
-											</div>
-											
-											<div class="media-body">
-												<p><strong>Area de Trabajo : </strong></p>
-											</div>
-										</li>
-									</ul>
+								
+								<div id="cargModal" class="panel-body">
+									<!-- esto esta siendo cargado por js -->
+										<ul class="media-list">
+											<li class="media">
+												<div class="media-left">
+													<a href="#" class="btn border-primary text-primary btn-flat btn-icon btn-rounded btn-sm">
+														<i class="icon-store2"></i>
+													</a>
+												</div>
+	
+												<div class="media-body">
+													<p><strong>RUC : </strong></p>
+													<p><strong>Dirección : </strong></p>
+												</div>
+											</li>
+	
+											<li class="media">
+												<div class="media-left">
+													<a href="#" class="btn border-danger text-danger btn-flat btn-icon btn-rounded btn-sm">
+														<i class="icon-vcard"></i>
+													</a>
+												</div>
+	
+												<div class="media-body">
+													<p><strong>Representante : </strong></p>
+													<p><strong>Celular : </strong></p>
+													<p><strong>DNI : </strong></p>
+													<p><strong>Correo : </strong></p>
+												</div>
+											</li>
+	
+											<li class="media">
+												<div class="media-left">
+													<a href="#" class="btn border-slate text-slate btn-flat btn-icon btn-rounded btn-sm">
+														<i class="icon-cash3"></i>
+													</a>
+												</div>
+	
+												<div class="media-body">
+													<p><strong>Periodo : </strong></p>
+													<p><strong>Horario : </strong></p>
+													<p><strong>Sueldo : </strong></p>
+												</div>
+											</li>
+											<li class="media">
+												<div class="media-left">
+													<a href="#" class="btn border-success text-success btn-flat btn-icon btn-rounded btn-sm">
+														<i class="icon-checkmark3"></i>
+													</a>
+												</div>
+												
+												<div class="media-body">
+													<p><strong>Area de Trabajo : </strong></p>
+												</div>
+											</li>
+										</ul>
+									<!-- /esto esta siendo cargado por js -->
 								</div>
+								
+								
 							</div>
 							<!-- /list of latest updates -->
 
@@ -677,8 +685,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<!-- /warning modal -->
+				</div>
+				
 
 		
 		
@@ -692,7 +700,7 @@
 	$(document).ready(function() {
 		$("#Notify").hide();
 		$("#Regis").hide();
-		$
+// 		$("#modal_theme_warning").modal('show');
 	});
 
 	function Notify() {

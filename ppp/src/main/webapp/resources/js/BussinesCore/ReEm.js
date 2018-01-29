@@ -4,11 +4,15 @@ $(document).ready(function() {
 	dataVacante();
 });
 
+// funciones de vista
 function ocultar(){
 	$("#ocultar").show(500);
 	$("#Aparecer").hide();
+	
 }
 
+
+// funciones para cargar combobox
 function listarSeguro() {
 	$.get('rp?opc=Combox', function(objJson) {
 		var v = '';
@@ -48,16 +52,40 @@ function listarSeguro() {
 
 
 
-// cargar vacantes existentes 
+// cargar vacantes existentes on data table
 function dataVacante (){
-	
+	// create component 
 	var s ;
 	var c ;
+	var m ;
+	var mm;
+	// recoleccion de datos 
+	var RAZONSOCIAL, RUC, DIRECCION;
+	var REPRESENTANTE, CELULAR, DNI;
+	var CORREO , PERIODO , HORARIO ;
+	var SUELDO , HORA, AREATRABAJO;
+	
+	
 	$.getJSON('rp?opc=Vacantes', function(objJson){
 		var vacantes = objJson.Vacantes;
 		console.log(vacantes);
 		if (vacantes.length > 0) {
 			for (var i = 0; i < vacantes.length; i++) {
+				//recoger valores de tabla 
+				RAZONSOCIAL	  = vacantes[i].RAZONSOCIAL;
+				RUC 		  = vacantes[i].RAZONSOCIAL;
+				DIRECCION	  = vacantes[i].DIRECCION;
+				REPRESENTANTE = vacantes[i].REPRESENTANTE;
+				CELULAR		  = vacantes[i].CELULAR;
+				DNI 		  = vacantes[i].DNI;
+				CORREO		  = vacantes[i].CORREO;
+				PERIODO		  = vacantes[i].PERIODO;
+				HORARIO		  = vacantes[i].HORARIO;
+				HORA 		  = vacantes[i].HORA;
+				SUELDO		  = vacantes[i].SUELDO;
+				AREATRABAJO   = vacantes[i].AREATRABAJO;
+				
+				// cargar tabla 
 				s += '<tr>';
 					s += '<td>'+vacantes[i].RAZONSOCIAL+'</td>';
 					s += '<td>'+vacantes[i].RUC+'</td>';
@@ -65,16 +93,25 @@ function dataVacante (){
 					s += '<td><strong>S/. </strong>'+vacantes[i].SUELDO+'</td>';
 					s += '<td><span class="label label-info">Pendiente</span></td></td>';
 					s += '<td class="text-center">\
-								<button   data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>\
+								<button onclick=""  data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>\
 						  </td>';
 				s += '</tr>';
 			}
-			
-			
 			$("#contTable").empty();
 			c = create (s);
 			$("#contTable").append(c);
 			$('#tabla').DataTable();
+		
+			// resetear modal
+			$("#empresaName").empty();
+			mm =  minimalModal(RAZONSOCIAL);
+			$("#empresaName").append(mm);
+			
+			$("#cargModal").empty();
+			m = createModal (RUC,DIRECCION,REPRESENTANTE, CELULAR ,DNI, CORREO,PERIODO,HORARIO,HORA,SUELDO,AREATRABAJO);
+			$("#cargModal").append(m);
+	
+			
 		
 		}else{
 			$("#contTable").hide();
@@ -103,6 +140,68 @@ function create (s){
 				'</tbody>\
 				</table>';
 	return b;
+}
+
+
+
+
+// funcion para crear y  llenar modales 
+function minimalModal(RAZONSOCIAL){
+	var mm ="<div class='icon-object border-danger text-danger'><i class='icon-office'></i></div>\
+			<h5 class='text-semibold'>"+ RAZONSOCIAL +"</h5>";
+	return mm;
+}
+
+function createModal (RUC,DIRECCION,REPRESENTANTE, CELULAR ,DNI, CORREO,PERIODO,HORARIO,HORA,SUELDO,AREATRABAJO){
+	var m ="<ul class='media-list'>\
+				<li class='media'>\
+					<div class='media-left'>\
+						<a href='#' class='btn border-primary text-primary btn-flat btn-icon btn-rounded btn-sm'>\
+								<i class='icon-store2'></i>\
+						</a>\
+					</div>\
+					<div class='media-body'>\
+						<p><strong>RUC : </strong> "+RUC+"</p>\
+						<p><strong>Dirección : </strong>"+DIRECCION+"</p>\
+					</div>\
+				</li>\
+				<li class='media'>\
+					<div class='media-left'>\
+						<a href='#' class='btn border-danger text-danger btn-flat btn-icon btn-rounded btn-sm'>\
+							<i class='icon-vcard'></i>\
+						</a>\
+					</div>\
+					<div class='media-body'>\
+						<p><strong>Representante :</strong>"+REPRESENTANTE+"</p>\
+						<p><strong>Celular : </strong>"+CELULAR+"</p>\
+						<p><strong>DNI : </strong>"+DNI+"</p>\
+						<p><strong>Correo : </strong>"+CORREO+"</p>\
+					</div>\
+				</li>\
+				<li class='media'>\
+					<div class='media-left'>\
+						<a href='#' class='btn border-slate text-slate btn-flat btn-icon btn-rounded btn-sm'>\
+							<i class='icon-cash3'></i>\
+						</a>\
+					</div>\
+					<div class='media-body'>\
+						<p><strong>Periodo : </strong>"+PERIODO+"</p>\
+						<p><strong>Horario : </strong>"+HORARIO+" de <strong> "+HORA+"</strong></p>\
+						<p><strong>Sueldo : </strong> "+SUELDO+"</p>\
+					</div>\
+				</li>\
+				<li class='media'>\
+					<div class='media-left'>\
+						<a href='#' class='btn border-success text-success btn-flat btn-icon btn-rounded btn-sm'>\
+							<i class='icon-checkmark3'></i>\
+						</a>\
+					</div>\
+					<div class='media-body'>\
+						<p><strong>Area de Trabajo : </strong>"+AREATRABAJO+"</p>\
+					</div>\
+				</li>\
+			</ul>";
+	return m;
 }
 
 

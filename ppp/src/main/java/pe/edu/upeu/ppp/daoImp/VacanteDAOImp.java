@@ -58,4 +58,17 @@ public class VacanteDAOImp implements VacanteDAO {
 		return a;
 	}
 
+
+	@Override
+	public ArrayList<Map<String, Object>> ListarHistoria(int id) {
+		try {
+			sql="SELECT Fp.Idfolderpractica, V.Idvacantes, Em.Razonsocial ||' -  RUC: '|| Em.Ruc AS EMPRESA ,Em.Direccion, U.Apellidos ||', '|| U.Nombre as Representante ,V.Fechainicio || ' - ' || V.Fechafin AS PLAZO ,  PR.Periodo as Semestre , Al.Ciclo , F.Nombre ||' - '|| Ec.Nombre ESCUELA , Es.Descripcion\r\n" + 
+					"FROM Ppp_Folderpractica fp , PPP_VACANTES V , Ppp_Periodo PR , Ppp_Alumno AL , Ppp_Representante RE , Ppp_Estado ES , Ppp_Escuela EC , Ppp_Usuario U , PPP_EMPRESA EM , Ppp_Facultad F WHERE Fp.Idvacantes = V.Idvacantes AND Fp.Idperiodo = Pr.Idperiodo AND Fp.Idalumno = AL.Idalumno AND Fp.Idrepresentante = Re.Idrepresentante AND Fp.Idestado = Es.Idestado AND U.Idusuario = Al.Idalumno AND \r\n" + 
+					"Al.Idescuela = Ec.Idescuela AND Em.Idempresa = RE.Idempresa AND Ec.Idfacultad = F.Idfacultad AND Al.Idalumno = ?";
+		} catch (Exception ev) {
+			System.out.println("No  ListarHistoria, error:_"+ev);
+		}
+		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
+	}
+
 }

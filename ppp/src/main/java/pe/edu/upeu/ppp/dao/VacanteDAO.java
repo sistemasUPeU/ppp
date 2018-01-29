@@ -6,6 +6,8 @@ import java.util.Map;
 
 public interface VacanteDAO {
 
+	ArrayList<Map<String, Object>> ListarHistoria(int id);
+	
 	ArrayList<Map<String, Object>> listarVacantes (int id);
 		
 	 int NewVacante(String P_IDPERIODO,

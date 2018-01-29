@@ -151,6 +151,7 @@ public class CenterController {
 					}else {
 						mp.put("hay", 0);
 					}
+				
 				System.out.println("hola pues" +vS.listarVacantes(id));
 				break;
 			}

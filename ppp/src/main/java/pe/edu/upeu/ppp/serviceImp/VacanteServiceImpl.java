@@ -35,4 +35,10 @@ public class VacanteServiceImpl implements VacanteService {
 		return vacanteDAO.notifyVaca(id);
 	}
 
+	@Override
+	public ArrayList<Map<String, Object>> ListarHistoria(int id) {
+		// TODO Auto-generated method stub
+		return vacanteDAO.ListarHistoria(id);
+	}
+
 }

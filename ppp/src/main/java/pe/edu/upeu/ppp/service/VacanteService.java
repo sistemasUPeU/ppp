@@ -8,6 +8,8 @@ public interface VacanteService {
 	
 	public ArrayList<Map<String, Object>> listarVacantes (int id);
 	
+	public ArrayList<Map<String, Object>> ListarHistoria(int id);
+	
 	public int NewVacante(String P_IDPERIODO,
 	 		String P_IDREPRESENTANTE,
 	 		String P_AREATRABAJO,
