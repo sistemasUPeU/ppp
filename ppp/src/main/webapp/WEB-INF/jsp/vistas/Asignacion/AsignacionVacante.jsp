@@ -471,6 +471,8 @@
 
 
 	<!-- area de modales  -->
+		
+		<!-- /modal warning -->
 		 
 		<div id="modal_theme_warning" class="modal fade">
 						<div class="modal-dialog">
@@ -565,12 +567,67 @@
 								</div>
 
 								<div class="modal-footer">
-									<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
-									<button type="button" class="btn btn-warning">Aceptar </button>
+									
+									<button type="button" class="btn btn-warning" data-dismiss="modal" >Cerrar </button>
 								</div>
 							</div>
 						</div>
 				</div>
+		
+		 <!-- Success modal -->
+					<div id="modal_theme_success" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header bg-success">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h6 class="modal-title">Aceptacion de la vacante </h6>
+								</div>
+
+								<div class="modal-body">
+									<h6 class="text-semibold">Puedes descargar tu carta de presentacion correspondiente  </h6>
+									
+									
+							<div class="panel">
+								<div class="panel-body text-center">
+									<div class="icon-object border-success text-success"><i class=" icon-cloud-download2"></i>
+									</div>
+									
+									<h5 class="text-semibold">Descargar carta de presentación</h5>
+								    <div class="row">
+								        <button type="button" onclick="alert('generar pdf')" class="btn btn-primary btn-ladda btn-ladda-progress" data-style="zoom-out"><span class="ladda-label"><i class=" icon-cog52"></i> Generar </span>
+								        </button>
+								        
+								        <button type="button" onclick="alert('descargar pdf')" class="btn btn-success btn-ladda btn-ladda-progress" data-style="zoom-out"><span class="ladda-label"><i class="icon-download4"></i> Descargar  </span>
+								        </button>
+								    </div>
+								    
+								</div>
+								
+							</div>
+							<hr>
+							<!-- List of latest updates -->
+							<div class="panel panel-flat">
+								<div class="panel-body text-center">
+                                    <div class="icon-object border-danger text-danger"><i class=" icon-cloud-upload"></i>
+									</div>
+								    <h5><strong>Subir Contrato</strong></h5>
+								    <div class="col-lg-12">
+										<input type="file" class="file-input-ajax" multiple="multiple">
+									</div>
+				                </div>
+							</div>
+                            </div>
+
+								<div class="modal-footer">
+									<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+									<button type="button" class="btn btn-success">Completar </button>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+					<!-- /success modal -->
+				
 				
 	<!-- / are4a de modales -->
 
@@ -617,6 +674,7 @@
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/datatables_responsive.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_steps.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_buttons.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/uploader_bootstrap.js'/>"></script>
 <%-- 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/user_pages_profile.js'/>"></script> --%>
 	<script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
 </html>

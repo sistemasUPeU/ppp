@@ -151,9 +151,11 @@ function dataVacante (){
 					s += '<td>'+vacantes[i].HORARIO+'</td>';
 					s += '<td><strong>S/. </strong>'+vacantes[i].SUELDO+'</td>';
 					s += '<td><span class="label label-info">Pendiente</span></td></td>';
-					s += '<td class="text-center">\
+					s += '<td class="text-center" >\
 								<button onclick=""  data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>\
-						  </td>';
+						\
+								<button onclick=""  data-toggle="modal" data-target="#modal_theme_success" type="button" class="btn btn-success btn-icon btn-rounded"><i class="icon-checkmark4"></i></button>\
+							</td>';
 				s += '</tr>';
 			}
 			
