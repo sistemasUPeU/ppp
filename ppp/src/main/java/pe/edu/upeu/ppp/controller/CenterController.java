@@ -48,7 +48,7 @@ public class CenterController {
 		return modelo;
 	}
 
-	// public contratoDAO cAO = new contratoDAO
+	
 
 	@RequestMapping(value = "/rp", method = RequestMethod.GET)
 	public void metod(HttpServletRequest request, HttpServletResponse response , Authentication authentication) throws IOException {
@@ -64,13 +64,20 @@ public class CenterController {
 		
 		
 		
+		
 		try {
 			switch (opc) {
 
 			case "Combox":
 				mp.put("as", empredao.ListSeguro());
 				mp.put("li", empredao.ListLineas());
-				System.out.println(empredao.ListLineas());
+				mp.put("combox1", vS.CargaCombox1());
+				System.out.println("pun pun"+vS.CargaCombox1());
+				break;
+			case "Combox1":
+				int cid = Integer.parseInt(request.getParameter("idSe"));
+				mp.put("combox11", vS.CargaCombox1(cid));
+				System.out.println("pun pun 2"+vS.CargaCombox1(cid));
 				break;
 				
 			case "Registro":
@@ -146,11 +153,8 @@ public class CenterController {
 			case "Vacantes":
 				int id = Integer.parseInt(IDALUMNO);
 				mp.put("Vacantes", vS.listarVacantes(id));
-					if(vS.listarVacantes(id).isEmpty()) {
-						mp.put("hay", 1);
-					}else {
-						mp.put("hay", 0);
-					}
+					
+				mp.put("history", vS.ListarHistoria(id));
 				System.out.println("hola pues" +vS.listarVacantes(id));
 				break;
 			}

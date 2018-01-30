@@ -6,8 +6,15 @@ import java.util.Map;
 
 public interface VacanteDAO {
 
+	//metodos para listar 
+	ArrayList<Map<String, Object>> ListarHistoria(int id);
+	
 	ArrayList<Map<String, Object>> listarVacantes (int id);
 		
+	ArrayList<Map<String, Object>> CargaCombox1();
+	ArrayList<Map<String, Object>> CargaCombox1(int id);
+	
+	//  metodos para insertar en base de datos
 	 int NewVacante(String P_IDPERIODO,
 			 		String P_IDREPRESENTANTE,
 			 		String P_AREATRABAJO,

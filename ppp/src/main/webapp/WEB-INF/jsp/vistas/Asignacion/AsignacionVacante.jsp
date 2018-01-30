@@ -27,7 +27,7 @@
 					<div class="panel">
 						<div class="panel-body">
 							<h4 class="text-center content-group-lg">
-								Welcome to our knowledge base <small class="display-block">Panther
+								Bienvenido al area de notificaciones y registro de vacante <small class="display-block">Panther
 									egret cut a more this bound one much yikes more less because
 									hello alas while unbridled seal</small>
 							</h4>
@@ -126,7 +126,7 @@
 									<h3 id="msj" style="text-align: center;"><strong>Tienes una vacante pendiente </strong> </h3>
 								
 										<!-- data table -->
-								<div class="row" id="contTable" >
+										<div class="row" id="contTable" >
 									
 										<table id="tabla" class="table datatable-responsive">
 													<thead>
@@ -145,8 +145,8 @@
 											</tbody>
 										</table>
 										
-									</div>
-								
+										</div>
+										<!-- / data table  for js -->
 									</div>
 									
 									
@@ -155,13 +155,13 @@
 										<!-- User profile -->
 											<div class="row">
 											
-											
+											<!-- Timeline HISTORIAL -->
 												<div class="col-lg-12">
 													<div class="tabbable">
 														<div class="tab-content">
 															<div class="tab-pane fade in active" id="activity">
 						
-																<!-- Timeline -->
+																
 																<div class="timeline timeline-left content-group">
 																	<div class="timeline-container">
 																		<!-- Date stamp -->
@@ -170,7 +170,7 @@
 																		</div>
 																		<!-- /date stamp -->
 						
-																		<!-- Invoices -->
+																		<!-- Invoices  -->
 																		<div class="timeline-row">
 																			<div class="timeline-icon">
 																				<div class="bg-warning-400">
@@ -178,36 +178,15 @@
 																				</div>
 																			</div>
 						
-																			<div class="row">
+																			<div id="historyCards" class="row">
+																			
 																				<div class="col-lg-12">
 																					<div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
 																						<div class="panel-body">
 																							<div class="row">
 																								<div class="col-sm-12">
-																									<h6 class="text-semibold no-margin-top">Leonardo Fellini</h6>
-																									<ul class="list list-unstyled">
-																										<li>Invoice #: &nbsp;0028</li>
-																										<li>Issued on: <span class="text-semibold">2015/01/25</span></li>
-																									</ul>
-																								</div>
-						
-																								<div class="col-sm-12">
-																									<h6 class="text-semibold text-right no-margin-top">$8,750</h6>
-																									<ul class="list list-unstyled text-right">
-																										<li>Method: <span class="text-semibold">SWIFT</span></li>
-																										<li class="dropdown">
-																											Status: &nbsp;
-																											<a href="#" class="label bg-danger-400 dropdown-toggle" data-toggle="dropdown">Overdue <span class="caret"></span></a>
-																											<ul class="dropdown-menu dropdown-menu-right">
-																												<li class="active"><a href="#"><i class="icon-alert"></i> Overdue</a></li>
-																												<li><a href="#"><i class="icon-alarm"></i> Pending</a></li>
-																												<li><a href="#"><i class="icon-checkmark3"></i> Paid</a></li>
-																												<li class="divider"></li>
-																												<li><a href="#"><i class="icon-spinner2 spinner"></i> On hold</a></li>
-																												<li><a href="#"><i class="icon-cross2"></i> Canceled</a></li>
-																											</ul>
-																										</li>
-																									</ul>
+																									<h3 class="text-semibold no-margin-top">Usted Aun no ha iniciado su folder de practicas</h3>
+																									<p>Para empezar su folder debe iniciar sus practicas</p>
 																								</div>
 																							</div>
 																						</div>
@@ -215,126 +194,36 @@
 																						<div class="panel-footer panel-footer-condensed">
 																							<div class="heading-elements">
 																								<span class="heading-text">
-																									<span class="status-mark border-danger position-left"></span> Due: <span class="text-semibold">2015/02/25</span>
+																									<span class="status-mark border-danger position-left"></span> <span class="text-semibold"></span>
 																								</span>
 						
 																								<ul class="list-inline list-inline-condensed heading-text pull-right">
 																									<li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i></a></li>
-																									<li class="dropdown">
-																										<a href="#" class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
-																										<ul class="dropdown-menu dropdown-menu-right">
-																											<li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
-																											<li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
-																											<li class="divider"></li>
-																											<li><a href="#"><i class="icon-file-plus"></i> Edit invoice</a></li>
-																											<li><a href="#"><i class="icon-cross2"></i> Remove invoice</a></li>
-																										</ul>
-																									</li>
 																								</ul>
 																							</div>
 																						</div>
 																					</div>
 																				</div>
-																				
+																			
 																			</div>
+																			
 																		</div>
 																		<!-- /invoices -->
-																	</div>
-															    </div>
-															    <!-- /timeline -->
-															</div>
-														</div>
-													</div>
-												</div>
-						
-						                    
-						                    <div class="col-lg-12">
-													<div class="tabbable">
-														<div class="tab-content">
-															<div class="tab-pane fade in active" id="activity">
-						
-																<!-- Timeline -->
-																<div class="timeline timeline-left content-group">
-																	<div class="timeline-container">
 																		
-						
-																		<!-- Invoices -->
-																		<div class="timeline-row">
-																			<div class="timeline-icon">
-																				<div class="bg-warning-400">
-																					<i class="icon-cash3"></i>
-																				</div>
-																			</div>
-						
-																			<div class="row">
-																				<div class="col-lg-12">
-																					<div class="panel border-left-lg border-left-danger invoice-grid timeline-content">
-																						<div class="panel-body">
-																							<div class="row">
-																								<div class="col-sm-12">
-																									<h6 class="text-semibold no-margin-top">Leonardo Fellini</h6>
-																									<ul class="list list-unstyled">
-																										<li>Invoice #: &nbsp;0028</li>
-																										<li>Issued on: <span class="text-semibold">2015/01/25</span></li>
-																									</ul>
-																								</div>
-						
-																								<div class="col-sm-12">
-																									<h6 class="text-semibold text-right no-margin-top">$8,750</h6>
-																									<ul class="list list-unstyled text-right">
-																										<li>Method: <span class="text-semibold">SWIFT</span></li>
-																										<li class="dropdown">
-																											Status: &nbsp;
-																											<a href="#" class="label bg-danger-400 dropdown-toggle" data-toggle="dropdown">Overdue <span class="caret"></span></a>
-																											<ul class="dropdown-menu dropdown-menu-right">
-																												<li class="active"><a href="#"><i class="icon-alert"></i> Overdue</a></li>
-																												<li><a href="#"><i class="icon-alarm"></i> Pending</a></li>
-																												<li><a href="#"><i class="icon-checkmark3"></i> Paid</a></li>
-																												<li class="divider"></li>
-																												<li><a href="#"><i class="icon-spinner2 spinner"></i> On hold</a></li>
-																												<li><a href="#"><i class="icon-cross2"></i> Canceled</a></li>
-																											</ul>
-																										</li>
-																									</ul>
-																								</div>
-																							</div>
-																						</div>
-						
-																						<div class="panel-footer panel-footer-condensed">
-																							<div class="heading-elements">
-																								<span class="heading-text">
-																									<span class="status-mark border-danger position-left"></span> Due: <span class="text-semibold">2015/02/25</span>
-																								</span>
-						
-																								<ul class="list-inline list-inline-condensed heading-text pull-right">
-																									<li><a href="#" class="text-default" data-toggle="modal" data-target="#invoice"><i class="icon-eye8"></i></a></li>
-																									<li class="dropdown">
-																										<a href="#" class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
-																										<ul class="dropdown-menu dropdown-menu-right">
-																											<li><a href="#"><i class="icon-printer"></i> Print invoice</a></li>
-																											<li><a href="#"><i class="icon-file-download"></i> Download invoice</a></li>
-																											<li class="divider"></li>
-																											<li><a href="#"><i class="icon-file-plus"></i> Edit invoice</a></li>
-																											<li><a href="#"><i class="icon-cross2"></i> Remove invoice</a></li>
-																										</ul>
-																									</li>
-																								</ul>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																				
-																			</div>
-																		</div>
-																		<!-- /invoices -->
+																		
+																		
+																		
 																	</div>
 															    </div>
-															    <!-- /timeline -->
+															   
+															
 															</div>
 														</div>
 													</div>
 												</div>
 						
+						                     <!-- /timeline HISTORIAL-->
+						                  
 						                    
 						                    </div>
 											<!-- /user profile -->
@@ -343,7 +232,7 @@
 									
 									
 									
-									<button onclick="nsocultar();" style=" text-align: center;" type="button" class="btn bg-danger-400 btn-labeled btn-rounded"><b><i class="icon-switch2"></i></b> Cancelar	</button>
+									<button onclick="nsocultar();" style=" text-align: center;" type="button" class="btn bg-danger-400 btn-labeled btn-rounded"><b><i class="icon-switch2"></i></b> Cerrar	</button>
 										
 								</div>
 							</div>
@@ -374,52 +263,48 @@
 								
 								<!-- forms -->
 								
-									<div class="row" id="Aparecer">
-										<div class="col-md-6">
-										
-										
-											<div class="form-group required">
-												<label class="control-label">Empresas</label> <select
-													data-placeholder="Lista de empresasEmpresas" class="select">
-													<!-- Aqui va combo -->
-													<optgroup label="Seleeciona Empresa">
-														<option value="AZ">Arizona</option>
-														<option value="CO">Colorado</option>
-														<option value="ID">Idaho</option>
-														<option value="WY">Wyoming</option>
-													</optgroup>
-												</select>
-
+									<!-- Combobox -->
+											<div class="row" id="Aparecer">
+												
+												<div class="row" id="combosb">
+													<div class="col-md-6">
+														<div class="form-group required">
+															<label class="control-label">Empresas</label> 
+															<select  data-placeholder="Lista de empresasEmpresas" id="select" class="select">
+																<!-- Aqui va combo -->
+																<optgroup  id="cbx1" label="Seleeciona Empresa">
+																	<!-- data for js -->
+																</optgroup>
+															</select>
+														</div>
+													</div>
+													
+													<div class="col-md-6">
+														<div class="form-group required">
+															<label class="control-label">Representante</label>
+															 <select  data-placeholder="Seguros de Empresa"  id="select2" class="select">
+																<!-- Aqui va combo -->
+																<optgroup id="cbx12" label="Seleeciona Representante">
+																	<!-- data for js -->
+																	
+																</optgroup>
+															</select>
+														</div>
+													</div>
+												</div>
+												
+												
+												<div class="col-md-3">
+													<div class="form-group">
+														<button type="button" onclick="ocultar();"
+															class="btn btn-info btn-float btn-rounded">
+															<i class="icon-plus3"></i>
+														</button>
+													</div>
+												</div>
+												
 											</div>
-											
-									
-										
-										</div>
-										<div class="col-md-6">
-											<div class="form-group required">
-												<label class="control-label">Representante</label> <select
-													data-placeholder="Seguros de Empresa" class="select">
-													<!-- Aqui va combo -->
-													<optgroup label="Seleeciona Empresa">
-														<option value="AZ">Arizona</option>
-														<option value="CO">Colorado</option>
-														<option value="ID">Idaho</option>
-														<option value="WY">Wyoming</option>
-													</optgroup>
-												</select>
-											</div>
-
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<button type="button" onclick="ocultar();"
-													class="btn btn-info btn-float btn-rounded">
-													<i class="icon-plus3"></i>
-												</button>
-											</div>
-										</div>
-									</div>
-
+									<!-- /Combobox -->
 
 								
 									<div class="col-md-12" id="ocultar">
@@ -551,14 +436,18 @@
 									
 									
 									<div class ="row">
+									
 										<div class="col-md-3">
-											<button  id="Boton" onclick="registrar();" style=" text-align: center;" type="button" class="btn bg-success-400 btn-labeled btn-rounded"><b><i class="icon-checkmark"></i></b> Completar Registro	</button>
+											<button  id="BotonEx" onclick="alert('soy existente')" style=" text-align: center;" type="button" class="btn bg-success-400 btn-labeled btn-rounded"><b><i class="icon-checkmark"></i></b> Registrar Existente	</button>
 										</div>
-										
 										<div class="col-md-4">
-										
 											<button onclick="asocultar();" style=" text-align: center;" type="button" class="btn bg-danger-400 btn-labeled btn-rounded"><b><i class="icon-switch2"></i></b> Cancelar	</button>
 										</div>
+										
+										<div class="col-md-3">
+											<button  id="Boton" onclick="registrar();" style=" text-align: center;" type="button" class="btn bg-success-400 btn-labeled btn-rounded"><b><i class="icon-checkmark"></i></b> Registrar nuevo	</button>
+										</div>
+										
 									</div>
 								</div>
 							</div>
@@ -582,9 +471,8 @@
 
 
 	<!-- area de modales  -->
-		
-		  <!-- Warning modal -->
-					<div id="modal_theme_warning" class="modal fade">
+		 
+		<div id="modal_theme_warning" class="modal fade">
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header bg-warning">
@@ -597,71 +485,76 @@
 									
 									
 									<div class="panel">
-								<div class="panel-body text-center">
-									<div class="icon-object border-danger text-danger"><i class="icon-office"></i></div>
-									<h5 class="text-semibold">Universidad Peruana Union</h5>
-								</div>
-							</div>
-									
-									
+										
+										<div id="empresaName" class="panel-body text-center">
+											<div class="icon-object border-danger text-danger"><i class="icon-office"></i></div>
+											<h5 class="text-semibold">Universidad Peruana Union</h5>
+										</div>
+							
+									</div>
 									<!-- List of latest updates -->
 							<div class="panel panel-flat">
-								<div class="panel-body">
-									<ul class="media-list">
-										<li class="media">
-											<div class="media-left">
-												<a href="#" class="btn border-primary text-primary btn-flat btn-icon btn-rounded btn-sm">
-													<i class="icon-store2"></i>
-												</a>
-											</div>
-
-											<div class="media-body">
-												<p><strong>RUC : </strong></p>
-												<p><strong>Dirección : </strong></p>
-											</div>
-										</li>
-
-										<li class="media">
-											<div class="media-left">
-												<a href="#" class="btn border-danger text-danger btn-flat btn-icon btn-rounded btn-sm">
-													<i class="icon-vcard"></i>
-												</a>
-											</div>
-
-											<div class="media-body">
-												<p><strong>Representante : </strong></p>
-												<p><strong>Celular : </strong></p>
-												<p><strong>DNI : </strong></p>
-												<p><strong>Correo : </strong></p>
-											</div>
-										</li>
-
-										<li class="media">
-											<div class="media-left">
-												<a href="#" class="btn border-slate text-slate btn-flat btn-icon btn-rounded btn-sm">
-													<i class="icon-cash3"></i>
-												</a>
-											</div>
-
-											<div class="media-body">
-												<p><strong>Periodo : </strong></p>
-												<p><strong>Horario : </strong></p>
-												<p><strong>Sueldo : </strong></p>
-											</div>
-										</li>
-										<li class="media">
-											<div class="media-left">
-												<a href="#" class="btn border-success text-success btn-flat btn-icon btn-rounded btn-sm">
-													<i class="icon-checkmark3"></i>
-												</a>
-											</div>
-											
-											<div class="media-body">
-												<p><strong>Area de Trabajo : </strong></p>
-											</div>
-										</li>
-									</ul>
+								
+								<div id="cargModal" class="panel-body">
+									<!-- esto esta siendo cargado por js -->
+										<ul class="media-list">
+											<li class="media">
+												<div class="media-left">
+													<a href="#" class="btn border-primary text-primary btn-flat btn-icon btn-rounded btn-sm">
+														<i class="icon-store2"></i>
+													</a>
+												</div>
+	
+												<div class="media-body">
+													<p><strong>RUC : </strong></p>
+													<p><strong>Dirección : </strong></p>
+												</div>
+											</li>
+	
+											<li class="media">
+												<div class="media-left">
+													<a href="#" class="btn border-danger text-danger btn-flat btn-icon btn-rounded btn-sm">
+														<i class="icon-vcard"></i>
+													</a>
+												</div>
+	
+												<div class="media-body">
+													<p><strong>Representante : </strong></p>
+													<p><strong>Celular : </strong></p>
+													<p><strong>DNI : </strong></p>
+													<p><strong>Correo : </strong></p>
+												</div>
+											</li>
+	
+											<li class="media">
+												<div class="media-left">
+													<a href="#" class="btn border-slate text-slate btn-flat btn-icon btn-rounded btn-sm">
+														<i class="icon-cash3"></i>
+													</a>
+												</div>
+	
+												<div class="media-body">
+													<p><strong>Periodo : </strong></p>
+													<p><strong>Horario : </strong></p>
+													<p><strong>Sueldo : </strong></p>
+												</div>
+											</li>
+											<li class="media">
+												<div class="media-left">
+													<a href="#" class="btn border-success text-success btn-flat btn-icon btn-rounded btn-sm">
+														<i class="icon-checkmark3"></i>
+													</a>
+												</div>
+												
+												<div class="media-body">
+													<p><strong>Area de Trabajo : </strong></p>
+												</div>
+											</li>
+										</ul>
+									<!-- /esto esta siendo cargado por js -->
 								</div>
+								
+								
 							</div>
 							<!-- /list of latest updates -->
 
@@ -677,11 +570,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<!-- /warning modal -->
-
-		
-		
+				</div>
+				
 	<!-- / are4a de modales -->
 
 
@@ -692,7 +582,8 @@
 	$(document).ready(function() {
 		$("#Notify").hide();
 		$("#Regis").hide();
-		$
+		$("#Boton").hide();
+// 		$("#modal_theme_warning").modal('show');
 	});
 
 	function Notify() {
@@ -708,6 +599,12 @@
 	function asocultar(){
 		$("#Regis").hide(500);
 		$('#btn_Rvca').attr("disabled", false);
+		$("#Aparecer").show();
+		$("#ocultar").hide();
+		
+		//botones
+		$("#Boton").hide();
+		$("#BotonEx").show();
 	}
 	
 	function nsocultar(){

@@ -154,7 +154,7 @@
 
 					<!-- Footer -->
 					<div class="footer text-center">
-	                  &copy; 2017. <a href="#">Sistema de Practicas Pre-Profesionales</a> by <a href="https://www.facebook.com/AlphaTeamUPeU/" target="_blank">Alpha Team - UPeU</a>
+	                  &copy; 2018. <a href="#">Sistema de Practicas Pre-Profesionales</a> by <a href="https://www.facebook.com/AlphaTeamUPeU/" target="_blank">Alpha Team - UPeU</a>
                     </div>
 					<!-- /footer -->
 

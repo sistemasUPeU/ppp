@@ -124,12 +124,12 @@
 	
 <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_page_header.js'/>"></script>
 	<script type="text/javascript">
-		window.onbeforeunload = function(e) {
-			var e = e || window.event;
-			if (e) {
-				e.returnValue = 'Se perderan todos los datos que no hayas guardado';
+			window.onbeforeunload = function(e) {
+				var e = e || window.event;
+				if (e) {
+					e.returnValue = 'Se perderan todos los datos que no hayas guardado';
+				}
 			}
-		}
 
 		$.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 			options.async = true;
