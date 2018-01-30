@@ -71,4 +71,26 @@ public class VacanteDAOImp implements VacanteDAO {
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
 	}
 
+
+	@Override
+	public ArrayList<Map<String, Object>> CargaCombox1() {
+		try {
+			sql="select Idempresa , Razonsocial from ppp_empresa ";
+		} catch (Exception ev) {
+			System.out.println("No  CargaCombox1, error:_"+ev);
+		}
+		return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
+	}
+
+
+	@Override
+	public ArrayList<Map<String, Object>> CargaCombox1(int id) {
+		try {
+			sql="select Rp.Idrepresentante , U.Nombre ||' , '|| U.Apellidos as Repre from ppp_representante rp , Ppp_Usuario u , ppp_empresa em where Rp.Idempresa = Em.Idempresa and Rp.Idrepresentante = U.Idusuario and Em.Idempresa = ?";
+		} catch (Exception ev) {
+			System.out.println("No  CargaCombox1 id, error:_"+ev);
+		}
+		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
+	}
+
 }

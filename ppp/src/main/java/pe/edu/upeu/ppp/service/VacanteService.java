@@ -10,6 +10,9 @@ public interface VacanteService {
 	
 	public ArrayList<Map<String, Object>> ListarHistoria(int id);
 	
+	public ArrayList<Map<String, Object>> CargaCombox1();
+	public ArrayList<Map<String, Object>> CargaCombox1(int id);
+	
 	public int NewVacante(String P_IDPERIODO,
 	 		String P_IDREPRESENTANTE,
 	 		String P_AREATRABAJO,

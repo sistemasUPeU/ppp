@@ -17,7 +17,6 @@ public class VacanteServiceImpl implements VacanteService {
 
 	@Override
 	public ArrayList<Map<String, Object>> listarVacantes(int id) {
-		// TODO Auto-generated method stub
 		return vacanteDAO.listarVacantes(id);
 	}
 
@@ -37,8 +36,17 @@ public class VacanteServiceImpl implements VacanteService {
 
 	@Override
 	public ArrayList<Map<String, Object>> ListarHistoria(int id) {
-		// TODO Auto-generated method stub
 		return vacanteDAO.ListarHistoria(id);
+	}
+
+	@Override
+	public ArrayList<Map<String, Object>> CargaCombox1() {
+		return vacanteDAO.CargaCombox1();
+	}
+
+	@Override
+	public ArrayList<Map<String, Object>> CargaCombox1(int id) {
+		return vacanteDAO.CargaCombox1(id);
 	}
 
 }

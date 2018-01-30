@@ -2,13 +2,15 @@ $(document).ready(function() {
 	$("#ocultar").hide();
 	listarSeguro();
 	dataVacante();
+	ListEmpresa();
 });
 
 // funciones de vista
 function ocultar(){
 	$("#ocultar").show(500);
 	$("#Aparecer").hide();
-	
+	$("#Boton").show();
+	$("#BotonEx").hide();
 }
 
 
@@ -50,8 +52,59 @@ function listarSeguro() {
 	});
 }
 
+function ListEmpresa() {
+	$.get('rp?opc=Combox', function(objJson) {
+		var v = '';
+		var c='';
+		var combox1 = objJson.combox1;
+		console.log(combox1);
+		
+		// solo para ListEmpresa
+		if(combox1.length>0){
+			for (var i = 0; i < combox1.length; i++) {
+				v +='<option value="' + combox1[i].IDEMPRESA + '">'+ combox1[i].RAZONSOCIAL +'</option>';
+			}
+			$("#cbx1").empty();			
+			$("#cbx1").append(v);
+			$('#select2').attr("disabled", true);
+		
+			$('#select').on('change', function() {
+				$("#cbx12").empty();
+				
+				$('#select2').attr("disabled", false);
+				var selec = $(this).val();
+				c= '';
+				alert(selec)
+				
+				$.get('rp?opc=Combox1&idSe='+selec, function(objJson) {
+					c= '';
+					
+					var combox11 = objJson.combox11;
+					console.log(combox11);
+					if ( combox11.length>0){
+						c ='<option value=""></option>';
+						for (var j = 0; j < combox11.length; j++) {
+							c +='<option value="' + combox11[j].IDREPRESENTANTE + '">'+ combox11[j].REPRE +'</option>';
+						}
+						$("#cbx12").empty();
+						$('#select2 option:select').remove();
+						$("#cbx12").append(c);
+						
+						alert(c)
+					}else{
+						console.log("anidado errr");
+					}
+				});
+				
+			});
+			
+		}
+	});
+}
 
 
+
+//---------------------------------------------------------------------------------------------------------------
 // cargar vacantes existentes on data table
 function dataVacante (){
 	// create component 
@@ -59,16 +112,22 @@ function dataVacante (){
 	var c ;
 	var m ;
 	var mm;
+	var hc;
 	// recoleccion de datos 
 	var RAZONSOCIAL, RUC, DIRECCION;
 	var REPRESENTANTE, CELULAR, DNI;
 	var CORREO , PERIODO , HORARIO ;
 	var SUELDO , HORA, AREATRABAJO;
 	
+	// recoleccion del historial de practicas
+	var CICLO , DESCRIPCION , DIRECCION2 , EMPRESA ;
+	var ESCUELA, PLAZO , REPRESENTANTEH , SEMESTRE;
 	
 	$.getJSON('rp?opc=Vacantes', function(objJson){
 		var vacantes = objJson.Vacantes;
+		var history =  objJson.history;
 		console.log(vacantes);
+		console.log(history);
 		if (vacantes.length > 0) {
 			for (var i = 0; i < vacantes.length; i++) {
 				//recoger valores de tabla 
@@ -97,6 +156,9 @@ function dataVacante (){
 						  </td>';
 				s += '</tr>';
 			}
+			
+			$('#btn_Rvca').attr("disabled", true);
+			
 			$("#contTable").empty();
 			c = create (s);
 			$("#contTable").append(c);
@@ -114,15 +176,43 @@ function dataVacante (){
 			
 		
 		}else{
+			
 			$("#contTable").hide();
 			var a ="<h2><strong>NO!! tienes vacante asignada..</strong></h2>";
 			$("#msj").empty();
 			$("#msj").append(a);
 		}
 		
+		
+		if(history.length > 0){
+			for(var j = 0; j < history.length; j++){
+				//recoger valores de tabla 
+				EMPRESA	  			  = history[j].EMPRESA;
+				REPRESENTANTEH 		  = history[j].REPRESENTANTE;
+				DIRECCION2			  = history[j].DIRECCION;
+				CICLO 				  = history[j].CICLO;
+				REPRESENTANTEH 		  = history[j].REPRESENTANTE;
+				ESCUELA			 	  = history[j].ESCUELA;
+				CICLO 				  = history[j].CICLO;
+				DESCRIPCION 		  = history[j].DESCRIPCION;
+				SEMESTRE			  = history[j].SEMESTRE;
+				PLAZO 				  = history[j].PLAZO;
+			}
+			
+			// reseteamos y mostramos HisotryCards
+			$("#historyCards").empty();
+			hc =  historyCards(EMPRESA, REPRESENTANTEH , DIRECCION2 , REPRESENTANTEH , ESCUELA , CICLO , DESCRIPCION , SEMESTRE , PLAZO);
+			$("#historyCards").append(hc);
+			
+		}else{
+			
+			console.log("Error Papai");
+		}
+		
 	});
 }
-	
+
+//funcion para crear datatable
 function create (s){
 	var b ='<table id="tabla" class="table datatable-responsive">\
 				<thead>\
@@ -204,6 +294,45 @@ function createModal (RUC,DIRECCION,REPRESENTANTE, CELULAR ,DNI, CORREO,PERIODO,
 	return m;
 }
 
+//funcion de history
+function historyCards(EMPRESA, REPRESENTANTEH , DIRECCION2 , REPRESENTANTEH , ESCUELA , CICLO , DESCRIPCION , SEMESTRE , PLAZO){
+	var h="	<div class='col-lg-12'>\
+				<div class='panel border-left-lg border-left-danger invoice-grid timeline-content'>\
+					<div class='panel-body'>\
+						<div class='row'>\
+							<div class='col-sm-12'>\
+								<h6 class='text-semibold no-margin-top'>"+EMPRESA+"</h6>\
+								<ul class='list list-unstyled'>\
+									<li>Representante: "+ REPRESENTANTEH +"</li>\
+									<li>Direccion:<span class='text-semibold'>"+DIRECCION2+"</span></li>\
+								</ul>\
+							</div>\
+							<div class='col-sm-12'>\
+								<h6 class='text-semibold text-right no-margin-top'>"+ESCUELA+"</h6>\
+								<ul class='list list-unstyled text-right'>\
+									<li><span class='text-semibold'>"+CICLO+"</span></li>\
+									<li class='dropdown'>\
+										Estado: &nbsp;\
+										<a  class='label bg-danger-400 dropdown-toggle'>"+DESCRIPCION+"</a>\
+									</li>\
+								</ul>\
+							</div>\
+						</div>\
+					</div>\
+					<div class='panel-footer panel-footer-condensed'>\
+						<div class='heading-elements'>\
+							<span class='heading-text'>\
+								<span class='status-mark border-danger position-left'></span><strong> "+SEMESTRE+" </strong> ; <span class='text-semibold'>"+PLAZO+"</span>\
+							</span>\
+							<ul class='list-inline list-inline-condensed heading-text pull-right'>\
+								<li><a href='#' class='text-default' data-toggle='modal' data-target='#invoice'><i class='icon-eye8'></i></a></li>\
+							</ul>\
+						</div>\
+					</div>\
+				</div>\
+			</div>";
+	return h;
+}
 
 // --------------------------------------------------------------
 // funcion para re3gistrar vacante
