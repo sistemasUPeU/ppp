@@ -63,14 +63,13 @@ public class CenterController {
 		String CICLO = ((CUserDTO) authentication.getPrincipal()).getCiclo();
 		
 		
-		
-		
 		try {
 			switch (opc) {
 
 			case "Combox":
 				mp.put("as", empredao.ListSeguro());
 				mp.put("li", empredao.ListLineas());
+				
 				mp.put("combox1", vS.CargaCombox1());
 				System.out.println("pun pun"+vS.CargaCombox1());
 				break;

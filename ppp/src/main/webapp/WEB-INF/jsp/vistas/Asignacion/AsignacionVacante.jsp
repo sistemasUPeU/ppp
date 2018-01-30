@@ -323,7 +323,7 @@
 																<div class="form-group">
 																	<label>Nombre: <span class="text-danger">*</span></label>
 																	<input type="text" id="nombreRepre" name="nombre"
-																		class="form-control required" placeholder="Nombre...">
+																		class="form-control" required placeholder="Nombre...">
 																</div>
 															</div>
 			

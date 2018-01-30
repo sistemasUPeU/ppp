@@ -106,14 +106,14 @@
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="text" name="username"  class="form-control" placeholder="Username">
+								<input type="text" name="username" required  class="form-control" placeholder="Username">
 								<div class="form-control-feedback">
 									<i class="icon-user text-muted"></i>
 								</div>
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="password" name="password" class="form-control" placeholder="Password">
+								<input type="password" name="password" required class="form-control" placeholder="Password">
 								<div class="form-control-feedback">
 									<i class="icon-lock2 text-muted"></i>
 								</div>
@@ -129,7 +129,7 @@
 								<div class="input-field col s12">
 									<c:if test="${not empty error}">
 										<div class="alert alert-warning alert-bordered">
-											<button type="button" class="close" data-dismiss="alert">
+											<button type="button"  class="close" data-dismiss="alert">
 												<span>&times;</span><span class="sr-only">Close</span>
 											</button>
 											<span class="text-semibold">${error}
