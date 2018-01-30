@@ -14,7 +14,8 @@ public class SpringConnection {
     public static DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
-        dataSource.setUrl("jdbc:oracle:thin:@192.168.21.26:1521:XE");
+        //para conexion a bd local (yerry)
+        dataSource.setUrl("jdbc:oracle:thin:@127.0.0.1:1521:XE");
         dataSource.setUsername("U_BRAYER");
         dataSource.setPassword("brayer123");
         return dataSource;
