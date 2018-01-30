@@ -13,6 +13,7 @@
 <meta name="_csrf" content="${_csrf.token}" />
 <meta name="_csrf_header" content="${_csrf.headerName}" />
 
+<link rel="icon" type="image/ico" href="resources/imagenes/PPP.ico" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
