@@ -105,7 +105,7 @@ function getrutas(id){
 
 function namePerfil(nombre ,apellido ) {
 	var s = '<a class="dropdown-toggle" data-toggle="dropdown">';
-//	s+='<img src="<c:url value=\'\'resources/imagenes/1.png\'\'/>" alt="">';
+//	s+='<img src="<c:url value=\'\'resources/imagenes/1.png\'\'\'/>" alt="">';
 	s+='<span>'+nombre+'  '+apellido+'</span>';
 	s+='<i class="caret"></i>';
 	s+='</a>';
