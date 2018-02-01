@@ -336,32 +336,35 @@ function historyCards(EMPRESA, REPRESENTANTEH , DIRECCION2 , REPRESENTANTEH , ES
 	return h;
 }
 
+function FormatearFormJson(v_json){
+	var n_json='';
+	$.each(v_json,function(index,v){
+		var clave=v.name;
+		var valor=v.value;
+		
+		n_json=n_json+'"'+clave+'":"'+valor+'",';		
+	});
+	n_json=n_json.substring(0,n_json.length-1);
+	n_json=JSON.parse('{'+n_json+'}');
+	
+	return n_json;
+}
 // --------------------------------------------------------------
 // funcion para re3gistrar vacante
 function registrar() {
 	
-	var url = "rp?opc=new_Empresa";
-	// REPRESENTANTE
-	var data = "&nom=" + $("#nombreRepre").val();
-	data += "&ape=" +  $("#ape").val();
-	data += "&dnii=" + $("#dni").val();
-	data += "&cel=" +  $("#cel").val();
-	data += "&cor=" + $("#correo").val();
-	data += "&gen=" + $("#genero").val();
-
-	//EMPRESAS
-	data += "&raz=" + $("#rasoc").val();
-	data += "&rucc=" +  $("#ruc").val();
-	data += "&direc=" + $("#direccion").val();
-	data += "&seg=" + $("#seguro").val();
-	data += "&act=" + $("#actividad").val();
-	data += "&car=" + $("#cargo").val();
+	var url = "rp";
+	// Datos del Representante y la empresa
+	var data = $("#form_new_empresa").serializeArray();
+	data=FormatearFormJson(data);
 	
+	console.log("----imprime datos repre y empresa");
+	console.log(data);
 	
-	alert(data);
-//	$.post(url,data, function(objJson) {
-//		var rspt = objJson.abl;
-//		console.log(rspt);
+	$.post(url,{"opc":"new_Empresa","paq_datos":JSON.stringify(data)}, function(objJson) {
+		var rspt = objJson;
+		console.log("llego");
+		console.log(rspt);
 //		
 //		if(rspt == 1){
 //			swal({
@@ -378,8 +381,6 @@ function registrar() {
 //	            type: "info"
 //	        });	
 //		}
-//	});
-	
-	
+	});		
 };
 

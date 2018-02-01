@@ -36,7 +36,9 @@ public class CenterController {
 	List<Map<String, Object>> listas;
 
 	@RequestMapping(value = "/rp", method = RequestMethod.POST)
-	public ModelAndView paginas(ModelAndView modelo, HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+	public void paginas(ModelAndView modelo, HttpServletRequest request, HttpServletResponse response, Authentication authentication)throws IOException {
+		response.setContentType("application/json");
+		PrintWriter out_post = response.getWriter();
 		String opc = request.getParameter("opc");
 		switch (opc) {
 		case "1":
@@ -45,10 +47,14 @@ public class CenterController {
 		case "2":
 			break;
 		case "new_Empresa":
-			
+			String paq_recibido=request.getParameter("envio_paq");
+			mp.put(paq_recibido,false);
 		break;
 		}
-		return modelo;
+		Gson gson = new Gson();
+		out_post.println(gson.toJson(mp));
+		out_post.flush();
+		out_post.close();
 	}
 
 	

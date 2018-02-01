@@ -317,7 +317,7 @@
 											
 											<div class="row">
 												
-												<form action="">
+												<form id="form_new_empresa" action="">
 														<div class="row">
 															<div class="col-md-3">
 																<div class="form-group">
@@ -424,7 +424,7 @@
 															<div class="col-md-4">
 																<div id="llenarseguro" class="form-group required">
 																	<label class="control-label">Seguros de Empresa</label> <select
-																		id="seguro" data-placeholder="Seguros de Empresa"
+																		id="seguro" name="seguro" data-placeholder="Seguros de Empresa"
 																		class="select">
 																		<!-- Aqui va combo -->
 																	</select>
