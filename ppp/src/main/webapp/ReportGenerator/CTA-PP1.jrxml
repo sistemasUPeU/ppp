@@ -7,8 +7,14 @@
 	<parameter name="txtCargoRp" class="java.lang.String"/>
 	<parameter name="txtEmpresa" class="java.lang.String"/>
 	<parameter name="txtDireccion" class="java.lang.String"/>
-	<parameter name="Parameter2" class="java.lang.String"/>
+	<parameter name="txtPracticante" class="java.lang.String"/>
 	<parameter name="txtGenero" class="java.lang.String"/>
+	<parameter name="txtCodigo" class="java.lang.String"/>
+	<parameter name="txtCiclo" class="java.lang.String"/>
+	<parameter name="txtAreaTrabajo" class="java.lang.String"/>
+	<parameter name="txtEscuelaEP" class="java.lang.String"/>
+	<parameter name="txtFacultad" class="java.lang.String"/>
+	<parameter name="txtDirector" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -27,7 +33,7 @@
 					<text><![CDATA[Lima, Ñaña, ]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="90" y="5" width="100" height="30" uuid="f10187cb-4575-4144-b2f6-e0f2885d7c1e"/>
+					<reportElement positionType="Float" x="90" y="5" width="100" height="30" uuid="f10187cb-4575-4144-b2f6-e0f2885d7c1e"/>
 					<textElement>
 						<font fontName="Arial" size="14"/>
 					</textElement>
@@ -48,9 +54,9 @@
 					<text><![CDATA[Señor:]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="13" y="30" width="150" height="30" uuid="1a1291b3-5e92-49df-a9fe-3a55d4efa839"/>
+					<reportElement x="13" y="30" width="357" height="30" uuid="1a1291b3-5e92-49df-a9fe-3a55d4efa839"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="14"/>
+						<font fontName="Arial" size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{txtRepresentante}]]></textFieldExpression>
 				</textField>
@@ -62,14 +68,14 @@
 					<textFieldExpression><![CDATA[$P{txtCargoRp}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="12" y="90" width="100" height="30" uuid="f7c0ea9f-7b7f-4fe1-a8e4-4679adaeb82a"/>
+					<reportElement x="12" y="90" width="358" height="30" uuid="f7c0ea9f-7b7f-4fe1-a8e4-4679adaeb82a"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="14"/>
+						<font fontName="Arial" size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{txtEmpresa}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="11" y="120" width="100" height="30" uuid="0f3cca86-da00-4a60-bef0-9477757291fa"/>
+					<reportElement x="11" y="120" width="349" height="30" uuid="0f3cca86-da00-4a60-bef0-9477757291fa"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14"/>
 					</textElement>
@@ -86,14 +92,14 @@
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="336" splitType="Stretch">
+		<band height="370" splitType="Stretch">
 			<frame>
-				<reportElement x="20" y="16" width="524" height="284" uuid="5fd22ed3-c587-4824-868c-5f605cebf604"/>
+				<reportElement x="15" y="20" width="524" height="350" uuid="5fd22ed3-c587-4824-868c-5f605cebf604"/>
 				<frame>
 					<reportElement x="10" y="10" width="500" height="90" uuid="a0de71e6-14d2-478e-b231-01a1754f70bd"/>
 					<staticText>
 						<reportElement x="0" y="0" width="500" height="90" uuid="02637a1b-1ee3-4234-9d4e-590bd0777c32"/>
-						<textElement verticalAlignment="Top">
+						<textElement textAlignment="Justified" verticalAlignment="Top">
 							<font fontName="Arial" size="14"/>
 						</textElement>
 						<text><![CDATA[De mi especial consideración: 
@@ -102,29 +108,159 @@ Es un placer saludarle y desearle nuestros mejores deseos de bienestar y prosper
 					</staticText>
 				</frame>
 				<staticText>
-					<reportElement x="10" y="110" width="200" height="20" uuid="172373ab-f6f4-4722-be7d-3bdcaea0fa65"/>
+					<reportElement x="10" y="110" width="190" height="20" uuid="172373ab-f6f4-4722-be7d-3bdcaea0fa65"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14"/>
 					</textElement>
-					<text><![CDATA[Tengo el grato de presentarle a ]]></text>
+					<text><![CDATA[Tengo el grato de presentarle ]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="210" y="110" width="100" height="20" uuid="44380108-9641-4f0b-8a3a-473b0649c2a7"/>
+					<reportElement x="200" y="110" width="95" height="20" uuid="44380108-9641-4f0b-8a3a-473b0649c2a7"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="14"/>
+						<font fontName="Arial" size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{txtGenero}]]></textFieldExpression>
 				</textField>
+				<textField>
+					<reportElement x="295" y="110" width="214" height="20" uuid="615b14c6-3917-4069-a7a2-30aeb7b4ce2e"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtPracticante}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="11" y="130" width="179" height="20" uuid="f9f45027-c49a-49dd-a2b4-5107a31d3247"/>
+					<textElement>
+						<font fontName="Arial" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[, con código universitario N* ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="190" y="130" width="100" height="20" uuid="5ca5f4b5-b419-4a99-8109-8fff7723984f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtCodigo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="290" y="130" width="90" height="20" uuid="726ce9d0-e424-4f73-95e7-cc09e6c2c380"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<text><![CDATA[estudiante del]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="380" y="130" width="128" height="20" uuid="b5f18350-f43f-4462-9063-99ae718d9374"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtCiclo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="12" y="150" width="38" height="20" uuid="de2e5164-0a35-4ea4-bd07-1b4d82c05757"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<text><![CDATA[de la]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="11" y="210" width="268" height="20" uuid="91fdba54-7a87-41c8-a80c-36527215787f"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtAreaTrabajo}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="279" y="210" width="230" height="20" uuid="e7bd8aec-7cef-4554-8d0c-83b9bee5f0ad"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<text><![CDATA[En la entidad que usted representa.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="12" y="240" width="500" height="70" uuid="1d79feca-93ba-49f3-90fc-8bd3824646cb"/>
+					<textElement>
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<text><![CDATA[Quedo muy agradecido por su gentil atención y por su apoyo que brinda a nuestros profesionales de vuestra escuela.
+
+Cordialemente.]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="50" y="151" width="170" height="19" uuid="0dc84700-a8c3-47e2-817b-ea7084279dab"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtEscuelaEP}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="220" y="150" width="40" height="20" uuid="dbbf49d5-3515-4c10-9388-b929c02af27c"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<text><![CDATA[de la]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="260" y="150" width="258" height="20" uuid="c18e8677-8640-4508-bbfd-8d09926decbb"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtFacultad}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="12" y="170" width="496" height="40" uuid="127334ed-02d1-4298-b910-7c476e7336c4"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<text><![CDATA[de la Universidad Peruana Unión, quien viene gestionando una oportunidad para realizar sus Prácticas Pre Profesionales en el área de]]></text>
+				</staticText>
 			</frame>
 		</band>
 	</columnHeader>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="160" splitType="Stretch">
+			<frame>
+				<reportElement x="15" y="1" width="524" height="159" uuid="a3915fbf-bd72-48ab-9010-2a110819c4f8"/>
+				<textField>
+					<reportElement x="145" y="60" width="235" height="20" uuid="a5009537-f127-4a35-b6d9-b7e1d580b07a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtDirector}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="130" y="80" width="100" height="20" uuid="e8175082-0f3b-4517-8bba-8b1cb357efbc"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[DIRECTOR(a) ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="240" y="80" width="210" height="20" uuid="ea3caae8-c7a7-4df5-8056-8434d9fc8b44"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtEscuelaEP}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="120" y="100" width="310" height="20" uuid="579d800d-ee0b-49f1-bd8b-0b2be1f5a313"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{txtFacultad}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
 	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="30" width="100" height="30" uuid="6216f086-050d-4b7d-95f0-9e172ac4b64f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</summary>
 </jasperReport>
