@@ -352,7 +352,16 @@
 																		placeholder="numero de celular">
 																</div>
 															</div>
-			
+															
+															<div class="col-md-3">
+																<div class="form-group">
+																	<label>Cargo en la Empresa: <span
+																		class="text-danger">*</span></label> <input type="text"
+																		id="cargo" name="cargo" class="form-control required"
+																		placeholder="Director de R.R.H.H">
+																</div>
+															</div>
+															
 															<div class="col-md-3">
 																<div class="form-group">
 																	<label>Corre Electronico: <span
@@ -403,14 +412,7 @@
 																		class="form-control required" placeholder="ruc">
 																</div>
 															</div>
-			
-															<div class="col-md-2">
-																<div class="form-group">
-																	<label>Cargo:<span class="text-danger">*</span></label> <input
-																		type="text" id="cargo" name="cargo"
-																		class="form-control required" placeholder="cargo">
-																</div>
-															</div>
+																		
 															<div class="col-md-4">
 																<div class="form-group">
 																	<label>Actividad: <span class="text-danger">*</span></label>

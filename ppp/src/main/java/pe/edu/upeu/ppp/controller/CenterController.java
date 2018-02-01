@@ -35,7 +35,7 @@ public class CenterController {
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
 
-	@RequestMapping(value = "/rg", method = RequestMethod.POST)
+	@RequestMapping(value = "/rp", method = RequestMethod.POST)
 	public ModelAndView paginas(ModelAndView modelo, HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
 		String opc = request.getParameter("opc");
 		switch (opc) {
@@ -44,6 +44,9 @@ public class CenterController {
 
 		case "2":
 			break;
+		case "new_Empresa":
+			
+		break;
 		}
 		return modelo;
 	}
@@ -108,11 +111,9 @@ public class CenterController {
 				String sueldo = request.getParameter("sueldo");
 				//String linia = request.getParameter("linia");
 				
-				int a =	empredao.RegEmpresa(nom, ape, dnii, cel,
+				int a =	empredao.RegEmpresa(IDROL,nom, ape, dnii, cel,
 						cor, genero, car, IDPERIODO, raz,
-						rucc, direc, seg, act, IDALUMNO, IDROL, 
-						CICLO, arTrabajo, cantidad, horario, f_ini,
-									f_fin, h_ini, h_fin, sueldo, "1");
+						rucc, direc, seg, act);
 				
 				if(a!=0) {
 					rpta.put("abl", 1);

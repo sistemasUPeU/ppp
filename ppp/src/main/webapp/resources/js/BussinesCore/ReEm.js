@@ -340,7 +340,7 @@ function historyCards(EMPRESA, REPRESENTANTEH , DIRECCION2 , REPRESENTANTEH , ES
 // funcion para re3gistrar vacante
 function registrar() {
 	
-	var url = "rp?opc=Registro";
+	var url = "rp?opc=new_Empresa";
 	// REPRESENTANTE
 	var data = "&nom=" + $("#nombreRepre").val();
 	data += "&ape=" +  $("#ape").val();
@@ -376,7 +376,7 @@ function registrar() {
 //	            text: "This is some sort of a custom alert",
 //	            confirmButtonColor: "#2196F3",
 //	            type: "info"
-//	        });
+//	        });	
 //		}
 //	});
 	
