@@ -19,7 +19,7 @@ public class VacanteDAOImp implements VacanteDAO {
 	@Override
 	public ArrayList<Map<String, Object>> listarVacantes(int id) {
 		try {
-			sql="SELECT V.Idvacantes , P.Periodo as Semestre , Em.Razonsocial ,Em.Ruc ,Em.Direccion, U.Apellidos ||', '|| U.Nombre as Representante ,U.Celular , U.Dni, U.Correo, V.Horario , V.Fechainicio || ' - ' || V.Fechafin AS Periodo, V.Horainicio || ' - ' || V.Horafin as Hora , V.Sueldo , V.Areatrabajo FROM PPP_VACANTES V , PPP_EMPRESA EM , PPP_PERIODO P , PPP_REPRESENTANTE RP , Ppp_Usuario u WHERE Em.Idempresa = Rp.Idempresa and V.Idperiodo =  P.Idperiodo and V.Idempresa = Em.Idempresa and Rp.Idrepresentante = U.Idusuario and  V.IDUSUARIO = ? AND V.Idestado = 22 ";
+			sql="SELECT V.Idvacantes , P.Periodo as Semestre , Em.Razonsocial ,Em.Ruc ,Em.Direccion, U.Apellidos ||', '|| U.Nombre as Representante ,U.Celular , U.Dni, U.Correo, V.Horario , V.Fechainicio || ' - ' || V.Fechafin AS Periodo, V.Horainicio || ' - ' || V.Horafin as Hora , V.Sueldo , V.Areatrabajo ,  Rp.Cargo  FROM PPP_VACANTES V , PPP_EMPRESA EM , PPP_PERIODO P , PPP_REPRESENTANTE RP , Ppp_Usuario u WHERE Em.Idempresa = Rp.Idempresa and V.Idperiodo =  P.Idperiodo and V.Idempresa = Em.Idempresa and Rp.Idrepresentante = U.Idusuario and  V.IDUSUARIO = ? AND V.Idestado = 22 ";
 		} catch (Exception ev) {
 			System.out.println("No lista Vacantes, error:_"+ev);
 		}
