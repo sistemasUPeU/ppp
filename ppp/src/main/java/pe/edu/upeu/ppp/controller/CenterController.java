@@ -48,7 +48,7 @@ public class CenterController {
 			break;
 		case "new_Empresa":
 			String paq_recibido=request.getParameter("envio_paq");
-			mp.put(paq_recibido,false);
+			mp.put(paq_recibido,false);			
 		break;
 		}
 		Gson gson = new Gson();
@@ -117,9 +117,9 @@ public class CenterController {
 				String sueldo = request.getParameter("sueldo");
 				//String linia = request.getParameter("linia");
 				
-				int a =	empredao.RegEmpresa(IDROL,nom, ape, dnii, cel,
-						cor, genero, car, IDPERIODO, raz,
-						rucc, direc, seg, act);
+				int a =	empredao.RegEmpresa(nom, ape, dnii, cel,
+						cor, genero, car, Integer.parseInt(IDPERIODO), raz,
+						rucc, direc, seg, act,23);
 				
 				if(a!=0) {
 					rpta.put("abl", 1);

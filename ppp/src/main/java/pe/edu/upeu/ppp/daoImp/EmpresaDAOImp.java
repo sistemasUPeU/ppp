@@ -16,7 +16,7 @@ public class EmpresaDAOImp implements EmpresaDAO {
 	JdbcTemplate jt;
 	
 	@Override
-	public int RegEmpresa(String P_IDROL,String P_NOMBRE, 
+	public int RegEmpresa(String P_NOMBRE, 
 		 	  String P_APELLIDOS,
 		 	  String P_DNI,
 		 	  String P_CELULAR,
@@ -24,20 +24,21 @@ public class EmpresaDAOImp implements EmpresaDAO {
 		 	  String P_GENERO,
 		 	  
 		 	  String P_CARGO,
-		 	  String P_IDPERIODO,
+		 	  int P_IDPERIODO,
 		 	  
 		 	  String P_RAZONSOCIAL,
 		 	  String P_RUC,
 		 	  String P_DIRECCION,
 		 	  String P_SEGURO,
-		 	  String P_ACTIVIDAD) {
+		 	  String P_ACTIVIDAD,
+		 	  int p_IdEstado) {
 		
 		String sql ="";
 		int x = 0;
 		try {
-			sql = "{CALL PA_REGS_EMPRESA_P1_AND_P2(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
-			x = jt.update(sql, P_IDROL , P_NOMBRE , P_APELLIDOS , P_DNI , P_CELULAR , P_CORREO , P_GENERO,
-					 P_CARGO, P_IDPERIODO , P_RAZONSOCIAL, P_RUC , P_DIRECCION , P_SEGURO, P_ACTIVIDAD);
+			sql = "{CALL PA_REGISTRAR_EMPRESA(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+			x = jt.update(sql,P_NOMBRE , P_APELLIDOS , P_DNI , P_CELULAR , P_CORREO , P_GENERO,
+					 P_CARGO, P_IDPERIODO , P_RAZONSOCIAL, P_RUC , P_DIRECCION , P_SEGURO, P_ACTIVIDAD,p_IdEstado);
 		} catch (Exception e) {
 			System.out.println("error en RegEmpresa dao implement:" + e);
 		}

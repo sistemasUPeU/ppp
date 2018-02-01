@@ -6,7 +6,7 @@ import java.util.Map;
 public interface EmpresaDAO {
 
 	// Este meto usa el procedimiento PA_REG_EMPRESA_P1_AND_P2
-	 int RegEmpresa(String P_IDROL,String P_NOMBRE, 
+	 int RegEmpresa(String P_NOMBRE, 
 			 	  String P_APELLIDOS,
 			 	  String P_DNI,
 			 	  String P_CELULAR,
@@ -14,13 +14,14 @@ public interface EmpresaDAO {
 			 	  String P_GENERO,
 			 	  
 			 	  String P_CARGO,
-			 	  String P_IDPERIODO,
+			 	  int P_IDPERIODO,
 			 	  
 			 	  String P_RAZONSOCIAL,
 			 	  String P_RUC,
 			 	  String P_DIRECCION,
 			 	  String P_SEGURO,
-			 	  String P_ACTIVIDAD);
+			 	  String P_ACTIVIDAD,
+			 	  int p_IdEstado);
 
 	 //Listar seguros de empresas
 	 List<Map<String, Object>> ListSeguro();
