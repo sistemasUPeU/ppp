@@ -11,10 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
@@ -23,6 +27,7 @@ import pe.edu.upeu.ppp.entity.CUserDTO;
 import pe.edu.upeu.ppp.service.EmpresaService;
 import pe.edu.upeu.ppp.service.VacanteService;
 @Controller
+@RequestMapping("/rp")
 public class CenterController {
 
 	@Autowired
@@ -35,31 +40,24 @@ public class CenterController {
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
 
-	@RequestMapping(value = "/rp", method = RequestMethod.POST)
-	public void paginas(ModelAndView modelo, HttpServletRequest request, HttpServletResponse response, Authentication authentication)throws IOException {
-		response.setContentType("application/json");
-		PrintWriter out_post = response.getWriter();
-		String opc = request.getParameter("opc");
+	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String centerPost(@RequestParam(value="opc") String opc,@RequestParam(value="form_datos")String form_datos, Authentication authentication)throws IOException {						
 		switch (opc) {
 		case "1":
 			break;
 
 		case "2":
 			break;
-		case "new_Empresa":
-			String paq_recibido=request.getParameter("envio_paq");
-			mp.put(paq_recibido,false);			
+		case "new_Empresa":			
+						
 		break;
 		}
-		Gson gson = new Gson();
-		out_post.println(gson.toJson(mp));
-		out_post.flush();
-		out_post.close();
+		return form_datos; 
 	}
 
 	
 
-	@RequestMapping(value = "/rp", method = RequestMethod.GET)
+	@GetMapping
 	public void metod(HttpServletRequest request, HttpServletResponse response , Authentication authentication) throws IOException {
 		response.setContentType("application/json");
 		//HttpSession session = request.getSession(true);

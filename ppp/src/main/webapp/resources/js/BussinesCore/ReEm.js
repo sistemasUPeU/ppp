@@ -361,7 +361,12 @@ function registrar() {
 	console.log("----imprime datos repre y empresa");
 	console.log(data);
 	
-	$.post(url,{"opc":"new_Empresa","paq_datos":JSON.stringify(data)}, function(objJson) {
+	$.ajax({
+		url:url,
+		method:"POST",
+		contentType:"application/json",
+		data:{"opc":"new_Empresa","form_datos":JSON.stringify(data)},
+		success:function(objJson) {
 		var rspt = objJson;
 		console.log("llego");
 		console.log(rspt);
@@ -381,6 +386,6 @@ function registrar() {
 //	            type: "info"
 //	        });	
 //		}
-	});		
+	}});		
 };
 
