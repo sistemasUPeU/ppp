@@ -67,8 +67,8 @@ public class CenterController {
 			if(IDROL=="3"){
 				vl_estado=22;
 			}						
-			
-			int resp=empredao.RegEmpresa(myHasMap.get("nombre").toString(),
+			int resp=123;
+/*			resp=empredao.RegEmpresa(myHasMap.get("nombre").toString(),
 					myHasMap.get("apellido").toString(),
 					myHasMap.get("dni").toString(),
 					myHasMap.get("celular").toString(),
@@ -81,7 +81,7 @@ public class CenterController {
 					myHasMap.get("direccion").toString(),
 					Integer.parseInt(myHasMap.get("seguro").toString()),
 					myHasMap.get("actividad").toString(), vl_estado);			
-			
+*/
 			mp = new HashMap<>();
 			mp.put("resp", resp);
 		break;
