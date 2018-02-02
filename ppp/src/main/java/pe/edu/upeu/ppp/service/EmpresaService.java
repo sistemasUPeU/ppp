@@ -18,7 +18,7 @@ public interface EmpresaService {
 		 	  String P_RAZONSOCIAL,
 		 	  String P_RUC,
 		 	  String P_DIRECCION,
-		 	  String P_SEGURO,
+		 	  int P_SEGURO,
 		 	  String P_ACTIVIDAD,
 		 	  int p_IdEstado);
 	

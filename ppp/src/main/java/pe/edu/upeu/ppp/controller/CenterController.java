@@ -2,6 +2,7 @@ package pe.edu.upeu.ppp.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.lucene.analysis.core.TypeTokenFilterFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
@@ -22,9 +24,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import pe.edu.upeu.ppp.entity.CUserDTO;
 import pe.edu.upeu.ppp.service.EmpresaService;
 import pe.edu.upeu.ppp.service.VacanteService;
@@ -53,6 +55,11 @@ public class CenterController {
 			break;
 		case "new_Empresa":
 			String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
+			int vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
+			
+			Type type = new TypeToken<HashMap<String, Object>>(){}.getType();
+			HashMap<String, Object> myHasMap = new Gson().fromJson(form_datos, type);
+			
 //		El estado 'ACTIVO' corresponde al id 23
 //		El estado 'PENDIENTE' corresponde al id 22
 			int vl_estado=23;
@@ -60,9 +67,23 @@ public class CenterController {
 			if(IDROL=="3"){
 				vl_estado=22;
 			}						
-//			empredao.RegEmpresa(, P_APELLIDOS, P_DNI, P_CELULAR, P_CORREO, P_GENERO, P_CARGO, P_IDPERIODO, P_RAZONSOCIAL, P_RUC, P_DIRECCION, P_SEGURO, P_ACTIVIDAD, p_IdEstado);
+			
+			int resp=empredao.RegEmpresa(myHasMap.get("nombre").toString(),
+					myHasMap.get("apellido").toString(),
+					myHasMap.get("dni").toString(),
+					myHasMap.get("celular").toString(),
+					myHasMap.get("correo").toString(),
+					myHasMap.get("genero").toString(),
+					myHasMap.get("cargo").toString(),
+					vl_idperiodo,
+					myHasMap.get("rasoc").toString(),
+					myHasMap.get("ruc").toString(),
+					myHasMap.get("direccion").toString(),
+					Integer.parseInt(myHasMap.get("seguro").toString()),
+					myHasMap.get("actividad").toString(), vl_estado);			
+			
 			mp = new HashMap<>();
-			mp.put("resp", true);
+			mp.put("resp", resp);
 		break;
 		}
 		return mp; 
@@ -130,7 +151,7 @@ public class CenterController {
 				
 				int a =	empredao.RegEmpresa(nom, ape, dnii, cel,
 						cor, genero, car, Integer.parseInt(IDPERIODO), raz,
-						rucc, direc, seg, act,23);
+						rucc, direc, Integer.parseInt(seg), act,23);
 				
 				if(a!=0) {
 					rpta.put("abl", 1);

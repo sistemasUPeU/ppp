@@ -373,7 +373,7 @@
 															<div class="col-md-2">
 																<div class="form-group">
 																	<label>Genero<span class="text-danger required">*</span></label>
-																	<select name="Genero" id="genero"
+																	<select name="genero" id="genero"
 																		data-placeholder="Genero" class="form-control required">
 																		<option>Seleccionar</option>
 																		<option value="1">M</option>
