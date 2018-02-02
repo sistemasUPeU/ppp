@@ -21,7 +21,7 @@ public class CUserDTO implements UserDetails, Serializable{
 	private String correo;
 	private String usu;
 	private String pass;
-	private String activo;
+	private String idestado;
 	private String genero;
 	
 	private String idrol;
@@ -72,7 +72,7 @@ public class CUserDTO implements UserDetails, Serializable{
 	}
 
 	public CUserDTO(String iDUSER, String nombre, String apellido, String dni, String celular, String usu, String pass,
-			String activo, String genero, String idrol,String idperiodo, String ciclo,  boolean accountNonExpired,
+			String idestado, String genero, String idrol,String idperiodo, String ciclo,  boolean accountNonExpired,
 			boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
 			IDUSER = iDUSER;
 			this.nombre = nombre;
@@ -81,7 +81,7 @@ public class CUserDTO implements UserDetails, Serializable{
 			this.celular = celular;
 			this.usu = usu;
 			this.pass = pass;
-			this.activo = activo;
+			this.idestado = idestado;
 			this.genero = genero;
 			this.idrol = idrol;
 			this.idperiodo = idperiodo;
@@ -155,14 +155,6 @@ public class CUserDTO implements UserDetails, Serializable{
 		this.pass = pass;
 	}
 
-	public String getActivo() {
-		return activo;
-	}
-
-	public void setActivo(String activo) {
-		this.activo = activo;
-	}
-
 	public String getGenero() {
 		return genero;
 	}
@@ -216,5 +208,13 @@ public class CUserDTO implements UserDetails, Serializable{
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return Enabled;
+	}
+
+	public String getIdestado() {
+		return idestado;
+	}
+
+	public void setIdestado(String idestado) {
+		this.idestado = idestado;
 	}
 }
