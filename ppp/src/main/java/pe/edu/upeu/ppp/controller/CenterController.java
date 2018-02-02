@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import pe.edu.upeu.ppp.entity.CUserDTO;
@@ -40,19 +42,30 @@ public class CenterController {
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
 
-	@PostMapping(produces=MediaType.APPLICATION_JSON_VALUE,consumes=MediaType.APPLICATION_JSON_VALUE)
-	public String centerPost(@RequestParam(value="opc") String opc,@RequestParam(value="form_datos")String form_datos, Authentication authentication)throws IOException {						
+	@PostMapping
+	@ResponseBody
+	public  Map<String,Object> centerPost(@RequestParam(value="opc") String opc,@RequestParam(value="form_datos") String form_datos, Authentication authentication)throws IOException {						
+
 		switch (opc) {
 		case "1":
 			break;
-
 		case "2":
 			break;
-		case "new_Empresa":			
-						
+		case "new_Empresa":
+			String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
+//		El estado 'ACTIVO' corresponde al id 23
+//		El estado 'PENDIENTE' corresponde al id 22
+			int vl_estado=23;
+//		el id_rol que corresponde a practicante es 3
+			if(IDROL=="3"){
+				vl_estado=22;
+			}						
+//			empredao.RegEmpresa(, P_APELLIDOS, P_DNI, P_CELULAR, P_CORREO, P_GENERO, P_CARGO, P_IDPERIODO, P_RAZONSOCIAL, P_RUC, P_DIRECCION, P_SEGURO, P_ACTIVIDAD, p_IdEstado);
+			mp = new HashMap<>();
+			mp.put("resp", true);
 		break;
 		}
-		return form_datos; 
+		return mp; 
 	}
 
 	

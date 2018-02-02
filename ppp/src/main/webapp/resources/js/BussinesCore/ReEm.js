@@ -353,7 +353,7 @@ function FormatearFormJson(v_json){
 // funcion para re3gistrar vacante
 function registrar() {
 	
-	var url = "rp";
+	var urls = "rp";
 	// Datos del Representante y la empresa
 	var data = $("#form_new_empresa").serializeArray();
 	data=FormatearFormJson(data);
@@ -362,14 +362,15 @@ function registrar() {
 	console.log(data);
 	
 	$.ajax({
-		url:url,
+		url:urls,
 		method:"POST",
-		contentType:"application/json",
+		dataType:"JSON",
+		contentType:"application/json",		
 		data:{"opc":"new_Empresa","form_datos":JSON.stringify(data)},
 		success:function(objJson) {
-		var rspt = objJson;
-		console.log("llego");
-		console.log(rspt);
+			var rspt = objJson;
+			console.log("llego");
+			console.log(rspt);
 //		
 //		if(rspt == 1){
 //			swal({
