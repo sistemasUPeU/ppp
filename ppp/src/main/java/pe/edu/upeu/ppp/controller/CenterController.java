@@ -60,10 +60,10 @@ public class CenterController {
 			Type type = new TypeToken<HashMap<String, Object>>(){}.getType();
 			HashMap<String, Object> myHasMap = new Gson().fromJson(form_datos, type);
 			
-//		El estado 'ACTIVO' corresponde al id 23
-//		El estado 'PENDIENTE' corresponde al id 22
+//El estado 'ACTIVO' corresponde al id 23
+//El estado 'PENDIENTE' corresponde al id 22
 			int vl_estado=23;
-//		el id_rol que corresponde a practicante es 3
+//el id_rol que corresponde a practicante es 3
 			if(IDROL=="3"){
 				vl_estado=22;
 			}						
