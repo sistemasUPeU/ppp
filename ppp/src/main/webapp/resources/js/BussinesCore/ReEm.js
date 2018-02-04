@@ -363,10 +363,10 @@ function registrar() {
 	
 	$.ajax({
 		url:urls,
-		method:"POST",
-		dataType:"JSON",
-		contentType:"application/json",		
+		method:"POST",		
+		crossDomain : true,	
 		data:{"opc":"new_Empresa","form_datos":JSON.stringify(data)},
+		contentType:"application/json",
 		success:function(objJson) {
 			var rspt = objJson;
 			console.log("llego");

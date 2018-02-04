@@ -43,11 +43,12 @@ public class CenterController {
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
-
+//POST
 	@PostMapping
+//	@ResponseStatus(HttpStatus.CREATED) // 201
 	@ResponseBody
-	public  Map<String,Object> centerPost(@RequestParam(value="opc") String opc,@RequestParam(value="form_datos") String form_datos, Authentication authentication)throws IOException {						
-
+	public Map<String,Object> centerPost(@RequestParam("opc") String opc,@RequestParam("form_datos") String form_datos, Authentication authentication)throws IOException {						
+		
 		switch (opc) {
 		case "1":
 			break;
@@ -90,7 +91,7 @@ public class CenterController {
 	}
 
 	
-
+//GET
 	@GetMapping
 	public void metod(HttpServletRequest request, HttpServletResponse response , Authentication authentication) throws IOException {
 		response.setContentType("application/json");
