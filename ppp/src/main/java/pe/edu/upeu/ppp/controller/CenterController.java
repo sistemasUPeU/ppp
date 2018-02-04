@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,8 +45,8 @@ public class CenterController {
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
 //POST
-	@PostMapping
-//	@ResponseStatus(HttpStatus.CREATED) // 201
+//	@CrossOrigin(origins = {"http://localhost:9090"}, maxAge = 4800, allowCredentials = "false")
+	@PostMapping	
 	@ResponseBody
 	public Map<String,Object> centerPost(@RequestParam("opc") String opc,@RequestParam("form_datos") String form_datos, Authentication authentication)throws IOException {						
 		

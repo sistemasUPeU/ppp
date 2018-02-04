@@ -358,15 +358,22 @@ function registrar() {
 	var data = $("#form_new_empresa").serializeArray();
 	data=FormatearFormJson(data);
 	
-	console.log("----imprime datos repre y empresa");
+	console.log("----imprime datos repre y empresa");	
 	console.log(data);
+	console.log("${_csrf.parameterName}"+"  :  "+"${_csrf.token}");
+	
+	var header=$("meta[name='_csrf_header']").attr("content");
+	var token=$("meta[name='_csrf']").attr("content");
 	
 	$.ajax({
 		url:urls,
 		method:"POST",		
-		crossDomain : true,	
-		data:{"opc":"new_Empresa","form_datos":JSON.stringify(data)},
+//		crossDomain : true,
 		contentType:"application/json",
+		data:{"opc":"new_Empresa","form_datos":JSON.stringify(data)},
+		beforeSend:function(xhr){
+			xhr.setRequestHeader(header,token);
+		},
 		success:function(objJson) {
 			var rspt = objJson;
 			console.log("llego");
