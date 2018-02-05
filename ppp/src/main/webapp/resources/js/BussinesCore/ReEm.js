@@ -353,47 +353,75 @@ function FormatearFormJson(v_json){
 // funcion para re3gistrar vacante
 function registrar() {
 	
-	var urls = "rp";
+	var urls = "rp?opc=new_Empresa";
 	// Datos del Representante y la empresa
 	var data = $("#form_new_empresa").serializeArray();
 	data=FormatearFormJson(data);
 	
 	console.log("----imprime datos repre y empresa");	
 	console.log(data);
-	console.log("${_csrf.parameterName}"+"  :  "+"${_csrf.token}");
 	
-	var header=$("meta[name='_csrf_header']").attr("content");
-	var token=$("meta[name='_csrf']").attr("content");
+	 $.ajax({
+         url : urls,
+         data : JSON.stringify(data), 
+         method : 'post', //en este caso
+         dataType: "json",
+         contentType: "application/json",
+         success : function(objJson){
+        	var rspt = objJson.resp;
+ 			console.log("llego");
+ 			console.log(rspt);
+ 			if(rspt != 0){
+				swal({
+					title : "Registrado correctamente!",
+					text : "Espere la confirmación del Supervisor de Practicas.!",
+					confirmButtonColor : "#66BB6A",
+					type : "success"
+				});
+ 			}else{
+				swal({
+		            title: "For your information",
+		            text: "This is some sort of a custom alert",
+		            confirmButtonColor: "#2196F3",
+		            type: "info"
+		        });	
+ 			}
+ 			
+         },
+         error: function(error){
+                //codigo error
+         }
+	 });
 	
-	$.ajax({
-		url:urls,
-		method:"POST",		
-//		crossDomain : true,
-		contentType:"application/json",
-		data:{"opc":"new_Empresa","form_datos":JSON.stringify(data)},
-		beforeSend:function(xhr){
-			xhr.setRequestHeader(header,token);
-		},
-		success:function(objJson) {
-			var rspt = objJson;
-			console.log("llego");
-			console.log(rspt);
-//		
-//		if(rspt == 1){
-//			swal({
-//				title : "Registrado correctamente!",
-//				text : "Espere la confirmación del Supervisor de Practicas.!",
-//				confirmButtonColor : "#66BB6A",
-//				type : "success"
-//			});
-//		}else{
-//			swal({
-//	            title: "For your information",
-//	            text: "This is some sort of a custom alert",
-//	            confirmButtonColor: "#2196F3",
-//	            type: "info"
-//	        });	
-//		}
-	}});		
+//	$.ajax({
+//		url:urls,
+//		method:"POST",		
+////		crossDomain : true,
+//		contentType:"application/json",
+//		data:{"opc":"new_Empresa","form_datos":JSON.stringify(data)},
+//		beforeSend:function(xhr){
+//			xhr.setRequestHeader(header,token);
+//		},
+//		success:function(objJson) {
+//			var rspt = objJson.resp;
+//			console.log("llego");
+//			console.log(rspt);
+////		
+////		if(rspt == 1){
+////			swal({
+////				title : "Registrado correctamente!",
+////				text : "Espere la confirmación del Supervisor de Practicas.!",
+////				confirmButtonColor : "#66BB6A",
+////				type : "success"
+////			});
+////		}else{
+////			swal({
+////	            title: "For your information",
+////	            text: "This is some sort of a custom alert",
+////	            confirmButtonColor: "#2196F3",
+////	            type: "info"
+////	        });	
+////		}
+//	}});		
 };
 

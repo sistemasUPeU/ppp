@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,11 +45,13 @@ public class CenterController {
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
-//POST
-//	@CrossOrigin(origins = {"http://localhost:9090"}, maxAge = 4800, allowCredentials = "false")
-	@PostMapping	
+	
+	Gson gson = new Gson();
+	PrintWriter out;
+	
+	@PostMapping 	
 	@ResponseBody
-	public Map<String,Object> centerPost(@RequestParam("opc") String opc,@RequestParam("form_datos") String form_datos, Authentication authentication)throws IOException {						
+	public void centerPost( HttpServletRequest request, HttpServletResponse response , @RequestParam("opc") String opc,@RequestBody String data, Authentication authentication)throws IOException {						
 		
 		switch (opc) {
 		case "1":
@@ -58,43 +61,44 @@ public class CenterController {
 		case "new_Empresa":
 			String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
 			int vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
+		
+			HashMap<String, Object> myHasMap;
 			
-			Type type = new TypeToken<HashMap<String, Object>>(){}.getType();
-			HashMap<String, Object> myHasMap = new Gson().fromJson(form_datos, type);
-			
-//El estado 'ACTIVO' corresponde al id 23
-//El estado 'PENDIENTE' corresponde al id 22
+			//El estado 'ACTIVO' corresponde al id 23
+			//El estado 'PENDIENTE' corresponde al id 22
 			int vl_estado=23;
-//el id_rol que corresponde a practicante es 3
+			//el id_rol que corresponde a practicante es 3
 			if(IDROL=="3"){
 				vl_estado=22;
 			}						
 			int resp=123;
-/*			resp=empredao.RegEmpresa(myHasMap.get("nombre").toString(),
-					myHasMap.get("apellido").toString(),
-					myHasMap.get("dni").toString(),
-					myHasMap.get("celular").toString(),
-					myHasMap.get("correo").toString(),
-					myHasMap.get("genero").toString(),
-					myHasMap.get("cargo").toString(),
-					vl_idperiodo,
-					myHasMap.get("rasoc").toString(),
-					myHasMap.get("ruc").toString(),
-					myHasMap.get("direccion").toString(),
-					Integer.parseInt(myHasMap.get("seguro").toString()),
-					myHasMap.get("actividad").toString(), vl_estado);			
-*/
-			mp = new HashMap<>();
+//			resp=empredao.RegEmpresa(
+//					myHasMap.get("nombre").toString(),
+//					myHasMap.get("apellido").toString(),
+//					myHasMap.get("dni").toString(),
+//					myHasMap.get("celular").toString(),
+//					myHasMap.get("correo").toString(),
+//					myHasMap.get("genero").toString(),
+//					myHasMap.get("cargo").toString(),
+//					vl_idperiodo,
+//					myHasMap.get("rasoc").toString(),
+//					myHasMap.get("ruc").toString(),
+//					myHasMap.get("direccion").toString(),
+//					Integer.parseInt(myHasMap.get("seguro").toString()),
+//					myHasMap.get("actividad").toString(), vl_estado);			
+
+			
+			System.out.println(data);
 			mp.put("resp", resp);
 		break;
 		}
-		return mp; 
+		respuesta( response);
 	}
 
 	
 //GET
 	@GetMapping
-	public void metod(HttpServletRequest request, HttpServletResponse response , Authentication authentication) throws IOException {
+	public void metod( HttpServletRequest request, HttpServletResponse response , Authentication authentication) throws IOException {
 		response.setContentType("application/json");
 		//HttpSession session = request.getSession(true);
 		PrintWriter out = response.getWriter();
@@ -122,74 +126,6 @@ public class CenterController {
 				System.out.println("pun pun 2"+vS.CargaCombox1(cid));
 				break;
 				
-			case "Registro":
-
-				// REPRESENTANTE
-				String nom = request.getParameter("nom");
-				String ape = request.getParameter("ape");
-				String dnii = request.getParameter("dnii");
-				String cel = request.getParameter("cel");
-				String cor = request.getParameter("cor");
-				String genero = request.getParameter("gen");
-				
-				//EMPRESAS
-				String raz = request.getParameter("raz");
-				String rucc = request.getParameter("rucc");
-				String direc = request.getParameter("direc");
-				String seg = request.getParameter("seg");
-				String act = request.getParameter("act");
-				String car = request.getParameter("car");
-				
-				//Registro vacante
-				String arTrabajo = request.getParameter("arTrabajo");
-				String cantidad = request.getParameter("cantidad");
-				String horario = request.getParameter("horario");
-				String f_ini = request.getParameter("f_ini");
-				String f_fin = request.getParameter("f_fin");
-				String h_ini = request.getParameter("h_ini");
-				String h_fin = request.getParameter("h_fin");
-				String sueldo = request.getParameter("sueldo");
-				//String linia = request.getParameter("linia");
-				
-				int a =	empredao.RegEmpresa(nom, ape, dnii, cel,
-						cor, genero, car, Integer.parseInt(IDPERIODO), raz,
-						rucc, direc, Integer.parseInt(seg), act,23);
-				
-				if(a!=0) {
-					rpta.put("abl", 1);
-				}else {
-					rpta.put("abl", 0);
-				}
-				
-				System.out.println("hola : "+ rpta);
-				
-				break;
-
-			case "Newvacante":
-				String P_IDPERIODO = request.getParameter("periodo");
-				String P_IDREPRESENTANTE = request.getParameter("representante");
-				String P_AREATRABAJO = request.getParameter("area_trabajo");
-				String P_CANTIDAD = request.getParameter("cantidad");
-				String P_HORARIO = request.getParameter("horario");
-				String P_FECHAINICIO = request.getParameter("fechainicio");
-				String P_FECHAFIN = request.getParameter("fechafin");
-				String P_HORAINICIO = request.getParameter("fechainicio");
-				String P_HORAFIN = request.getParameter("horafin");
-				String P_SUELDO = request.getParameter("sueldo");
-				String P_IDLINEASP = request.getParameter("IDlineasAP");
-				String P_IDFOLDERPRACTICA = request.getParameter("");
-				String P_IDTRABAJADOR = request.getParameter("trabajador");
-				String P_IDALUMNO = request.getParameter("alumnos");
-				String P_IDROL = request.getParameter("idrol");
-				String P_CICLO = request.getParameter("ciclo");
-				String P_TIPOPRACTICA = request.getParameter("tipo_practica");
-				String P_OBSERVACIONES = request.getParameter("observacion");
-
-				vS.NewVacante(P_IDPERIODO, P_IDREPRESENTANTE, P_AREATRABAJO, P_CANTIDAD, P_HORARIO, P_FECHAINICIO,
-						P_FECHAFIN, P_HORAINICIO, P_HORAFIN, P_SUELDO, P_IDLINEASP, P_IDFOLDERPRACTICA, P_IDTRABAJADOR,
-						P_IDALUMNO, P_IDROL, P_CICLO, P_TIPOPRACTICA, P_OBSERVACIONES);
-				break;
-
 			case "Vacantes":
 				int id = Integer.parseInt(IDALUMNO);
 				mp.put("Vacantes", vS.listarVacantes(id));
@@ -203,10 +139,23 @@ public class CenterController {
 			mp.put("rpta", false);
 			System.out.println("Error CenterController COMPONENTS : " + e);
 		}
-		Gson gson = new Gson();
-		out.println(gson.toJson(mp));
-		out.flush();
-		out.close();
+		respuesta( response);
 	}
 
+	public void respuesta(HttpServletResponse response) {
+		try {
+			out = response.getWriter();
+	        out.println(gson.toJson(mp));
+	        out.flush();
+	        out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			rpta.put("rpta", "-1");
+            rpta.put("mensaje", e.getMessage());
+            out.print(gson.toJson(mp));
+            out.flush();
+            out.close();
+		}
+	}
+	
 }
