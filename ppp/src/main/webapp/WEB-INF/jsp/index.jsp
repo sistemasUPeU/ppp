@@ -125,6 +125,27 @@
 	
 <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_page_header.js'/>"></script>
 	<script type="text/javascript">
+	
+	$(document).ready(function() {
+		 $(document).bind("contextmenu",function(e) {
+		
+		return false;
+		 
+		});
+		 
+		 
+		 
+		});
+		
+// 		$(document).keydown(function (event) {
+// 				if (event.keyCode == 123) {
+// 				return false;
+// 				}
+// 				else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+// 				return false;
+// 				}
+// 		});
+	
 			window.onbeforeunload = function(e) {
 				var e = e || window.event;
 				if (e) {

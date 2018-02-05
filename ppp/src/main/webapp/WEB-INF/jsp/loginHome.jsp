@@ -153,7 +153,6 @@
 					</form>
 					<!-- /simple login form -->
 
-
 					<!-- Footer -->
 					<div class="footer text-center">
 	                  &copy; 2018. <a href="#">Sistema de Practicas Pre-Profesionales</a> by <a href="https://www.facebook.com/AlphaTeamUPeU/" target="_blank">Alpha Team - UPeU</a>
@@ -162,10 +161,8 @@
 
 				</div>
 				<!-- /content area -->
-
 			</div>
 			<!-- /main content -->
-
 		</div>
 		<!-- /page content -->
 
