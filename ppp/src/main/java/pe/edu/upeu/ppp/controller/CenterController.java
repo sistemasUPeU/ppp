@@ -51,7 +51,7 @@ public class CenterController {
 	
 	@PostMapping 	
 	@ResponseBody
-	public void centerPost( HttpServletRequest request, HttpServletResponse response , @RequestParam("opc") String opc,@RequestBody String data, Authentication authentication)throws IOException {						
+	public void centerPost( HttpServletRequest request, HttpServletResponse response , @RequestParam("opc") String opc,@RequestBody String data_json, Authentication authentication)throws IOException {						
 		
 		switch (opc) {
 		case "1":
@@ -62,9 +62,9 @@ public class CenterController {
 			String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
 			int vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
 		
-			
-			Map<String, Object> myHasMap = new HashMap<>();
-			myHasMap.put("myHasMap", data);
+			Type tipoHashMap=new TypeToken<Map<String,Object>>(){}.getType();
+			Map<String, Object> myHasMap = gson.fromJson(data_json, tipoHashMap);
+						
 			//El estado 'ACTIVO' corresponde al id 23
 			//El estado 'PENDIENTE' corresponde al id 22
 			int vl_estado=23;
@@ -72,24 +72,25 @@ public class CenterController {
 			if(IDROL=="3"){
 				vl_estado=22;
 			}						
-			int resp=123;
-//			resp=empredao.RegEmpresa(
-//					myHasMap.get("nombre").toString(),
-//					myHasMap.get("apellido").toString(),
-//					myHasMap.get("dni").toString(),
-//					myHasMap.get("celular").toString(),
-//					myHasMap.get("correo").toString(),
-//					myHasMap.get("genero").toString(),
-//					myHasMap.get("cargo").toString(),
-//					vl_idperiodo,
-//					myHasMap.get("rasoc").toString(),
-//					myHasMap.get("ruc").toString(),
-//					myHasMap.get("direccion").toString(),
-//					Integer.parseInt(myHasMap.get("seguro").toString()),
-//					myHasMap.get("actividad").toString(), vl_estado);			
+			int resp=0;
+			resp=empredao.RegEmpresa(
+					myHasMap.get("nombre").toString(),
+					myHasMap.get("apellido").toString(),
+					myHasMap.get("dni").toString(),
+					myHasMap.get("celular").toString(),
+					myHasMap.get("correo").toString(),
+					myHasMap.get("genero").toString(),
+					myHasMap.get("cargo").toString(),
+					vl_idperiodo,
+					myHasMap.get("rasoc").toString(),
+					myHasMap.get("ruc").toString(),
+					myHasMap.get("direccion").toString(),
+					Integer.parseInt(myHasMap.get("seguro").toString()),
+					myHasMap.get("actividad").toString(), vl_estado);			
 
 			
 			System.out.println(myHasMap);
+			System.out.println("Nombre-> "+myHasMap.get("nombre"));
 			mp.put("resp", resp);
 		break;
 		}
