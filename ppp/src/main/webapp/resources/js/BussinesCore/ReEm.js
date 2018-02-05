@@ -393,35 +393,5 @@ function registrar() {
          }
 	 });
 	
-//	$.ajax({
-//		url:urls,
-//		method:"POST",		
-////		crossDomain : true,
-//		contentType:"application/json",
-//		data:{"opc":"new_Empresa","form_datos":JSON.stringify(data)},
-//		beforeSend:function(xhr){
-//			xhr.setRequestHeader(header,token);
-//		},
-//		success:function(objJson) {
-//			var rspt = objJson.resp;
-//			console.log("llego");
-//			console.log(rspt);
-////		
-////		if(rspt == 1){
-////			swal({
-////				title : "Registrado correctamente!",
-////				text : "Espere la confirmación del Supervisor de Practicas.!",
-////				confirmButtonColor : "#66BB6A",
-////				type : "success"
-////			});
-////		}else{
-////			swal({
-////	            title: "For your information",
-////	            text: "This is some sort of a custom alert",
-////	            confirmButtonColor: "#2196F3",
-////	            type: "info"
-////	        });	
-////		}
-//	}});		
 };
 
