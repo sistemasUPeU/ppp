@@ -62,8 +62,9 @@ public class CenterController {
 			String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
 			int vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
 		
-			HashMap<String, Object> myHasMap;
 			
+			Map<String, Object> myHasMap = new HashMap<>();
+			myHasMap.put("myHasMap", data);
 			//El estado 'ACTIVO' corresponde al id 23
 			//El estado 'PENDIENTE' corresponde al id 22
 			int vl_estado=23;
@@ -88,7 +89,7 @@ public class CenterController {
 //					myHasMap.get("actividad").toString(), vl_estado);			
 
 			
-			System.out.println(data);
+			System.out.println(myHasMap);
 			mp.put("resp", resp);
 		break;
 		}
