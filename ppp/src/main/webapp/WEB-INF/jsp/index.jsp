@@ -134,7 +134,6 @@
 		});
 		 
 		 
-		 
 		});
 		
 // 		$(document).keydown(function (event) {

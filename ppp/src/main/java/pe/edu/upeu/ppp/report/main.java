@@ -24,23 +24,23 @@ public class main {
 
 	public static void main(String[] args)  throws JRException, IOException  {
 		
-//		 // Compile jrxml file.
+		 // Compile jrxml file.
 	       JasperReport jasperReport = JasperCompileManager.compileReport("src/main/webapp/ReportGenerator/CTA-PP1.jrxml");
 	 
 	       // Parameters for report
 	       Map<String, Object> parameters = new HashMap<String, Object>();
 	       parameters.put("txtCiclo", "vrabndux");
 	 
-	       JRDataSource vacio = new JREmptyDataSource(1);
+	       
 	       //recibe parametros 
-	       //JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters);
+	       JRDataSource vacio = new JREmptyDataSource(1);
 	       JasperPrint out  = JasperFillManager.fillReport(jasperReport, parameters, vacio);
            String name = "brandux";
 	       // Make sure the output directory exists.
-	       File outDir = new File("src/main/webapp/ReportGenerator/"+name);
+	       File outDir = new File("src/main/webapp/Portafolios/FolderPPP/"+name);
 	       outDir.mkdirs();
 	       
-	       String ruta ="src/main/webapp/ReportGenerator/"+name+"/CartP-"+name+".pdf";
+	       String ruta ="src/main/webapp/Portafolios/FolderPPP/"+name+"/CartP-"+name+".pdf";
 	       // Export to PDF.
 	       JasperExportManager.exportReportToPdfFile(out, ruta);
 	        

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CTA-PP1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6c3e54fe-4737-4538-a2e8-df31d1709a0b">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="Fecha" class="java.sql.Date"/>
 	<parameter name="txtRepresentante" class="java.lang.String"/>
 	<parameter name="txtCargoRp" class="java.lang.String"/>
@@ -15,9 +16,27 @@
 	<parameter name="txtEscuelaEP" class="java.lang.String"/>
 	<parameter name="txtFacultad" class="java.lang.String"/>
 	<parameter name="txtDirector" class="java.lang.String"/>
+	<parameter name="txtId" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[]]>
+		<![CDATA[SELECT   Esc.Nombre AS "ESCUELA", Fal.Nombre AS "FACULTAD", Tr.Tipo ||''|| U.Nombre ||' '|| U.Apellidos AS "DIRECTOR"
+FROM  PPP_ALUMNO AL , Ppp_Escuela ESC  , 
+Ppp_Facultad FAL , Ppp_Universidad UNI ,
+Ppp_Escuela_Trabajador ET, Ppp_Periodo P , Ppp_Trabajador TR ,Ppp_Usuario U 
+WHERE Al.Idescuela = ESC.Idescuela 
+AND Esc.Idfacultad = Fal.Idfacultad AND Fal.Iduniversidad =  Uni.Iduniversidad
+and   Esc.Idescuela = Et.Idescuela and  P.Idperiodo = Et.Idperiodo and  Et.Idtrabajador = Tr.Idtrabajador 
+and  Tr.Idtrabajador = U.Idusuario
+and Al.Idalumno = $P{txtId}]]>
 	</queryString>
+	<field name="ESCUELA" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ESCUELA"/>
+	</field>
+	<field name="FACULTAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="FACULTAD"/>
+	</field>
+	<field name="DIRECTOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DIRECTOR"/>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
