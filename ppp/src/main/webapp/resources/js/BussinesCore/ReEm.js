@@ -1,18 +1,33 @@
 $(document).ready(function() {
-	$("#ocultar").hide();
+	$("#ocultar , #form_despl_representante").hide();
+	$("#btn_select_representante").prop("disabled",true);
+	
 	listarSeguro();
 	dataVacante();
 	ListEmpresa();
+	
+	$("#select").on("change",function(){
+		$("#btn_select_representante").prop("disabled",false);				
+	});
 });
+
+
 
 // funciones de vista
 function ocultar(){
 	$("#ocultar").show(500);
-	$("#Aparecer").hide();
+	$("#Aparecer").hide();	
 	$("#Boton").show();
 	$("#BotonEx").hide();
 }
-
+function ocultar2(desplegarVista){
+	$("#"+desplegarVista).show(500);
+	$("#Aparecer").hide();
+	$("#Boton").show();
+	$("#BotonEx").hide();
+	
+	$("#id_form_registrar").attr("value",desplegarVista);
+}
 
 // funciones para cargar combobox
 function listarSeguro() {

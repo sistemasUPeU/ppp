@@ -294,12 +294,18 @@
 												</div>
 												
 												
-												<div class="col-md-3">
-													<div class="form-group">
-														<button type="button" onclick="ocultar();"
-															class="btn btn-info btn-float btn-rounded">
+												<div class="row">
+													<div class="form-group col-md-6">
+														<button type="button" onclick="ocultar2('ocultar');"  
+															class="btn btn-info btn-float btn-rounded btn_select_form_EmpRepre">
 															<i class="icon-plus3"></i>
-														</button>
+														</button> Nueva Empresa
+													</div>
+													<div class="form-group col-md-6">
+														<button id="btn_select_representante" type="button" onclick="ocultar2('form_despl_representante');"  
+															class="btn btn-info btn-float btn-rounded btn_select_form_EmpRepre">
+															<i class="icon-plus3"></i>
+														</button> Nuevo Representante
 													</div>
 												</div>
 												
@@ -435,12 +441,90 @@
 												</form>										
 											</div>
 									</div>
+																		
 									
+									<!-- Formulario New Representante -->
+									<div class="col-md-12" id=form_despl_representante>
+										<span class="label border-left-primary label-striped">Representante
+											de Empresa</span>
+											<br>										
+											
+											<div class="row">
+												
+												<form id="form_new_representante" action="">
+														<div class="row">
+															<div class="col-md-3">
+																<div class="form-group">
+																	<label>Nombre: <span class="text-danger">*</span></label>
+																	<input type="text" id="nombreRepre" name="nombre"
+																		class="form-control" required placeholder="Nombre...">
+																</div>
+															</div>
+			
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label>Apellidos: <span class="text-danger">*</span></label>
+																	<input type="text" id="ape" name="apellido"
+																		class="form-control required" placeholder="Apellido...!">
+																</div>
+															</div>
+			
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label>DNI<span class="text-danger">*</span></label> <input
+																		type="number" id="dni" name="dni"
+																		class="form-control required"
+																		placeholder="doc. de identidad">
+																</div>
+															</div>
+			
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label>Celular<span class="text-danger">*</span></label> <input
+																		type="number" id="cel" name="celular"
+																		class="form-control required"
+																		placeholder="numero de celular">
+																</div>
+															</div>
+															
+															<div class="col-md-3">
+																<div class="form-group">
+																	<label>Cargo en la Empresa: <span
+																		class="text-danger">*</span></label> <input type="text"
+																		id="cargo" name="cargo" class="form-control required"
+																		placeholder="Director de R.R.H.H">
+																</div>
+															</div>
+															
+															<div class="col-md-3">
+																<div class="form-group">
+																	<label>Corre Electronico: <span
+																		class="text-danger">*</span></label> <input type="email"
+																		id="correo" name="correo" class="form-control required"
+																		placeholder="Example@upeu.edu.pe">
+																</div>
+															</div>
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label>Genero<span class="text-danger required">*</span></label>
+																	<select name="genero" id="genero"
+																		data-placeholder="Genero" class="form-control required">
+																		<option>Seleccionar</option>
+																		<option value="1">M</option>
+																		<option value="2">F</option>
+																	</select>
+																</div>
+															</div>			
+														</div>																																																													
+												</form>										
+											</div>
+									</div>
 									
+							<!-- Botones de los formularios desplegables -->
 									<div class ="row">
 									
 										<div class="col-md-3">
-											<button  id="BotonEx" onclick="alert('soy existente')" style=" text-align: center;" type="button" class="btn bg-success-400 btn-labeled btn-rounded"><b><i class="icon-checkmark"></i></b> Registrar Existente	</button>
+											<button  id="BotonEx" onclick="alert('soy existente')" style=" text-align: center;" type="button" class="btn bg-success-400 btn-labeled btn-rounded"><b><i class="icon-checkmark"></i></b> Registrar Existente	</button>											
 										</div>
 										<div class="col-md-4">
 											<button onclick="asocultar();" style=" text-align: center;" type="button" class="btn bg-danger-400 btn-labeled btn-rounded"><b><i class="icon-switch2"></i></b> Cancelar	</button>
@@ -449,8 +533,9 @@
 										<div class="col-md-3">
 											<button  id="Boton" onclick="registrar();" style=" text-align: center;" type="button" class="btn bg-success-400 btn-labeled btn-rounded"><b><i class="icon-checkmark"></i></b> Registrar nuevo	</button>
 										</div>
-										
+										<input type="hidden" id="id_form_registrar" value="">										
 									</div>
+									
 								</div>
 							</div>
 						</div>
@@ -659,7 +744,9 @@
 		$("#Regis").hide(500);
 		$('#btn_Rvca').attr("disabled", false);
 		$("#Aparecer").show();
-		$("#ocultar").hide();
+		
+		var vistaDesplegable=$("#id_form_registrar").attr("value");
+		$("#"+vistaDesplegable).hide();
 		
 		//botones
 		$("#Boton").hide();
