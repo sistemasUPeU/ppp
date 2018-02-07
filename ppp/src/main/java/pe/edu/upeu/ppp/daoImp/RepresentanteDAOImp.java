@@ -15,6 +15,25 @@ public class RepresentanteDAOImp implements RepresentanteDAO {
 	@Autowired
 	JdbcTemplate jt;
 
+	@Override 
+	public int regRepresentante(String P_NOMBRE, 
+		 	  String P_APELLIDOS,
+		 	  String P_DNI,
+		 	  String P_CELULAR,
+		 	  String P_CORREO,
+		 	  String P_GENERO,int idEstado,int id_Empresa,int id_Periodo,String cargo){
+		String sql ="";
+		int x = 0;
+		try {
+			sql = "{CALL PA_NUEVO_REPRESEN(?,?,?,?,?,?,?,?,?,?)}";
+			x = jt.update(sql , id_Empresa,id_Periodo,cargo,P_NOMBRE,P_APELLIDOS,P_DNI,P_CELULAR,P_CORREO,P_GENERO
+					 ,idEstado);
+		} catch (Exception e) {
+			System.out.println("error en RegRepresentante dao implement:" + e);
+		}
+		return x;
+		
+	}
 	
 	@Override
 	public ArrayList<Map<String, Object>> listarRepr() {
