@@ -125,7 +125,7 @@
 	
 <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_page_header.js'/>"></script>
 	<script type="text/javascript">
-	
+/*	
 	$(document).ready(function() {
 		 $(document).bind("contextmenu",function(e) {
 		
@@ -135,7 +135,8 @@
 		 
 		 
 		});
-		
+
+*/	
 // 		$(document).keydown(function (event) {
 // 				if (event.keyCode == 123) {
 // 				return false;
