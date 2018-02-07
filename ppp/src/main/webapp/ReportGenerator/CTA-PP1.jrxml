@@ -3,6 +3,8 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CTA-PP1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6c3e54fe-4737-4538-a2e8-df31d1709a0b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DATA PPP"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="271"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="721"/>
 	<parameter name="Fecha" class="java.lang.String"/>
 	<parameter name="txtRepresentante" class="java.lang.String"/>
 	<parameter name="txtCargoRp" class="java.lang.String"/>
@@ -10,12 +12,11 @@
 	<parameter name="txtDireccion" class="java.lang.String"/>
 	<parameter name="txtPracticante" class="java.lang.String"/>
 	<parameter name="txtGenero" class="java.lang.String"/>
-	<parameter name="txtCodigo" class="java.lang.String"/>
 	<parameter name="txtCiclo" class="java.lang.String"/>
 	<parameter name="txtAreaTrabajo" class="java.lang.String"/>
 	<parameter name="txtId" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[SELECT   Esc.Nombre AS "ESCUELA", Fal.Nombre AS "FACULTAD", Tr.Tipo ||''|| U.Nombre ||' '|| U.Apellidos AS "DIRECTOR"
+		<![CDATA[SELECT  AL.CODIGO,  Esc.Nombre AS "ESCUELA", Fal.Nombre AS "FACULTAD", Tr.Tipo ||''|| U.Nombre ||' '|| U.Apellidos AS "DIRECTOR"
 FROM  PPP_ALUMNO AL , Ppp_Escuela ESC  , 
 Ppp_Facultad FAL , Ppp_Universidad UNI ,
 Ppp_Escuela_Trabajador ET, Ppp_Periodo P , Ppp_Trabajador TR ,Ppp_Usuario U 
@@ -25,6 +26,9 @@ and   Esc.Idescuela = Et.Idescuela and  P.Idperiodo = Et.Idperiodo and  Et.Idtra
 and  Tr.Idtrabajador = U.Idusuario
 and Al.Idalumno = $P{txtId}]]>
 	</queryString>
+	<field name="CODIGO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CODIGO"/>
+	</field>
 	<field name="ESCUELA" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ESCUELA"/>
 	</field>
@@ -151,22 +155,15 @@ Es un placer saludarle y desearle nuestros mejores deseos de bienestar y prosper
 					</textElement>
 					<text><![CDATA[, con código universitario N* ]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="190" y="130" width="100" height="20" uuid="5ca5f4b5-b419-4a99-8109-8fff7723984f"/>
-					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="14" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{txtCodigo}]]></textFieldExpression>
-				</textField>
 				<staticText>
-					<reportElement x="290" y="130" width="90" height="20" uuid="726ce9d0-e424-4f73-95e7-cc09e6c2c380"/>
+					<reportElement x="270" y="130" width="80" height="20" uuid="726ce9d0-e424-4f73-95e7-cc09e6c2c380"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14"/>
 					</textElement>
-					<text><![CDATA[estudiante del]]></text>
+					<text><![CDATA[, estudiante del]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="380" y="130" width="128" height="20" uuid="b5f18350-f43f-4462-9063-99ae718d9374"/>
+					<reportElement x="350" y="130" width="128" height="20" uuid="b5f18350-f43f-4462-9063-99ae718d9374"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14" isBold="true"/>
 					</textElement>
@@ -229,6 +226,13 @@ Cordialemente.]]></text>
 						<font fontName="Arial" size="14"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{FACULTAD}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="190" y="130" width="80" height="20" uuid="ed5afad3-fd15-4020-9488-1a82a970d756"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CODIGO}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
