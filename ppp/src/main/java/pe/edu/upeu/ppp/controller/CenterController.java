@@ -33,6 +33,7 @@ import com.google.gson.reflect.TypeToken;
 import pe.edu.upeu.ppp.entity.CUserDTO;
 import pe.edu.upeu.ppp.report.reportCreate;
 import pe.edu.upeu.ppp.service.EmpresaService;
+import pe.edu.upeu.ppp.service.RepreService;
 import pe.edu.upeu.ppp.service.VacanteService;
 @Controller
 @RequestMapping("/rp")
@@ -40,6 +41,9 @@ public class CenterController {
 
 	@Autowired
 	EmpresaService empredao;
+	
+	@Autowired
+	RepreService representanteDao;
 	
 	@Autowired
 	VacanteService vS;
@@ -54,28 +58,64 @@ public class CenterController {
 	
 	@PostMapping 	
 	@ResponseBody
-	public void centerPost( HttpServletRequest request, HttpServletResponse response , @RequestParam("opc") String opc,@RequestBody String data_json, Authentication authentication)throws IOException {						
+	public void centerPost( HttpServletRequest request, HttpServletResponse response , @RequestBody String data_json, Authentication authentication)throws IOException {						
+		
+		String opc=request.getParameter("opc");
+		Type tipoHashMap=new TypeToken<Map<String,Object>>(){}.getType();
+		Map<String, Object> myHasMap=null;
+				
+		String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
+		int vl_idperiodo=0;
+		
+		int vl_estado=0;
+		int resp=0;
 		
 		switch (opc) {
 		case "1":
 			break;
-		case "2":
+		case "new_Representante":
+			vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			
+			myHasMap = gson.fromJson(data_json, tipoHashMap);
+			
+			//El estado 'ACTIVO' corresponde al id 23
+			//El estado 'PENDIENTE' corresponde al id 22
+			vl_estado=23;
+			//el id_rol que corresponde a practicante es 3
+			System.out.println(IDROL);
+			if(IDROL.equals("3")){
+				vl_estado=22;
+			}
+			resp=0;
+			resp=representanteDao.regRepresentante(
+					myHasMap.get("nombre").toString(),
+					myHasMap.get("apellido").toString(),
+					myHasMap.get("dni").toString(),
+					myHasMap.get("celular").toString(),
+					myHasMap.get("correo").toString(),
+					myHasMap.get("genero").toString(),
+					vl_estado,
+					Integer.parseInt(myHasMap.get("idempresa").toString()),
+					vl_idperiodo,
+					myHasMap.get("cargo").toString()
+					);
+			
+			System.out.println(myHasMap);
+			System.out.println(IDROL+" _ "+vl_estado);
+			mp.put("resp", resp);
 			break;
 		case "new_Empresa":
-			String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
-			int vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
-		
-			Type tipoHashMap=new TypeToken<Map<String,Object>>(){}.getType();
-			Map<String, Object> myHasMap = gson.fromJson(data_json, tipoHashMap);
+			 vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
+					
+			myHasMap = gson.fromJson(data_json, tipoHashMap);
 						
 			//El estado 'ACTIVO' corresponde al id 23
 			//El estado 'PENDIENTE' corresponde al id 22
-			int vl_estado=23;
+			vl_estado=23;
 			//el id_rol que corresponde a practicante es 3
-			if(IDROL=="3"){
+			if(IDROL.equals("3")){
 				vl_estado=22;
 			}						
-			int resp=0;
+			resp=0;
 			resp=empredao.RegEmpresa(
 					myHasMap.get("nombre").toString(),
 					myHasMap.get("apellido").toString(),
@@ -90,13 +130,11 @@ public class CenterController {
 					myHasMap.get("direccion").toString(),
 					Integer.parseInt(myHasMap.get("seguro").toString()),
 					myHasMap.get("actividad").toString(), vl_estado);			
-
 			
 			System.out.println(myHasMap);
 			System.out.println("Nombre-> "+myHasMap.get("nombre"));
 			mp.put("resp", resp);
-		break;
-		
+			break;		
 		case "CreateCart":
 			outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
 			

@@ -296,7 +296,7 @@
 												
 												<div class="row">
 													<div class="form-group col-md-6">
-														<button type="button" onclick="ocultar2('ocultar');"  
+														<button id="btn_select_empresa" type="button" onclick="ocultar2('ocultar');"  
 															class="btn btn-info btn-float btn-rounded btn_select_form_EmpRepre">
 															<i class="icon-plus3"></i>
 														</button> Nueva Empresa

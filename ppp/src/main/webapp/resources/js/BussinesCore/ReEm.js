@@ -10,6 +10,14 @@ $(document).ready(function() {
 		$("#btn_select_representante").prop("disabled",false);				
 	});
 	
+	$("#btn_select_empresa").on("click",function(){
+		$("#Boton").attr("onclick","registrar();");
+	});
+	
+	$("#btn_select_representante").on("click",function(){
+		$("#Boton").attr("onclick","create_Representante();");
+	});
+	
 	$('#btnDesc').attr("disabled", true);
 });
 
@@ -440,9 +448,9 @@ function getCarta(){
 
 
 //-------- funcion para transformar a json
-function FormatearFormJson(v_json){
+function FormatearFormJson(form_json){
 	var n_json='';
-	$.each(v_json,function(index,v){
+	$.each(form_json,function(index,v){
 		var clave=v.name;
 		var valor=v.value;
 		
@@ -484,8 +492,8 @@ function registrar() {
 				});
  			}else{
 				swal({
-		            title: "Asegurate de llenar los campos correctamente!!",
-		            text: "Si el problema persiste intentelo más tarde ",
+		            title: "For your information",
+		            text: "This is some sort of a custom alert",
 		            confirmButtonColor: "#2196F3",
 		            type: "info"
 		        });	
@@ -499,3 +507,46 @@ function registrar() {
 	
 };
 
+function create_Representante() {
+	
+	var urls = "rp?opc=new_Representante";
+	// Datos del Representante y la empresa
+	var data = $("#form_new_representante").serializeArray();		
+	data=FormatearFormJson(data);
+	data.idempresa=$("#select").val();
+	console.log("----imprime datos representante");	
+	console.log(data);
+
+	 $.ajax({
+         url : urls,
+         data : JSON.stringify(data), 
+         method : 'post', //en este caso
+         dataType: "json",
+         contentType: "application/json",
+         success : function(objJson){
+        	var rspt = objJson.resp;
+ 			console.log("llego");
+ 			console.log(rspt);
+ 			if(rspt != 0){
+				swal({
+					title : "Registrado correctamente!",
+					text : "Espere la confirmación del Supervisor de Practicas.!",
+					confirmButtonColor : "#66BB6A",
+					type : "success"
+				});
+				ListEmpresa();
+ 			}else{
+				swal({
+		            title: "For your information",
+		            text: "This is some sort of a custom alert",
+		            confirmButtonColor: "#2196F3",
+		            type: "info"
+		        });	
+ 			}
+ 			
+         },
+         error: function(error){
+                //codigo error
+         }
+	 });
+};
