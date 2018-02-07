@@ -9,6 +9,8 @@ $(document).ready(function() {
 	$("#select").on("change",function(){
 		$("#btn_select_representante").prop("disabled",false);				
 	});
+	
+	$('#btnDesc').attr("disabled", true);
 });
 
 
@@ -122,6 +124,7 @@ function ListEmpresa() {
 //---------------------------------------------------------------------------------------------------------------
 // cargar vacantes existentes on data table
 function dataVacante (){
+	var vacantes ;
 	// create component 
 	var s ;
 	var c ;
@@ -139,10 +142,10 @@ function dataVacante (){
 	var ESCUELA, PLAZO , REPRESENTANTEH , SEMESTRE;
 	
 	$.getJSON('rp?opc=Vacantes', function(objJson){
-		var vacantes = objJson.Vacantes;
+		vacantes = objJson.Vacantes;
 		var history =  objJson.history;
-		console.log(vacantes);
-		console.log(history);
+		console.log("parse");
+		
 		if (vacantes.length > 0) {
 			for (var i = 0; i < vacantes.length; i++) {
 				//recoger valores de tabla 
@@ -161,10 +164,10 @@ function dataVacante (){
 				
 				// cargar tabla 
 				s += '<tr>';
-					s += '<td>'+vacantes[i].RAZONSOCIAL+'</td>';
-					s += '<td>'+vacantes[i].RUC+'</td>';
-					s += '<td>'+vacantes[i].HORARIO+'</td>';
-					s += '<td><strong>S/. </strong>'+vacantes[i].SUELDO+'</td>';
+					s += '<td>'+RAZONSOCIAL+'</td>';
+					s += '<td>'+RUC+'</td>';
+					s += '<td>'+HORARIO+'</td>';
+					s += '<td><strong>S/. </strong>'+SUELDO+'</td>';
 					s += '<td><span class="label label-info">Pendiente</span></td></td>';
 					s += '<td class="text-center" >\
 								<button onclick=""  data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>\
@@ -172,6 +175,7 @@ function dataVacante (){
 								<button onclick=""  data-toggle="modal" data-target="#modal_theme_success" type="button" class="btn btn-success btn-icon btn-rounded"><i class="icon-checkmark4"></i></button>\
 							</td>';
 				s += '</tr>';
+				
 			}
 			
 			$('#btn_Rvca').attr("disabled", true);
@@ -351,6 +355,91 @@ function historyCards(EMPRESA, REPRESENTANTEH , DIRECCION2 , REPRESENTANTEH , ES
 	return h;
 }
 
+// Funcion para generatorCarta
+function getCarta(){
+	var obj;
+	var RAZONSOCIAL, CARGO, DIRECCION, REPRESENTANTE ,AREATRABAJO;
+	$.getJSON('rp?opc=Vacantes', function(objJson){
+		var obj = objJson.Vacantes;
+		if (obj.length > 0) {
+			for (var i = 0; i < obj.length; i++) {
+				RAZONSOCIAL	  = obj[i].RAZONSOCIAL;
+				CARGO 		  = obj[i].CARGO;
+				DIRECCION	  = obj[i].DIRECCION;
+				REPRESENTANTE = obj[i].REPRESENTANTE;
+				AREATRABAJO   = obj[i].AREATRABAJO;
+			}
+		}
+		var dataB	  = '&RAZONSOCIAL='+RAZONSOCIAL;
+		dataB 		 += '&CARGO='+CARGO;
+		dataB		 += '&DIRECCION='+DIRECCION;
+		dataB		 += '&REPRESENTANTE='+REPRESENTANTE;
+		dataB 		 += '&AREATRABAJO='+AREATRABAJO;
+		alert(dataB);
+		$.post('rp?opc=CreateCart', dataB , function(objJson){
+			$('#btnDesc').attr("disabled", false);
+        	var rspt = objJson.crtA;
+ 			console.log(rspt);
+ 			if(rspt != 0){
+				swal({
+					title : "Generada correctamente!",
+					text : "Proceda a descargarlo!",
+					confirmButtonColor : "#66BB6A",
+					type : "success"
+				});
+				$('#btnGen').attr("disabled", true);
+ 			}else{
+				swal({
+		            title: "UPS!! Error al gener carta!!",
+		            text: "Intentelo nuevamente",
+		            confirmButtonColor: "#2196F3",
+		            type: "info"
+		        });	
+ 			}
+		});
+//		
+//		$.ajax({
+//	         url : 'rp?opc=CreateCart',
+//	         data : {RAZONSOCIAL:RAZONSOCIAL}, 
+//	         method : 'post',
+//	         dataType: "json",
+//	         contentType: "application/json",
+//	         success : function(objJson){
+//	        	$('#btnDesc').attr("disabled", false);
+//	        	var rspt = objJson.crt;
+//	 			console.log(rspt);
+//	 			if(rspt != 0){
+//					swal({
+//						title : "Generada correctamente!",
+//						text : "Proceda a descargarlo!",
+//						confirmButtonColor : "#66BB6A",
+//						type : "success"
+//					});
+//					$('#btnGen').attr("disabled", true);
+//	 			}else{
+//					swal({
+//			            title: "UPS!! Error al gener carta!!",
+//			            text: "Intentelo nuevamente",
+//			            confirmButtonColor: "#2196F3",
+//			            type: "info"
+//			        });	
+//	 			}
+//	 			
+//	         },
+//	         error: function(error){
+//	                //codigo error
+//	         }
+//		 });
+//		
+		
+	});
+	
+//	$('#modal_theme_success').modal('toggle');
+}
+
+
+
+//-------- funcion para transformar a json
 function FormatearFormJson(v_json){
 	var n_json='';
 	$.each(v_json,function(index,v){
@@ -364,7 +453,7 @@ function FormatearFormJson(v_json){
 	
 	return n_json;
 }
-// --------------------------------------------------------------
+// -------------------------------------------------------------- Registros -------------------------
 // funcion para re3gistrar vacante
 function registrar() {
 	
@@ -395,8 +484,8 @@ function registrar() {
 				});
  			}else{
 				swal({
-		            title: "For your information",
-		            text: "This is some sort of a custom alert",
+		            title: "Asegurate de llenar los campos correctamente!!",
+		            text: "Si el problema persiste intentelo más tarde ",
 		            confirmButtonColor: "#2196F3",
 		            type: "info"
 		        });	

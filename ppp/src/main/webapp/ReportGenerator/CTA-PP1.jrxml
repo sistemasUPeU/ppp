@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CTA-PP1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6c3e54fe-4737-4538-a2e8-df31d1709a0b">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="PPP-DB"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<parameter name="Fecha" class="java.sql.Date"/>
+	<parameter name="Fecha" class="java.lang.String"/>
 	<parameter name="txtRepresentante" class="java.lang.String"/>
 	<parameter name="txtCargoRp" class="java.lang.String"/>
 	<parameter name="txtEmpresa" class="java.lang.String"/>
@@ -13,9 +13,6 @@
 	<parameter name="txtCodigo" class="java.lang.String"/>
 	<parameter name="txtCiclo" class="java.lang.String"/>
 	<parameter name="txtAreaTrabajo" class="java.lang.String"/>
-	<parameter name="txtEscuelaEP" class="java.lang.String"/>
-	<parameter name="txtFacultad" class="java.lang.String"/>
-	<parameter name="txtDirector" class="java.lang.String"/>
 	<parameter name="txtId" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[SELECT   Esc.Nombre AS "ESCUELA", Fal.Nombre AS "FACULTAD", Tr.Tipo ||''|| U.Nombre ||' '|| U.Apellidos AS "DIRECTOR"
@@ -73,7 +70,7 @@ and Al.Idalumno = $P{txtId}]]>
 					<text><![CDATA[Señor:]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="13" y="30" width="357" height="30" uuid="1a1291b3-5e92-49df-a9fe-3a55d4efa839"/>
+					<reportElement x="13" y="30" width="347" height="30" uuid="1a1291b3-5e92-49df-a9fe-3a55d4efa839"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14" isBold="true"/>
 					</textElement>
@@ -87,7 +84,7 @@ and Al.Idalumno = $P{txtId}]]>
 					<textFieldExpression><![CDATA[$P{txtCargoRp}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="12" y="90" width="358" height="30" uuid="f7c0ea9f-7b7f-4fe1-a8e4-4679adaeb82a"/>
+					<reportElement x="12" y="90" width="348" height="30" uuid="f7c0ea9f-7b7f-4fe1-a8e4-4679adaeb82a"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14" isBold="true"/>
 					</textElement>
@@ -101,7 +98,7 @@ and Al.Idalumno = $P{txtId}]]>
 					<textFieldExpression><![CDATA[$P{txtDireccion}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="11" y="150" width="100" height="30" uuid="a06467f3-98e5-4ce8-8fba-61166c9d4db9"/>
+					<reportElement x="11" y="150" width="130" height="30" uuid="a06467f3-98e5-4ce8-8fba-61166c9d4db9"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14" isItalic="true"/>
 					</textElement>
@@ -113,7 +110,7 @@ and Al.Idalumno = $P{txtId}]]>
 	<columnHeader>
 		<band height="370" splitType="Stretch">
 			<frame>
-				<reportElement x="15" y="20" width="524" height="350" uuid="5fd22ed3-c587-4824-868c-5f605cebf604"/>
+				<reportElement x="15" y="20" width="529" height="350" uuid="5fd22ed3-c587-4824-868c-5f605cebf604"/>
 				<frame>
 					<reportElement x="10" y="10" width="500" height="90" uuid="a0de71e6-14d2-478e-b231-01a1754f70bd"/>
 					<staticText>
@@ -135,7 +132,7 @@ Es un placer saludarle y desearle nuestros mejores deseos de bienestar y prosper
 				</staticText>
 				<textField>
 					<reportElement x="200" y="110" width="95" height="20" uuid="44380108-9641-4f0b-8a3a-473b0649c2a7"/>
-					<textElement verticalAlignment="Middle">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{txtGenero}]]></textFieldExpression>
@@ -176,28 +173,28 @@ Es un placer saludarle y desearle nuestros mejores deseos de bienestar y prosper
 					<textFieldExpression><![CDATA[$P{txtCiclo}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="12" y="150" width="38" height="20" uuid="de2e5164-0a35-4ea4-bd07-1b4d82c05757"/>
+					<reportElement x="12" y="150" width="62" height="20" uuid="de2e5164-0a35-4ea4-bd07-1b4d82c05757"/>
 					<textElement textAlignment="Justified" verticalAlignment="Middle">
 						<font fontName="Arial" size="14"/>
 					</textElement>
-					<text><![CDATA[de la]]></text>
+					<text><![CDATA[de la E.P]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="11" y="210" width="268" height="20" uuid="91fdba54-7a87-41c8-a80c-36527215787f"/>
+					<reportElement x="11" y="228" width="268" height="20" uuid="91fdba54-7a87-41c8-a80c-36527215787f"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$P{txtAreaTrabajo}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="279" y="210" width="230" height="20" uuid="e7bd8aec-7cef-4554-8d0c-83b9bee5f0ad"/>
+					<reportElement x="279" y="228" width="230" height="20" uuid="e7bd8aec-7cef-4554-8d0c-83b9bee5f0ad"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="14"/>
 					</textElement>
 					<text><![CDATA[En la entidad que usted representa.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="12" y="240" width="500" height="70" uuid="1d79feca-93ba-49f3-90fc-8bd3824646cb"/>
+					<reportElement x="12" y="248" width="500" height="70" uuid="1d79feca-93ba-49f3-90fc-8bd3824646cb"/>
 					<textElement>
 						<font fontName="Arial" size="14"/>
 					</textElement>
@@ -205,34 +202,34 @@ Es un placer saludarle y desearle nuestros mejores deseos de bienestar y prosper
 
 Cordialemente.]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="50" y="151" width="170" height="19" uuid="0dc84700-a8c3-47e2-817b-ea7084279dab"/>
-					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="14" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{txtEscuelaEP}]]></textFieldExpression>
-				</textField>
 				<staticText>
-					<reportElement x="220" y="150" width="40" height="20" uuid="dbbf49d5-3515-4c10-9388-b929c02af27c"/>
+					<reportElement x="255" y="150" width="119" height="20" uuid="dbbf49d5-3515-4c10-9388-b929c02af27c"/>
 					<textElement textAlignment="Justified" verticalAlignment="Middle">
 						<font fontName="Arial" size="14"/>
 					</textElement>
-					<text><![CDATA[de la]]></text>
+					<text><![CDATA[de la Facultad de]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="260" y="150" width="258" height="20" uuid="c18e8677-8640-4508-bbfd-8d09926decbb"/>
-					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="14" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{txtFacultad}]]></textFieldExpression>
-				</textField>
 				<staticText>
-					<reportElement x="12" y="170" width="496" height="40" uuid="127334ed-02d1-4298-b910-7c476e7336c4"/>
+					<reportElement x="12" y="188" width="496" height="40" uuid="127334ed-02d1-4298-b910-7c476e7336c4"/>
 					<textElement textAlignment="Justified" verticalAlignment="Middle">
 						<font fontName="Arial" size="14"/>
 					</textElement>
 					<text><![CDATA[de la Universidad Peruana Unión, quien viene gestionando una oportunidad para realizar sus Prácticas Pre Profesionales en el área de]]></text>
 				</staticText>
+				<textField>
+					<reportElement x="74" y="150" width="181" height="20" uuid="fd716052-a49b-40b3-9635-f56f8898ecb4"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ESCUELA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="170" width="218" height="20" uuid="9c64db19-abda-484a-b20f-878aa92dece8"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FACULTAD}]]></textFieldExpression>
+				</textField>
 			</frame>
 		</band>
 	</columnHeader>
@@ -240,33 +237,33 @@ Cordialemente.]]></text>
 		<band height="160" splitType="Stretch">
 			<frame>
 				<reportElement x="15" y="1" width="524" height="159" uuid="a3915fbf-bd72-48ab-9010-2a110819c4f8"/>
-				<textField>
-					<reportElement x="145" y="60" width="235" height="20" uuid="a5009537-f127-4a35-b6d9-b7e1d580b07a"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="14" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{txtDirector}]]></textFieldExpression>
-				</textField>
 				<staticText>
-					<reportElement x="130" y="80" width="100" height="20" uuid="e8175082-0f3b-4517-8bba-8b1cb357efbc"/>
+					<reportElement x="130" y="80" width="110" height="20" uuid="e8175082-0f3b-4517-8bba-8b1cb357efbc"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Arial" size="12"/>
 					</textElement>
-					<text><![CDATA[DIRECTOR(a) ]]></text>
+					<text><![CDATA[DIRECTOR(a) E.P.]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="240" y="80" width="210" height="20" uuid="ea3caae8-c7a7-4df5-8056-8434d9fc8b44"/>
-					<textElement verticalAlignment="Middle">
-						<font fontName="Arial" size="14" isBold="true"/>
+					<reportElement x="120" y="102" width="310" height="20" uuid="ae31762f-e26a-4641-b13e-ba7d89ad3ee4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" size="12" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{txtEscuelaEP}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{FACULTAD}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="120" y="100" width="310" height="20" uuid="579d800d-ee0b-49f1-bd8b-0b2be1f5a313"/>
+					<reportElement x="145" y="56" width="235" height="23" uuid="bc6b8f6d-7a04-4b28-8efa-720c619612e1"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="Arial" size="12" isBold="true"/>
+						<font fontName="Arial" size="14"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$P{txtFacultad}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{DIRECTOR}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="240" y="81" width="210" height="17" uuid="e5de4ad8-b854-4c58-90fe-cdf7f31208c6"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Arial" size="14" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ESCUELA}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
