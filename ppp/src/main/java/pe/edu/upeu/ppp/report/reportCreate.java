@@ -28,7 +28,18 @@ public class reportCreate {
 		 
 		       // llenado de datos para reporte
 		       Map<String, Object> parameters = new HashMap<String, Object>();
+		       parameters.put("Fecha", Inparamets.get("Fecha").toString().trim());
+		       parameters.put("txtRepresentante", Inparamets.get("txtRepresentante").toString().trim());
+		       parameters.put("txtCargoRp", Inparamets.get("txtCargoRp").toString().trim());
+		       parameters.put("txtEmpresa", Inparamets.get("txtEmpresa").toString().trim());
+		       parameters.put("txtDireccion", Inparamets.get("txtDireccion").toString().trim());
+		       parameters.put("txtPracticante", Inparamets.get("txtPracticante").toString().trim());
+		       parameters.put("txtGenero", Inparamets.get("txtGenero").toString().trim());
+		       parameters.put("txtCodigo", Inparamets.get("txtCodigo").toString().trim());
 		       parameters.put("txtCiclo", Inparamets.get("txtCiclo").toString().trim());
+		       parameters.put("txtAreaTrabajo", Inparamets.get("txtAreaTrabajo").toString().trim());
+		       parameters.put("txtId", Inparamets.get("txtId").toString().trim());
+		       
 		       
 		       //recibe parametros 
 		       JRDataSource vacio = new JREmptyDataSource(1);
@@ -42,7 +53,6 @@ public class reportCreate {
 		       // Export to PDF.
 		       outfilePDF ="src/main/webapp/Portafolios/FolderPPP/"+name+"/CartP-"+name+".pdf";
 		       JasperExportManager.exportReportToPdfFile(out, outfilePDF);
-		        
 		       System.out.println("Done!");
 			
 		} catch (JRException e) {	

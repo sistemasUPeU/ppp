@@ -681,10 +681,10 @@
 									
 									<h5 class="text-semibold">Descargar carta de presentación</h5>
 								    <div class="row">
-								        <button type="button" onclick="alert('generar pdf')" class="btn btn-primary btn-ladda btn-ladda-progress" data-style="zoom-out"><span class="ladda-label"><i class=" icon-cog52"></i> Generar </span>
+								        <button type="button" id="btnGen"  onclick="getCarta();" class="btn btn-primary btn-ladda btn-ladda-progress" data-style="zoom-out"><span class="ladda-label"><i class=" icon-cog52"></i> Generar </span>
 								        </button>
 								        
-								        <button type="button" onclick="alert('descargar pdf')" class="btn btn-success btn-ladda btn-ladda-progress" data-style="zoom-out"><span class="ladda-label"><i class="icon-download4"></i> Descargar  </span>
+								        <button type="button" id="btnDesc"  onclick="alert('descargar pdf')" class="btn btn-success btn-ladda btn-ladda-progress" data-style="zoom-out"><span class="ladda-label"><i class="icon-download4"></i> Descargar  </span>
 								        </button>
 								    </div>
 								    

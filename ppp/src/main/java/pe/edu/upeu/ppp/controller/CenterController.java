@@ -3,6 +3,7 @@ package pe.edu.upeu.ppp.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +31,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import pe.edu.upeu.ppp.entity.CUserDTO;
+import pe.edu.upeu.ppp.report.reportCreate;
 import pe.edu.upeu.ppp.service.EmpresaService;
 import pe.edu.upeu.ppp.service.VacanteService;
 @Controller
@@ -45,6 +47,7 @@ public class CenterController {
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
+	Map<String, Object> outCT = new HashMap<String, Object>();
 	
 	Gson gson = new Gson();
 	PrintWriter out;
@@ -93,6 +96,20 @@ public class CenterController {
 			System.out.println("Nombre-> "+myHasMap.get("nombre"));
 			mp.put("resp", resp);
 		break;
+		
+		case "CreateCart":
+			outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
+			
+			String CARGO = request.getParameter("CARGO").toString();
+			String DIRECCION = request.getParameter("DIRECCION").toString();
+			String REPRESENTANTE = request.getParameter("REPRESENTANTE").toString();
+			String AREATRABAJO = request.getParameter("AREATRABAJO").toString();
+			System.out.println(out);
+			
+			
+			reportCreate rct = new reportCreate();
+			mp.put("crtA", "listo" );
+			break;
 		}
 		respuesta( response);
 	}
@@ -135,6 +152,7 @@ public class CenterController {
 				mp.put("history", vS.ListarHistoria(id));
 				System.out.println("hola pues" +vS.listarVacantes(id));
 				break;
+				
 			}
 
 		} catch (Exception e) {
@@ -159,5 +177,4 @@ public class CenterController {
             out.close();
 		}
 	}
-	
 }
