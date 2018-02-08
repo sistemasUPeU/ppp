@@ -1,6 +1,7 @@
 package pe.edu.upeu.ppp.report;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +44,7 @@ public class main {
 	       String ruta ="src/main/webapp/Portafolios/FolderPPP/"+name+"/CartP-"+name+".pdf";
 	       // Export to PDF.
 	       JasperExportManager.exportReportToPdfFile(out, ruta);
-	        
+	       JasperExportManager.exportReportToPdfStream(out, new FileOutputStream(ruta));
 	       System.out.println("Done!");
 		
 		

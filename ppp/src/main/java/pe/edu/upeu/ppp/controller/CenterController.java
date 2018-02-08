@@ -3,7 +3,9 @@ package pe.edu.upeu.ppp.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,6 +54,9 @@ public class CenterController {
 	Map<String, Object> rpta = new HashMap<String, Object>();
 	List<Map<String, Object>> listas;
 	Map<String, Object> outCT = new HashMap<String, Object>();
+	
+	
+	reportCreate rct = new reportCreate();
 	
 	Gson gson = new Gson();
 	PrintWriter out;
@@ -137,35 +142,40 @@ public class CenterController {
 			break;		
 		case "CreateCart":
 			
+		
+				
+				Date ahora = new Date();
+			    SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+			    String fecha = formateador.format(ahora);
+				
+				String Practicante = ((CUserDTO) authentication.getPrincipal()).getApellido() +" "+ ((CUserDTO) authentication.getPrincipal()).getNombre();
+				int idUser = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
+				String ciclo = ((CUserDTO) authentication.getPrincipal()).getCiclo();
+				String genero ="";
+				
+				int IDgenero = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getGenero());
+				    if(IDgenero == 1) {
+					    genero ="el joven";
+				    }else if(IDgenero ==2){
+					genero ="a la señorita";
+				    }
+				   
+				outCT.put("Fecha", fecha);
+				outCT.put("txtRepresentante", request.getParameter("REPRESENTANTE").toString());
+				outCT.put("txtCargoRp",request.getParameter("CARGO").toString());
+				outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
+				outCT.put("txtDireccion", request.getParameter("DIRECCION").toString());
+				outCT.put("txtPracticante",Practicante);
+				outCT.put("txtGenero",genero);
+				outCT.put("txtCiclo",ciclo);
+				outCT.put("txtAreaTrabajo", request.getParameter("AREATRABAJO").toString());
+				outCT.put("txtId", idUser);
 			
-			String Practicante = ((CUserDTO) authentication.getPrincipal()).getApellido() +" "+ ((CUserDTO) authentication.getPrincipal()).getNombre();
-			int idUser = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
-			String ciclo = ((CUserDTO) authentication.getPrincipal()).getCiclo();
-			String genero ="";
-			
-			int IDgenero = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getGenero());
-			if(IDgenero == 1) {
-				genero ="el joven";
-			}else if(IDgenero ==2){
-				genero ="a la señorita";
-			}
-			
-			outCT.put("txtRepresentante", request.getParameter("RAZONSOCIAL").toString());
-			outCT.put("txtCargoRp", request.getParameter("RAZONSOCIAL").toString());
-			outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
-			outCT.put("txtDireccion", request.getParameter("RAZONSOCIAL").toString());
-			outCT.put("txtAreaTrabajo", request.getParameter("RAZONSOCIAL").toString());
-			
-			
-			
-			String CARGO = request.getParameter("CARGO").toString();
-			String DIRECCION = request.getParameter("DIRECCION").toString();
-			String REPRESENTANTE = request.getParameter("REPRESENTANTE").toString();
-			String AREATRABAJO = request.getParameter("AREATRABAJO").toString();
+//				Map<String, Object> recibe = rct.getReport(Practicante, outCT);
+				
+				
+		
 			System.out.println(outCT);
-			
-			
-			reportCreate rct = new reportCreate();
 			mp.put("crtA", "listo" );
 			break;
 		}
