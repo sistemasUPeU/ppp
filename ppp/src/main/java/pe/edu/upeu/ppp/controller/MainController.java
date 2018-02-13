@@ -45,15 +45,12 @@ public class MainController {
 		String opc = request.getParameter("opc");
 		System.out.println(opc);
 		
-		String REID = ((CUserDTO) authentication.getPrincipal()).IDUSER();
-		int IDUSER = Integer.parseInt(REID);
+		int IDUSER = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
 		System.out.println(IDUSER);
 		
 		String name = ((CUserDTO) authentication.getPrincipal()).getNombre();
 		String genero = ((CUserDTO) authentication.getPrincipal()).getGenero();
-		String idPeriodo = ((CUserDTO) authentication.getPrincipal()).getidperiodo();
-		//String 
-		//userinf.get("IDUSER").toString().trim();
+		
 		try {
 			switch (opc) {
 			case "perfil":

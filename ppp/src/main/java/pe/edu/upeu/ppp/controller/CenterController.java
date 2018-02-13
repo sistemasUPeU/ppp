@@ -79,7 +79,7 @@ public class CenterController {
 		case "1":
 			break;
 		case "new_Representante":
-			vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			
+		//	vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			
 			myHasMap = gson.fromJson(data_json, tipoHashMap);
 			
 			//El estado 'ACTIVO' corresponde al id 23
@@ -109,7 +109,7 @@ public class CenterController {
 			mp.put("resp", resp);
 			break;
 		case "new_Empresa":
-			 vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
+			// vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
 					
 			myHasMap = gson.fromJson(data_json, tipoHashMap);
 						
@@ -191,7 +191,7 @@ public class CenterController {
 		PrintWriter out = response.getWriter();
 		String opc = request.getParameter("opc");
 		
-		String IDPERIODO = ((CUserDTO) authentication.getPrincipal()).getidperiodo();
+		//String IDPERIODO = ((CUserDTO) authentication.getPrincipal()).getidperiodo();
 		String IDALUMNO = ((CUserDTO) authentication.getPrincipal()).IDUSER();
 		String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
 		String CICLO = ((CUserDTO) authentication.getPrincipal()).getCiclo();

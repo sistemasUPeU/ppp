@@ -25,8 +25,16 @@ public class CUserDTO implements UserDetails, Serializable{
 	private String genero;
 	
 	private String idrol;
+	private String Rol_name;
 	
-	private String idperiodo;
+	// periodo
+			public String getRol_name() {
+				return Rol_name;
+			}
+
+			public void setRol_name(String Rol_name) {
+				this.Rol_name = Rol_name;
+			}
 	
 	private String ciclo;
 	
@@ -39,15 +47,7 @@ public class CUserDTO implements UserDetails, Serializable{
 			this.ciclo = ciclo;
 		}
 	
-	// periodo
-	public String getidperiodo() {
-		return idperiodo;
-	}
-
-	public void setidperiodo(String idperiodo) {
-		this.idperiodo = idperiodo;
-	}
-	
+		
 	//rol
 	public String getidrol() {
 		return idrol;
@@ -71,22 +71,23 @@ public class CUserDTO implements UserDetails, Serializable{
 		return IDUSER;
 	}
 
-	public CUserDTO(String iDUSER, String nombre, String apellido, String dni, String celular, String usu, String pass,
-			String idestado, String genero, String idrol,String idperiodo, String ciclo,  boolean accountNonExpired,
+
+	public CUserDTO(ArrayList<Map<String, Object>> userinfo ,  String ciclo,  boolean accountNonExpired,
 			boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
-			IDUSER = iDUSER;
-			this.nombre = nombre;
-			this.apellido = apellido;
-			this.dni = dni;
-			this.celular = celular;
-			this.usu = usu;
-			this.pass = pass;
-			this.idestado = idestado;
-			this.genero = genero;
-			this.idrol = idrol;
-			this.idperiodo = idperiodo;
+			IDUSER = userinfo.get(0).get("IDUSER").toString().trim();
+			this.nombre = userinfo.get(0).get("NOMBRE").toString().trim();
+			this.apellido = userinfo.get(0).get("APELLIDOS").toString().trim();
+			this.dni =  userinfo.get(0).get("DNI").toString().trim();
+			this.celular = userinfo.get(0).get("CELULAR").toString().trim();
+			this.usu = userinfo.get(0).get("USU").toString().trim();
+			this.pass = userinfo.get(0).get("PASS").toString().trim();
+			this.idestado = userinfo.get(0).get("ESTADO").toString().trim();
+			this.genero = userinfo.get(0).get("GENERO").toString().trim();
+			this.idrol = userinfo.get(0).get("IDROL").toString().trim();
+			this.Rol_name = userinfo.get(0).get("ROL").toString().trim();
+			
 			this.ciclo =ciclo;
-			//this.List_Permiso = List_Permiso;
+			
 			
 			this.accountNonExpired = accountNonExpired;
 			AccountNonLocked = accountNonLocked;
@@ -94,6 +95,7 @@ public class CUserDTO implements UserDetails, Serializable{
 			Enabled = enabled;
 	}
 
+	
 
 	public void setIDUSER(String IDUSER) {
 		this.IDUSER = IDUSER;

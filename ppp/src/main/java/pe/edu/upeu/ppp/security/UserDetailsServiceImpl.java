@@ -25,20 +25,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	public CUserDTO loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		 	ArrayList<Map<String, Object>> userinf = userDAO2.getValidateUser(username);
-		 			 	
-			System.out.println(userinf );
-			System.out.println( userinf.get(0).get("IDUSER").toString().trim());
-			System.out.println( userinf.get(0).get("NOMBRE").toString().trim());
-			System.out.println( userinf.get(0).get("APELLIDOS").toString().trim());
-			System.out.println( userinf.get(0).get("DNI").toString().trim());
-			System.out.println( userinf.get(0).get("CELULAR").toString().trim());
-			System.out.println( userinf.get(0).get("USU").toString().trim());
-			System.out.println( userinf.get(0).get("PASS").toString().trim());
-			System.out.println( userinf.get(0).get("IDESTADO").toString().trim());
-			System.out.println( userinf.get(0).get("GENERO").toString().trim());
-			System.out.println( userinf.get(0).get("IDROL").toString().trim());
-			System.out.println("periodo:"+ userinf.get(0).get("IDPERIODO").toString().trim());
-			
+		 	
 			int idCiclo = Integer.parseInt(userinf.get(0).get("IDUSER").toString().trim());
 			System.out.println(idCiclo);
 					
@@ -53,11 +40,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		 	
 		 	System.out.println("soy el ciclo: " + ciclo);
 			
-			CUserDTO user = new CUserDTO(userinf.get(0).get("IDUSER").toString().trim(),userinf.get(0).get("NOMBRE").toString().trim(),
-					userinf.get(0).get("APELLIDOS").toString().trim(), userinf.get(0).get("DNI").toString().trim(),
-					userinf.get(0).get("CELULAR").toString().trim(),userinf.get(0).get("USU").toString().trim(), userinf.get(0).get("PASS").toString().trim()
-					, userinf.get(0).get("IDESTADO").toString().trim() , userinf.get(0).get("GENERO").toString().trim(),userinf.get(0).get("IDROL").toString().trim() 
-					,userinf.get(0).get("IDPERIODO").toString().trim(), ciclo ,true,true,true,true);
+			CUserDTO user = new CUserDTO(userinf,ciclo ,true,true,true,true);
 			
 			 System.out.println("Cargando user");
 			 System.out.println(user.getUsername());
