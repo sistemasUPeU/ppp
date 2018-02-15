@@ -30,7 +30,7 @@
 							<ul class="navigation navigation-main navigation-accordion">
 								<!-- Main -->
 						
-								<li  id="cagarmenu">
+								<li  id="cagarmenu" >
 									<a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>
 									<ul>
 										<li><a href="boxed_full.html">Boxed full width</a></li>

@@ -14,17 +14,36 @@ public class SupervicionLinks {
 		return pagina;
 	}
 	
-	@GetMapping("/Monitoreo")
-	public String Asignacion() {
-		String pagina = "vistas/Supervision/Monitoreo";
-		return pagina;
-	}
-	
+	// LINKS QUE REPRESENTAN A SUPERVISOR EP
 	@GetMapping("/practicantes_Aptos")
 	public String Practicantes_Aptos() {
 		String pagina = "vistas/Supervision/practicantesAptos";
 		return pagina;
 	}
+	@GetMapping("/Seguimiento")
+	public String Seguimiento() {
+		String pagina = "vistas/Supervision/Seguimiento";
+		return pagina;
+	}
+	@GetMapping("/Cierre")
+	public String Cierre() {
+		String pagina = "vistas/Supervision/Cierre";
+		return pagina;
+	}
+	@GetMapping("/Asignacion")
+	public String Asignacion() {
+		String pagina = "vistas/Supervision/Asignacion";
+		return pagina;
+	}
+	
+	//---------------------------------------------------------
+	@GetMapping("/Monitoreo")
+	public String Monitoreo() {
+		String pagina = "vistas/Supervision/Monitoreo";
+		return pagina;
+	}
+	
+	
 	
 	@GetMapping("/evaluar")
 	public String evaluaciones() {
@@ -37,6 +56,9 @@ public class SupervicionLinks {
 		String pagina = "vistas/Supervision/practicanteCargo";
 		return pagina;
 	}
+	
+	
+	
 	
 	@GetMapping("/perfil")
 	public String perfil() {

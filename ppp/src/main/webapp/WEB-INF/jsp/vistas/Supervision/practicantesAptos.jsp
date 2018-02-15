@@ -7,11 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/pages/jqueryui_navigation.js'/>"></script>
+<script type="text/javascript"	src="<c:url value='resources/plugin2/assets/js/pages/jqueryui_navigation.js'/>"></script>
 
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/pages/form_checkboxes_radios.js'/>"></script>
+<script type="text/javascript"	src="<c:url value='resources/plugin2/assets/js/pages/form_checkboxes_radios.js'/>"></script>
 <body>
 	<div class="panel panel-flat">
 
