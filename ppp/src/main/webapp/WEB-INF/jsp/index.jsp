@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="navbar-top">
+<body class="navbar-top has-detached-right" >
 	<!-- Main navbar -->
 
 	<%@ include file="../../jspf/NavBar.jspf"%>

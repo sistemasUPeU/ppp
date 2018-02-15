@@ -52,7 +52,9 @@
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/uploaders/fileinput/fileinput.min.js'/>"></script>
 	
 	<!-- Theme JS files -->
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/media/fancybox.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/styling/uniform.min.js'/>"></script>
+	
 	
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jquery_ui/interactions.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jquery_ui/widgets.min.js'/>"></script>
