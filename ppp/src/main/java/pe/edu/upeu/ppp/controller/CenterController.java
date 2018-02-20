@@ -52,7 +52,7 @@ public class CenterController {
 
 	Map<String, Object> mp = new HashMap<>();
 	Map<String, Object> rpta = new HashMap<String, Object>();
-	List<Map<String, Object>> listas;
+	ArrayList<Map<String, Object>> listas;
 	Map<String, Object> outCT = new HashMap<String, Object>();
 	
 	
@@ -192,13 +192,21 @@ public class CenterController {
 		String opc = request.getParameter("opc");
 		
 		//String IDPERIODO = ((CUserDTO) authentication.getPrincipal()).getidperiodo();
-		String IDALUMNO = ((CUserDTO) authentication.getPrincipal()).IDUSER();
-		String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
+		int IDUSER = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
+		int IDROL = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidrol());
 		String CICLO = ((CUserDTO) authentication.getPrincipal()).getCiclo();
 		
 		try {
 			switch (opc) {
 
+			case "Vacantes":
+				if(IDROL == 3) {
+					listas = vS.getTeacher(IDUSER);
+					mp.put("Vacantes", vS.listarVacantes(Integer.parseInt(listas.get(0).get("IDESCUELA").toString().trim())));
+				}
+				
+				break;
+			
 			case "Combox":
 				mp.put("as", empredao.ListSeguro());
 				mp.put("li", empredao.ListLineas());
@@ -212,13 +220,7 @@ public class CenterController {
 				System.out.println("pun pun 2"+vS.CargaCombox1(cid));
 				break;
 				
-			case "Vacantes":
-				int id = Integer.parseInt(IDALUMNO);
-				mp.put("Vacantes", vS.listarVacantes(id));
-					
-				mp.put("history", vS.ListarHistoria(id));
-				System.out.println("hola pues" +vS.listarVacantes(id));
-				break;
+			
 				
 			}
 

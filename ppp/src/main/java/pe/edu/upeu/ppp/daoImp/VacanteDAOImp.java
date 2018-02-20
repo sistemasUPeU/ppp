@@ -19,29 +19,28 @@ public class VacanteDAOImp implements VacanteDAO {
 	@Override
 	public ArrayList<Map<String, Object>> listarVacantes(int id) {
 		try {
-			sql="SELECT V.Idvacantes , P.Periodo as Semestre , Em.Razonsocial ,Em.Ruc ,Em.Direccion, U.Apellidos ||', '|| U.Nombre as Representante ,U.Celular , U.Dni, U.Correo, V.Horario , V.Fechainicio || ' - ' || V.Fechafin AS Periodo, V.Horainicio || ' - ' || V.Horafin as Hora , V.Sueldo , V.Areatrabajo ,  Rp.Cargo  FROM PPP_VACANTES V , PPP_EMPRESA EM , PPP_PERIODO P , PPP_REPRESENTANTE RP , Ppp_Usuario u WHERE Em.Idempresa = Rp.Idempresa and V.Idperiodo =  P.Idperiodo and V.Idempresa = Em.Idempresa and Rp.Idrepresentante = U.Idusuario and  V.IDUSUARIO = ? AND V.Idestado = 22 ";
+			sql="SELECT VC.IDVACANTES, VC.IDPERIODO , EM.RAZONSOCIAL , EM.DIRECCION , RP.IDREPRESENTANTE , US.NOMBRE ||' '|| US.APELLIDOS as REPRESENTANTE , US.CELULAR , US.CORREO, \r\n" + 
+					"VC.AREATRABAJO , VC.FECHAINICIO ||' - '|| VC.FECHAFIN AS PERIODO, VC.HORAINICIO ||' A '|| VC.HORAFIN AS HORARIO , VC.SUELDO , VC.NCUPOS , VC.IDESTADO\r\n" + 
+					"FROM PPP_VACANTES VC , PPP_PERIODO PR , PPP_EMPRESA EM , PPP_REPRESENTANTE RP , PPP_ESTADO ES , PPP_USUARIO US , PPP_ESCUELA sc\r\n" + 
+					"WHERE EM.IDEMPRESA = VC.IDEMPRESA AND sc.IDESCUELA = VC.IDESCUELA and  PR.IDPERIODO = VC.IDPERIODO  AND RP.IDREPRESENTANTE = VC.IDREPRESENTANTE AND VC.IDESTADO = ES.IDESTADO\r\n" + 
+					"AND US.IDUSUARIO = RP.IDREPRESENTANTE and sc.IDESCUELA = ?";
 		} catch (Exception ev) {
 			System.out.println("No lista Vacantes, error:_"+ev);
 		}
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);	
 	}
 
-
 	@Override
-	public int NewVacante(String P_IDPERIODO, String P_IDREPRESENTANTE, String P_AREATRABAJO, String P_CANTIDAD,
-			String P_HORARIO, String P_FECHAINICIO, String P_FECHAFIN, String P_HORAINICIO, String P_HORAFIN,
-			String P_SUELDO, String P_IDLINEASP, String P_IDFOLDERPRACTICA, String P_IDTRABAJADOR, String P_IDALUMNO,
-			String P_IDROL, String P_CICLO, String P_TIPOPRACTICA, String P_OBSERVACIONES) {
-		int x=0;
+	public ArrayList<Map<String, Object>> getTeacher(int id) {
 		try {
-			sql="CALL PA_REG_EMPRESA_P3(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-			x=jt.update(sql,P_IDPERIODO,P_IDREPRESENTANTE,P_AREATRABAJO,P_CANTIDAD,P_HORARIO,P_FECHAINICIO,P_FECHAFIN,P_HORAINICIO,P_SUELDO,P_IDLINEASP,P_IDFOLDERPRACTICA,P_IDTRABAJADOR,P_IDALUMNO,P_IDROL,P_CICLO,P_TIPOPRACTICA,P_OBSERVACIONES);
-		} catch (Exception e) {
-			System.out.println("New Vacante error : "+e);
+			sql="select pr.IDESCUELA , pr.CODIGO , pr.GRADO from PPP_PROFESOR pr where pr.IDPROFESOR = ?";
+		} catch (Exception ev) {
+			System.out.println("No getTeacher, error:_"+ev);
 		}
-		
-		return x;
+		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);	
 	}
+	
+	//por cambiar
 
 
 	@Override
@@ -92,5 +91,8 @@ public class VacanteDAOImp implements VacanteDAO {
 		}
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
 	}
+
+
+	
 
 }
