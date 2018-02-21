@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	
 	getDataBase ();
-	
+	getAllData();
 });
 
 function getDataBase (){
@@ -108,7 +108,7 @@ function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARI
 \
 									<div class="media-right text-center">\
 										<h3 class="no-margin text-semibold">'+NCUPOS+'</h3>\
-										<button class="btn bg-teal btn-sm" data-toggle="modal" data-target="#modal_theme_success" type="button" onclick=" getAlumno('+IDVACANTES+')" class="btn bg-teal-400 mt-15"><i class="icon-medal-first position-left"></i>Asignar</button>\
+										<button class="btn bg-teal btn-sm" data-toggle="modal" data-target="#modal_theme_success" type="button" onclick=" getAllData('+IDVACANTES+')" class="btn bg-teal-400 mt-15"><i class="icon-medal-first position-left"></i>Asignar</button>\
 									</div>\
 								</li>\
 				            </ul>\
@@ -117,40 +117,63 @@ function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARI
 }
 
 
-
-function getAlumno(id){
-	
-	alert(id);
-}
-
-
 // function :::::::::::::::::::::::::::::::::::::::
-function getAllData(){
-	var url = '../php/paginarProductos.php';
-	$.ajax({
-		type:'POST',
-		url:url,
-		data:'partida='+1,
-		success:function(data){
-			var array = eval(data);
-			$('#agrega-registros').html(array[0]);
-			$('#pagination').html(array[1]);
-		}
-	});
-	return false;
-}
-
-function paginate(){
+function getAllData(ID){
+	var alumnos , rc ='';
 	var url = '';
 	$.ajax({
-		type:'POST',
-		url:url,
-		data:'partida='+1,
-		success:function(data){
-			var array = eval(data);
-			$('#agrega-registros').html(array[0]);
-			$('#pagination').html(array[1]);
-		}
-	});
-	return false;
+		    url : 'rp',
+		    data : { opc : 'Vacantes' },
+		    type : 'GET',
+		    dataType : 'json',
+		    success : function(objJson) {
+		    	alumnos = objJson.alumnos;
+		    	console.log(objJson.alumnos);
+		    	if (alumnos.length > 0) {
+					for (var i = 0; i < alumnos.length; i++) {
+					    rc += '<div class="col-lg-3 col-sm-6">\
+								<div class="thumbnail">\
+									<div class="thumb thumb-rounded">\
+										<img src="<c:url value=\'resources/plugin2/assets/images/placeholder.jpg\'/>" alt="">\
+												<div class="caption-overflow">\
+													<span> <a href="#" class="btn border-white text-white btn-flat btn-icon btn-rounded"><i class="icon-plus2"></i></a></span>\
+												</div>\
+									</div>\
+									<div class="caption text-center">\
+										<h6 class="text-semibold no-margin">'+ alumnos[i].NOMBRE+'</h6>\
+										<small class="display-block"><strong>correo: </strong>'+ alumnos[i].CORREO+'</small> \
+										<small class="display-block"><strong>celular:</strong>'+ alumnos[i].CELULAR+'</small> \
+										<small class="display-block"><strong>Codigo:</strong> '+ alumnos[i].CODIGO+'</small> \
+										<small class="display-block"><strong>Ciclo:</strong>'+ alumnos[i].CICLO+' </small>\
+											<ul class="icons-list mt-15">\
+												<li><a href="" data-popup="tooltip" title="Google Drive"><i class="icon-google-drive"></i></a></li>\
+												<li><a href="'+ alumnos[i].GITHUB+'" data-popup="tooltip" title="Github"><i class="icon-github"></i></a></li>\
+												<li><a href="'+ alumnos[i].FACEBOOK+'" data-popup="tooltip" title="Twitter"><i class="icon-facebook2"></i></a></li>\
+											</ul>\
+											<ul class="icons-list mt-15">\
+												<li><button onclick="alert("asa");" type="button" class="btn btn-success">Completar </button></li>\
+											</ul>\
+									</div>\
+								</div>\
+							</div>';
+					}
+					 $("#card").empty();
+				     $("#card").append(rc);
+				}else{
+					
+				}	       
+		    },
+		    error : function(xhr, status) {
+		    	swal({
+		            title: "UPS!! Error !!",
+		            text: "Intentelo nuevamente",
+		            confirmButtonColor: "#2196F3",
+		            type: "info"
+		        });	
+		    },
+		    complete : function(xhr, status) {
+		    	 
+		    }
+		});
 }
+

@@ -191,7 +191,6 @@ public class CenterController {
 		PrintWriter out = response.getWriter();
 		String opc = request.getParameter("opc");
 		
-		//String IDPERIODO = ((CUserDTO) authentication.getPrincipal()).getidperiodo();
 		int IDUSER = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
 		int IDROL = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidrol());
 		String CICLO = ((CUserDTO) authentication.getPrincipal()).getCiclo();
@@ -203,6 +202,7 @@ public class CenterController {
 				if(IDROL == 3) {
 					listas = vS.getTeacher(IDUSER);
 					mp.put("Vacantes", vS.listarVacantes(Integer.parseInt(listas.get(0).get("IDESCUELA").toString().trim())));
+					mp.put("alumnos", vS.GetAlumnos(Integer.parseInt(listas.get(0).get("IDESCUELA").toString().trim())));
 				}
 				
 				break;

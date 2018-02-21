@@ -8,7 +8,7 @@ public interface VacanteService {
 	
 	public ArrayList<Map<String, Object>> listarVacantes (int id);
 	public ArrayList<Map<String, Object>> getTeacher (int id);
-	
+	public ArrayList<Map<String, Object>> GetAlumnos (int id);
 	
 	public ArrayList<Map<String, Object>> ListarHistoria(int id);
 	

@@ -282,9 +282,9 @@
 													<!-- Search results -->
 													<div class="content-group">
 
-
 														<div class="search-results-list">
-															<div class="row">
+															<div class="row data-container" id="card">
+															
 																<div class="col-lg-3 col-sm-6">
 																	<div class="thumbnail">
 																		<div class="thumb thumb-rounded">
@@ -327,6 +327,7 @@
 																		</div>
 																	</div>
 																</div>
+															
 															</div>
 														</div>
 													</div>
@@ -334,8 +335,8 @@
 
 
 													<!-- Pagination -->
-													<div class="text-center content-group pt-20">
-														<ul class="pagination" id="pag">
+													<div id="pag" class="text-center content-group pt-20">
+														<ul class="pagination" >
 															<li class="disabled"><a href="#">&larr;</a></li>
 															<li class="active"><a href="#">1</a></li>
 															<li><a href="#">2</a></li>
@@ -395,8 +396,16 @@
 <script type="text/javascript"
 	src="<c:url value='resources/plugin2/assets/js/pages/uploader_bootstrap.js'/>"></script>
 
+
 <script type="text/javascript"
 	src="<c:url value='resources/plugin2/assets/js/pages/ecommerce_product_list.js'/>"></script>
+	
+	
+	
+<script type="text/javascript"
+	src="<c:url value='resources/js/Paginate/pagination.js'/>"></script>
+<script type="text/javascript"
+	src="<c:url value='resources/js/Paginate/pagination.min.js'/>"></script>
 <script type="text/javascript"
 	src="<c:url value='resources/js/BussinesCore/Asigancion.js'/>"></script>
 

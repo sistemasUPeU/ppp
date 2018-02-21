@@ -47,6 +47,11 @@ public class VacanteServiceImpl implements VacanteService {
 		return vacanteDAO.CargaCombox1(id);
 	}
 
+	@Override
+	public ArrayList<Map<String, Object>> GetAlumnos(int id) {
+		return vacanteDAO.GetAlumnos(id);
+	}
+
 	
 
 }

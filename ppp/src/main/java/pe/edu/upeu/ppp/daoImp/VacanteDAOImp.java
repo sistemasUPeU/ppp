@@ -42,11 +42,16 @@ public class VacanteDAOImp implements VacanteDAO {
 	
 	
 	@Override
-	public ArrayList<Map<String, Object>> GetAlumnos() {
+	public ArrayList<Map<String, Object>> GetAlumnos(int id) {
 		try {
-			sql="";
+			sql="select AL.IDALUMNO , AL.CODIGO , AL.CICLO ,US.DNI , US.GENERO, US.NOMBRE ||' '|| US.APELLIDOS AS NOMBRE , US.CELULAR, US.CORREO , AL.GITHUB, AL.FACEBOOK , CP.NOMBRE AS CURSO\r\n" + 
+					"from PPP_ALUMNOS_MATRICULADO AM , PPP_ALUMNO AL , PPP_USUARIO US , PPP_CURSO_ASIGNADO CA , PPP_CURSO_PRACTICA CP\r\n" + 
+					"WHERE  AM.IDCURSOASIGNADO = CA.IDCURSOASIGNADO AND CA.IDCURSOPRACTICA = CP.IDCURSOPRACTICA\r\n" + 
+					"AND AM.IDALUMNO = AL.IDALUMNO AND AL.IDALUMNO = US.IDUSUARIO AND \r\n" + 
+					"AL.IDALUMNO IN (SELECT ALU.IDALUMNO FROM PPP_ESCUELA ES , PPP_ALUMNO ALU, PPP_PLAN_ACADEMICO PA WHERE ALU.IDPLANACADEMICO = PA.IDPLANACADEMICO\r\n" + 
+					"AND PA.IDESCUELA = ES.IDESCUELA AND ES.IDESCUELA = "+id+")  ";
 		} catch (Exception ev) {
-			System.out.println("No getTeacher, error:_"+ev);
+			System.out.println("No GetAlumnos, error:_"+ev);
 		}
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql);	
 	}
