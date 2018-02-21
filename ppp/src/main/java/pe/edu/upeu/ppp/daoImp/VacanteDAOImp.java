@@ -40,6 +40,19 @@ public class VacanteDAOImp implements VacanteDAO {
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);	
 	}
 	
+	
+	@Override
+	public ArrayList<Map<String, Object>> GetAlumnos() {
+		try {
+			sql="";
+		} catch (Exception ev) {
+			System.out.println("No getTeacher, error:_"+ev);
+		}
+		return (ArrayList<Map<String, Object>>) jt.queryForList(sql);	
+	}
+
+
+	
 	//por cambiar
 
 
@@ -92,7 +105,7 @@ public class VacanteDAOImp implements VacanteDAO {
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
 	}
 
-
+	
 	
 
 }

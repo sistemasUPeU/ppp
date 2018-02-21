@@ -10,7 +10,7 @@ public class AsignacionLinks {
 
 	@GetMapping("/AsignacionVacante")
 	public String supervicion() {
-		String pagina = "vistas/Asignacion/AsignacionVacante";
+		String pagina = "vistas/Asignacion/Asignacion";
 		return pagina;
 	}
 	

@@ -2,6 +2,7 @@
 $(document).ready(function() {
 	
 	getDataBase ();
+	
 });
 
 function getDataBase (){
@@ -115,7 +116,41 @@ function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARI
 	return s;
 }
 
+
+
 function getAlumno(id){
 	
 	alert(id);
+}
+
+
+// function :::::::::::::::::::::::::::::::::::::::
+function getAllData(){
+	var url = '../php/paginarProductos.php';
+	$.ajax({
+		type:'POST',
+		url:url,
+		data:'partida='+1,
+		success:function(data){
+			var array = eval(data);
+			$('#agrega-registros').html(array[0]);
+			$('#pagination').html(array[1]);
+		}
+	});
+	return false;
+}
+
+function paginate(){
+	var url = '';
+	$.ajax({
+		type:'POST',
+		url:url,
+		data:'partida='+1,
+		success:function(data){
+			var array = eval(data);
+			$('#agrega-registros').html(array[0]);
+			$('#pagination').html(array[1]);
+		}
+	});
+	return false;
 }
