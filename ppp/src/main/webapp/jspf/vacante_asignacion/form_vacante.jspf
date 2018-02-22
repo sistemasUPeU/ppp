@@ -1,0 +1,97 @@
+<form id="form_vacante">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group required">
+				<label class="control-label">Escuela</label> <select name="escuelas"
+					data-placeholder="Escuelas Profesionales" class="select">
+					<!-- Aqui va combo -->
+				</select>
+			</div>
+		</div>
+		
+		<div class="col-md-4">
+			<div class="form-group required">
+				<label class="control-label">Linea Profesional</label> <select name="lineasprofesionales"
+					data-placeholder="Especialidad Profesional" class="select">
+					<!-- Aqui va combo -->
+				</select>
+			</div>
+		</div>		
+	</div>
+					
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Area de Trabajo: <span class="text-danger">*</span></label> <input
+							type="text" name="areatrabajo"
+							class="form-control required" placeholder="El departamento o area donde trabajara...">
+					</div>
+				</div>
+			
+				<div class="col-md-4">
+					<div class="form-group">
+						<label>Horario: <span class="text-danger">*</span></label> <input
+							type="text" id="horario" name="horario"
+							class="form-control required" placeholder="Horario....">
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Fecha de Inicio<span class="text-danger">*</span></label> <input
+							type="date" id="fechainicio" name="fechainicio" class="form-control required">
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Fecha Fin<span class="text-danger">*</span></label> <input
+							type="date" id="fechafin" name="fechafin"
+							class="form-control required">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Hora de Entrada: <span class="text-danger">*</span></label>
+						<input type="time" id="horainicio" name="horainicio"
+							class="form-control required">
+					</div>
+				</div>
+				
+				<div class="col-md-2">
+					<div class="form-group">
+						<label>Hora de Salida: <span class="text-danger">*</span></label>
+						<input type="time" id="horafin" name="horafin"
+							class="form-control required">
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>Sueldo: <span class="text-danger">*</span></label>
+						<input type="number" maxlength="4" id="sueldo" name="sueldo"
+							class="form-control required">
+					</div>
+				</div>
+				
+				<div class="col-md-3">
+					<div class="form-group">
+						<label>N# de Cupos: <span class="text-danger">*</span></label>
+						<input type="number" maxlength="2" id="ncupos" name="ncupos"
+							class="form-control required" placeholder="Cupos para la vacante">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<div class="form-group">						
+						<button type="button" class="btn btn-primary stepy-finish" id="btn_form_vacante">
+						Guardar <i class="icon-check position-right"></i>
+						</button>
+					</div>
+				</div>		
+			</div>										
+</form>
