@@ -289,7 +289,7 @@
 																	<div class="thumbnail">
 																		<div class="thumb thumb-rounded">
 																			<img
-																				src="<c:url value='resources/plugin2/assets/images/placeholder.jpg'/>"
+																				src="../../resources/imagenes/ICONO_ASIG.png"
 																				alt="">
 																			<div class="caption-overflow">
 																				<span> <a href="#"
@@ -336,14 +336,14 @@
 
 													<!-- Pagination -->
 													<div id="pag" class="text-center content-group pt-20">
-														<ul class="pagination" >
-															<li class="disabled"><a href="#">&larr;</a></li>
-															<li class="active"><a href="#">1</a></li>
-															<li><a href="#">2</a></li>
-															<li><a href="#">3</a></li>
-															<li><a href="#">4</a></li>
-															<li><a href="#">&rarr;</a></li>
-														</ul>
+<!-- 														<ul   class="pagination" > -->
+<!-- 															<li class="disabled"><a href="#">&larr;</a></li> -->
+<!-- 															<li class="active"><a href="#">1</a></li> -->
+<!-- 															<li><a href="#">2</a></li> -->
+<!-- 															<li><a href="#">3</a></li> -->
+<!-- 															<li><a href="#">4</a></li> -->
+<!-- 															<li><a href="#">&rarr;</a></li> -->
+<!-- 														</ul> -->
 													</div>
 													<!-- /pagination -->
 
@@ -387,25 +387,18 @@
 	<!-- /page container -->
 
 </body>
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/pages/datatables_responsive.js'/>"></script>
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/pages/wizard_steps.js'/>"></script>
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/pages/components_buttons.js'/>"></script>
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/pages/uploader_bootstrap.js'/>"></script>
 
 
 <script type="text/javascript"
 	src="<c:url value='resources/plugin2/assets/js/pages/ecommerce_product_list.js'/>"></script>
 	
 	
+<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_modals.js'/>"></script>
 	
 <script type="text/javascript"
-	src="<c:url value='resources/js/Paginate/pagination.js'/>"></script>
-<script type="text/javascript"
-	src="<c:url value='resources/js/Paginate/pagination.min.js'/>"></script>
+	src="<c:url value='resources/js/Paginate/jquery.bootpag.min.js'/>"></script>
+
+
 <script type="text/javascript"
 	src="<c:url value='resources/js/BussinesCore/Asigancion.js'/>"></script>
 

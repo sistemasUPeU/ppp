@@ -8,10 +8,10 @@
 					<!-- User menu -->
 					<div class="sidebar-user">
 						<div class="category-content">
-							<div class="media" >
+							<div class="media" id="perfil">
+							
 								<a href="#" class="media-left"><img src="<c:url value='resources/imagenes/1.png'/>" class="img-circle img-sm" alt=""></a>
-								
-								<div class="media-body" id="perfil">
+								<div class="media-body" >
 									<span class="media-heading text-semibold">Victoria Baker</span>
 									<div class="text-size-mini text-muted">
 										<i class="icon-pin text-size-small"></i> &nbsp;Santa Ana, CA

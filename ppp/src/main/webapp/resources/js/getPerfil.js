@@ -68,13 +68,13 @@ function listarPerfil() {
 			 apellido = role[i].APELLIDOS
 		}
 			
-			a = perfildate(nombre ,apellido , rol);
+			a = perfildate(nombre ,apellido , rol ,genero);
 			console.log(a);
 			$("#perfil").empty();
 			$("#perfil").append(a); 
 			
 			
-			b= namePerfil(nombre,apellido);
+			b= namePerfil(nombre,apellido ,genero);
 			//$("#listarI").empty();
 			$("#listarI").append(b); 
 		if (genero == 1){
@@ -88,10 +88,13 @@ function listarPerfil() {
 	});
 }
 
-function perfildate(nombre ,apellido , rol) {
-	var s = '<span class="media-heading text-semibold">'+nombre+'  '+apellido+'</span>';
+function perfildate(nombre ,apellido , rol ,genero) {
+	var s ='<a href="#" class="media-left"><img src="resources/imagenes/'+ genero+'.png" class="img-circle img-sm" alt=""></a>';
+	s+= '<div class="media-body" >';
+	s+= '<span class="media-heading text-semibold">'+nombre+'  '+apellido+'</span>';
 	s+='<div class="text-size-mini text-muted">';
 	s+='<i class="icon-pin text-size-small"></i> &nbsp; '+rol+'';
+	s+='</div>';
 	s+='</div>';
 	return s;
 }
@@ -103,9 +106,9 @@ function getrutas(id){
 }
 
 
-function namePerfil(nombre ,apellido ) {
+function namePerfil(nombre ,apellido, genero ) {
 	var s = '<a class="dropdown-toggle" data-toggle="dropdown">';
-//	s+='<img src="<c:url value=\'\'resources/imagenes/1.png\'\'\'/>" alt="">';
+	s+='<img src="resources/imagenes/'+genero+'.png" alt="">';
 	s+='<span>'+nombre+'  '+apellido+'</span>';
 	s+='<i class="caret"></i>';
 	s+='</a>';

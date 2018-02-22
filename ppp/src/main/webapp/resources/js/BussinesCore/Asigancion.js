@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	
 	getDataBase ();
-	getAllData();
+	
 });
 
 function getDataBase (){
@@ -59,7 +59,7 @@ function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARI
 							<ul class="media-list">\
 								<li class="media panel panel-body stack-media-on-mobile">\
 									<a href="<c:url value=\'resources/imagenes/ICONO_ASIG.png\'/>" class="media-left" data-popup="lightbox">\
-										<img src="<c:url value=\'resources/imagenes/ICONO_ASIG.png\'/>" width="50" alt="">\
+										<img src="resources/imagenes/ICONO_ASIG.png" width="50" alt="">\
 									</a>\
 \
 									<div class="media-body">\
@@ -108,7 +108,7 @@ function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARI
 \
 									<div class="media-right text-center">\
 										<h3 class="no-margin text-semibold">'+NCUPOS+'</h3>\
-										<button class="btn bg-teal btn-sm" data-toggle="modal" data-target="#modal_theme_success" type="button" onclick=" getAllData('+IDVACANTES+')" class="btn bg-teal-400 mt-15"><i class="icon-medal-first position-left"></i>Asignar</button>\
+										<button class="btn bg-teal btn-sm" data-toggle="modal" data-target="#modal_theme_success" type="button" onclick=" getAllData('+IDVACANTES+ ","+ NCUPOS +')" class="btn bg-teal-400 mt-15"><i class="icon-medal-first position-left"></i>Asignar</button>\
 									</div>\
 								</li>\
 				            </ul>\
@@ -118,9 +118,13 @@ function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARI
 
 
 // function :::::::::::::::::::::::::::::::::::::::
-function getAllData(ID){
+function getAllData(ID , cupos){
+	alert(ID );
+	alert( cupos);
 	var alumnos , rc ='';
 	var url = '';
+	
+
 	$.ajax({
 		    url : 'rp',
 		    data : { opc : 'Vacantes' },
@@ -130,11 +134,13 @@ function getAllData(ID){
 		    	alumnos = objJson.alumnos;
 		    	console.log(objJson.alumnos);
 		    	if (alumnos.length > 0) {
+		    		
+		    		
 					for (var i = 0; i < alumnos.length; i++) {
 					    rc += '<div class="col-lg-3 col-sm-6">\
 								<div class="thumbnail">\
 									<div class="thumb thumb-rounded">\
-										<img src="<c:url value=\'resources/plugin2/assets/images/placeholder.jpg\'/>" alt="">\
+										<img src="resources/plugin2/assets/images/placeholder.jpg" alt="">\
 												<div class="caption-overflow">\
 													<span> <a href="#" class="btn border-white text-white btn-flat btn-icon btn-rounded"><i class="icon-plus2"></i></a></span>\
 												</div>\
@@ -151,14 +157,28 @@ function getAllData(ID){
 												<li><a href="'+ alumnos[i].FACEBOOK+'" data-popup="tooltip" title="Twitter"><i class="icon-facebook2"></i></a></li>\
 											</ul>\
 											<ul class="icons-list mt-15">\
-												<li><button onclick="alert("asa");" type="button" class="btn btn-success">Completar </button></li>\
+												<li><button onclick="Agregar('+alumnos[i].IDALUMNO+');" type="button" class="btn btn-success">Completar </button></li>\
 											</ul>\
 									</div>\
 								</div>\
 							</div>';
 					}
-					 $("#card").empty();
-				     $("#card").append(rc);
+					
+					var nume = alumnos.length;
+					$('#pag').bootpag({
+					    total: nume,          
+					    page: 1,            
+					    maxVisible: nume,     
+					    leaps: true,
+					    href: "#result-page-{{number}}",
+					})
+					//page click action
+					$('#pag').on("page", function(event, num){
+						 $("#card").empty();
+					     $("#card").append(rc); 
+					});
+					
+				     
 				}else{
 					
 				}	       
@@ -177,3 +197,6 @@ function getAllData(ID){
 		});
 }
 
+function Agregar(name){
+	alert(name);
+}
