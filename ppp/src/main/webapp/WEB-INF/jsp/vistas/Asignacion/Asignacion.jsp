@@ -229,19 +229,19 @@
 													<div class="panel panel-flat">
 														<div class="panel-body">
 															<form action="#" class="main-search">
-																<div class="input-group content-group">
-																	<div class="has-feedback has-feedback-left">
-																		<input type="text" class="form-control input-xlg"
-																			value="">
-																		<div class="form-control-feedback">
-																			<i class="icon-search4 text-muted text-size-base"></i>
-																		</div>
-																	</div>
+<!-- 																<div class="input-group content-group"> -->
+<!-- 																	<div class="has-feedback has-feedback-left"> -->
+<!-- 																		<input type="text" class="form-control input-xlg" -->
+<!-- 																			value=""> -->
+<!-- 																		<div class="form-control-feedback"> -->
+<!-- 																			<i class="icon-search4 text-muted text-size-base"></i> -->
+<!-- 																		</div> -->
+<!-- 																	</div> -->
 
-																	<div class="input-group-btn">
-																		<button type="submit" class="btn btn-primary btn-xlg">Search</button>
-																	</div>
-																</div>
+<!-- 																	<div class="input-group-btn"> -->
+<!-- 																		<button type="submit" class="btn btn-primary btn-xlg">Search</button> -->
+<!-- 																	</div> -->
+<!-- 																</div> -->
 
 																<div class="row search-option-buttons">
 																	<div class="col-sm-6">
@@ -283,52 +283,11 @@
 													<div class="content-group">
 
 														<div class="search-results-list">
+														<form id="tuprima">
 															<div class="row data-container" id="card">
-															
-																<div class="col-lg-3 col-sm-6">
-																	<div class="thumbnail">
-																		<div class="thumb thumb-rounded">
-																			<img
-																				src="../../resources/imagenes/ICONO_ASIG.png"
-																				alt="">
-																			<div class="caption-overflow">
-																				<span> <a href="#"
-																					class="btn border-white text-white btn-flat btn-icon btn-rounded"><i
-																						class="icon-plus2"></i></a>
-
-																				</span>
-																			</div>
-																		</div>
-
-																		<div class="caption text-center">
-																			<h6 class="text-semibold no-margin">Brandux
-																				Didier Juarez Avila</h6>
-																			<small class="display-block"><strong>correo
-																					: </strong> branduxjuarez@upeu.edu.pe</small> <small
-																				class="display-block"><strong>celular:
-																			</strong> 931858464</small> <small class="display-block"><strong>Codigo:
-																			</strong> 201521982</small> <small class="display-block"><strong>Ciclo:
-																			</strong> VI</small>
-																			<ul class="icons-list mt-15">
-																				<li><a href="#" data-popup="tooltip"
-																					title="Google Drive"><i
-																						class="icon-google-drive"></i></a></li>
-																				<li><a href="#" data-popup="tooltip"
-																					title="Github"><i class="icon-github"></i></a></li>
-																				<li><a href="#" data-popup="tooltip"
-																					title="Twitter"><i class="icon-facebook2"></i></a></li>
-
-																			</ul>
-																			<ul class="icons-list mt-15">
-																				<li><button onclick="alert('asa');"
-																						type="button" class="btn btn-success">Completar
-																					</button></li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-															
+															<!-- caragn datos de js -->
 															</div>
+														</form>
 														</div>
 													</div>
 													<!-- /search results -->
@@ -367,8 +326,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
-								<button type="button" class="btn btn-success">Completar
-								</button>
+								<button type="button" id="completar" onclick="EnvData();" class="btn btn-success">Completar	</button>
 							</div>
 						</div>
 
@@ -379,7 +337,7 @@
 
 			</div>
 			<!-- /main content -->
-
+			
 		</div>
 		<!-- /page content -->
 
@@ -389,17 +347,22 @@
 </body>
 
 
+
 <script type="text/javascript"
 	src="<c:url value='resources/plugin2/assets/js/pages/ecommerce_product_list.js'/>"></script>
+
+<%-- 	<script type="text/javascript"	src="<c:url value='resources/plugin2/assets/js/pages/form_checkboxes_radios.js'/>"></script> --%>
 	
 	
 <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_modals.js'/>"></script>
 	
 <script type="text/javascript"
 	src="<c:url value='resources/js/Paginate/jquery.bootpag.min.js'/>"></script>
-
+	
 
 <script type="text/javascript"
 	src="<c:url value='resources/js/BussinesCore/Asigancion.js'/>"></script>
+	
+	
 
 </html>

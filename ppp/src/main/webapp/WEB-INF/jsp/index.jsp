@@ -15,7 +15,7 @@
 <title>PPP - UPeU</title>
 <link rel="icon" type="image/ico" href="resources/imagenes/PPP.ico" />
 <%@ include file="../../jspf/head.jspf"%>
-
+<%-- <jsp:include page=""></jsp:include> --%>
 <%-- 	 --%>
 
 </head>

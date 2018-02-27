@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.rememberMeCookieName("my-remember-me")
 				.tokenValiditySeconds(86400)
 			.and()
-				.csrf();
+				.csrf().disable();
 		}
 	
 	public CustomAuthenticationProvider authenticationProvider() {

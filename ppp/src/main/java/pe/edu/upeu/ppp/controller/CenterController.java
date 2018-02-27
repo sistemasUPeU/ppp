@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.lucene.analysis.core.TypeTokenFilterFactory;
+import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.Authentication;
@@ -75,110 +76,123 @@ public class CenterController {
 		int vl_estado=0;
 		int resp=0;
 		
-		switch (opc) {
-		case "1":
+//		try {
+			switch (opc) {
+			case "asignado":
+				System.out.println("asignado");
+				JSONArray jsonarray = new JSONArray(data_json);
+				for (int i = 0; i < jsonarray.length(); i++) {
+					System.out.println(Integer.parseInt(jsonarray.get(i).toString().trim())); 
+				}
+				int vacante = Integer.parseInt(request.getParameter("vacante"));
+				System.out.println("soy la vacante "+ vacante);
+				System.out.println(data_json);
+			    mp.put("resp", 1);
 			break;
-		case "new_Representante":
-		//	vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			
-			myHasMap = gson.fromJson(data_json, tipoHashMap);
-			
-			//El estado 'ACTIVO' corresponde al id 23
-			//El estado 'PENDIENTE' corresponde al id 22
-			vl_estado=23;
-			//el id_rol que corresponde a practicante es 3
-			System.out.println(IDROL);
-			if(IDROL.equals("3")){
-				vl_estado=22;
+			case "new_Representante":
+//			//	vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			
+//				myHasMap = gson.fromJson(data_json, tipoHashMap);
+//				
+//				//El estado 'ACTIVO' corresponde al id 23
+//				//El estado 'PENDIENTE' corresponde al id 22
+//				vl_estado=23;
+//				//el id_rol que corresponde a practicante es 3
+//				System.out.println(IDROL);
+//				if(IDROL.equals("3")){
+//					vl_estado=22;
+//				}
+//				resp=0;
+//				resp=representanteDao.regRepresentante(
+//						myHasMap.get("nombre").toString(),
+//						myHasMap.get("apellido").toString(),
+//						myHasMap.get("dni").toString(),
+//						myHasMap.get("celular").toString(),
+//						myHasMap.get("correo").toString(),
+//						myHasMap.get("genero").toString(),
+//						vl_estado,
+//						Integer.parseInt(myHasMap.get("idempresa").toString()),
+//						vl_idperiodo,
+//						myHasMap.get("cargo").toString()
+//						);
+//				
+//				System.out.println(myHasMap);
+//				System.out.println(IDROL+" _ "+vl_estado);
+//				mp.put("resp", resp);
+				break;
+			case "new_Empresa":
+//				// vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
+//						
+//				myHasMap = gson.fromJson(data_json, tipoHashMap);
+//							
+//				//El estado 'ACTIVO' corresponde al id 23
+//				//El estado 'PENDIENTE' corresponde al id 22
+//				vl_estado=23;
+//				//el id_rol que corresponde a practicante es 3
+//				if(IDROL.equals("3")){
+//					vl_estado=22;
+//				}						
+//				resp=0;
+//				resp=empredao.RegEmpresa(
+//						myHasMap.get("nombre").toString(),
+//						myHasMap.get("apellido").toString(),
+//						myHasMap.get("dni").toString(),
+//						myHasMap.get("celular").toString(),
+//						myHasMap.get("correo").toString(),
+//						myHasMap.get("genero").toString(),
+//						myHasMap.get("cargo").toString(),
+//						vl_idperiodo,
+//						myHasMap.get("rasoc").toString(),
+//						myHasMap.get("ruc").toString(),
+//						myHasMap.get("direccion").toString(),
+//						Integer.parseInt(myHasMap.get("seguro").toString()),
+//						myHasMap.get("actividad").toString(), vl_estado);			
+//				
+//				System.out.println(myHasMap);
+//				System.out.println("Nombre-> "+myHasMap.get("nombre"));
+//				mp.put("resp", resp);
+				break;		
+			case "CreateCart":
+				
+//					Date ahora = new Date();
+//				    SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+//				    String fecha = formateador.format(ahora);
+//					
+//					String Practicante = ((CUserDTO) authentication.getPrincipal()).getApellido() +" "+ ((CUserDTO) authentication.getPrincipal()).getNombre();
+//					int idUser = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
+//					String ciclo = ((CUserDTO) authentication.getPrincipal()).getCiclo();
+//					String genero ="";
+//					
+//					int IDgenero = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getGenero());
+//					    if(IDgenero == 1) {
+//						    genero ="el joven";
+//					    }else if(IDgenero ==2){
+//						genero ="a la señorita";
+//					    }
+//					   
+//					outCT.put("Fecha", fecha);
+//					outCT.put("txtRepresentante", request.getParameter("REPRESENTANTE").toString());
+//					outCT.put("txtCargoRp",request.getParameter("CARGO").toString());
+//					outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
+//					outCT.put("txtDireccion", request.getParameter("DIRECCION").toString());
+//					outCT.put("txtPracticante",Practicante);
+//					outCT.put("txtGenero",genero);
+//					outCT.put("txtCiclo",ciclo);
+//					outCT.put("txtAreaTrabajo", request.getParameter("AREATRABAJO").toString());
+//					outCT.put("txtId", idUser);
+//				
+////					Map<String, Object> recibe = rct.getReport(Practicante, outCT);
+//					
+//					
+//			
+//				System.out.println(outCT);
+//				mp.put("crtA", "listo" );
+				break;
 			}
-			resp=0;
-			resp=representanteDao.regRepresentante(
-					myHasMap.get("nombre").toString(),
-					myHasMap.get("apellido").toString(),
-					myHasMap.get("dni").toString(),
-					myHasMap.get("celular").toString(),
-					myHasMap.get("correo").toString(),
-					myHasMap.get("genero").toString(),
-					vl_estado,
-					Integer.parseInt(myHasMap.get("idempresa").toString()),
-					vl_idperiodo,
-					myHasMap.get("cargo").toString()
-					);
-			
-			System.out.println(myHasMap);
-			System.out.println(IDROL+" _ "+vl_estado);
-			mp.put("resp", resp);
-			break;
-		case "new_Empresa":
-			// vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
-					
-			myHasMap = gson.fromJson(data_json, tipoHashMap);
-						
-			//El estado 'ACTIVO' corresponde al id 23
-			//El estado 'PENDIENTE' corresponde al id 22
-			vl_estado=23;
-			//el id_rol que corresponde a practicante es 3
-			if(IDROL.equals("3")){
-				vl_estado=22;
-			}						
-			resp=0;
-			resp=empredao.RegEmpresa(
-					myHasMap.get("nombre").toString(),
-					myHasMap.get("apellido").toString(),
-					myHasMap.get("dni").toString(),
-					myHasMap.get("celular").toString(),
-					myHasMap.get("correo").toString(),
-					myHasMap.get("genero").toString(),
-					myHasMap.get("cargo").toString(),
-					vl_idperiodo,
-					myHasMap.get("rasoc").toString(),
-					myHasMap.get("ruc").toString(),
-					myHasMap.get("direccion").toString(),
-					Integer.parseInt(myHasMap.get("seguro").toString()),
-					myHasMap.get("actividad").toString(), vl_estado);			
-			
-			System.out.println(myHasMap);
-			System.out.println("Nombre-> "+myHasMap.get("nombre"));
-			mp.put("resp", resp);
-			break;		
-		case "CreateCart":
-			
+//		} catch (Exception e) {
+//             System.out.println("erroro en Center controlle:" +e);
+//		}
 		
-				
-				Date ahora = new Date();
-			    SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
-			    String fecha = formateador.format(ahora);
-				
-				String Practicante = ((CUserDTO) authentication.getPrincipal()).getApellido() +" "+ ((CUserDTO) authentication.getPrincipal()).getNombre();
-				int idUser = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
-				String ciclo = ((CUserDTO) authentication.getPrincipal()).getCiclo();
-				String genero ="";
-				
-				int IDgenero = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getGenero());
-				    if(IDgenero == 1) {
-					    genero ="el joven";
-				    }else if(IDgenero ==2){
-					genero ="a la señorita";
-				    }
-				   
-				outCT.put("Fecha", fecha);
-				outCT.put("txtRepresentante", request.getParameter("REPRESENTANTE").toString());
-				outCT.put("txtCargoRp",request.getParameter("CARGO").toString());
-				outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
-				outCT.put("txtDireccion", request.getParameter("DIRECCION").toString());
-				outCT.put("txtPracticante",Practicante);
-				outCT.put("txtGenero",genero);
-				outCT.put("txtCiclo",ciclo);
-				outCT.put("txtAreaTrabajo", request.getParameter("AREATRABAJO").toString());
-				outCT.put("txtId", idUser);
-			
-//				Map<String, Object> recibe = rct.getReport(Practicante, outCT);
-				
-				
 		
-			System.out.println(outCT);
-			mp.put("crtA", "listo" );
-			break;
-		}
 		respuesta( response);
 	}
 

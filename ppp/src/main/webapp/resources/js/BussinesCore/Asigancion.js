@@ -30,7 +30,7 @@ function getDataBase (){
 					RAZONSOCIAL     = Vacantes[i].RAZONSOCIAL;
 					REPRESENTANTE   = Vacantes[i].REPRESENTANTE;
 					SUELDO          = Vacantes[i].SUELDO;
-					a  += CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARIO ,IDPERIODO ,IDVACANTES ,NCUPOS ,PERIODO , RAZONSOCIAL ,REPRESENTANTE , SUELDO );
+					a  += CreateCard(IDVACANTES, IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARIO ,IDPERIODO ,IDVACANTES ,NCUPOS ,PERIODO , RAZONSOCIAL ,REPRESENTANTE , SUELDO );
 				}
 				    console.log(objJson.Vacantes);
 			        $("#listed").empty();
@@ -54,17 +54,17 @@ function getDataBase (){
 	});
 }
 
-function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARIO ,IDPERIODO ,IDVACANTES ,NCUPOS ,PERIODO , RAZONSOCIAL ,REPRESENTANTE , SUELDO){
+function CreateCard(IDVACANTES, IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARIO ,IDPERIODO ,IDVACANTES ,NCUPOS ,PERIODO , RAZONSOCIAL ,REPRESENTANTE , SUELDO){
 	var s ='<!-- List card vacantes-->\
 							<ul class="media-list">\
 								<li class="media panel panel-body stack-media-on-mobile">\
-									<a href="<c:url value=\'resources/imagenes/ICONO_ASIG.png\'/>" class="media-left" data-popup="lightbox">\
+									<a href="resources/imagenes/ICONO_ASIG.png" class="media-left" data-popup="lightbox">\
 										<img src="resources/imagenes/ICONO_ASIG.png" width="50" alt="">\
 									</a>\
 \
 									<div class="media-body">\
 										<h3 class="media-heading text-semibold">\
-											<a href="#">'+AREATRABAJO+'</a>\
+											<a href="#">'+RAZONSOCIAL+'</a>\
 										</h3>\
 \
 										<ul class="list-inline list-inline-separate mb-10">\
@@ -108,6 +108,7 @@ function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARI
 \
 									<div class="media-right text-center">\
 										<h3 class="no-margin text-semibold">'+NCUPOS+'</h3>\
+										<input id="vacante" name="vacante" type="hidden" value="'+IDVACANTES+'">\
 										<button class="btn bg-teal btn-sm" data-toggle="modal" data-target="#modal_theme_success" type="button" onclick=" getAllData('+IDVACANTES+ ","+ NCUPOS +')" class="btn bg-teal-400 mt-15"><i class="icon-medal-first position-left"></i>Asignar</button>\
 									</div>\
 								</li>\
@@ -118,13 +119,9 @@ function CreateCard(IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRECCION,HORARI
 
 
 // function :::::::::::::::::::::::::::::::::::::::
-function getAllData(ID , cupos){
-	alert(ID );
-	alert( cupos);
+function getAllData(IDvac , cupos){
 	var alumnos , rc ='';
 	var url = '';
-	
-
 	$.ajax({
 		    url : 'rp',
 		    data : { opc : 'Vacantes' },
@@ -134,8 +131,6 @@ function getAllData(ID , cupos){
 		    	alumnos = objJson.alumnos;
 		    	console.log(objJson.alumnos);
 		    	if (alumnos.length > 0) {
-		    		
-		    		
 					for (var i = 0; i < alumnos.length; i++) {
 					    rc += '<div class="col-lg-3 col-sm-6">\
 								<div class="thumbnail">\
@@ -152,33 +147,48 @@ function getAllData(ID , cupos){
 										<small class="display-block"><strong>Codigo:</strong> '+ alumnos[i].CODIGO+'</small> \
 										<small class="display-block"><strong>Ciclo:</strong>'+ alumnos[i].CICLO+' </small>\
 											<ul class="icons-list mt-15">\
-												<li><a href="" data-popup="tooltip" title="Google Drive"><i class="icon-google-drive"></i></a></li>\
-												<li><a href="'+ alumnos[i].GITHUB+'" data-popup="tooltip" title="Github"><i class="icon-github"></i></a></li>\
-												<li><a href="'+ alumnos[i].FACEBOOK+'" data-popup="tooltip" title="Twitter"><i class="icon-facebook2"></i></a></li>\
+												<li><a href="" data-popup="tooltip" target="_blank" title="linkedin"><i class="icon-linkedin"></i></a></li>\
+												<li><a href="'+ alumnos[i].GITHUB+'" target="_blank" data-popup="tooltip" title="Github"><i class="icon-github"></i></a></li>\
+												<li><a href="'+ alumnos[i].FACEBOOK+'" target="_blank" data-popup="tooltip" title="Twitter"><i class="icon-facebook2"></i></a></li>\
 											</ul>\
 											<ul class="icons-list mt-15">\
-												<li><button onclick="Agregar('+alumnos[i].IDALUMNO+');" type="button" class="btn btn-success">Completar </button></li>\
+												<li><input type="checkbox" name="check" value="'+alumnos[i].IDALUMNO+'" class="styled"></li>\
 											</ul>\
 									</div>\
 								</div>\
 							</div>';
 					}
-					
-					var nume = alumnos.length;
-					$('#pag').bootpag({
-					    total: nume,          
-					    page: 1,            
-					    maxVisible: nume,     
-					    leaps: true,
-					    href: "#result-page-{{number}}",
-					})
-					//page click action
-					$('#pag').on("page", function(event, num){
 						 $("#card").empty();
 					     $("#card").append(rc); 
-					});
-					
-				     
+					     $("#completar").attr("disabled", true);
+
+					     //-----------------------------------
+			            // Evento que se ejecuta al pulsar en un checkbox
+					 	$("input[type=checkbox]").change(function(){
+					 		$("#completar").attr("disabled", false);
+					 		// Cogemos el elemento actual
+					 		var elemento=this;
+					 		var contador=0;
+					 		// Recorremos todos los checkbox para contar los que estan seleccionados
+					 		$("input[type=checkbox]").each(function(){
+					 			if($(this).is(":checked"))
+					 				contador++;
+					 		});
+					  
+					 		// Comprovamos si supera la cantidad máxima indicada
+					 		if(contador>cupos)
+					 		{
+					 			swal({
+						            title: "Has seleccionado mas checkbox que los indicados",
+						            text: "Seleccione solo "+ cupos ,
+						            confirmButtonColor: "#2196F3",
+						            type: "info"
+						        });	
+					 			// Desmarcamos el ultimo elemento
+					 			$(elemento).prop('checked', false);
+					 			contador--;
+					 		}
+					 	});
 				}else{
 					
 				}	       
@@ -197,6 +207,67 @@ function getAllData(ID , cupos){
 		});
 }
 
-function Agregar(name){
-	alert(name);
+//-------- funcion para transformar a json
+
+//_----
+
+function EnvData(){
+	var a = $("#vacante").val();
+	var categorias = new Array();
+    $("input:checkbox[name=check]:checked").each(function( i ) {
+        categorias.push($(this).val() );
+    });
+//    categorisas.push(a);
+    var enviar = JSON.parse(JSON.stringify(categorias));
+   
+    console.log(enviar);
+    var data = JSON.stringify(enviar);
+        swal({
+            title: "¿Desea Registrar?",
+            type: "info",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            confirmButtonColor: "#2196F3",
+            showLoaderOnConfirm: true
+        },
+        function() {
+        	//enviamos el valor al controlador
+        	$.ajax({
+                url : 'rp?opc=asignado&vacante='+a,
+                data :   data,  
+                method : 'post', //en este caso
+                dataType: "json",
+                contentType: "application/json",
+                success : function(objJson){
+               	var rspt = objJson.resp;
+        			if(rspt != 0){
+        				console.log("volvi papu");
+        	            setTimeout(function() {
+        	                swal({
+        	                    title: "Se ha registrado correctamente",
+        	                    type: "success",
+        	                    confirmButtonColor: "#66BB6A"
+        	                });
+        	            }, 2000);
+        	            $('#modal_theme_success').modal('hide');
+        	            $("#listed").empty();
+    			    	getDataBase ();
+        	           
+        			}else{
+        				 swal({
+        			            title: "Oops...",
+        			            text: "Something went wrong!",
+        			            confirmButtonColor: "#EF5350",
+        			            type: "error"
+        			        });
+        			}
+                },
+                error: function(error){
+                       //codigo error
+                }
+       	 });
+        });
+    
+	
+	
 }
