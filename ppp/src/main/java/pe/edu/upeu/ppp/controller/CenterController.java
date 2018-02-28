@@ -76,18 +76,22 @@ public class CenterController {
 		int vl_estado=0;
 		int resp=0;
 		
-//		try {
+		try {
 			switch (opc) {
 			case "asignado":
-				System.out.println("asignado");
 				JSONArray jsonarray = new JSONArray(data_json);
-				for (int i = 0; i < jsonarray.length(); i++) {
-					System.out.println(Integer.parseInt(jsonarray.get(i).toString().trim())); 
-				}
+				int ids = 0;
 				int vacante = Integer.parseInt(request.getParameter("vacante"));
-				System.out.println("soy la vacante "+ vacante);
+//				int cupos = jsonarray.length();
+				for (int i = 0; i < jsonarray.length(); i++) {
+					ids += Integer.parseInt(jsonarray.get(i).toString().trim());
+					System.out.println(ids); 
+				}
+				
+				System.out.println("soy la vacante "+ vacante );
 				System.out.println(data_json);
 			    mp.put("resp", 1);
+			    
 			break;
 			case "new_Representante":
 //			//	vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			
@@ -188,9 +192,9 @@ public class CenterController {
 //				mp.put("crtA", "listo" );
 				break;
 			}
-//		} catch (Exception e) {
-//             System.out.println("erroro en Center controlle:" +e);
-//		}
+		} catch (Exception e) {
+             System.out.println("erroro en Center controlle:" +e);
+		}
 		
 		
 		respuesta( response);

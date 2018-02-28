@@ -6,26 +6,92 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  float:right;
+}
 
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input.default:checked + .slider {
+  background-color: #444;
+}
+input.primary:checked + .slider {
+  background-color: #2196F3;
+}
+input.success:checked + .slider {
+  background-color: #8bc34a;
+}
+input.info:checked + .slider {
+  background-color: #3de0f5;
+}
+input.warning:checked + .slider {
+  background-color: #FFC107;
+}
+input.danger:checked + .slider {
+  background-color: #f44336;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
 </head>
 
 <body class="has-detached-right">
-
-
 	<!-- Page container -->
 	<div class="page-container">
-
 		<!-- Page content -->
 		<div class="page-content">
 
-
-
-
 			<!-- Main content -->
 			<div class="content-wrapper">
-
-
-
 
 				<!-- Content area -->
 				<div class="content">
@@ -116,12 +182,6 @@
 									</div></li>
 							</ul>
 							<!-- /list -->
-
-
-
-
-
-
 
 						</div>
 						<!-- Pagination -->
@@ -295,14 +355,14 @@
 
 													<!-- Pagination -->
 													<div id="pag" class="text-center content-group pt-20">
-<!-- 														<ul   class="pagination" > -->
-<!-- 															<li class="disabled"><a href="#">&larr;</a></li> -->
-<!-- 															<li class="active"><a href="#">1</a></li> -->
-<!-- 															<li><a href="#">2</a></li> -->
-<!-- 															<li><a href="#">3</a></li> -->
-<!-- 															<li><a href="#">4</a></li> -->
-<!-- 															<li><a href="#">&rarr;</a></li> -->
-<!-- 														</ul> -->
+														<ul   class="pagination" >
+															<li class="disabled"><a href="#">&larr;</a></li>
+															<li class="active"><a href="#">1</a></li>
+															<li><a href="#">2</a></li>
+															<li><a href="#">3</a></li>
+															<li><a href="#">4</a></li>
+															<li><a href="#">&rarr;</a></li>
+														</ul>
 													</div>
 													<!-- /pagination -->
 
@@ -334,8 +394,8 @@
 				</div>
 				<!-- /success modal -->
 
-
-			</div>
+ 
+ 			</div>
 			<!-- /main content -->
 			
 		</div>
@@ -345,9 +405,6 @@
 	<!-- /page container -->
 
 </body>
-
-
-
 <script type="text/javascript"
 	src="<c:url value='resources/plugin2/assets/js/pages/ecommerce_product_list.js'/>"></script>
 
