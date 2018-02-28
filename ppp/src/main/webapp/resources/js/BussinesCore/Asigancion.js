@@ -152,7 +152,7 @@ function getAllData(IDvac , cupos){
 												<li><a href="'+ alumnos[i].FACEBOOK+'" target="_blank" data-popup="tooltip" title="Twitter"><i class="icon-facebook2"></i></a></li>\
 											</ul>\
 											<ul class="icons-list mt-15">\
-												<li><input type="checkbox" name="check" value="'+alumnos[i].IDALUMNO+'" class="styled"></li>\
+												<li><label class="switch "> <input type="checkbox" name="check" value="'+alumnos[i].IDALUMNO+'" class="success"><span class="slider round"></span> </label></li>\
 											</ul>\
 									</div>\
 								</div>\
@@ -165,14 +165,18 @@ function getAllData(IDvac , cupos){
 					     //-----------------------------------
 			            // Evento que se ejecuta al pulsar en un checkbox
 					 	$("input[type=checkbox]").change(function(){
-					 		$("#completar").attr("disabled", false);
+					 		
 					 		// Cogemos el elemento actual
 					 		var elemento=this;
 					 		var contador=0;
 					 		// Recorremos todos los checkbox para contar los que estan seleccionados
 					 		$("input[type=checkbox]").each(function(){
-					 			if($(this).is(":checked"))
+					 			if($(this).is(":checked")){
 					 				contador++;
+					 			    $("#completar").attr("disabled", false);
+					 			}else if($(this).is(":checked") == null){
+					 				 $("#completar").attr("disabled", true);
+					 			}
 					 		});
 					  
 					 		// Comprovamos si supera la cantidad máxima indicada
@@ -217,13 +221,13 @@ function EnvData(){
     $("input:checkbox[name=check]:checked").each(function( i ) {
         categorias.push($(this).val() );
     });
-//    categorisas.push(a);
+    
+    if( categorias.length > 0){
     var enviar = JSON.parse(JSON.stringify(categorias));
-   
     console.log(enviar);
     var data = JSON.stringify(enviar);
         swal({
-            title: "¿Desea Registrar?",
+            title: "¿Desea Asignar?",
             type: "info",
             showCancelButton: true,
             closeOnConfirm: false,
@@ -268,6 +272,13 @@ function EnvData(){
        	 });
         });
     
-	
+    }else{
+    	 swal({
+	            title: "Oops...",
+	            text: "Debe seleccionar un practicante!",
+	            confirmButtonColor: "#EF5350",
+	            type: "error"
+	        });
+    }
 	
 }

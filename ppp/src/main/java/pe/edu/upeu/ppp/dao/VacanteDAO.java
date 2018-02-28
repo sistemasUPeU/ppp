@@ -12,6 +12,9 @@ public interface VacanteDAO {
 	ArrayList<Map<String, Object>> getTeacher (int id);
 	ArrayList<Map<String, Object>> GetAlumnos (int id);
 	
+	// METODOS PARA INSERT
+	
+	
 	//por borrar
 	ArrayList<Map<String, Object>> ListarHistoria(int id);
 	

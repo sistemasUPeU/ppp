@@ -38,7 +38,6 @@
 	
 	<!-- Theme JS files -->
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/wizards/steps.min.js'/>"></script>
-	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jasny_bootstrap.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/validation/validate.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/extensions/cookie.js'/>"></script>
 	
