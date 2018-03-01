@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class VacantesAsignacionLinks {
 	@GetMapping("Vacantes")
 	public String vacantes() {
-		return "vistas/Vacante_Asignacion/vacantes";
+		return "vistas/Vacante/vacantes";
 	}
 }
