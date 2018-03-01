@@ -169,40 +169,6 @@ public class CenterController {
 //				mp.put("resp", resp);
 				break;		
 			case "CreateCart":
-				
-//					Date ahora = new Date();
-//				    SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
-//				    String fecha = formateador.format(ahora);
-//					
-//					String Practicante = ((CUserDTO) authentication.getPrincipal()).getApellido() +" "+ ((CUserDTO) authentication.getPrincipal()).getNombre();
-//					int idUser = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
-//					String ciclo = ((CUserDTO) authentication.getPrincipal()).getCiclo();
-//					String genero ="";
-//					
-//					int IDgenero = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getGenero());
-//					    if(IDgenero == 1) {
-//						    genero ="el joven";
-//					    }else if(IDgenero ==2){
-//						genero ="a la señorita";
-//					    }
-//					   
-//					outCT.put("Fecha", fecha);
-//					outCT.put("txtRepresentante", request.getParameter("REPRESENTANTE").toString());
-//					outCT.put("txtCargoRp",request.getParameter("CARGO").toString());
-//					outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
-//					outCT.put("txtDireccion", request.getParameter("DIRECCION").toString());
-//					outCT.put("txtPracticante",Practicante);
-//					outCT.put("txtGenero",genero);
-//					outCT.put("txtCiclo",ciclo);
-//					outCT.put("txtAreaTrabajo", request.getParameter("AREATRABAJO").toString());
-//					outCT.put("txtId", idUser);
-//				
-////					Map<String, Object> recibe = rct.getReport(Practicante, outCT);
-//					
-//					
-//			
-//				System.out.println(outCT);
-//				mp.put("crtA", "listo" );
 				break;
 			}
 		} catch (Exception e) {
