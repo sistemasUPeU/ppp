@@ -25,6 +25,10 @@ public class VacanteServiceImpl implements VacanteService {
 		return vacanteDAO.getTeacher(id);
 	}
 	
+	@Override
+	public String AginacionIn(int idalumno, int idvacante) {
+		return vacanteDAO.AginacionIn(idalumno, idvacante);
+	}
 	
 	
 	@Override
@@ -51,6 +55,8 @@ public class VacanteServiceImpl implements VacanteService {
 	public ArrayList<Map<String, Object>> GetAlumnos(int id) {
 		return vacanteDAO.GetAlumnos(id);
 	}
+
+	
 
 	
 

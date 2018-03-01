@@ -1,6 +1,8 @@
 package pe.edu.upeu.ppp.report;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +18,7 @@ import net.sf.jasperreports.engine.JasperReport;
 public class reportCreate {
 
 	
-	public Map<String, Object> getReport(String name , Map<String, Object> Inparamets){
+	public Map<String, Object> getReport(String codigo , int idalumno , int idvacante ){
 		
 		Map<String, Object> OutValues = new HashMap<>();
 		 String outfilePDF ="";
@@ -24,19 +26,31 @@ public class reportCreate {
 		 String FileLocalReport ="src/main/webapp/ReportGenerator/CTA-PP1.jrxml";
 		 
 		try {
+
+			//creamos la fecha actual
+			   Date ahora = new Date();
+               SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+  		       String fecha = formateador.format(ahora);
+			   
+  		       //llenamos variables
+			   Map<String,Object> Inparamets = new HashMap<String,Object>();
+			   Inparamets.put("txtIdAlumno", idalumno);
+			   Inparamets.put("txtIdVacante", idvacante);
+			   
 				// Compile jrxml file.
 		       JasperReport jasperReport = JasperCompileManager.compileReport(FileLocalReport);
+		       
 		       //recibe parametros 
 		       JRDataSource vacio = new JREmptyDataSource(1);
 		       JasperPrint out  = JasperFillManager.fillReport(jasperReport, Inparamets, vacio);
 	          
 		       // Make sure the output directory exists.
-		       outFoler ="src/main/webapp/Portafolios/FolderPPP/"+name;
+		       outFoler ="src/main/webapp/Portafolios/FolderPPP/"+codigo;
 		       File outDir = new File(outFoler);
 		       outDir.mkdirs();
 		       
 		       // Export to PDF.
-		       outfilePDF ="src/main/webapp/Portafolios/FolderPPP/"+name+"/CartP-"+name+".pdf";
+		       outfilePDF ="src/main/webapp/Portafolios/FolderPPP/"+codigo+"/CartP-"+codigo+".pdf";
 		       JasperExportManager.exportReportToPdfFile(out, outfilePDF);
 		       System.out.println("Done!");
 			

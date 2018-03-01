@@ -1,17 +1,23 @@
 package pe.edu.upeu.ppp.daoImp;
 
 import java.util.ArrayList;
+import java.util.logging.Logger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.ppp.dao.VacanteDAO;
 @Repository("VacanteDAO")
 public class VacanteDAOImp implements VacanteDAO {
+	
+	private static Logger LOGGER = Logger.getLogger("VacanteDAOImp");
 	
 	String sql;
 	@Autowired
@@ -57,7 +63,24 @@ public class VacanteDAOImp implements VacanteDAO {
 	}
 
 
-	
+	//--- insert method
+	@Override
+	public String AginacionIn(int idalumno, int idvacante) {
+		String resul ="";
+		try {
+			
+			 SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jt).withProcedureName("pa_AsignarAlumno");
+			 SqlParameterSource in = new MapSqlParameterSource().addValue("ID_ALUMNO", idalumno).addValue("ID_VACANTE", idvacante);
+			 Map<String, Object> out = simpleJdbcCall.execute(in);
+			 resul = out.get("P_name").toString().trim();
+		} catch (Exception ev) {
+			System.out.println("No  AginacionIn, error:_"+ev);
+			 LOGGER.info("No  AginacionIn, error:_" + ev);
+		}
+		
+		return resul;
+	}
+
 	//por cambiar
 
 
@@ -110,6 +133,7 @@ public class VacanteDAOImp implements VacanteDAO {
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
 	}
 
+	
 	
 	
 

@@ -3,16 +3,12 @@ package pe.edu.upeu.ppp.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Type;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.lucene.analysis.core.TypeTokenFilterFactory;
 import org.json.JSONArray;
@@ -79,45 +75,25 @@ public class CenterController {
 		try {
 			switch (opc) {
 			case "asignado":
+				String codigo ="";
 				JSONArray jsonarray = new JSONArray(data_json);
-				int ids = 0;
 				int vacante = Integer.parseInt(request.getParameter("vacante"));
-				for (int i = 0; i < jsonarray.length(); i++) {
-					ids += Integer.parseInt(jsonarray.get(i).toString().trim());
-					System.out.println(ids); 
+				if(jsonarray.length() != 0) {
+				    for (int i = 0; i < jsonarray.length(); i++) {
+					    codigo = vS.AginacionIn(Integer.parseInt(jsonarray.get(i).toString().trim()), vacante);
+					    if(codigo != "" || codigo == null) {
+						   
+					    }else {
+						    
+					    }
+				      }
 				}
-				
-				System.out.println("soy la vacante "+ vacante );
+				System.out.println("soy la vacante "+ codigo );
 				System.out.println(data_json);
 				
 				//----- cart genartor
 				
-//				Date ahora = new Date();
-//			    SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
-//			    String fecha = formateador.format(ahora);
 //				
-//				String Practicante = ((CUserDTO) authentication.getPrincipal()).getApellido() +" "+ ((CUserDTO) authentication.getPrincipal()).getNombre();
-//				int idUser = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
-//				String ciclo = ((CUserDTO) authentication.getPrincipal()).getCiclo();
-//				String genero ="";
-//				
-//				int IDgenero = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getGenero());
-//				    if(IDgenero == 1) {
-//					    genero ="el joven";
-//				    }else if(IDgenero ==2){
-//					genero ="a la señorita";
-//				    }
-//				   
-//				outCT.put("Fecha", fecha);
-//				outCT.put("txtRepresentante", request.getParameter("REPRESENTANTE").toString());
-//				outCT.put("txtCargoRp",request.getParameter("CARGO").toString());
-//				outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
-//				outCT.put("txtDireccion", request.getParameter("DIRECCION").toString());
-//				outCT.put("txtPracticante",Practicante);
-//				outCT.put("txtGenero",genero);
-//				outCT.put("txtCiclo",ciclo);
-//				outCT.put("txtAreaTrabajo", request.getParameter("AREATRABAJO").toString());
-//				outCT.put("txtId", idUser);
 //			
 ////				Map<String, Object> recibe = rct.getReport(Practicante, outCT);
 //				
@@ -126,12 +102,7 @@ public class CenterController {
 //			System.out.println(outCT);
 //			mp.put("crtA", "listo" );
 				
-				
-				///_------------------------
-				
-				
-				
-				
+							
 			    mp.put("resp", 1);
 			    
 			break;

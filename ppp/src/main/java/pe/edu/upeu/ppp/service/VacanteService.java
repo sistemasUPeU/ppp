@@ -10,6 +10,9 @@ public interface VacanteService {
 	public ArrayList<Map<String, Object>> getTeacher (int id);
 	public ArrayList<Map<String, Object>> GetAlumnos (int id);
 	
+	public String AginacionIn (int idalumno , int idvacante);
+	
+	
 	public ArrayList<Map<String, Object>> ListarHistoria(int id);
 	
 	public ArrayList<Map<String, Object>> CargaCombox1();

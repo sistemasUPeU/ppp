@@ -13,7 +13,7 @@ public interface VacanteDAO {
 	ArrayList<Map<String, Object>> GetAlumnos (int id);
 	
 	// METODOS PARA INSERT
-	
+	String AginacionIn (int idalumno , int idvacante);
 	
 	//por borrar
 	ArrayList<Map<String, Object>> ListarHistoria(int id);
