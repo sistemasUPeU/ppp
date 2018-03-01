@@ -82,7 +82,6 @@ public class CenterController {
 				JSONArray jsonarray = new JSONArray(data_json);
 				int ids = 0;
 				int vacante = Integer.parseInt(request.getParameter("vacante"));
-//				int cupos = jsonarray.length();
 				for (int i = 0; i < jsonarray.length(); i++) {
 					ids += Integer.parseInt(jsonarray.get(i).toString().trim());
 					System.out.println(ids); 
@@ -90,6 +89,49 @@ public class CenterController {
 				
 				System.out.println("soy la vacante "+ vacante );
 				System.out.println(data_json);
+				
+				//----- cart genartor
+				
+//				Date ahora = new Date();
+//			    SimpleDateFormat formateador = new SimpleDateFormat("dd-MM-yyyy");
+//			    String fecha = formateador.format(ahora);
+//				
+//				String Practicante = ((CUserDTO) authentication.getPrincipal()).getApellido() +" "+ ((CUserDTO) authentication.getPrincipal()).getNombre();
+//				int idUser = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
+//				String ciclo = ((CUserDTO) authentication.getPrincipal()).getCiclo();
+//				String genero ="";
+//				
+//				int IDgenero = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getGenero());
+//				    if(IDgenero == 1) {
+//					    genero ="el joven";
+//				    }else if(IDgenero ==2){
+//					genero ="a la señorita";
+//				    }
+//				   
+//				outCT.put("Fecha", fecha);
+//				outCT.put("txtRepresentante", request.getParameter("REPRESENTANTE").toString());
+//				outCT.put("txtCargoRp",request.getParameter("CARGO").toString());
+//				outCT.put("txtEmpresa", request.getParameter("RAZONSOCIAL").toString());
+//				outCT.put("txtDireccion", request.getParameter("DIRECCION").toString());
+//				outCT.put("txtPracticante",Practicante);
+//				outCT.put("txtGenero",genero);
+//				outCT.put("txtCiclo",ciclo);
+//				outCT.put("txtAreaTrabajo", request.getParameter("AREATRABAJO").toString());
+//				outCT.put("txtId", idUser);
+//			
+////				Map<String, Object> recibe = rct.getReport(Practicante, outCT);
+//				
+//				
+//		
+//			System.out.println(outCT);
+//			mp.put("crtA", "listo" );
+				
+				
+				///_------------------------
+				
+				
+				
+				
 			    mp.put("resp", 1);
 			    
 			break;
