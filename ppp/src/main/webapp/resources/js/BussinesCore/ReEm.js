@@ -450,7 +450,7 @@ function getCarta(){
 //-------- funcion para transformar a json
 function FormatearFormJson(form_json){
 	var n_json='';
-	$.each(form_json,function(index,v){
+	$.each(form_json.serializeArray(),function(index,v){
 		var clave=v.name;
 		var valor=v.value;
 		
@@ -467,7 +467,7 @@ function registrar() {
 	
 	var urls = "rp?opc=new_Empresa";
 	// Datos del Representante y la empresa
-	var data = $("#form_new_empresa").serializeArray();
+	var data = $("#form_new_empresa");
 	data=FormatearFormJson(data);
 	
 	console.log("----imprime datos repre y empresa");	
@@ -511,7 +511,7 @@ function create_Representante() {
 	
 	var urls = "rp?opc=new_Representante";
 	// Datos del Representante y la empresa
-	var data = $("#form_new_representante").serializeArray();		
+	var data = $("#form_new_representante");		
 	data=FormatearFormJson(data);
 	data.idempresa=$("#select").val();
 	console.log("----imprime datos representante");	

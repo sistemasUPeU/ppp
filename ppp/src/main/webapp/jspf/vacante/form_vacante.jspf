@@ -1,32 +1,40 @@
 <form id="form_vacante">
 	<div class="row">
+ 
 		<div class="col-md-4">
 			<div class="form-group required">
-				<label class="control-label">Escuela</label> <select name="escuelas"
-					data-placeholder="Escuelas Profesionales" class="select">
-					<!-- Aqui va combo -->
+				<label class="control-label">Escuela</label>
+				<select id="escuelas" name="escuelas"	data-placeholder="Escuelas Profesionales" class="select">
+					<option value="cheese">Cheese</option>
+					<option value="tomatoes">Tomatoes</option>
+					<option value="mozarella">Mozzarella</option>
 				</select>
 			</div>
 		</div>
+		<div class="col-md-4">
+		<div class="form-group required">
+			<label class="control-label">Especialidades</label>
+
+			<div>
+				<select id="lineasprofesionales" name="lineasprofesionales" multiple="multiple" style="display: none;">					
+					
+				</select>				
+			</div>
+		</div>	
+		</div>
+			
 		
 		<div class="col-md-4">
-			<div class="form-group required">
-				<label class="control-label">Linea Profesional</label> <select name="lineasprofesionales"
-					data-placeholder="Especialidad Profesional" class="select">
-					<!-- Aqui va combo -->
-				</select>
-			</div>
-		</div>		
-	</div>
-					
-			<div class="row">
-				<div class="col-md-4">
 					<div class="form-group">
 						<label>Area de Trabajo: <span class="text-danger">*</span></label> <input
 							type="text" name="areatrabajo"
 							class="form-control required" placeholder="El departamento o area donde trabajara...">
 					</div>
-				</div>
+		</div>
+				
+	</div>
+					
+			<div class="row">				
 			
 				<div class="col-md-4">
 					<div class="form-group">
@@ -36,14 +44,14 @@
 					</div>
 				</div>
 
-				<div class="col-md-2">
+				<div class="col-md-4">
 					<div class="form-group">
 						<label>Fecha de Inicio<span class="text-danger">*</span></label> <input
 							type="date" id="fechainicio" name="fechainicio" class="form-control required">
 					</div>
 				</div>
 
-				<div class="col-md-2">
+				<div class="col-md-4">
 					<div class="form-group">
 						<label>Fecha Fin<span class="text-danger">*</span></label> <input
 							type="date" id="fechafin" name="fechafin"
@@ -53,7 +61,7 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label>Hora de Entrada: <span class="text-danger">*</span></label>
 						<input type="time" id="horainicio" name="horainicio"
@@ -61,7 +69,7 @@
 					</div>
 				</div>
 				
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label>Hora de Salida: <span class="text-danger">*</span></label>
 						<input type="time" id="horafin" name="horafin"

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Insert title here</title>		
 </head>
 
 <body>
@@ -127,9 +127,7 @@
 									
 											<!-- data table -->
 											<div class="row" id="contTable" >
-												<div id="div_new_vacante">
-													<%@ include file="../../../../jspf/vacante/form_vacante.jspf"%>
-												</div>
+												
 											</div>
 											<!-- / data table  for js -->
 										</div>
@@ -244,9 +242,9 @@
 									<div class="panel-body">
 									
 									<!-- forms -->
-									
-									<%@ include file="../../../../jspf/vacante/form_vacante.jspf"%>																			
-																				
+									<div id="div_new_vacante">
+										<%@ include file="../../../../jspf/vacante/form_vacante.jspf"%>
+									</div>																																															
 								<!-- Botones de los formularios desplegables -->
 										<div class ="row">
 										
@@ -294,6 +292,8 @@
 		</div>
 	</div>
 
+<div id="div_auxiliar">	
+</div>
 </body>
 <script>
 	$(document).ready(function() {
@@ -330,9 +330,13 @@
 	}
 	
 </script>
-	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jquery.min.js'/>"></script>	
+
+	
+
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_steps.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/js/BussinesCore/yer_vacante.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/selects/bootstrap_multiselect.js'/>"></script>	
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/form_multiselect.js'/>"></script>	
 <!-- 
 <script type="text/javascript">
 	/*$('#Boton').on('click', function() {
