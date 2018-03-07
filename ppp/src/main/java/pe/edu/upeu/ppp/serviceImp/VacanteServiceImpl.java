@@ -56,8 +56,18 @@ public class VacanteServiceImpl implements VacanteService {
 		return vacanteDAO.GetAlumnos(id);
 	}
 
-	
+	@Override
+	public int SaveVacante(ArrayList<String> lineasp,String idPeriodo, int idConvenio, int idRepresentante, String areaTrabajo, String horario,
+			String fechaInicio, String fechaFin, String horaInicio, String horaFin, int sueldo, int nCupos,
+			int idEstado) {
+		// TODO Auto-generated method stub		
+		return vacanteDAO.SaveVacante(lineasp,idPeriodo, idConvenio, idRepresentante, areaTrabajo, horario, fechaInicio, fechaFin, horaInicio, horaFin, sueldo, nCupos, idEstado);
+	}
 
-	
+	@Override
+	public List<Map<String, Object>> obtenerEscuela_LineaP(int idrepresentante) {
+		// TODO Auto-generated method stub
+		return vacanteDAO.obtenerEscuela_LineaP(idrepresentante);
+	}
 
 }

@@ -20,6 +20,7 @@ public class VacanteDAOImp implements VacanteDAO {
 	private static Logger LOGGER = Logger.getLogger("VacanteDAOImp");
 	
 	String sql;
+	int filasAfectadas;
 	@Autowired
 	JdbcTemplate jt;
 	@Override
@@ -133,8 +134,59 @@ public class VacanteDAOImp implements VacanteDAO {
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
 	}
 
-	
-	
-	
+	@Override	
+	public int SaveVacante(ArrayList<String> lineasp,String idPeriodo, int idConvenio, int idRepresentante, String areaTrabajo, String horario,
+			String fechaInicio, String fechaFin, String horaInicio, String horaFin, int sueldo, int nCupos,
+			int idEstado) {
+		// TODO Auto-generated method stub
+		int p_out_idvacante=0;
+		try {			
+//			sql="{CALL PA_NUEVA_VACANTE(?,?,?,?,?,?,?,?,?,?,?,?)}";								
+			
+			SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jt)
+		            .withProcedureName("PA_NUEVA_VACANTE");         
+				SqlParameterSource in =new MapSqlParameterSource()
+						.addValue("periodo",idPeriodo)
+						.addValue("convenio", idConvenio)
+						.addValue("representante", idRepresentante)
+						.addValue("areatrabajo", areaTrabajo)
+						.addValue("horario", horario)
+						.addValue("fechainicio", fechaInicio+" 00:00:00")
+						.addValue("fechafin", fechaFin+" 00:00:00")
+						.addValue("horainicio",horaInicio)
+						.addValue("horafin", horaFin)
+						.addValue("sueldo", sueldo)
+						.addValue("ncupos", nCupos)
+						.addValue("idestado",idEstado);
+
+				int respuesta_procedure=Integer.parseInt(simpleJdbcCall.executeObject(String.class ,in));
+			
+			p_out_idvacante=respuesta_procedure;
+			System.out.println("la respuesta es-> "+respuesta_procedure);
+			
+//			filasAfectadas=jt.update(sql,idPeriodo,idConvenio,idRepresentante,areaTrabajo,horario,
+				//fechaInicio,fechaFin,horaInicio,horaFin,sueldo,nCupos,idEstado);
+			
+			sql="INSERT INTO ppp_vacantes__lineasp VALUES(?,?)";			
+			if(lineasp.size()>0) {				
+				for(String lineap : lineasp) {
+					System.out.println("En el FOR");
+					jt.update(sql,Integer.valueOf(lineap),p_out_idvacante);
+				}								
+			}
+		}catch(Exception e) {
+			System.out.println(e+" Error yer_method -> SaveVacante");
+		}		
+		return p_out_idvacante;
+	}
+		
+	@Override
+	public List<Map<String, Object>> obtenerEscuela_LineaP(int idrepresentante) {
+		// TODO Auto-generated method stub
+		sql="SELECT R.IDEMPRESA,C.IDCONVENIO CONVENIO,C.FECHAINICIO,C.FECHAFIN,E.NOMBRE ESCUELA,l.IDLINEASP,L.NOMBRE LINEAP,L.DESCRIPCION INFO FROM PPP_ESCUELA E JOIN PPP_CONVENIO C ON E.IDESCUELA=C.IDESCUELA\r\n" + 
+				" JOIN PPP_REPRESENTANTE R ON C.IDREPRESENTANTE=R.IDREPRESENTANTE JOIN PPP_LINEASP L ON L.IDESCUELA=E.IDESCUELA\r\n" + 
+				" WHERE C.IDESTADO=1 AND R.IDEMPRESA=(select R2.IDEMPRESA FROM PPP_REPRESENTANTE R2 WHERE R2.IDREPRESENTANTE=?)";
+		return jt.queryForList(sql,idrepresentante);
+	}
 
 }

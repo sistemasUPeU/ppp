@@ -6,6 +6,8 @@ import java.util.Map;
 
 public interface VacanteService {
 	
+	public List<Map<String, Object>> obtenerEscuela_LineaP(int idrepresentante);	
+	public int SaveVacante(ArrayList<String> lineasp,String idPeriodo,int idConvenio,int idRepresentante,String areaTrabajo,String horario,String fechaInicio,String fechaFin,String horaInicio,String horaFin,int sueldo,int nCupos,int idEstado);
 	public ArrayList<Map<String, Object>> listarVacantes (int id);
 	public ArrayList<Map<String, Object>> getTeacher (int id);
 	public ArrayList<Map<String, Object>> GetAlumnos (int id);
