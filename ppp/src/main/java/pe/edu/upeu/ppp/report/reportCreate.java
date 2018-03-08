@@ -38,15 +38,15 @@ public class reportCreate {
 			   Inparamets.put("txtIdAlumno", idalumno);
 			   Inparamets.put("txtIdVacante", idvacante);
 			   System.out.println(Inparamets);
-				// Compile jrxml file.
-		       JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\ppp\\ppp\\src\\main\\webapp\\ReportGenerator/CTA-PP1.jrxml");
+				// Compile jrxml file. -> C:\Users\Cesar\Documents\ALPHA PROJECTS\PPP\new - ppp\ppp\ppp\src\main\webapp\ReportGenerator
+		       JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\new - ppp\\ppp\\ppp\\src\\main\\webapp\\ReportGenerator\\CTA-PP1.jrxml");
 		       
 		       //recibe parametros C:\Users\Cesar\Documents\ALPHA PROJECTS\PPP\ppp\ppp\src\main\webapp\ReportGenerator
 		       JRDataSource vacio = new JREmptyDataSource(1);
 		       JasperPrint out  = JasperFillManager.fillReport(jasperReport, Inparamets, vacio);
 	          
 		       // Make sure the output directory exists. src/main/webapp/Portafolios/FolderPPP/
-		       outFoler ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo;
+		       outFoler ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\new - ppp\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo;
 		       File outDir = new File(outFoler);
 		       System.out.println("existe o no "+outDir.exists());
 //		       if (outDir.exists() == false) { 
@@ -54,7 +54,7 @@ public class reportCreate {
 //		    	}
 		       
 		       // Export to PDF. ->
-		       outfilePDF ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo+"\\CartP-"+codigo+".pdf";
+		       outfilePDF ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\new - ppp\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo+"\\CartP-"+codigo+".pdf";
 		       JasperExportManager.exportReportToPdfFile(out, outfilePDF);
 		       System.out.println("Done!");
 			
