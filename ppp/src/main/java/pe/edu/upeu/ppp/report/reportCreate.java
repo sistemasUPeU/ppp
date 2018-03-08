@@ -20,11 +20,11 @@ public class reportCreate {
 	
 	public Map<String, Object> getReport(String codigo , int idalumno , int idvacante ){
 		
+		System.out.println("codigo" +codigo +"idalumno"+idalumno+"idvacante"+idvacante);
+		System.out.println("entro al jasper");
 		Map<String, Object> OutValues = new HashMap<>();
 		 String outfilePDF ="";
 		 String outFoler ="";
-		 String FileLocalReport ="src/main/webapp/ReportGenerator/CTA-PP1.jrxml";
-		 
 		try {
 
 			//creamos la fecha actual
@@ -34,34 +34,40 @@ public class reportCreate {
 			   
   		       //llenamos variables
 			   Map<String,Object> Inparamets = new HashMap<String,Object>();
+			   Inparamets.put("Fecha", fecha);
 			   Inparamets.put("txtIdAlumno", idalumno);
 			   Inparamets.put("txtIdVacante", idvacante);
-			   
+			   System.out.println(Inparamets);
 				// Compile jrxml file.
-		       JasperReport jasperReport = JasperCompileManager.compileReport(FileLocalReport);
+		       JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\ppp\\ppp\\src\\main\\webapp\\ReportGenerator/CTA-PP1.jrxml");
 		       
-		       //recibe parametros 
+		       //recibe parametros C:\Users\Cesar\Documents\ALPHA PROJECTS\PPP\ppp\ppp\src\main\webapp\ReportGenerator
 		       JRDataSource vacio = new JREmptyDataSource(1);
 		       JasperPrint out  = JasperFillManager.fillReport(jasperReport, Inparamets, vacio);
 	          
-		       // Make sure the output directory exists.
-		       outFoler ="src/main/webapp/Portafolios/FolderPPP/"+codigo;
+		       // Make sure the output directory exists. src/main/webapp/Portafolios/FolderPPP/
+		       outFoler ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo;
 		       File outDir = new File(outFoler);
-		       outDir.mkdirs();
+		       System.out.println("existe o no "+outDir.exists());
+//		       if (outDir.exists() == false) { 
+		    	    outDir.mkdirs();
+//		    	}
 		       
-		       // Export to PDF.
-		       outfilePDF ="src/main/webapp/Portafolios/FolderPPP/"+codigo+"/CartP-"+codigo+".pdf";
+		       // Export to PDF. ->
+		       outfilePDF ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo+"\\CartP-"+codigo+".pdf";
 		       JasperExportManager.exportReportToPdfFile(out, outfilePDF);
 		       System.out.println("Done!");
 			
 		} catch (JRException e) {	
 			e.printStackTrace();
-			System.out.println("Error en getReport"+e);
+			System.out.println("Error en getReport :  "+e);
 		}
-		OutValues.put("localPdf", FileLocalReport);
 		OutValues.put("folder", outFoler);
 		OutValues.put("pdf", outfilePDF);
 		return OutValues;
+
+		
+		
 	}
 	
 }

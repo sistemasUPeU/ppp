@@ -75,36 +75,38 @@ public class CenterController {
 		try {
 			switch (opc) {
 			case "asignado":
+				// objeto de repostes
+				reportCreate rcp = new reportCreate();
+				
 				String codigo ="";
+				Map<String, Object> getDataFolder = new HashMap<String, Object>();
+				int result =0;
 				JSONArray jsonarray = new JSONArray(data_json);
 				int vacante = Integer.parseInt(request.getParameter("vacante"));
 				if(jsonarray.length() != 0) {
 				    for (int i = 0; i < jsonarray.length(); i++) {
+				    	System.out.println("soy la id alumno "+ Integer.parseInt(jsonarray.get(i).toString().trim()) );
 					    codigo = vS.AginacionIn(Integer.parseInt(jsonarray.get(i).toString().trim()), vacante);
 					    if(codigo != "" || codigo == null) {
-						   
+					       String titulo = "Carta presentacion d/al :" + codigo;
+					       getDataFolder = rcp.getReport(codigo, Integer.parseInt(jsonarray.get(i).toString().trim()), vacante);
+						   result = vS.createFolder(getDataFolder.get("pdf").toString().trim(), 
+								                    getDataFolder.get("folder").toString().trim(),
+								                    titulo,null, Integer.parseInt(jsonarray.get(i).toString().trim()),
+								                    Integer.parseInt(IDROL));
+						   mp.put("resp",result);
 					    }else {
-						    
+					    	result =0;
+					    	mp.put("resp",result);
 					    }
 				      }
 				}
-				System.out.println("soy la vacante "+ codigo );
+				System.out.println("soy la mapping "+ getDataFolder );
+				System.out.println("soy la result "+ result );
+				System.out.println("soy la vacante "+ vacante );
+				System.out.println("soy la codigo "+ codigo );
 				System.out.println(data_json);
-				
-				//----- cart genartor
-				
-//				
-//			
-////				Map<String, Object> recibe = rct.getReport(Practicante, outCT);
-//				
-//				
-//		
-//			System.out.println(outCT);
-//			mp.put("crtA", "listo" );
-				
-							
-			    mp.put("resp", 1);
-			    
+
 			break;
 			case "new_Representante":
 //			//	vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			

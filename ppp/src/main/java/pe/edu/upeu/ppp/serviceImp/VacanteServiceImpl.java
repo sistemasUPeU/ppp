@@ -70,4 +70,11 @@ public class VacanteServiceImpl implements VacanteService {
 		return vacanteDAO.obtenerEscuela_LineaP(idrepresentante);
 	}
 
+	@Override
+	public int createFolder(String rutapdf, String rutafolder, String titulo, String observacion, int idalumno,
+			int idrol) {
+		
+		return vacanteDAO.createFolder(rutapdf, rutafolder, titulo, observacion, idalumno, idrol);
+	}
+
 }

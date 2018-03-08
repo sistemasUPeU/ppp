@@ -2,7 +2,7 @@
 $(document).ready(function() {
 	
 	getDataBase ();
-	
+	var vg_idVacante;
 });
 
 function getDataBase (){
@@ -120,6 +120,7 @@ function CreateCard(IDVACANTES, IDREPRESENTANTE,AREATRABAJO ,CELULAR,CORREO,DIRE
 
 // function :::::::::::::::::::::::::::::::::::::::
 function getAllData(IDvac , cupos){
+	vg_idVacante=IDvac;
 	var alumnos , rc ='';
 	var url = '';
 	$.ajax({
@@ -216,7 +217,10 @@ function getAllData(IDvac , cupos){
 //_----
 
 function EnvData(){
-	var a = $("#vacante").val();
+
+	var a =vg_idVacante;
+	alert(a);
+	
 	var categorias = new Array();
     $("input:checkbox[name=check]:checked").each(function( i ) {
         categorias.push($(this).val() );

@@ -62,6 +62,16 @@ public class VacanteDAOImp implements VacanteDAO {
 		}
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql);	
 	}
+	
+
+	@Override
+	public List<Map<String, Object>> obtenerEscuela_LineaP(int idrepresentante) {
+		// TODO Auto-generated method stub
+		sql="SELECT R.IDEMPRESA,C.IDCONVENIO CONVENIO,C.FECHAINICIO,C.FECHAFIN,E.NOMBRE ESCUELA,l.IDLINEASP,L.NOMBRE LINEAP,L.DESCRIPCION INFO FROM PPP_ESCUELA E JOIN PPP_CONVENIO C ON E.IDESCUELA=C.IDESCUELA\r\n" + 
+				" JOIN PPP_REPRESENTANTE R ON C.IDREPRESENTANTE=R.IDREPRESENTANTE JOIN PPP_LINEASP L ON L.IDESCUELA=E.IDESCUELA\r\n" + 
+				" WHERE C.IDESTADO=1 AND R.IDEMPRESA=(select R2.IDEMPRESA FROM PPP_REPRESENTANTE R2 WHERE R2.IDREPRESENTANTE=?)";
+		return jt.queryForList(sql,idrepresentante);
+	}
 
 
 	//--- insert method
@@ -69,19 +79,85 @@ public class VacanteDAOImp implements VacanteDAO {
 	public String AginacionIn(int idalumno, int idvacante) {
 		String resul ="";
 		try {
-			
+			System.out.println("method AginacionIn:"+idalumno+" , "+ idvacante);
 			 SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jt).withProcedureName("pa_AsignarAlumno");
 			 SqlParameterSource in = new MapSqlParameterSource().addValue("ID_ALUMNO", idalumno).addValue("ID_VACANTE", idvacante);
-			 Map<String, Object> out = simpleJdbcCall.execute(in);
-			 resul = out.get("P_name").toString().trim();
+			 resul = simpleJdbcCall.executeObject(String.class, in);
 		} catch (Exception ev) {
 			System.out.println("No  AginacionIn, error:_"+ev);
 			 LOGGER.info("No  AginacionIn, error:_" + ev);
 		}
-		
+		System.out.println("result , AginacionIn" + resul);
 		return resul;
+
 	}
 
+	@Override	
+	public int SaveVacante(ArrayList<String> lineasp,String idPeriodo, int idConvenio, int idRepresentante, String areaTrabajo, String horario,
+			String fechaInicio, String fechaFin, String horaInicio, String horaFin, int sueldo, int nCupos,
+			int idEstado) {
+		// TODO Auto-generated method stub
+		int p_out_idvacante=0;
+		try {			
+//			sql="{CALL PA_NUEVA_VACANTE(?,?,?,?,?,?,?,?,?,?,?,?)}";								
+			
+			SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jt)
+		            .withProcedureName("PA_NUEVA_VACANTE");         
+				SqlParameterSource in =new MapSqlParameterSource()
+						.addValue("periodo",idPeriodo)
+						.addValue("convenio", idConvenio)
+						.addValue("representante", idRepresentante)
+						.addValue("areatrabajo", areaTrabajo)
+						.addValue("horario", horario)
+						.addValue("fechainicio", fechaInicio+" 00:00:00")
+						.addValue("fechafin", fechaFin+" 00:00:00")
+						.addValue("horainicio",horaInicio)
+						.addValue("horafin", horaFin)
+						.addValue("sueldo", sueldo)
+						.addValue("ncupos", nCupos)
+						.addValue("idestado",idEstado);
+
+				int respuesta_procedure=Integer.parseInt(simpleJdbcCall.executeObject(String.class ,in));
+			
+			p_out_idvacante=respuesta_procedure;
+			System.out.println("la respuesta es-> "+respuesta_procedure);
+			
+//			filasAfectadas=jt.update(sql,idPeriodo,idConvenio,idRepresentante,areaTrabajo,horario,
+				//fechaInicio,fechaFin,horaInicio,horaFin,sueldo,nCupos,idEstado);
+			
+			sql="INSERT INTO ppp_vacantes__lineasp VALUES(?,?)";			
+			if(lineasp.size()>0) {				
+				for(String lineap : lineasp) {
+					System.out.println("En el FOR");
+					jt.update(sql,Integer.valueOf(lineap),p_out_idvacante);
+				}								
+			}
+		}catch(Exception e) {
+			System.out.println(e+" Error yer_method -> SaveVacante");
+		}		
+		return p_out_idvacante;
+	}
+		
+	
+	@Override
+	public int createFolder(String rutapdf, String rutafolder, String titulo, String observacion, int idalumno,
+			int idrol) {
+		int out = 0;
+		String sql ="CALL pa_createFolder(?,?,?,?,?,?)";
+		try {
+			out = jt.update(sql,rutapdf,rutafolder,titulo,observacion, idalumno ,idrol);
+		    out = out+1;
+		} catch (Exception ev) {
+			System.out.println("No  AginacionIn, error:_"+ev);
+			 LOGGER.info("No  AginacionIn, error:_" + ev);
+		}
+		return out;
+	}
+	
+	
+	
+	
+	
 	//por cambiar
 
 
@@ -134,59 +210,8 @@ public class VacanteDAOImp implements VacanteDAO {
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
 	}
 
-	@Override	
-	public int SaveVacante(ArrayList<String> lineasp,String idPeriodo, int idConvenio, int idRepresentante, String areaTrabajo, String horario,
-			String fechaInicio, String fechaFin, String horaInicio, String horaFin, int sueldo, int nCupos,
-			int idEstado) {
-		// TODO Auto-generated method stub
-		int p_out_idvacante=0;
-		try {			
-//			sql="{CALL PA_NUEVA_VACANTE(?,?,?,?,?,?,?,?,?,?,?,?)}";								
-			
-			SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jt)
-		            .withProcedureName("PA_NUEVA_VACANTE");         
-				SqlParameterSource in =new MapSqlParameterSource()
-						.addValue("periodo",idPeriodo)
-						.addValue("convenio", idConvenio)
-						.addValue("representante", idRepresentante)
-						.addValue("areatrabajo", areaTrabajo)
-						.addValue("horario", horario)
-						.addValue("fechainicio", fechaInicio+" 00:00:00")
-						.addValue("fechafin", fechaFin+" 00:00:00")
-						.addValue("horainicio",horaInicio)
-						.addValue("horafin", horaFin)
-						.addValue("sueldo", sueldo)
-						.addValue("ncupos", nCupos)
-						.addValue("idestado",idEstado);
+	
 
-				int respuesta_procedure=Integer.parseInt(simpleJdbcCall.executeObject(String.class ,in));
-			
-			p_out_idvacante=respuesta_procedure;
-			System.out.println("la respuesta es-> "+respuesta_procedure);
-			
-//			filasAfectadas=jt.update(sql,idPeriodo,idConvenio,idRepresentante,areaTrabajo,horario,
-				//fechaInicio,fechaFin,horaInicio,horaFin,sueldo,nCupos,idEstado);
-			
-			sql="INSERT INTO ppp_vacantes__lineasp VALUES(?,?)";			
-			if(lineasp.size()>0) {				
-				for(String lineap : lineasp) {
-					System.out.println("En el FOR");
-					jt.update(sql,Integer.valueOf(lineap),p_out_idvacante);
-				}								
-			}
-		}catch(Exception e) {
-			System.out.println(e+" Error yer_method -> SaveVacante");
-		}		
-		return p_out_idvacante;
-	}
-		
-	@Override
-	public List<Map<String, Object>> obtenerEscuela_LineaP(int idrepresentante) {
-		// TODO Auto-generated method stub
-		sql="SELECT R.IDEMPRESA,C.IDCONVENIO CONVENIO,C.FECHAINICIO,C.FECHAFIN,E.NOMBRE ESCUELA,l.IDLINEASP,L.NOMBRE LINEAP,L.DESCRIPCION INFO FROM PPP_ESCUELA E JOIN PPP_CONVENIO C ON E.IDESCUELA=C.IDESCUELA\r\n" + 
-				" JOIN PPP_REPRESENTANTE R ON C.IDREPRESENTANTE=R.IDREPRESENTANTE JOIN PPP_LINEASP L ON L.IDESCUELA=E.IDESCUELA\r\n" + 
-				" WHERE C.IDESTADO=1 AND R.IDEMPRESA=(select R2.IDEMPRESA FROM PPP_REPRESENTANTE R2 WHERE R2.IDREPRESENTANTE=?)";
-		return jt.queryForList(sql,idrepresentante);
-	}
+	
 
 }
