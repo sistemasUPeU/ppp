@@ -140,18 +140,26 @@ public class VacanteDAOImp implements VacanteDAO {
 		
 	
 	@Override
-	public int createFolder(String rutapdf, String rutafolder, String titulo, String observacion, int idalumno,
+	public String createFolder(String rutapdf, String rutafolder, String titulo, String observacion, int idalumno,
 			int idrol) {
-		int out = 0;
-		String sql ="CALL pa_createFolder(?,?,?,?,?,?)";
+		
+		String outCf ="";
 		try {
-			out = jt.update(sql,rutapdf,rutafolder,titulo,observacion, idalumno ,idrol);
-		    out = out+1;
+			 SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jt).withProcedureName("pa_createFolder");
+			 SqlParameterSource in = new MapSqlParameterSource().addValue("V_rutaPDF", rutapdf)
+					                                            .addValue("v_rutaFolder", rutafolder)
+					                                            .addValue("V_TITULO", titulo)
+					                                            .addValue("V_OBSERVACIONES", observacion)
+					                                            .addValue("v_idAlumno", idalumno)
+					                                            .addValue("ID_rol", idrol);
+			 outCf = simpleJdbcCall.executeObject(String.class, in);
 		} catch (Exception ev) {
 			System.out.println("No  AginacionIn, error:_"+ev);
 			 LOGGER.info("No  AginacionIn, error:_" + ev);
 		}
-		return out;
+		System.out.println(outCf);
+		return outCf;
+		
 	}
 	
 	

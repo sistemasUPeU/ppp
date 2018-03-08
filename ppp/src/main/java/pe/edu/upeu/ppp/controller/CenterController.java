@@ -34,6 +34,7 @@ import pe.edu.upeu.ppp.report.reportCreate;
 import pe.edu.upeu.ppp.service.EmpresaService;
 import pe.edu.upeu.ppp.service.RepreService;
 import pe.edu.upeu.ppp.service.VacanteService;
+import pe.edu.upeu.ppp.utilitarios.EmailSend;
 @Controller
 @RequestMapping("/rp")
 public class CenterController {
@@ -77,12 +78,15 @@ public class CenterController {
 			case "asignado":
 				// objeto de repostes
 				reportCreate rcp = new reportCreate();
+				EmailSend es = new EmailSend();
 				
 				String codigo ="";
 				Map<String, Object> getDataFolder = new HashMap<String, Object>();
 				int result =0;
 				JSONArray jsonarray = new JSONArray(data_json);
 				int vacante = Integer.parseInt(request.getParameter("vacante"));
+				String correo ="";
+				
 				if(jsonarray.length() != 0) {
 				    for (int i = 0; i < jsonarray.length(); i++) {
 				    	System.out.println("soy la id alumno "+ Integer.parseInt(jsonarray.get(i).toString().trim()) );
@@ -90,10 +94,11 @@ public class CenterController {
 					    if(codigo != "" || codigo == null) {
 					       String titulo = "Carta presentacion d/al :" + codigo;
 					       getDataFolder = rcp.getReport(codigo, Integer.parseInt(jsonarray.get(i).toString().trim()), vacante);
-						   result = vS.createFolder(getDataFolder.get("pdf").toString().trim(), 
+					       correo = vS.createFolder(getDataFolder.get("pdf").toString().trim(), 
 								                    getDataFolder.get("folder").toString().trim(),
 								                    titulo,null, Integer.parseInt(jsonarray.get(i).toString().trim()),
 								                    Integer.parseInt(IDROL));
+						   result = es.enviarConGMail(correo, "asunto ", "Cuerpo");
 						   mp.put("resp",result);
 					    }else {
 					    	result =0;
@@ -102,6 +107,7 @@ public class CenterController {
 				      }
 				}
 				System.out.println("soy la mapping "+ getDataFolder );
+				System.out.println("soy la emailSend "+ correo );
 				System.out.println("soy la result "+ result );
 				System.out.println("soy la vacante "+ vacante );
 				System.out.println("soy la codigo "+ codigo );

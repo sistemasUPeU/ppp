@@ -13,7 +13,7 @@ public interface VacanteService {
 	
 	public String AginacionIn (int idalumno , int idvacante);
 	public int SaveVacante(ArrayList<String> lineasp,String idPeriodo,int idConvenio,int idRepresentante,String areaTrabajo,String horario,String fechaInicio,String fechaFin,String horaInicio,String horaFin,int sueldo,int nCupos,int idEstado);
-	public int createFolder(String rutapdf , String rutafolder, String titulo, String observacion , int idalumno , int idrol );
+	public String createFolder(String rutapdf , String rutafolder, String titulo, String observacion , int idalumno , int idrol );
 	
 	
 	

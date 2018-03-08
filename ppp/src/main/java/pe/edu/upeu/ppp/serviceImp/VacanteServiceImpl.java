@@ -71,7 +71,7 @@ public class VacanteServiceImpl implements VacanteService {
 	}
 
 	@Override
-	public int createFolder(String rutapdf, String rutafolder, String titulo, String observacion, int idalumno,
+	public String createFolder(String rutapdf, String rutafolder, String titulo, String observacion, int idalumno,
 			int idrol) {
 		
 		return vacanteDAO.createFolder(rutapdf, rutafolder, titulo, observacion, idalumno, idrol);

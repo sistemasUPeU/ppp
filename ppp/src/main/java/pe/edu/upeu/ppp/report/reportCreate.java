@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
+
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -20,6 +22,7 @@ public class reportCreate {
 	
 	public Map<String, Object> getReport(String codigo , int idalumno , int idvacante ){
 		
+//		ServletContext sc = this.get;
 		System.out.println("codigo" +codigo +"idalumno"+idalumno+"idvacante"+idvacante);
 		System.out.println("entro al jasper");
 		Map<String, Object> OutValues = new HashMap<>();
@@ -38,7 +41,7 @@ public class reportCreate {
 			   Inparamets.put("txtIdAlumno", idalumno);
 			   Inparamets.put("txtIdVacante", idvacante);
 			   System.out.println(Inparamets);
-				// Compile jrxml file. -> C:\Users\Cesar\Documents\ALPHA PROJECTS\PPP\new - ppp\ppp\ppp\src\main\webapp\ReportGenerator
+				// Compile jrxml file. ->
 		       JasperReport jasperReport = JasperCompileManager.compileReport("C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\new - ppp\\ppp\\ppp\\src\\main\\webapp\\ReportGenerator\\CTA-PP1.jrxml");
 		       
 		       //recibe parametros C:\Users\Cesar\Documents\ALPHA PROJECTS\PPP\ppp\ppp\src\main\webapp\ReportGenerator
