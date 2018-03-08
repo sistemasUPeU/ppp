@@ -130,10 +130,6 @@ AND ALM.IDALUMNO =$P{txtIdAlumno}  AND VC.IDVACANTES = $P{txtIdVacante}]]>
 					<textFieldExpression><![CDATA[$F{DIRECCION}]]></textFieldExpression>
 				</textField>
 			</frame>
-			<image>
-				<reportElement x="360" y="18" width="153" height="150" uuid="22e1dadf-4c9b-49c7-a4c5-c055aa52230a"/>
-				<imageExpression><![CDATA["src/main/webapp/resources/imagenes/upeu.png"]]></imageExpression>
-			</image>
 		</band>
 	</pageHeader>
 	<columnHeader>

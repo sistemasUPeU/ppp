@@ -98,7 +98,7 @@ public class CenterController {
 								                    getDataFolder.get("folder").toString().trim(),
 								                    titulo,null, Integer.parseInt(jsonarray.get(i).toString().trim()),
 								                    Integer.parseInt(IDROL));
-						   result = es.enviarConGMail(correo, "asunto ", "Cuerpo");
+						   result = es.enviarConGMail(correo, "asunto ", "has sido asignado a practicas  ");
 						   mp.put("resp",result);
 					    }else {
 					    	result =0;
