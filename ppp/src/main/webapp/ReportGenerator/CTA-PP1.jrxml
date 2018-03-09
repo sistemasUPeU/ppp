@@ -21,7 +21,7 @@ WHERE USUR.IDUSUARIO= RP.IDREPRESENTANTE AND VC.IDREPRESENTANTE = RP.IDREPRESENT
 AND AM.IDVACANTES = VC.IDVACANTES AND AM.IDALUMNO = ALM.IDALUMNO AND ALM.IDALUMNO = USUA.IDUSUARIO 
 AND CV.IDCONVENIO = VC.IDCONVENIO  AND ES.IDESCUELA = CV.IDESCUELA AND ES.IDFACULTAD = FL.IDFACULTAD
 and ES.IDESCUELA = CE.IDESCUELA and CE.IDUSUARIO  = usuac.IDUSUARIO
-AND ALM.IDALUMNO =$P{txtIdAlumno}  AND VC.IDVACANTES = $P{txtIdVacante}]]>
+AND ALM.IDALUMNO  = $P{txtIdAlumno}   AND VC.IDVACANTES  =  $P{txtIdVacante}]]>
 	</queryString>
 	<field name="REPRESENTANTE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="REPRESENTANTE"/>
@@ -291,11 +291,6 @@ Cordialemente.]]></text>
 		</band>
 	</columnFooter>
 	<summary>
-		<band height="50" splitType="Stretch">
-			<textField evaluationTime="Report">
-				<reportElement x="450" y="10" width="100" height="30" uuid="17de8e86-642b-489d-9ef7-5883df17ee20"/>
-				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="16" splitType="Stretch"/>
 	</summary>
 </jasperReport>
