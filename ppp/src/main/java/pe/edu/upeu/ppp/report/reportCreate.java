@@ -53,10 +53,8 @@ public class reportCreate {
 		       System.out.println("existe o no "+outDir.exists());
 		       if (outDir.exists() == false) { 
 	    	       outDir.mkdirs();
-	    	       outfilePDF ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\new - ppp\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo+"\\CartP-"+codigo+".pdf";
-		    	}else {
-		    		outfilePDF ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\new - ppp\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo+"\\CartP-"+codigo+"*.pdf";
 		    	}
+		       outfilePDF ="C:\\Users\\Cesar\\Documents\\ALPHA PROJECTS\\PPP\\new - ppp\\ppp\\ppp\\src\\main\\webapp\\Portafolios\\FolderPPP\\"+codigo+"\\CartP-"+codigo+"vcn-"+idvacante+".pdf";
 		       System.out.println("existe ?¡:"+outDir.exists());
 		       
 			 // Exporta el informe a PDF
@@ -65,20 +63,17 @@ public class reportCreate {
 	    }
 	    catch (Exception e) {
 	      e.printStackTrace();
-	    }
-	    finally {
+	    }finally {
 	      try {
 	        if (conn != null) {
 	          conn.rollback();
 	          System.out.println("ROLLBACK EJECUTADO");
 	          conn.close();
 	        }
-	      }
-	      catch (Exception e) {
+	      }catch (Exception e) {
 	        e.printStackTrace();
 	      }
 	    }
-	    
 	    OutValues.put("folder", outFoler);
 		OutValues.put("pdf", outfilePDF);
 		return OutValues;
