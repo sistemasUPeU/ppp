@@ -11,15 +11,12 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.aop.config.AopConfigUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -44,8 +41,8 @@ public class VacanteController {
 	Map<String, Object> myHasMap= new HashMap<String, Object>();
 	
 	//Otras varianbles
-	private int vg_idconvenio=0,vg_idrepresentante=0;
-	private String vg_idperiodo="";
+	private int vg_idconvenio=0,vg_idrepresentante=0,vg_idestado=3;
+	private String vg_idperiodo="",vg_idrol="";
 /*	
 	private VacanteController() {
 		// TODO Auto-generated constructor stub
@@ -64,11 +61,19 @@ public class VacanteController {
 	
 	@PostMapping	
 	private void saveVacante(HttpServletRequest request,HttpServletResponse response,@RequestBody String data_json, Authentication authentication) {		
-		System.out.println("save_Controller");
-		System.out.println(data_json);
+//		System.out.println("save_Controller");
+//		System.out.println(data_json);
+		
+		vg_idrol=((CUserDTO) authentication.getPrincipal()).getidrol();
+		vg_idrepresentante = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).IDUSER());
+		vg_idperiodo= "2018-1";		
+		
+		if(!vg_idrol.equals("5")) {
+			vg_idestado=1;
+		}
 		
 		myHasMap=gson.fromJson(data_json, tipoHashMap);							
-		ArrayList<String> lista_lineasp=new ArrayList<>();		
+		ArrayList<String> lista_lineasp=new ArrayList<>();
 		
 		if(myHasMap.get("lineasprofesionales") instanceof ArrayList<?>) {
 			System.out.println("si");
@@ -76,10 +81,9 @@ public class VacanteController {
 		}else {
 			System.out.println("no");
 			lista_lineasp.add(0, myHasMap.get("lineasprofesionales").toString());
-		}		
-		System.out.println("Linea1 "+lista_lineasp.get(0));
-		System.out.println("Linea2 "+lista_lineasp.get(1));
-		vacanteService.SaveVacante(lista_lineasp,vg_idperiodo,vg_idconvenio,vg_idrepresentante, myHasMap.get("areatrabajo").toString(), myHasMap.get("horario").toString(), myHasMap.get("fechainicio").toString(), myHasMap.get("fechafin").toString(), myHasMap.get("horainicio").toString(), myHasMap.get("horafin").toString(), Integer.parseInt(myHasMap.get("sueldo").toString()), Integer.parseInt(myHasMap.get("ncupos").toString()),1);
+		}				
+		rpta.put("retorno", vacanteService.SaveVacante(lista_lineasp,vg_idperiodo,vg_idconvenio,vg_idrepresentante, myHasMap.get("areatrabajo").toString(), myHasMap.get("horario").toString(), myHasMap.get("fechainicio").toString(), myHasMap.get("fechafin").toString(), myHasMap.get("horainicio").toString(), myHasMap.get("horafin").toString(), Integer.parseInt(myHasMap.get("sueldo").toString()), Integer.parseInt(myHasMap.get("ncupos").toString()),vg_idestado));
+		respuesta(response);
 	}
 	
 	public void respuesta(HttpServletResponse response) {

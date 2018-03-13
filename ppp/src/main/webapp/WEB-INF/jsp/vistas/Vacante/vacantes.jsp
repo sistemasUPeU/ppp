@@ -14,8 +14,7 @@
 
 		<!-- Basic setup -->
 		<div class="panel panel-white">
-			<div class="panel-heading">
-				<h6 class="panel-title">Vacantes</h6>
+			<div class="panel-heading">				
 				<div class="heading-elements">
 					<ul class="icons-list">
 						<li><a data-action="collapse"></a></li>
@@ -281,13 +280,7 @@
 		</div>														
 				</div>
 														
-				</fieldset>			
- 
-				<button type="button" 
-					class="btn btn-primary stepy-finish">
-					Registrar <i class="icon-check position-right"></i>
-				</button>
- 				
+				</fieldset>			 				 				
 			</div>
 		</div>
 	</div>
