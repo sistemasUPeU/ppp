@@ -98,7 +98,7 @@ public class CenterController {
 								                    getDataFolder.get("folder").toString().trim(),
 								                    titulo,null, Integer.parseInt(jsonarray.get(i).toString().trim()),
 								                    Integer.parseInt(IDROL));
-						   result = es.enviarConGMail(correo, "Asignacion de Practicas Pre - Profesionales ", "has sido asignado a practicas  ");
+						   result = es.enviarConGMail(correo, "Asignacion de Practicas Pre- Profesionales ", "has sido asignado a practicas  ");
 						   mp.put("resp",result);
 					    }else {
 					    	result =0;
@@ -115,66 +115,66 @@ public class CenterController {
 
 			break;
 			case "new_Representante":
-//			//	vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			
-//				myHasMap = gson.fromJson(data_json, tipoHashMap);
-//				
-//				//El estado 'ACTIVO' corresponde al id 23
-//				//El estado 'PENDIENTE' corresponde al id 22
-//				vl_estado=23;
-//				//el id_rol que corresponde a practicante es 3
-//				System.out.println(IDROL);
-//				if(IDROL.equals("3")){
-//					vl_estado=22;
-//				}
-//				resp=0;
-//				resp=representanteDao.regRepresentante(
-//						myHasMap.get("nombre").toString(),
-//						myHasMap.get("apellido").toString(),
-//						myHasMap.get("dni").toString(),
-//						myHasMap.get("celular").toString(),
-//						myHasMap.get("correo").toString(),
-//						myHasMap.get("genero").toString(),
-//						vl_estado,
-//						Integer.parseInt(myHasMap.get("idempresa").toString()),
-//						vl_idperiodo,
-//						myHasMap.get("cargo").toString()
-//						);
-//				
-//				System.out.println(myHasMap);
-//				System.out.println(IDROL+" _ "+vl_estado);
-//				mp.put("resp", resp);
+			//	vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());			
+				myHasMap = gson.fromJson(data_json, tipoHashMap);
+				
+				//El estado 'ACTIVO' corresponde al id 23
+				//El estado 'PENDIENTE' corresponde al id 22
+				vl_estado=23;
+				//el id_rol que corresponde a practicante es 3
+				System.out.println(IDROL);
+				if(IDROL.equals("3")){
+					vl_estado=22;
+				}
+				resp=0;
+				resp=representanteDao.regRepresentante(
+						myHasMap.get("nombre").toString(),
+						myHasMap.get("apellido").toString(),
+						myHasMap.get("dni").toString(),
+						myHasMap.get("celular").toString(),
+						myHasMap.get("correo").toString(),
+						myHasMap.get("genero").toString(),
+						vl_estado,
+						Integer.parseInt(myHasMap.get("idempresa").toString()),
+						vl_idperiodo,
+						myHasMap.get("cargo").toString()
+						);
+				
+				System.out.println(myHasMap);
+				System.out.println(IDROL+" _ "+vl_estado);
+				mp.put("resp", resp);
 				break;
 			case "new_Empresa":
-//				// vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
-//						
-//				myHasMap = gson.fromJson(data_json, tipoHashMap);
-//							
-//				//El estado 'ACTIVO' corresponde al id 23
-//				//El estado 'PENDIENTE' corresponde al id 22
-//				vl_estado=23;
-//				//el id_rol que corresponde a practicante es 3
-//				if(IDROL.equals("3")){
-//					vl_estado=22;
-//				}						
-//				resp=0;
-//				resp=empredao.RegEmpresa(
-//						myHasMap.get("nombre").toString(),
-//						myHasMap.get("apellido").toString(),
-//						myHasMap.get("dni").toString(),
-//						myHasMap.get("celular").toString(),
-//						myHasMap.get("correo").toString(),
-//						myHasMap.get("genero").toString(),
-//						myHasMap.get("cargo").toString(),
-//						vl_idperiodo,
-//						myHasMap.get("rasoc").toString(),
-//						myHasMap.get("ruc").toString(),
-//						myHasMap.get("direccion").toString(),
-//						Integer.parseInt(myHasMap.get("seguro").toString()),
-//						myHasMap.get("actividad").toString(), vl_estado);			
-//				
-//				System.out.println(myHasMap);
-//				System.out.println("Nombre-> "+myHasMap.get("nombre"));
-//				mp.put("resp", resp);
+				// vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
+						
+				myHasMap = gson.fromJson(data_json, tipoHashMap);
+							
+				//El estado 'ACTIVO' corresponde al id 23
+				//El estado 'PENDIENTE' corresponde al id 22
+				vl_estado=23;
+				//el id_rol que corresponde a practicante es 3
+				if(IDROL.equals("3")){
+					vl_estado=22;
+				}						
+				resp=0;
+				resp=empredao.RegEmpresa(
+						myHasMap.get("nombre").toString(),
+						myHasMap.get("apellido").toString(),
+						myHasMap.get("dni").toString(),
+						myHasMap.get("celular").toString(),
+						myHasMap.get("correo").toString(),
+						myHasMap.get("genero").toString(),
+						myHasMap.get("cargo").toString(),
+						vl_idperiodo,
+						myHasMap.get("rasoc").toString(),
+						myHasMap.get("ruc").toString(),
+						myHasMap.get("direccion").toString(),
+						Integer.parseInt(myHasMap.get("seguro").toString()),
+						myHasMap.get("actividad").toString(), vl_estado);			
+				
+				System.out.println(myHasMap);
+				System.out.println("Nombre-> "+myHasMap.get("nombre"));
+				mp.put("resp", resp);
 				break;		
 			case "CreateCart":
 				break;

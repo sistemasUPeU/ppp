@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<%@ include file="../../../../jspf/Emp/headEmpl.jspf"%>
 </head>
 
 
@@ -68,8 +67,7 @@
 
 </body>
 
-<script type="text/javascript"
-	src="<c:url value='resources/plugin2/assets/js/core/libraries/jquery.min.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/wizard_stepy.js'/>"></script>
 <script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script>
 <script type="text/javascript">
 	/*$('#Boton').on('click', function() {

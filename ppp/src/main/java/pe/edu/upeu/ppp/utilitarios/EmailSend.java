@@ -32,7 +32,8 @@ public class EmailSend {
 	        message.setFrom(new InternetAddress(remitente));
 	        message.addRecipients(Message.RecipientType.TO, destinatario);   //Se podrían añadir varios de la misma manera
 	        message.setSubject(asunto);
-	        message.setText(cuerpo);
+	        message.setText(cuerpo );
+	        
 	        Transport transport = session.getTransport("smtp");
 	        transport.connect("smtp.gmail.com", remitente, "ppp-team123");
 	        transport.sendMessage(message, message.getAllRecipients());

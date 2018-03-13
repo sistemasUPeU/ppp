@@ -219,7 +219,7 @@ function getAllData(IDvac , cupos){
 function EnvData(){
 
 	var a =vg_idVacante;
-	alert(a);
+	
 	
 	var categorias = new Array();
     $("input:checkbox[name=check]:checked").each(function( i ) {
@@ -256,7 +256,7 @@ function EnvData(){
         	                    type: "success",
         	                    confirmButtonColor: "#66BB6A"
         	                });
-        	            }, 2000);
+        	            }, 1000);
         	            $('#modal_theme_success').modal('hide');
         	            $("#listed").empty();
     			    	getDataBase ();
