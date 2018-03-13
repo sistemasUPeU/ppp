@@ -1,16 +1,26 @@
 package pe.edu.upeu.ppp.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import pe.edu.upeu.ppp.entity.CUserDTO;
 
 @Controller
 @RequestMapping("/Supervision")
 public class SupervicionLinks {
 	
-	@GetMapping("/supervicion")
-	public String supervicion() {
-		String pagina = "vistas/Supervision/supervicion";
+	@GetMapping
+	public String supervicion(Authentication authentication) {
+		String vg_idrol=((CUserDTO) authentication.getPrincipal()).getidrol();
+		String pagina="";
+		
+		if(vg_idrol.equals("4")) {
+			pagina = "vistas/Supervision/SupervicionRepre";
+		}else if(vg_idrol.equals("3")) {
+			pagina = "vistas/Supervision/supervicion";
+		}		
 		return pagina;
 	}
 	
