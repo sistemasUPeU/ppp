@@ -1,6 +1,5 @@
 $(document).ready(function(){	
-	$("#div_auxiliar").hide();
-	listarEscuelaLineasP();
+	$("#div_auxiliar").hide();	
 	
 	$("#escuelas").on("change",function(){
 		console.log($(this).val());
@@ -12,6 +11,9 @@ $(document).ready(function(){
 		new_vacante();	
 	});
 	
+	$("#btn_Rvca").on("click",function(){
+		listarEscuelaLineasP();
+	});
 });
 
 
@@ -35,26 +37,21 @@ function listarEscuelaLineasP(){
 		method:"post",
 		success:function(retorno){
 			retorno=JSON.parse(retorno);
-			console.log(retorno);
-			
+						
 			array_escuelas=[];
 			form_vacante=$("#form_vacante");
 			
 			form_vacante.find("#escuelas").html("<option  value='0'>None Select</option>");
 			form_vacante.find("#lineasprofesionales").html("");
 			
-			$.each(retorno.escuela_linep,function(key,value){
-				console.log("entro.....");
-				
-				if(jQuery.inArray(value.ESCUELA,array_escuelas)<0){
-					console.log(value.ESCUELA);
+			$.each(retorno.escuela_linep,function(key,value){								
+				if(jQuery.inArray(value.ESCUELA,array_escuelas)<0){					
 					array_escuelas.push(value.ESCUELA);
 					form_vacante.find("#escuelas").append("<option value='"+value.ESCUELA+"'>"+value.ESCUELA+"</option>");					
 				}
 //				form_vacante.find("#lineasprofesionales").append("<option data-escuela='"+value.ESCUELA+"' value='"+value.LINEAP+"'>"+value.LINEAP+"</option>");
 				$("#div_auxiliar").append("<option title='"+value.INFO+"' data-escuela='"+value.ESCUELA+"' value='"+value.IDLINEASP+"'>"+value.LINEAP+"</option>");
-			});			
-			console.log("joven");
+			});						
 //			$("#div_auxiliar").html(form_vacante.find("#lineasprofesionales").html());			
 			form_vacante.find("#lineasprofesionales").multiselect();
 		}
