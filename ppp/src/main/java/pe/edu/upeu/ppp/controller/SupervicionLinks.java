@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pe.edu.upeu.ppp.entity.CUserDTO;
 
 @Controller
-@RequestMapping("/Supervision")
+@RequestMapping("/SupervisionView")
 public class SupervicionLinks {
 	
-	@GetMapping
+	@GetMapping("/")
 	public String supervicion(Authentication authentication) {
 		String vg_idrol=((CUserDTO) authentication.getPrincipal()).getidrol();
 		String pagina="";
-		
+		System.out.println("idrol -> "+vg_idrol);
 		if(vg_idrol.equals("4")) {
-			pagina = "vistas/Supervision/SupervicionRepre";
+			pagina = "vistas/Supervision/supervicionRepre";
 		}else if(vg_idrol.equals("3")) {
-			pagina = "vistas/Supervision/supervicion";
+			pagina = "vistas/Supervision/supervicionSupervi";
 		}		
 		return pagina;
 	}

@@ -10,8 +10,6 @@
 <body>
 
 <div class="panel panel-flat">
-
-
 		<div class="panel-body">
 			<div class="jui-tabs-basic">				
 				<ul>

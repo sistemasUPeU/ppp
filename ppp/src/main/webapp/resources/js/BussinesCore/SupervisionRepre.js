@@ -10,6 +10,7 @@ function cargarPracticantes(){
 			retorno=JSON.parse(retorno);	
 			console.log(retorno);
 			$.each(retorno["lista_practicantes"],function(key,value){							
+				var porcen=Math.round(100*+value["PORCENTAJE"]);
 				var bloque='<div class="content-group col-sm-6 col-lg-3">'+
 								'<div class="panel-body bg-blue border-radius-top text-center">'+
 								'<div class="content-group-sm">'+value["ALUMNO"]+
@@ -53,13 +54,18 @@ function cargarPracticantes(){
 								'</div>'+
 									'<div class="progress progress-lg">'+
 										'<div class="progress-bar bg-primary progress-bar-striped active"'+
-											'style="width: 75%">'+
-											'<span>75% Complete</span>'+
+											'style="width: '+porcen+'%">'+
+											'<span>'+porcen+' Complete</span>'+
 										'</div>'+
 									'</div>'+
 								'</div>'+
 							'</div>';
-				$("#Con-Practicas .row").append(bloque);
+				if(value["ESTADO"]=="EN CURSO"){
+					$("#Con-Practicas .row").append(bloque);
+				}else if(value["ESTADO"]=="CONCLUIDO"){
+					$("#Practicas-Concluidas .row").append(bloque);
+				}
+				
 			});
 		}
 	});
