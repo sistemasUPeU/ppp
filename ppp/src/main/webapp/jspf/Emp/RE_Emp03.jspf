@@ -1,94 +1,70 @@
 
-<div class="col-md-12">
+<legend class="text-semibold">Registro del Representante</legend>
 
-
-	<fieldset>
-
-		<div class="row">
-			<div class="col-md-4">
-				<div class="form-group">
-					<label>Area de tabajo: <span class="text-danger">*</span></label>
-					 <input
-						type="text" id="areaT" name="nombre" class="form-control required"
-						placeholder="Area de trabajo.....">
-				</div>
-			</div>
-			<div class="col-md-1">
-				<div class="form-group">
-					<label>Cantidad: <span class="text-danger">*</span></label>
-					 <select
-						name="Genero" id="cant" data-placeholder="Choose a Ciclo..."
-						class="form-control required">
-						<option>Seleccionar</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="form-group">
-					<label>Horario<span class="text-danger">*</span></label> 
-					<input id="horario"
-						type="text" name="dni" class="form-control required"
-						placeholder="doc. de identidad">
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="form-group">
-					<label>Fecha Inicio<span class="text-danger">*</span></label>
-					<div class="input-group">
-						<span class="input-group-addon"><i class="icon-calendar"></i></span>
-						<input type="text" id="fec_ini" class="form-control pickadate-accessibility"
-							placeholder="Fecha Inicio&hellip;">
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="form-group">
-					<label>Fecha Fin<span class="text-danger">*</span></label>
-					<div class="input-group">
-						<span class="input-group-addon"><i class="icon-calendar"></i></span>
-						<input type="text"  id="fec_fin" class="form-control pickadate-accessibility"
-							placeholder="Fin Convenio&hellip;">
-					</div>
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="form-group">
-					<label>Hora Inicio<span class="text-danger">*</span></label> 
-					<input id="H_inic"
-						type="time" name="celular" class="form-control required"
-						placeholder="numero de celular">
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="form-group">
-					<label>Hora Fin<span class="text-danger">*</span></label>
-					 <input id="H_fin"
-						type="time" name="celular" class="form-control required"
-						placeholder="numero de celular">
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="form-group">
-					<label>Sueldo<span class="text-danger">*</span></label> 
-					<input id="suel"
-						type="number" name="sueldo" class="form-control required"
-						placeholder="Sueldo">
-				</div>
-			</div>
-
-			<div class="col-md-6">
-				<div  id="llenarlineas" class="form-group required">
-					<label class="control-label">Lineas Academicas</label><select
-						id="lineas" data-placeholder="Lista de empresasEmpresas" class="select">
-						<!-- Aqui va combo -->
-					</select>
-
-				</div>
-			</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Nombre: <span class="text-danger">*</span></label> <input
+				type="text" name="name" class="form-control required"
+				placeholder="Razon social">
 		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Apellido: <span class="text-danger">*</span></label> <input
+				type="text" name="apelli" class="form-control required"
+				placeholder="Dirección">
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>DNI: <span class="text-danger">*</span></label> <input
+				type="text" name="dni" class="form-control required"
+				data-mask="99999999-9" placeholder="Dni">
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Genero: <span class="text-danger">*</span></label> <select
+				name="Genero" id="genero" data-placeholder="Genero"
+				class="form-control required">
+				<option>Seleccionar</option>
+				<option value="1">M</option>
+				<option value="2">F</option>
+			</select>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Celular: <span class="text-danger">*</span></label> <input
+				type="text" name="cel" class="form-control required"
+				data-mask="999 999 999" placeholder="# Celular">
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Correo: <span class="text-danger">*</span></label> <input
+				type="email" name="email" class="form-control required"
+				placeholder="correo">
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Cargo: <span class="text-danger">*</span></label> <input
+				type="text" name="cargo" class="form-control required"
+				placeholder="Cargo">
+		</div>
+	</div>
 </div>

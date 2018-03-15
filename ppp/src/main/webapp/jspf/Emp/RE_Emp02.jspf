@@ -1,43 +1,81 @@
+<legend class="text-semibold">Registro de Empresa</legend>
 
-	<div class="col-md-12">
+<div class="row">
 
+	<div class="row" id="Aparecer">
 
-		<fieldset>
+		<div class="alert alert-success alert-styled-left">
+			<button type="button" class="close" data-dismiss="alert">
+				<span>&times;</span><span class="sr-only">Close</span>
+			</button>
+			<span class="text-semibold">Inforamcion!</span> respecto a practicas
+			pre-profesionales.
+		</div>
 
-			<div class="row">
+		<div class="col-md-6">
 
-				<div class="col-md-5">
-					<div class="form-group">
-						<label>Adjuntar Convenio: <span class="text-danger">*</span></label>
-						<input type="file" class="file-input required"
-							data-browse-class="btn btn-primary btn-block"
-							data-show-remove="false" data-show-caption="false"
-							data-show-upload="false">
-					</div>
-				</div>
-				<!-- jonas -->
+			<div class="form-group required">
+				<label class="control-label">Empresas</label> <select
+					data-placeholder="Lista de empresasEmpresas" class="select">
+					<!-- Aqui va combo -->
+				</select>
 
-				<div class="col-md-3">
-					<div class="form-group">
-						<label>Fecha Inicio<span class="text-danger">*</span></label>
-						<div class="input-group">
-							<span class="input-group-addon"><i class="icon-calendar"></i></span>
-							<input type="text" class="form-control pickadate-accessibility"
-								placeholder="Inicio Convenio&hellip;">
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="form-group">
-						<label>Fecha Fin<span class="text-danger">*</span></label> 
-						<div class="input-group">
-							<span class="input-group-addon"><i class="icon-calendar"></i></span>
-							<input type="text" class="form-control pickadate-accessibility"
-								placeholder="Fin Convenio&hellip;">
-						</div>
-					</div>
-				</div>
 			</div>
-		</fieldset>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group required">
+				<label class="control-label">Representante</label> <select
+					data-placeholder="Seguros de Empresa" class="select">
+					<!-- Aqui va combo -->
+				</select>
+			</div>
 
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+				<button type="button" onclick="ocultar();"
+					class="btn btn-info btn-float btn-rounded">
+					<i class="icon-plus3"></i>
+				</button>
+			</div>
+		</div>
 	</div>
+</div>
+<div class="col-md-12" id="ocultar">
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>Razón Social: <span class="text-danger">*</span></label> <input
+					type="text" name="razon" class="form-control required"
+					placeholder="Razon social">
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>Dirección: <span class="text-danger">*</span></label> <input
+					type="text" name="direc" class="form-control required"
+					placeholder="Dirección">
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>RUC: <span class="text-danger">*</span></label> <input
+					type="text" name="ruc" class="form-control required"
+					data-mask="999999999" placeholder="RUC">
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>Actividad: <span class="text-danger">*</span></label> <input
+					type="text" name="activ" class="form-control required"
+					placeholder="Actividad">
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,73 @@
+
+<legend class="text-semibold">Adjuntar Archivos</legend>
+
+<div class="row">
+	<div class="col-md-12">
+
+		<div class="form-group">
+
+			<div class="panel panel-flat">
+				<div class="panel-body text-center">
+					<div class="icon-object border-success text-success">
+						<i class=" icon-cloud-download2"></i>
+					</div>
+					<h5>
+						<strong>Subir Contrato</strong>
+					</h5>
+					<div class="col-lg-12">
+						<button type="button" data-toggle="modal"
+							data-target="#modal_theme_success"
+							class="btn btn-danger btn-ladda btn-ladda-progress"
+							data-style="zoom-out">
+							<span class="ladda-label"> + </span>
+						</button>
+
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+
+	<!-- Success modal -->
+	<div id="modal_theme_success" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bg-success">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h6 class="modal-title">Aceptacion de la vacante</h6>
+				</div>
+
+				<div class="modal-body">
+					<h6 class="text-semibold">Puedes descargar tu carta de
+						presentacion correspondiente</h6>
+
+
+
+					<hr>
+					<!-- List of latest updates -->
+					<div class="panel panel-flat">
+						<div class="panel-body text-center">
+							<div class="icon-object border-danger text-danger">
+								<i class=" icon-cloud-upload"></i>
+							</div>
+							
+							<div class="col-lg-12">
+								<input type="file" class="file-input-ajax" multiple="multiple">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-success">Completar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- /success modal -->
+</div>

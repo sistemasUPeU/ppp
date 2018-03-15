@@ -476,6 +476,9 @@ $(function() {
         format: "%l %p"
     });
 
+    $("#anytime-time-hours2").AnyTime_picker({
+        format: "%l %p"
+    });
 
     // Date and time
     $("#anytime-both").AnyTime_picker({

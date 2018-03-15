@@ -1,147 +1,169 @@
 
-	<div class="row" id="Aparecer">
-		<div class="col-md-6">
-			<div class="form-group required">
-				<label class="control-label">Empresas</label> <select
-					data-placeholder="Lista de empresasEmpresas" class="select">
-					<!-- Aqui va combo -->
-				</select>
+<legend class="text-semibold">Datos previos</legend>
 
-			</div>
+<div class="row">
+	<div class="col-md-12">
+
+		<div class="alert alert-primary alert-styled-left">
+			<button type="button" class="close" data-dismiss="alert">
+				<span>&times;</span><span class="sr-only">Close</span>
+			</button>
+			<span class="text-semibold">Inforamcion!</span> respecto a practicas
+			pre-profesionales.
 		</div>
-		<div class="col-md-6">
-			<div class="form-group required">
-				<label class="control-label">Representante</label> <select
-					data-placeholder="Seguros de Empresa" class="select">
-					<!-- Aqui va combo -->
-				</select>
+
+
+		<div class="panel-group panel-group-control panel-group-control-right">
+			<div class="panel panel-white">
+				<div class="panel-heading">
+					<h6 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" href="#question16">
+							<i class=" icon-seven-segment-1 position-left text-slate"></i>
+							Paso 1
+						</a>
+					</h6>
+				</div>
+
+				<div id="question16" class="panel-collapse collapse">
+					<div class="panel-body">You disposal strongly quitting his
+						endeavor two settling him. Manners ham him hearted hundred
+						expense.</div>
+
+					<div class="panel-footer panel-footer-transparent">
+						<div class="heading-elements">
+							<span class="text-muted heading-text">Latest update: Apr
+								3, 2015</span>
+
+							<ul
+								class="list-inline list-inline-condensed heading-text pull-right">
+								<li><a href="#" class="text-primary"><i
+										class="icon-thumbs-up2 position-left"></i></a> 479</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 
-		</div>
-		<div class="col-md-3">
-			<div class="form-group">
-				<button type="button" onclick="ocultar();"
-					class="btn btn-info btn-float btn-rounded">
-					<i class="icon-plus3"></i>
-				</button>
+			<div class="panel panel-white">
+				<div class="panel-heading">
+					<h6 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" href="#question17">
+							<i class=" icon-seven-segment-2 position-left text-slate"></i>
+							Paso 2
+						</a>
+					</h6>
+				</div>
+
+				<div id="question17" class="panel-collapse collapse">
+					<div class="panel-body">Up am intention on dependent
+						questions oh elsewhere september. No betrayed pleasure possible
+						jointure we in throwing.</div>
+
+					<div class="panel-footer panel-footer-transparent">
+						<div class="heading-elements">
+							<span class="text-muted heading-text">Latest update: Mar
+								29, 2015</span>
+
+							<ul
+								class="list-inline list-inline-condensed heading-text pull-right">
+								<li><a href="#" class="text-primary"><i
+										class="icon-thumbs-up2 position-left"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-white">
+				<div class="panel-heading">
+					<h6 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" href="#question18">
+							<i class=" icon-seven-segment-3 position-left text-slate"></i>
+							Paso 3
+						</a>
+					</h6>
+				</div>
+
+				<div id="question18" class="panel-collapse collapse">
+					<div class="panel-body">Way nor furnished sir procuring
+						therefore but. Warmth far manner myself active are cannot called.
+					</div>
+
+					<div class="panel-footer panel-footer-transparent">
+						<div class="heading-elements">
+							<span class="text-muted heading-text">Latest update: Mar
+								24, 2015</span>
+
+							<ul
+								class="list-inline list-inline-condensed heading-text pull-right">
+								<li><a href="#" class="text-primary"><i
+										class="icon-thumbs-up2 position-left"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-white">
+				<div class="panel-heading">
+					<h6 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" href="#question19">
+							<i class=" icon-seven-segment-4 position-left text-slate"></i>Paso
+							4
+						</a>
+					</h6>
+				</div>
+
+				<div id="question19" class="panel-collapse collapse">
+					<div class="panel-body">So insisted received is occasion
+						advanced honoured. Among ready to which up.</div>
+
+					<div class="panel-footer panel-footer-transparent">
+						<div class="heading-elements">
+							<span class="text-muted heading-text">Latest update: Mar
+								17, 2015</span>
+
+							<ul
+								class="list-inline list-inline-condensed heading-text pull-right">
+								<li><a href="#" class="text-primary"><i
+										class="icon-thumbs-up2 position-left"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-white">
+				<div class="panel-heading">
+					<h6 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" href="#question20">
+							<i class=" icon-seven-segment-5 position-left text-slate"></i>
+							Paso 5
+						</a>
+					</h6>
+				</div>
+
+				<div id="question20" class="panel-collapse collapse">
+					<div class="panel-body">Necessary ye contented newspaper
+						zealously breakfast he prevailed.</div>
+
+					<div class="panel-footer panel-footer-transparent">
+						<div class="heading-elements">
+							<span class="text-muted heading-text">Latest update: Mar
+								12, 2015</span>
+
+							<ul
+								class="list-inline list-inline-condensed heading-text pull-right">
+								<li><a href="#" class="text-primary"><i
+										class="icon-thumbs-up2 position-left"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+
+
 	</div>
 
-	<div class="col-md-12" id="ocultar">
-		<span class="label border-left-primary label-striped">Representante
-			de Empresa</span>
-
-		<fieldset>
-			<br>
-			<div class="row">
-				<div class="col-md-3">
-					<div class="form-group">
-						<label>Nombre: <span class="text-danger">*</span></label> <input
-							type="text" id="nombreRepre" name="nombre"
-							class="form-control required" placeholder="Nombre...">
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label>Apellidos: <span class="text-danger">*</span></label> <input
-							type="text" id="ape" name="apellido"
-							class="form-control required" placeholder="Apellido...!">
-					</div>
-				</div>
-
-				<div class="col-md-2">
-					<div class="form-group">
-						<label>DNI<span class="text-danger">*</span></label> <input
-							type="number" id="dni" name="dni" class="form-control required"
-							placeholder="doc. de identidad">
-					</div>
-				</div>
-
-				<div class="col-md-2">
-					<div class="form-group">
-						<label>Celular<span class="text-danger">*</span></label> <input
-							type="number" id="cel" name="celular"
-							class="form-control required" placeholder="numero de celular">
-					</div>
-				</div>
-
-				<div class="col-md-3">
-					<div class="form-group">
-						<label>Corre Electronico: <span class="text-danger">*</span></label>
-						<input type="email" id="correo" name="correo"
-							class="form-control required" placeholder="Example@upeu.edu.pe">
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="form-group">
-						<label>Genero<span class="text-danger required">*</span></label> <select
-							name="Genero" id="genero" data-placeholder="Genero"
-							class="form-control required">
-							<option>Seleccionar</option>
-							<option value="1">M</option>
-							<option value="2">F</option>
-						</select>
-					</div>
-				</div>
-
-			</div>
-
-			<span class="label border-left-success label-striped"><strong>Registro
-					de Empresa</strong></span>
-
-			<div class="row">
-				<br>
-				<div class="col-md-4">
-					<div class="form-group">
-						<label>Razon Social:<span class="text-danger">*</span></label> <input
-							type="text" id="rasoc" name="rasoc" class="form-control required"
-							placeholder="razon social">
-					</div>
-				</div>
-
-				<div class="col-md-3">
-					<div class="form-group">
-						<label>Direccion:<span class="text-danger">*</span></label> <input
-							type="text" id="direccion" name="direccion"
-							class="form-control required" placeholder="direccion">
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="form-group">
-						<label>RUC:<span class="text-danger">*</span></label> <input
-							type="text" id="ruc" name="ruc" class="form-control required"
-							placeholder="ruc">
-					</div>
-				</div>
-
-				<div class="col-md-2">
-					<div class="form-group">
-						<label>Cargo:<span class="text-danger">*</span></label> <input
-							type="text" id="cargo" name="cargo" class="form-control required"
-							placeholder="cargo">
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="form-group">
-						<label>Actividad: <span class="text-danger">*</span></label> <input
-							type="text" id="actividad" name="actividad"
-							class="form-control required" placeholder="actividad">
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div id="llenarseguro" class="form-group required">
-						<label class="control-label">Seguros de Empresa</label> <select
-							id="seguro" data-placeholder="Seguros de Empresa" class="select">
-							<!-- Aqui va combo -->
-						</select>
-
-					</div>
-				</div>
-			</div>
-
-		</fieldset>
-	</div>
+</div>

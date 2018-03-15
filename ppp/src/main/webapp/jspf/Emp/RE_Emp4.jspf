@@ -1,0 +1,74 @@
+<legend class="text-semibold">Datos de la vacante</legend>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Area de Trabajo: <span class="text-danger">*</span></label> <input
+				type="text" name="name" class="form-control required"
+				placeholder="Razon social">
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Horario: <span class="text-danger">*</span></label> <input
+				type="text" name="apelli" class="form-control required"
+				placeholder="Lunes - Viernes">
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Fecha de INICIO: <span class="text-danger">*</span></label>
+
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-calendar5"></i></span>
+				<input type="text" class="form-control pickadate-selectors required"
+					placeholder="Try me&hellip;">
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Fecha de FIN: <span class="text-danger">*</span></label>
+
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-calendar5"></i></span>
+				<input type="text" class="form-control pickadate-selectors required"
+					placeholder="Try me&hellip;">
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Hora inicio: <span class="text-danger">*</span></label> <span
+				class="input-group-addon"><i class="icon-watch2"></i></span> <input
+				type="text" name="fec_in" class="form-control required"
+				id="anytime-time-hours" value="9 am">
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Hora Fin: <span class="text-danger">*</span></label> <span
+				class="input-group-addon"><i class="icon-watch2"></i></span> <input
+				type="text" name="fec_fin" class="form-control required"
+				id="anytime-time-hours2" value="9 pm">
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label>Sueldo: <span class="text-danger">*</span></label> <input
+				type="text" name="suel" class="form-control required"
+				data-mask="S/. 99999" placeholder="Enter amount in PEN">
+		</div>
+	</div>
+</div>
