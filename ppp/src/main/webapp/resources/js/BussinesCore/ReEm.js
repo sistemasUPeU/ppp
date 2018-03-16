@@ -179,11 +179,16 @@ function dataVacante (){
 					s += '<td>'+HORARIO+'</td>';
 					s += '<td><strong>S/. </strong>'+SUELDO+'</td>';
 					s += '<td><span class="label label-info">'+ESTADO+'</span></td></td>';
-					s += '<td class="text-center" >\
-								<button onclick=""  data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>\
-						\
-								<button onclick=""  data-toggle="modal" data-target="#modal_theme_success" type="button" class="btn btn-success btn-icon btn-rounded"><i class="icon-checkmark4"></i></button>\
-							</td>';
+					s += '<td class="text-center" >';
+					
+					if(ESTADO == 'ASIGANDO' || ESTADO == 'PENDIENTE'){
+					s += '<button onclick=""  data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>';
+					
+					}else if(ESTADO == 'APROBADO'){
+						s += '<button onclick=""  data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>';
+						s += '<button onclick=""  data-toggle="modal" data-target="#modal_theme_success" type="button" class="btn btn-success btn-icon btn-rounded"><i class="icon-checkmark4"></i></button>';
+					}
+					s +='</td>';
 				s += '</tr>';
 				
 			}
