@@ -10,7 +10,7 @@ public class RegistroLinks {
 
 	@GetMapping("/ORDN")
 	public String empresa() {
-		String pagina = "vistas/registro/Empresa";
+		String pagina = "vistas/registro/RegisAlumno";
 		return pagina;
 	}
 	

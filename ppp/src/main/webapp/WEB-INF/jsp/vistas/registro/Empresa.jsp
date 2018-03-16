@@ -275,7 +275,7 @@ function Asig() {
 <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/datatables_basic.js'/>"></script>
 <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/components_buttons.js'/>"></script>
 <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/uploader_bootstrap.js'/>"></script>
-<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/form_controls_extended.js'/>"></script>
+<%-- <script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/pages/form_controls_extended.js'/>"></script> --%>
 
 <%-- <script src="<c:url value='resources/js/BussinesCore/ReEm.js'/>"></script> --%>
 

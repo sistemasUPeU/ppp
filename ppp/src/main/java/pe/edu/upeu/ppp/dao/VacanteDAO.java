@@ -12,6 +12,8 @@ public interface VacanteDAO {
 	ArrayList<Map<String, Object>> listarVacantes (int id);
 	ArrayList<Map<String, Object>> getTeacher (int id);
 	ArrayList<Map<String, Object>> GetAlumnos (int id);
+	ArrayList<Map<String, Object>> NotifyVacante(int id);
+	
 	
 	// METODOS PARA INSERT
 	String AginacionIn (int idalumno , int idvacante);

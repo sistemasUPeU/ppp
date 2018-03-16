@@ -29,7 +29,7 @@ public class VacanteDAOImp implements VacanteDAO {
 			sql="SELECT VC.IDVACANTES, VC.IDPERIODO , EM.RAZONSOCIAL , EM.DIRECCION , RP.IDREPRESENTANTE , US.NOMBRE ||' '|| US.APELLIDOS as REPRESENTANTE , US.CELULAR , US.CORREO,\r\n" + 
 					"VC.AREATRABAJO , VC.FECHAINICIO ||' - '|| VC.FECHAFIN AS PERIODO, VC.HORAINICIO ||' A '|| VC.HORAFIN AS HORARIO , VC.SUELDO , VC.NCUPOS , VC.IDESTADO\r\n" + 
 					"FROM PPP_VACANTES VC , PPP_PERIODO PR ,  PPP_REPRESENTANTE RP , PPP_ESTADO ES , PPP_USUARIO US , PPP_CONVENIO CN , PPP_EMPRESA EM\r\n" + 
-					"WHERE EM.IDEMPRESA = RP.IDEMPRESA AND CN.IDCONVENIO = VC.IDCONVENIO and  PR.IDPERIODO = VC.IDPERIODO  AND RP.IDREPRESENTANTE = VC.IDREPRESENTANTE AND VC.IDESTADO = ES.IDESTADO and  VC.NCUPOS>0  \r\n" + 
+					"WHERE EM.IDEMPRESA = RP.IDEMPRESA AND CN.IDCONVENIO = VC.IDCONVENIO and  PR.IDPERIODO = VC.IDPERIODO  AND RP.IDREPRESENTANTE = VC.IDREPRESENTANTE AND VC.IDESTADO = ES.IDESTADO and  VC.NCUPOS > 0  \r\n" + 
 					"AND US.IDUSUARIO = RP.IDREPRESENTANTE and CN.IDESCUELA = ?";
 		} catch (Exception ev) { 
 			System.out.println("No lista Vacantes, error:_"+ev);
@@ -72,8 +72,31 @@ public class VacanteDAOImp implements VacanteDAO {
 				" WHERE C.IDESTADO=1 AND R.IDEMPRESA=(select R2.IDEMPRESA FROM PPP_REPRESENTANTE R2 WHERE R2.IDREPRESENTANTE=?)";
 		return jt.queryForList(sql,idrepresentante);
 	}
+	
 
+	@Override
+	public ArrayList<Map<String, Object>> NotifyVacante(int id) {
+		try {
+			sql="SELECT EM.RAZONSOCIAL , EM.RUC , EM.DIRECCION , \n" + 
+					"USU.NOMBRE ||' '|| USU.APELLIDOS AS REPRESENTANTE ,USU.CELULAR, USU.DNI, USU.CORREO, RP.CARGO ,\n" + 
+					"V.FECHAINICIO ||' -  '|| V.FECHAFIN AS PERIODO , V.HORAINICIO||' a '|| V.HORAFIN AS HORA , V.HORARIO , V.SUELDO , V.AREATRABAJO, S.NOMBRE as ESTADO\n" + 
+					"FROM PPP_ALUMNOS_MATRICULADO AM  \n" + 
+					"JOIN PPP_VACANTES V ON AM.IDVACANTES = V.IDVACANTES \n" + 
+					"JOIN PPP_REPRESENTANTE RP ON RP.IDREPRESENTANTE = V.IDREPRESENTANTE\n" + 
+					"JOIN PPP_EMPRESA EM ON EM.IDEMPRESA = RP.IDEMPRESA\n" + 
+					"JOIN PPP_USUARIO USU ON RP.IDREPRESENTANTE = USU.IDUSUARIO\n" + 
+					"JOIN PPP_ESTADO S ON V.IDESTADO = S.IDESTADO\n" + 
+					"where AM.IDALUMNO = ?";
+		} catch (Exception ev) {
+			System.out.println("No GetAlumnos, error:_"+ev);
+		}
+		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
+	}
 
+	
+	
+	
+	
 	//--- insert method
 	@Override
 	public String AginacionIn(int idalumno, int idvacante) {
@@ -217,9 +240,6 @@ public class VacanteDAOImp implements VacanteDAO {
 		}
 		return (ArrayList<Map<String, Object>>) jt.queryForList(sql, id);
 	}
-
-	
-
 	
 
 }

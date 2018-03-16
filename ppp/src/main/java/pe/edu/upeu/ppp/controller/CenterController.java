@@ -211,7 +211,12 @@ public class CenterController {
 				}
 				
 				break;
-			
+				
+			case "RegistroAlumno":
+				mp.put("notifyVac", vS.NotifyVacante(IDUSER));
+				
+			break;
+				
 			case "Combox":
 				mp.put("as", empredao.ListSeguro());
 				mp.put("li", empredao.ListLineas());

@@ -77,4 +77,9 @@ public class VacanteServiceImpl implements VacanteService {
 		return vacanteDAO.createFolder(rutapdf, rutafolder, titulo, observacion, idalumno, idrol);
 	}
 
+	@Override
+	public ArrayList<Map<String, Object>> NotifyVacante(int id) {
+		return vacanteDAO.NotifyVacante(id);
+	}
+
 }

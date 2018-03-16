@@ -142,41 +142,43 @@ function dataVacante (){
 	// recoleccion de datos 
 	var RAZONSOCIAL, RUC, DIRECCION;
 	var REPRESENTANTE, CELULAR, DNI;
-	var CORREO , PERIODO , HORARIO ;
-	var SUELDO , HORA, AREATRABAJO;
+	var CORREO, CARGO , PERIODO , HORARIO ;
+	var SUELDO , HORA, AREATRABAJO, ESTADO;
+	
 	
 	// recoleccion del historial de practicas
 	var CICLO , DESCRIPCION , DIRECCION2 , EMPRESA ;
 	var ESCUELA, PLAZO , REPRESENTANTEH , SEMESTRE;
 	
-	$.getJSON('rp?opc=Vacantes', function(objJson){
-		vacantes = objJson.Vacantes;
-		var history =  objJson.history;
+	$.getJSON('rp?opc=RegistroAlumno', function(objJson){
+		vacantes = objJson.notifyVac;
+		//var history =  objJson.history;
 		console.log("parse");
 		
 		if (vacantes.length > 0) {
 			for (var i = 0; i < vacantes.length; i++) {
 				//recoger valores de tabla 
 				RAZONSOCIAL	  = vacantes[i].RAZONSOCIAL;
-				RUC 		  = vacantes[i].RAZONSOCIAL;
+				RUC 		  = vacantes[i].RUC;
 				DIRECCION	  = vacantes[i].DIRECCION;
 				REPRESENTANTE = vacantes[i].REPRESENTANTE;
 				CELULAR		  = vacantes[i].CELULAR;
 				DNI 		  = vacantes[i].DNI;
 				CORREO		  = vacantes[i].CORREO;
+				CARGO		  = vacantes[i].CARGO;
 				PERIODO		  = vacantes[i].PERIODO;
-				HORARIO		  = vacantes[i].HORARIO;
 				HORA 		  = vacantes[i].HORA;
+				HORARIO		  = vacantes[i].HORARIO;
 				SUELDO		  = vacantes[i].SUELDO;
 				AREATRABAJO   = vacantes[i].AREATRABAJO;
-				
+				ESTADO        = vacantes[i].ESTADO;
 				// cargar tabla 
 				s += '<tr>';
 					s += '<td>'+RAZONSOCIAL+'</td>';
 					s += '<td>'+RUC+'</td>';
 					s += '<td>'+HORARIO+'</td>';
 					s += '<td><strong>S/. </strong>'+SUELDO+'</td>';
-					s += '<td><span class="label label-info">Pendiente</span></td></td>';
+					s += '<td><span class="label label-info">'+ESTADO+'</span></td></td>';
 					s += '<td class="text-center" >\
 								<button onclick=""  data-toggle="modal" data-target="#modal_theme_warning" type="button" class="btn btn-primary btn-icon btn-rounded"><i class="icon-search4"></i></button>\
 						\
@@ -199,7 +201,7 @@ function dataVacante (){
 			$("#empresaName").append(mm);
 			
 			$("#cargModal").empty();
-			m = createModal (RUC,DIRECCION,REPRESENTANTE, CELULAR ,DNI, CORREO,PERIODO,HORARIO,HORA,SUELDO,AREATRABAJO);
+			m = createModal (RUC,DIRECCION,REPRESENTANTE, CELULAR ,DNI, CORREO,PERIODO,HORARIO,HORA,SUELDO,AREATRABAJO , CARGO);
 			$("#cargModal").append(m);
 	
 			
@@ -213,30 +215,30 @@ function dataVacante (){
 		}
 		
 		
-		if(history.length > 0){
-			for(var j = 0; j < history.length; j++){
-				//recoger valores de tabla 
-				EMPRESA	  			  = history[j].EMPRESA;
-				REPRESENTANTEH 		  = history[j].REPRESENTANTE;
-				DIRECCION2			  = history[j].DIRECCION;
-				CICLO 				  = history[j].CICLO;
-				REPRESENTANTEH 		  = history[j].REPRESENTANTE;
-				ESCUELA			 	  = history[j].ESCUELA;
-				CICLO 				  = history[j].CICLO;
-				DESCRIPCION 		  = history[j].DESCRIPCION;
-				SEMESTRE			  = history[j].SEMESTRE;
-				PLAZO 				  = history[j].PLAZO;
-			}
-			
-			// reseteamos y mostramos HisotryCards
-			$("#historyCards").empty();
-			hc =  historyCards(EMPRESA, REPRESENTANTEH , DIRECCION2 , REPRESENTANTEH , ESCUELA , CICLO , DESCRIPCION , SEMESTRE , PLAZO);
-			$("#historyCards").append(hc);
-			
-		}else{
-			
-			console.log("Error Papai");
-		}
+//		if(history.length > 0){
+//			for(var j = 0; j < history.length; j++){
+//				//recoger valores de tabla 
+//				EMPRESA	  			  = history[j].EMPRESA;
+//				REPRESENTANTEH 		  = history[j].REPRESENTANTE;
+//				DIRECCION2			  = history[j].DIRECCION;
+//				CICLO 				  = history[j].CICLO;
+//				REPRESENTANTEH 		  = history[j].REPRESENTANTE;
+//				ESCUELA			 	  = history[j].ESCUELA;
+//				CICLO 				  = history[j].CICLO;
+//				DESCRIPCION 		  = history[j].DESCRIPCION;
+//				SEMESTRE			  = history[j].SEMESTRE;
+//				PLAZO 				  = history[j].PLAZO;
+//			}
+//			
+//			// reseteamos y mostramos HisotryCards
+//			$("#historyCards").empty();
+//			hc =  historyCards(EMPRESA, REPRESENTANTEH , DIRECCION2 , REPRESENTANTEH , ESCUELA , CICLO , DESCRIPCION , SEMESTRE , PLAZO);
+//			$("#historyCards").append(hc);
+//			
+//		}else{
+//			
+//			console.log("Error Papai");
+//		}
 		
 	});
 }
@@ -271,7 +273,7 @@ function minimalModal(RAZONSOCIAL){
 	return mm;
 }
 
-function createModal (RUC,DIRECCION,REPRESENTANTE, CELULAR ,DNI, CORREO,PERIODO,HORARIO,HORA,SUELDO,AREATRABAJO){
+function createModal (RUC,DIRECCION,REPRESENTANTE, CELULAR ,DNI, CORREO,PERIODO,HORARIO,HORA,SUELDO,AREATRABAJO , CARGO){
 	var m ="<ul class='media-list'>\
 				<li class='media'>\
 					<div class='media-left'>\
@@ -295,6 +297,7 @@ function createModal (RUC,DIRECCION,REPRESENTANTE, CELULAR ,DNI, CORREO,PERIODO,
 						<p><strong>Celular : </strong>"+CELULAR+"</p>\
 						<p><strong>DNI : </strong>"+DNI+"</p>\
 						<p><strong>Correo : </strong>"+CORREO+"</p>\
+					    <p><strong>Cargo : </strong>"+CARGO+"</p>\
 					</div>\
 				</li>\
 				<li class='media'>\

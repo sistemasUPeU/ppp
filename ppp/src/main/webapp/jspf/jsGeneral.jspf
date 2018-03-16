@@ -45,8 +45,7 @@
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/pickadate/picker.time.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/pickers/pickadate/legacy.js'/>"></script>
     
-	
-	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/core/libraries/jasny_bootstrap.min.js'/>"></script>
+    
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/inputs/formatter.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='resources/plugin2/assets/js/plugins/forms/inputs/typeahead/handlebars.min.js'/>"></script>
