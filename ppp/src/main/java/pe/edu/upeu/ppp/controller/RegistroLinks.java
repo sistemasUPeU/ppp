@@ -30,6 +30,10 @@ public class RegistroLinks {
 		String pagina = "vistas/registro/ListaVacantes";
 		return pagina;
 	}
-
 	
+	@GetMapping("/Convenio")
+	public String conve() {
+		String pagina = "vistas/registro/Convenio";
+		return pagina;
+	}
 }
