@@ -21,7 +21,7 @@ public class RepreServiceImp implements RepreService {
 		 	  String P_DNI,
 		 	  String P_CELULAR,
 		 	  String P_CORREO,
-		 	  String P_GENERO,int idEstado,int id_Empresa,int id_Periodo,String cargo) {
+		 	  String P_GENERO,int idEstado,int id_Empresa,String id_Periodo,String cargo) {
 		return RepreSerImp.regRepresentante(P_NOMBRE, P_APELLIDOS, P_DNI, P_CELULAR, P_CORREO, P_GENERO, idEstado, id_Empresa, id_Periodo, cargo);
 	}
 	@Override

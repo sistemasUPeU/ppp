@@ -87,7 +87,7 @@
 								
 								<div class="row">
 									
-									<h3 id="msj" style="text-align: center;"><strong>Tienes una vacante pendiente </strong> </h3>
+									<h3 id="msj" style="text-align: center;"><strong></strong> </h3>
 								
 										<!-- data table -->
 										<div class="row" id="contTable" >
@@ -293,7 +293,7 @@
 																<div class="form-group">
 																	<label>Nombre: <span class="text-danger">*</span></label>
 																	<input type="text" id="nombreRepre" name="nombre"
-																		class="form-control" required placeholder="Nombre...">
+																		class="form-control required"  placeholder="Nombre...">
 																</div>
 															</div>
 			
@@ -390,17 +390,6 @@
 																		class="form-control required" placeholder="actividad">
 																</div>
 															</div>
-			
-															<div class="col-md-4">
-																<div id="llenarseguro" class="form-group required">
-																	<label class="control-label">Seguros de Empresa</label> <select
-																		id="seguro" name="seguro" data-placeholder="Seguros de Empresa"
-																		class="select">
-																		<!-- Aqui va combo -->
-																	</select>
-			
-																</div>
-															</div>
 														</div>
 												</form>										
 											</div>
@@ -488,7 +477,7 @@
 									<div class ="row">
 									
 										<div class="col-md-3">
-											<button  id="BotonEx" onclick="alert('soy existente')" style=" text-align: center;" type="button" class="btn bg-success-400 btn-labeled btn-rounded"><b><i class="icon-checkmark"></i></b> Registrar Existente	</button>											
+											<button  id="BotonEx" onclick="alert('soy existente')" style=" text-align: center;" type="button" class="btn bg-success-400 btn-labeled btn-rounded"><b><i class="icon-checkmark"></i></b>Agregar</button>											
 										</div>
 										<div class="col-md-4">
 											<button onclick="asocultar();" style=" text-align: center;" type="button" class="btn bg-danger-400 btn-labeled btn-rounded"><b><i class="icon-switch2"></i></b> Cancelar	</button>

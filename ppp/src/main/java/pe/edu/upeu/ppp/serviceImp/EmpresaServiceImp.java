@@ -24,19 +24,19 @@ public class EmpresaServiceImp implements EmpresaService{
 		 	  String P_GENERO,
 		 	  
 		 	  String P_CARGO,
-		 	  int P_IDPERIODO,
+		 	  String P_IDPERIODO,
+		 	 int p_idalumno,
 		 	  
 		 	  String P_RAZONSOCIAL,
 		 	  String P_RUC,
 		 	  String P_DIRECCION,
-		 	  int P_SEGURO,
 		 	  String P_ACTIVIDAD,
 		 	  int p_IdEstado) {
 		
 		
 		return empredao.RegEmpresa(P_NOMBRE,P_APELLIDOS,P_DNI,
-			 	   P_CELULAR,P_CORREO,P_GENERO,P_CARGO,P_IDPERIODO,			 	  
-			 	  P_RAZONSOCIAL,P_RUC,P_DIRECCION,P_SEGURO,P_ACTIVIDAD,p_IdEstado);
+			 	   P_CELULAR,P_CORREO,P_GENERO,P_CARGO,P_IDPERIODO,	 p_idalumno,		 	  
+			 	  P_RAZONSOCIAL,P_RUC,P_DIRECCION,P_ACTIVIDAD,p_IdEstado);
 	}
 
 	@Override

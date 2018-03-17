@@ -48,4 +48,10 @@ public class UserDAO2 {
 					"WHERE   Al.Idalumno = U.Idusuario and U.Idusuario = ? ";
 			return (ArrayList<Map<String, Object>>) jt.queryForList(sql,id);
 		}
+		
+		//para listar periodo
+				public  ArrayList<Map<String, Object>>  getPeriodo() {
+					String sql ="select pe.IDPERIODO from ppp_periodo pe where pe.FECHAFIN > sysdate ";
+					return (ArrayList<Map<String, Object>>) jt.queryForList(sql);
+				}
 }

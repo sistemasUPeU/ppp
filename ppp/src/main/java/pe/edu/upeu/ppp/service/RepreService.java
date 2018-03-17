@@ -11,7 +11,7 @@ public interface RepreService {
 		 	  String P_DNI,
 		 	  String P_CELULAR,
 		 	  String P_CORREO,
-		 	  String P_GENERO,int idEstado,int id_Empresa,int id_Periodo,String cargo);
+		 	  String P_GENERO,int idEstado,int id_Empresa,String id_Periodo,String cargo);
 	
 	public ArrayList<Map<String,Object>> listarRepr ();
 	

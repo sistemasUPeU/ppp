@@ -21,7 +21,7 @@ public class RepresentanteDAOImp implements RepresentanteDAO {
 		 	  String P_DNI,
 		 	  String P_CELULAR,
 		 	  String P_CORREO,
-		 	  String P_GENERO,int idEstado,int id_Empresa,int id_Periodo,String cargo){
+		 	  String P_GENERO,int idEstado,int id_Empresa,String id_Periodo,String cargo){
 		String sql ="";
 		int x = 0;
 		try {

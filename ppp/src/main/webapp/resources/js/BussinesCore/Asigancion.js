@@ -256,7 +256,7 @@ function EnvData(){
         	                    type: "success",
         	                    confirmButtonColor: "#66BB6A"
         	                });
-        	            }, 500);
+        	            });
         	            $('#modal_theme_success').modal('hide');
         	            $("#listed").empty();
     			    	getDataBase ();

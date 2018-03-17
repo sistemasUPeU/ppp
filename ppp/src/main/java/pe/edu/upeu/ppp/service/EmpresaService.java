@@ -13,12 +13,12 @@ public interface EmpresaService {
 		 	  String P_GENERO,
 		 	  
 		 	  String P_CARGO,
-		 	  int P_IDPERIODO,
+		 	  String P_IDPERIODO,
+		 	 int p_idalumno,
 		 	  
 		 	  String P_RAZONSOCIAL,
 		 	  String P_RUC,
 		 	  String P_DIRECCION,
-		 	  int P_SEGURO,
 		 	  String P_ACTIVIDAD,
 		 	  int p_IdEstado);
 	

@@ -30,7 +30,11 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 			System.out.println(idCiclo);
 					
 			String ciclo ;
-		 	ArrayList<Map<String, Object>> cicloinf =  (ArrayList<Map<String, Object>>) userDAO2.getCiclo(idCiclo);
+		 	// geet data ciclo
+			ArrayList<Map<String, Object>> cicloinf =  (ArrayList<Map<String, Object>>) userDAO2.getCiclo(idCiclo);
+			// get periodo actual
+			 
+			 String  periodo =  userDAO2.getPeriodo().get(0).get("IDPERIODO").toString().trim() ;
 		 	
 		 	if(cicloinf.isEmpty()) {
 		 		 ciclo = null;
@@ -40,12 +44,13 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		 	
 		 	System.out.println("soy el ciclo: " + ciclo);
 			
-			CUserDTO user = new CUserDTO(userinf,ciclo ,true,true,true,true);
+			CUserDTO user = new CUserDTO(userinf,ciclo ,periodo ,true,true,true,true);
 			
 			 System.out.println("Cargando user");
 			 System.out.println(user.getUsername());
 			 System.out.println(user.getPassword());
 			 System.out.println("ciclo :" + user.getCiclo());
+			 System.out.println("periodo actual :" + user.getPeriodo());
 	    return user;
 	
 	}

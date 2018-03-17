@@ -68,7 +68,7 @@ public class CenterController {
 		Map<String, Object> myHasMap=null;
 				
 		String IDROL = ((CUserDTO) authentication.getPrincipal()).getidrol();
-		int vl_idperiodo=0;
+		String vl_idperiodo="";
 		
 		int vl_estado=0;
 		int resp=0;
@@ -120,11 +120,11 @@ public class CenterController {
 				
 				//El estado 'ACTIVO' corresponde al id 23
 				//El estado 'PENDIENTE' corresponde al id 22
-				vl_estado=23;
+				vl_estado=1;
 				//el id_rol que corresponde a practicante es 3
 				System.out.println(IDROL);
-				if(IDROL.equals("3")){
-					vl_estado=22;
+				if(IDROL.equals("5")){
+					vl_estado=3;
 				}
 				resp=0;
 				resp=representanteDao.regRepresentante(
@@ -145,16 +145,16 @@ public class CenterController {
 				mp.put("resp", resp);
 				break;
 			case "new_Empresa":
-				// vl_idperiodo = Integer.parseInt(((CUserDTO) authentication.getPrincipal()).getidperiodo());
-						
+				vl_idperiodo = ((CUserDTO) authentication.getPrincipal()).getPeriodo().toString().trim();
+				System.out.println("cc" + vl_idperiodo );		
 				myHasMap = gson.fromJson(data_json, tipoHashMap);
 							
 				//El estado 'ACTIVO' corresponde al id 23
 				//El estado 'PENDIENTE' corresponde al id 22
-				vl_estado=23;
+				vl_estado=1;
 				//el id_rol que corresponde a practicante es 3
-				if(IDROL.equals("3")){
-					vl_estado=22;
+				if(IDROL.equals("5")){
+					vl_estado=3;
 				}						
 				resp=0;
 				resp=empredao.RegEmpresa(
@@ -166,10 +166,10 @@ public class CenterController {
 						myHasMap.get("genero").toString(),
 						myHasMap.get("cargo").toString(),
 						vl_idperiodo,
+						1,
 						myHasMap.get("rasoc").toString(),
 						myHasMap.get("ruc").toString(),
 						myHasMap.get("direccion").toString(),
-						Integer.parseInt(myHasMap.get("seguro").toString()),
 						myHasMap.get("actividad").toString(), vl_estado);			
 				
 				System.out.println(myHasMap);

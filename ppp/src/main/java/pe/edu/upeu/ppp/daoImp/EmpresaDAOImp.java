@@ -17,28 +17,28 @@ public class EmpresaDAOImp implements EmpresaDAO {
 	
 	@Override
 	public int RegEmpresa(String P_NOMBRE, 
-		 	  String P_APELLIDOS,
-		 	  String P_DNI,
-		 	  String P_CELULAR,
-		 	  String P_CORREO,
-		 	  String P_GENERO,
-		 	  
-		 	  String P_CARGO,
-		 	  int P_IDPERIODO,
-		 	  
-		 	  String P_RAZONSOCIAL,
-		 	  String P_RUC,
-		 	  String P_DIRECCION,
-		 	  int P_SEGURO,
-		 	  String P_ACTIVIDAD,
-		 	  int p_IdEstado) {
+					 	  String P_APELLIDOS,
+					 	  String P_DNI,
+					 	  String P_CELULAR,
+					 	  String P_CORREO,
+					 	  String P_GENERO,
+					 	  String P_CARGO,
+					 	  
+					 	  String P_IDPERIODO,
+					 	  int p_idalumno,
+					 	  
+					 	  String P_RAZONSOCIAL,
+					 	  String P_RUC,
+					 	  String P_DIRECCION,
+					 	  String P_ACTIVIDAD,
+					 	  int p_IdEstado) {
 		
 		String sql ="";
 		int x = 0;
 		try {
 			sql = "{CALL PA_REGISTRAR_EMPRESA(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
 			x = jt.update(sql,P_NOMBRE , P_APELLIDOS , P_DNI , P_CELULAR , P_CORREO , P_GENERO,
-					 P_CARGO, P_IDPERIODO , P_RAZONSOCIAL, P_RUC , P_DIRECCION , P_SEGURO, P_ACTIVIDAD,p_IdEstado);
+					 P_CARGO, P_IDPERIODO ,p_idalumno, P_RAZONSOCIAL, P_RUC , P_DIRECCION , P_ACTIVIDAD,p_IdEstado);
 		} catch (Exception e) {
 			System.out.println("error en RegEmpresa dao implement:" + e);
 		}

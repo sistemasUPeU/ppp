@@ -214,7 +214,7 @@ function dataVacante (){
 		}else{
 			
 			$("#contTable").hide();
-			var a ="<h2><strong>NO!! tienes vacante asignada..</strong></h2>";
+			var a ="<h2><strong>NO!! tienes vacante asignada..</strong><p>Puedes realizar tu solicitud de practicas</p></h2>";
 			$("#msj").empty();
 			$("#msj").append(a);
 		}

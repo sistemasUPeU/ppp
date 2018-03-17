@@ -47,6 +47,16 @@ public class CUserDTO implements UserDetails, Serializable{
 			this.ciclo = ciclo;
 		}
 	
+	private String Periodo;
+		
+	// periodo
+	public String getPeriodo() {
+		return Periodo;
+	}
+
+	public void setPeriodo(String Periodo) {
+		this.Periodo = Periodo;
+	}
 		
 	//rol
 	public String getidrol() {
@@ -72,7 +82,7 @@ public class CUserDTO implements UserDetails, Serializable{
 	}
 
 
-	public CUserDTO(ArrayList<Map<String, Object>> userinfo ,  String ciclo,  boolean accountNonExpired,
+	public CUserDTO(ArrayList<Map<String, Object>> userinfo ,  String ciclo, String Periodo , boolean accountNonExpired,
 			boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled) {
 			IDUSER = userinfo.get(0).get("IDUSER").toString().trim();
 			this.nombre = userinfo.get(0).get("NOMBRE").toString().trim();
@@ -87,7 +97,7 @@ public class CUserDTO implements UserDetails, Serializable{
 			this.Rol_name = userinfo.get(0).get("ROL").toString().trim();
 			
 			this.ciclo =ciclo;
-			
+			this.Periodo =Periodo;
 			
 			this.accountNonExpired = accountNonExpired;
 			AccountNonLocked = accountNonLocked;
