@@ -552,7 +552,7 @@
 									<div class="tab-pane fade" id="settings">
 
 										<!-- Profile info -->
-										<div class="panel panel-flat">
+										<div class="panel panel-flat" >
 											<div class="panel-heading">
 												<h6 class="panel-title">Informacion del perfil</h6>
 												<div class="heading-elements">
@@ -566,7 +566,7 @@
 											</div>
 
 											<div class="panel-body">
-												<form action="#">
+												<form  id="listAlumno">
 													<div class="form-group">
 														<div class="row">
 															<div class="col-md-6">
@@ -585,8 +585,8 @@
 													<div class="form-group">
 														<div class="row">
 															<div class="col-md-4">
-																<label>Fecha de Nacimiento</label> <input type="text"
-																	value="24 de julio 1994" readonly="readonly"
+																<label>Codigo</label> <input type="text"
+																	value="201520363" readonly="readonly"
 																	class="form-control">
 															</div>
 															<div class="col-md-4">
@@ -785,6 +785,11 @@
 	<!-- /page container -->
 
 </body>
+
+
+
+<script type="text/javascript"
+	src="<c:url value='resources/js/BussinesCore/getAlum.js'/>"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 
