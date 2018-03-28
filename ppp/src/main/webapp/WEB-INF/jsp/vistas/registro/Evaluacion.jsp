@@ -7,75 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <%@ include file="../../../../jspf/Emp/headEmpl.jspf"%>	
-<script type="text/javascript">
-		var nr=1;
-		var contador=0;
-        var contadorpanel=0;
-		var array=[];
-		$(document).ready(function() {
-			
-		});
-		function insertar(){
-		     var x= $("#pregunta").val();
-		     console.log(x);
-		      if(x!=''){
-		         array.push(x);
-		         console.log(array);
-		         show();
-		        }
-		    }
-		           
-		    function show() {
-		    var add="";
-		    $("#pregunta").val('');
-		      for(contador ; contador < array.length; contador++)
-		      {
-		      add+="<div class='input-group'>"+
-                    "<label id='guardar'>"+array[contador]+"</label>"+
-                        "<button type='button' data-toggle='modal' data-target='#modal_default' class='right btn btn-primary btn-icon btn-rounded'><i class='glyphicon glyphicon-edit'></i></button>"+
-                        "<button type='button' class='btn btn-danger btn-icon btn-rounded'><i class='glyphicon glyphicon-remove-circle'></i></button>"+
-                  "</div>"
-                  ;
-		      console.log(array[contador]);
-		     $("#aqui").append(add);
-		      }
 
-		    }
-		            
-		            $("#guardar").click(function(){
-		              insertar();
-		             })
-		            $("#listar").click(function(){
-		              alert("hola");
-		              show();
-		            })
-    
-               
-                
-                $("#createdimension").click(function(){
-                    createpaneldimension();
-                })
-                
-                 function createpaneldimension()
-                {
-                    var panel="";
-                            panel+="<div class='panel panel-white'>"+
-								    "<div class='panel-heading'>"+
-									   "<h6 class='panel-title text-semibold'>DIMENSIÓN: </h6>"+
-                                        "<div class='heading-elements'>"+
-										"<ul class='icons-list'>"+
-					                		"<li><a data-action='collapse'></a></li>"+
-					                		"<li><a data-action='reload'></a></li>"+
-					                		"<li><a data-action='close''></a></li>"+
-					                	"</ul>"+
-				                	"</div>"+
-                                    "</div>"+
-                                    "</div>";
-                        
-                    console.log(contadorpanel);
-                    $("#panels-target-left").append(panel);
-                }
-        </script>
 </head>
 <body>
 			<!-- Content area -->
@@ -234,5 +166,73 @@
 <script type="text/javascript" src="resources/plugin2/assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
 <script type="text/javascript" src="resources/plugin2/assets/js/pages/form_select2.js"></script>
 		<script type="text/javascript" src="resources/plugin2/assets/js/pages/extension_dnd.js"></script>
+<script type="text/javascript">
+		var nr=1;
+		var contador=0;
+        var contadorpanel=0;
+		var array=[];
+		$(document).ready(function() {
+			
+		});
+		function insertar(){
+		     var x= $("#pregunta").val();
+		     console.log(x);
+		      if(x!=''){
+		         array.push(x);
+		         console.log(array);
+		         show();
+		        }
+		    }
+		           
+		    function show() {
+		    var add="";
+		    $("#pregunta").val('');
+		      for(contador ; contador < array.length; contador++)
+		      {
+		      add+="<div class='input-group'>"+
+                    "<label id='guardar'>"+array[contador]+"</label>"+
+                        "<button type='button' data-toggle='modal' data-target='#modal_default' class='right btn btn-primary btn-icon btn-rounded'><i class='glyphicon glyphicon-edit'></i></button>"+
+                        "<button type='button' class='btn btn-danger btn-icon btn-rounded'><i class='glyphicon glyphicon-remove-circle'></i></button>"+
+                  "</div>"
+                  ;
+		      console.log(array[contador]);
+		     $("#aqui").append(add);
+		      }
 
+		    }
+		            
+		            $("#guardar").click(function(){
+		              insertar();
+		             })
+		            $("#listar").click(function(){
+		              alert("hola");
+		              show();
+		            })
+    
+               
+                
+                $("#createdimension").click(function(){
+                    createpaneldimension();
+                })
+                
+                 function createpaneldimension()
+                {
+                    var panel="";
+                            panel+="<div class='panel panel-white'>"+
+								    "<div class='panel-heading'>"+
+									   "<h6 class='panel-title text-semibold'>DIMENSIÓN: </h6>"+
+                                        "<div class='heading-elements'>"+
+										"<ul class='icons-list'>"+
+					                		"<li><a data-action='collapse'></a></li>"+
+					                		"<li><a data-action='reload'></a></li>"+
+					                		"<li><a data-action='close''></a></li>"+
+					                	"</ul>"+
+				                	"</div>"+
+                                    "</div>"+
+                                    "</div>";
+                        
+                    console.log(contadorpanel);
+                    $("#panels-target-left").append(panel);
+                }
+        </script>
 </html>
