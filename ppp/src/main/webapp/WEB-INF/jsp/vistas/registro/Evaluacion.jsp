@@ -18,7 +18,7 @@
 									<div class="panel panel-flat">
 									
 										<div class="panel-heading">
-											<h5 class="panel-title">EXAMEN</h5>
+											<h5 class="panel-title">EXÁMEN</h5>
 											
 											<div class="heading-elements">
 												<ul class="icons-list">
