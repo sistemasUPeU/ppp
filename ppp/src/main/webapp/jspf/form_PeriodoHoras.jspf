@@ -1,0 +1,49 @@
+
+<form id="form_periodoHoras">
+	<div id="periodo_hora">
+	<div class="row div_row_periodo_horas row_periodo"> 
+		<div class="col-md-2">
+			<div class="form-group required">
+				<label>Desde el Ciclo<span class="text-danger">*</span></label>
+				<input name="ciclo_izquierda" type="number" min="1" max="10" class="form-control required">
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="form-group required">
+				<label>Hasta Ciclo<span class="text-danger">*</span></label>				
+				<input name="ciclo_derecha" type="number" min="1" max="10" class="form-control required">
+			</div>
+		</div>					
+		<div class="col-md-3">
+			<div class="form-group required">
+				<label>¿Cuántas Horas completara?<span class="text-danger">*</span></label>				
+				<input name="horas" type="number" min="1" max="1000" class="form-control required">				
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="form-group">						
+				<button type="button" class="btn btn-primary stepy-finish btn_add_periodohoras">
+				<i class="glyphicon glyphicon-plus"></i>
+				</button>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="form-group">						
+				<button type="button" class="btn btn-danger stepy-finish btn_delete_periodohoras">
+				<i class="glyphicon glyphicon glyphicon-trash"></i>
+				</button>
+			</div>
+		</div>				
+	</div>			
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="form-group">						
+				<button type="button" class="btn btn-primary stepy-finish" id="btn_form_periodohoras">
+				Guardar <i class="icon-check position-right"></i>
+				</button>
+			</div>
+		</div>		
+	</div>										
+</form>
+<script type="text/javascript" src="resources/js/BussinesCore/periodoHoras.js"></script>

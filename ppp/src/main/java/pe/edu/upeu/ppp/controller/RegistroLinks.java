@@ -1,3 +1,4 @@
+
 package pe.edu.upeu.ppp.controller;
 
 import org.springframework.stereotype.Controller;
@@ -36,4 +37,9 @@ public class RegistroLinks {
 		String pagina = "vistas/registro/Convenio";
 		return pagina;
 	}
+	@GetMapping("/Periodo_Horas")
+	public String periodoHoras() {
+		return "vistas/registro/PeriodoHoras";
+	}
 }
+
