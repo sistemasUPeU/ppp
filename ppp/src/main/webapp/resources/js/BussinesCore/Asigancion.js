@@ -237,8 +237,7 @@ function EnvData(){
             closeOnConfirm: false,
             confirmButtonColor: "#2196F3",
             showLoaderOnConfirm: true
-        },
-        function() {
+        }, function() {
         	//enviamos el valor al controlador
         	$.ajax({
                 url : 'rp?opc=asignado&vacante='+a,

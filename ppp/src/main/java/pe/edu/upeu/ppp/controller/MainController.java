@@ -18,10 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.google.gson.Gson;
 
-import pe.edu.upeu.ppp.config.SpringConnection;
 import pe.edu.upeu.ppp.entity.CUserDTO;
-import pe.edu.upeu.ppp.security.UserDAO2;
-import pe.edu.upeu.ppp.service.RepreService;
 import pe.edu.upeu.ppp.service.UserService;
 
 @Controller

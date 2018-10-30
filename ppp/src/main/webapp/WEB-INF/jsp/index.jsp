@@ -7,7 +7,6 @@
 
 <html lang="es">
 <head>
-<%-- <link rel="shortcut icon" href="<c:url value='resources/imagenes/PPP.ico'/>"> --%>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +16,7 @@
 <%@ include file="../../jspf/head.jspf"%>
 <link rel="stylesheet"
 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-<%-- <jsp:include page=""></jsp:include> --%>
-<%-- 	 --%>
+
 <style>
 #fade-quote-carousel.carousel {
 	padding-bottom: 60px;
@@ -223,7 +221,6 @@
 	<!-- /page container -->
 
 	<%@ include file="../../jspf/jsGeneral.jspf"%>
-
 	<script type="text/javascript"
 		src="<c:url value='resources/plugin2/assets/js/pages/components_page_header.js'/>"></script>
 	<script type="text/javascript">

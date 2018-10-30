@@ -124,8 +124,6 @@
 													<div class="tabbable">
 														<div class="tab-content">
 															<div class="tab-pane fade in active" id="activity">
-						
-																
 																<div class="timeline timeline-left content-group">
 																	<div class="timeline-container">
 																		<!-- Date stamp -->
@@ -173,14 +171,8 @@
 																			
 																		</div>
 																		<!-- /invoices -->
-																		
-																		
-																		
-																		
 																	</div>
 															    </div>
-															   
-															
 															</div>
 														</div>
 													</div>
@@ -191,18 +183,11 @@
 						                    
 						                    </div>
 											<!-- /user profile -->
-																
 									</div>
-									
-									
-									
 									<button onclick="nsocultar();" style=" text-align: center;" type="button" class="btn bg-danger-400 btn-labeled btn-rounded"><b><i class="icon-switch2"></i></b> Cerrar	</button>
-										
 								</div>
 							</div>
 						</div>
-
-
 
 					<!-- panel de registro -->
 						<div class="col-md-6">
